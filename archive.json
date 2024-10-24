@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-22T01:17:52.059664+00:00",
+  "timestamp": "2024-10-24T01:16:52.318319+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -1494,6 +1494,22 @@
           "updatedAt": "2024-08-28T15:42:16Z"
         }
       ]
+    },
+    {
+      "number": 99,
+      "id": "I_kwDOJBcdGs6bQsZC",
+      "title": "Zongpeng\uff1a Some proposal for policy delivery ",
+      "url": "https://github.com/boucadair/CATS-framework/issues/99",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Hi\uff0c Cheng\r\n\r\n    We have prepared some context for a new section in the framework document.\r\n\r\n\r\n    Welcome for comments.\r\n\r\n\r\n4.6.  Policy Delivery\r\n\r\nAs shown in Figure1, the control plane and management plane need to communicate some policies to the data plane. The control plane and management plane can be implemented in a control center entity.\r\n\r\nIf the C-PS is logically centralized, it needs to communicate some policies to the CATS-Forwarders. In this case, the network entity containing the C-PS, such as a control center, should be able to perform management and/or control functions, including computing information awareness function, service scheduling function, etc. It collects computing and network information, and schedules service based on computing and network information. The CATS-Forwarders performs data plane functions or routing functions.\r\n\r\nIf the C-PS is collocated with an Ingress CATS-Forwarder, the functions that the Ingress CATS-Forwarder supports would include computing information awareness function, service scheduling function and data forwarding function. In this case, Ingress CATS-Forwarders make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service instances and network.\r\n\r\nIn either case, management plane policies need to be delivered to the CATS-Forwarders. For example, a general scheduling policy can be sent to the Ingress CATS-Forwarder, which would include policy execution node information, topology information and configuration information for real-time state collection of resources. If the C-PS is collocated with an Ingress CATS-Forwarder, the policy execution node would be the Ingress CATS-Forwarder. The topology information could be the nodes that need to be communicated to obtain the computing information. According to the topology information and configuration information in the received general scheduling policy, the Ingress CATS-Forwarder obtains the real-time status information of the computing resource, the service resource or the network resource. Based on these resource state information and the scheduling policy information in the general scheduling policy, the ingress CATS-Forwarder can obtain the target scheduling policy for the service requirement and schedule the corresponding service's traffic.\r\n\r\n\r\n\r\nBest Regards\r\nZongpeng Du\r\n",
+      "createdAt": "2024-10-22T09:31:01Z",
+      "updatedAt": "2024-10-22T09:31:01Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -4518,6 +4534,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 100,
+      "id": "PR_kwDOJBcdGs5_byep",
+      "title": "contribution from Zongpeng regarding Policy delivery",
+      "url": "https://github.com/boucadair/CATS-framework/pull/100",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "create a PR for review.\r\n\r\nNote: This is not the final decision, but an initial contribution from Zongpeng, create a PR for better review. \r\nPlease review and comment. ",
+      "createdAt": "2024-10-22T09:41:17Z",
+      "updatedAt": "2024-10-22T09:57:19Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "fc0b17f3f1d44fad710305b672f8333b87388c1a",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "2e44d0b9675b0629fbf545fe9feaef6a08c9121c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
