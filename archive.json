@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-27T01:22:33.281826+00:00",
+  "timestamp": "2024-10-29T01:18:50.969277+00:00",
   "repo": "ietf-wg-cats/CATS-framework",
   "labels": [
     {
@@ -4547,7 +4547,7 @@
       "labels": [],
       "body": "create a PR for review.\r\n\r\nNote: This is not the final decision, but an initial contribution from Zongpeng, create a PR for better review. \r\nPlease review and comment. ",
       "createdAt": "2024-10-22T09:41:17Z",
-      "updatedAt": "2024-10-22T09:57:19Z",
+      "updatedAt": "2024-10-28T15:40:37Z",
       "baseRepository": "ietf-wg-cats/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "fc0b17f3f1d44fad710305b672f8333b87388c1a",
@@ -4559,7 +4559,58 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6PBJwP",
+          "commit": {
+            "abbreviatedOid": "2e44d0b"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thank you for this proposal.\r\n\r\nI'm afraid more discussion is needed as the proposed text includes notions that need to be defined first. Also, some workflow seems to be solution-specific. ",
+          "createdAt": "2024-10-28T15:29:04Z",
+          "updatedAt": "2024-10-28T15:40:37Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\n## Policy Provisioning\r\n```",
+              "createdAt": "2024-10-28T15:29:04Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            },
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\nAs shown in {{fig-cats-fw}}, the control and management planes need to communicate some policies to the data plane.\r\n```",
+              "createdAt": "2024-10-28T15:29:23Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            },
+            {
+              "originalPosition": 6,
+              "body": "No need to repeat that this can be distributed/centralized as this was already stated in the doc.",
+              "createdAt": "2024-10-28T15:31:36Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "Not sure what is this text is trying to say. ",
+              "createdAt": "2024-10-28T15:32:08Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "This text seems to redefine the function of an CATS-Forwarder.",
+              "createdAt": "2024-10-28T15:33:21Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            },
+            {
+              "originalPosition": 12,
+              "body": "There are many items that need to be defined, e.g., \"policy execution node information\", \"topology information and configuration information for real-time state collection of resources\", \"target scheduling policy\", etc. These smell solution-specific.",
+              "createdAt": "2024-10-28T15:39:22Z",
+              "updatedAt": "2024-10-28T15:40:38Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
