@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-29T01:18:50.969277+00:00",
+  "timestamp": "2024-10-31T01:18:31.262361+00:00",
   "repo": "ietf-wg-cats/CATS-framework",
   "labels": [
     {
@@ -67,6 +67,11 @@
       "name": "Close_No_Change_Needed",
       "description": "",
       "color": "c5def5"
+    },
+    {
+      "name": "Too-Solution-Oriented",
+      "description": "",
+      "color": "006b75"
     }
   ],
   "issues": [
@@ -4544,10 +4549,12 @@
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "Too-Solution-Oriented"
+      ],
       "body": "create a PR for review.\r\n\r\nNote: This is not the final decision, but an initial contribution from Zongpeng, create a PR for better review. \r\nPlease review and comment. ",
       "createdAt": "2024-10-22T09:41:17Z",
-      "updatedAt": "2024-10-28T15:40:37Z",
+      "updatedAt": "2024-10-30T08:18:35Z",
       "baseRepository": "ietf-wg-cats/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "fc0b17f3f1d44fad710305b672f8333b87388c1a",
@@ -4607,6 +4614,46 @@
               "body": "There are many items that need to be defined, e.g., \"policy execution node information\", \"topology information and configuration information for real-time state collection of resources\", \"target scheduling policy\", etc. These smell solution-specific.",
               "createdAt": "2024-10-28T15:39:22Z",
               "updatedAt": "2024-10-28T15:40:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6PSWiK",
+          "commit": {
+            "abbreviatedOid": "2e44d0b"
+          },
+          "author": "dzpzp",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-30T08:17:34Z",
+          "updatedAt": "2024-10-30T08:17:34Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "Some explanations: If the C-PS is logically centralized, the C-PS can be in a controller. After the CATS decision is made,  it can communicate some policy to the CATS-Forwarders.\r\n\r\n  If the C-PS is collocated with an Ingress CATS-Forwarder, the Ingress CATS-Forwarder would implement the C-PS functions locally. ",
+              "createdAt": "2024-10-30T08:17:34Z",
+              "updatedAt": "2024-10-30T08:17:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6PSYqA",
+          "commit": {
+            "abbreviatedOid": "2e44d0b"
+          },
+          "author": "dzpzp",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-30T08:18:35Z",
+          "updatedAt": "2024-10-30T08:18:35Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "We do not want to redefined the function of the Ingress CATS-Forwarder. We want to state that the Ingress CATS-Forwarder can include the function of the C-PS, which makes a different situation for policy provision.",
+              "createdAt": "2024-10-30T08:18:35Z",
+              "updatedAt": "2024-10-30T08:18:35Z"
             }
           ]
         }
