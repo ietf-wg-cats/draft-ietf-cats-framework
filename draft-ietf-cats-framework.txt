@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 20 April 2025                                      China Mobile
+Expires: 5 May 2025                                         China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                         17 October 2024
+                                                         1 November 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 April 2025.
+   This Internet-Draft will expire on 5 May 2025.
 
 Copyright Notice
 
@@ -144,11 +144,11 @@ Table of Contents
    Client:  An endpoint that is connected to a service provider network.
 
    Computing-Aware Traffic Steering (CATS):  A traffic engineering
-      approach [I-D.ietf-teas-rfc3272bis] that takes into account the
-      dynamic nature of computing resources and network state to
-      optimize service-specific traffic forwarding towards a given
-      service contact instance.  Various relevant metrics may be used to
-      enforce such computing-aware traffic steering policies.
+      approach [RFC9522] that takes into account the dynamic nature of
+      computing resources and network state to optimize service-specific
+      traffic forwarding towards a given service contact instance.
+      Various relevant metrics may be used to enforce such computing-
+      aware traffic steering policies.
 
    Metric:  An information that provides suitable input information to a
       selection mechanism to determine a CATS egress node.
@@ -872,9 +872,9 @@ Table of Contents
    Hence, when specifying a protocol to communicate information about
    service contact instance affinity, a certain level of flexibility for
    identifying flows should be supported.  Or, from a more general
-   perspective, there should be a flexible mechanism to specify and
-   identify the set of packets that are subject to a service contact
-   instance affinity.
+   perspective, there should be a mechanism to specify and identify the
+   set of packets that are subject to a service contact instance
+   affinity.
 
    More importantly, the means for identifying a flow for the purpose of
    ensuring instance affinity should be application-independent to avoid
@@ -937,20 +937,12 @@ Table of Contents
 8.  Informative References
 
    [I-D.ietf-cats-usecases-requirements]
-              Yao, K., Trossen, D., Contreras, L. M., Shi, H., Li, Y.,
-              Zhang, S., and Q. An, "Computing-Aware Traffic Steering
-              (CATS) Problem Statement, Use Cases, and Requirements",
-              Work in Progress, Internet-Draft, draft-ietf-cats-
-              usecases-requirements-03, 3 July 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-cats-
-              usecases-requirements-03>.
-
-   [I-D.ietf-teas-rfc3272bis]
-              Farrel, A., "Overview and Principles of Internet Traffic
-              Engineering", Work in Progress, Internet-Draft, draft-
-              ietf-teas-rfc3272bis-27, 12 August 2023,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              rfc3272bis-27>.
+              Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
+              "Computing-Aware Traffic Steering (CATS) Problem
+              Statement, Use Cases, and Requirements", Work in Progress,
+              Internet-Draft, draft-ietf-cats-usecases-requirements-04,
+              21 October 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-usecases-requirements-04>.
 
    [I-D.yao-cats-awareness-architecture]
               Yao, H., wang, X., Li, Z., Huang, D., and C. Lin,
@@ -1028,6 +1020,10 @@ Table of Contents
    [RFC9112]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
               June 2022, <https://www.rfc-editor.org/rfc/rfc9112>.
+
+   [RFC9522]  Farrel, A., Ed., "Overview and Principles of Internet
+              Traffic Engineering", RFC 9522, DOI 10.17487/RFC9522,
+              January 2024, <https://www.rfc-editor.org/rfc/rfc9522>.
 
 Appendix A.  Acknowledgements
 
