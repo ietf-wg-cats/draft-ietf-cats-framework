@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 5 May 2025                                         China Mobile
+Expires: 18 May 2025                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                         1 November 2024
+                                                        14 November 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 May 2025.
+   This Internet-Draft will expire on 18 May 2025.
 
 Copyright Notice
 
@@ -485,7 +485,7 @@ Table of Contents
    infrastructure.  A service site that hosts service instances may be
    connected to one or more Egress CATS-Forwarders (e.g., multi-homing
    design).  If a C-PS has selected a specific service contact instance
-   and the C-TC has marked the traffic with the CIS-ID related
+   and the C-TC has marked the traffic with the CS-ID related
    information, the Egress CATS-Forwarder then forwards traffic to the
    relevant service contact instance accordingly.  In some cases, the
    choice of the service contact instance may be left open to the Egress
