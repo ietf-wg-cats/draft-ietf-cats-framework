@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-12T01:15:03.015156+00:00",
+  "timestamp": "2024-11-14T01:16:35.169004+00:00",
   "repo": "ietf-wg-cats/CATS-framework",
   "labels": [
     {
@@ -4658,6 +4658,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 101,
+      "id": "PR_kwDOJBcdGs6B2ZSz",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/CATS-framework/pull/101",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Typo correction (s/CIS-ID/CS-ID)",
+      "createdAt": "2024-11-13T23:09:47Z",
+      "updatedAt": "2024-11-13T23:09:47Z",
+      "baseRepository": "ietf-wg-cats/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "943275445aa02225917c0d05ba365b4402995dbb",
+      "headRepository": "ietf-wg-cats/CATS-framework",
+      "headRefName": "luismcontreras-patch-1",
+      "headRefOid": "b0db7493a6671780fb31cfc11d61c8e6a7abf006",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
