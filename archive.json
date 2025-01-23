@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-21T01:14:55.697886+00:00",
+  "timestamp": "2025-01-23T01:15:26.180098+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1117,16 +1117,24 @@
       "id": "I_kwDOJBcdGs6O88pf",
       "title": "Comments from Huijuan YAO",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/75",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/cats/XFQAwKMn0V6xRp-TXZM-8ix7qVo/",
       "createdAt": "2024-07-09T14:11:51Z",
-      "updatedAt": "2024-07-09T14:11:51Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-01-22T14:41:09Z",
+      "closedAt": "2025-01-22T14:41:08Z",
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "seems same as zongpeng's comment. Let's follow the discussion in PULL100.",
+          "createdAt": "2025-01-22T14:41:08Z",
+          "updatedAt": "2025-01-22T14:41:08Z"
+        }
+      ]
     },
     {
       "number": 76,
@@ -1140,9 +1148,17 @@
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/cats/sGSINvkw5rllPvThopkl_0WuSE0/",
       "createdAt": "2024-07-09T14:15:19Z",
-      "updatedAt": "2024-07-09T14:15:19Z",
+      "updatedAt": "2025-01-22T15:01:42Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "no reply yet. https://mailarchive.ietf.org/arch/msg/cats/cfce4sBiIQRzcyyZuVOpL-Z-SFM/",
+          "createdAt": "2025-01-22T15:01:41Z",
+          "updatedAt": "2025-01-22T15:01:41Z"
+        }
+      ]
     },
     {
       "number": 77,
@@ -1156,7 +1172,7 @@
       "labels": [],
       "body": "Hi WG,\r\n\r\nSection 3.5, \"Deployment Considerations,\" mentions both the Distributed and Centralized models.\r\nHowever, Section 4, \"CATS Framework Workflow,\" does not mention the Centralized model.\r\nI suggest adding a centralized workflow to the framework. Thank you.\r\n\r\n\r\nThanks,\r\nChangwang",
       "createdAt": "2024-07-09T14:16:46Z",
-      "updatedAt": "2024-10-07T13:52:33Z",
+      "updatedAt": "2025-01-22T14:40:12Z",
       "closedAt": null,
       "comments": [
         {
@@ -1165,6 +1181,13 @@
           "body": "we do have some text related to the centralized model in section 4. Already request for specific comments or text proposal in CATS ML. Awaiting for reply.",
           "createdAt": "2024-10-07T13:52:32Z",
           "updatedAt": "2024-10-07T13:52:32Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No reply after sent email to CATS. https://mailarchive.ietf.org/arch/msg/cats/cuxT9LpLEvltxtpY8i28umNP1dM/\n",
+          "createdAt": "2025-01-22T14:40:11Z",
+          "updatedAt": "2025-01-22T14:40:11Z"
         }
       ]
     },
@@ -1180,9 +1203,17 @@
       "labels": [],
       "body": "\r\nhttps://mailarchive.ietf.org/arch/msg/cats/L0dNW8V1WGh_dHFOklxL6-6zmeU/",
       "createdAt": "2024-07-09T14:19:51Z",
-      "updatedAt": "2024-07-09T14:19:51Z",
+      "updatedAt": "2025-01-22T15:03:12Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "no reply yet. ",
+          "createdAt": "2025-01-22T15:01:58Z",
+          "updatedAt": "2025-01-22T15:03:12Z"
+        }
+      ]
     },
     {
       "number": 79,
@@ -1512,9 +1543,17 @@
       "labels": [],
       "body": "Hi\uff0c Cheng\r\n\r\n    We have prepared some context for a new section in the framework document.\r\n\r\n\r\n    Welcome for comments.\r\n\r\n\r\n4.6.  Policy Delivery\r\n\r\nAs shown in Figure1, the control plane and management plane need to communicate some policies to the data plane. The control plane and management plane can be implemented in a control center entity.\r\n\r\nIf the C-PS is logically centralized, it needs to communicate some policies to the CATS-Forwarders. In this case, the network entity containing the C-PS, such as a control center, should be able to perform management and/or control functions, including computing information awareness function, service scheduling function, etc. It collects computing and network information, and schedules service based on computing and network information. The CATS-Forwarders performs data plane functions or routing functions.\r\n\r\nIf the C-PS is collocated with an Ingress CATS-Forwarder, the functions that the Ingress CATS-Forwarder supports would include computing information awareness function, service scheduling function and data forwarding function. In this case, Ingress CATS-Forwarders make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service instances and network.\r\n\r\nIn either case, management plane policies need to be delivered to the CATS-Forwarders. For example, a general scheduling policy can be sent to the Ingress CATS-Forwarder, which would include policy execution node information, topology information and configuration information for real-time state collection of resources. If the C-PS is collocated with an Ingress CATS-Forwarder, the policy execution node would be the Ingress CATS-Forwarder. The topology information could be the nodes that need to be communicated to obtain the computing information. According to the topology information and configuration information in the received general scheduling policy, the Ingress CATS-Forwarder obtains the real-time status information of the computing resource, the service resource or the network resource. Based on these resource state information and the scheduling policy information in the general scheduling policy, the ingress CATS-Forwarder can obtain the target scheduling policy for the service requirement and schedule the corresponding service's traffic.\r\n\r\n\r\n\r\nBest Regards\r\nZongpeng Du\r\n",
       "createdAt": "2024-10-22T09:31:01Z",
-      "updatedAt": "2024-10-22T09:31:01Z",
+      "updatedAt": "2025-01-22T14:38:23Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See discussion in https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/100\n\nIf we can not get the consensus, we may not be able to merge text into the document. But we can keep the issue open until we decide to close it.",
+          "createdAt": "2025-01-22T14:38:22Z",
+          "updatedAt": "2025-01-22T14:38:22Z"
+        }
+      ]
     }
   ],
   "pulls": [
