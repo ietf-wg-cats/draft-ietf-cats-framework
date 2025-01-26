@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-23T01:15:26.180098+00:00",
+  "timestamp": "2025-01-26T01:17:43.504830+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -962,15 +962,15 @@
       "id": "I_kwDOJBcdGs6BVStX",
       "title": "Editorial review of Figures 3 to 5",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/67",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "luismcontreras",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Not clear to me some parts fo the figures. Assuming Figure 3 is ok, then it is not clear to me the line at the bottom from CS-ID 2 up to CATS forwarder 1. Also whyService CS-ID 2 has no metrics at the bottom part in Figure 5. More clarification text can be benefitial. ",
       "createdAt": "2024-03-05T18:04:45Z",
-      "updatedAt": "2024-09-09T17:43:27Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-24T17:06:29Z",
+      "closedAt": "2025-01-24T17:05:44Z",
       "comments": [
         {
           "author": "muzixing",
@@ -985,6 +985,13 @@
           "body": "Hi Luis,  are you ok with my answer? or do you have some text proposal? ",
           "createdAt": "2024-09-09T17:43:26Z",
           "updatedAt": "2024-09-09T17:43:26Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "clarification issue without text modification",
+          "createdAt": "2025-01-24T17:06:01Z",
+          "updatedAt": "2025-01-24T17:06:29Z"
         }
       ]
     },
@@ -1141,15 +1148,15 @@
       "id": "I_kwDOJBcdGs6O8-zL",
       "title": "Comments from Luis",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/76",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/cats/sGSINvkw5rllPvThopkl_0WuSE0/",
       "createdAt": "2024-07-09T14:15:19Z",
-      "updatedAt": "2025-01-22T15:01:42Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-24T17:07:52Z",
+      "closedAt": "2025-01-24T17:07:51Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1157,6 +1164,13 @@
           "body": "no reply yet. https://mailarchive.ietf.org/arch/msg/cats/cfce4sBiIQRzcyyZuVOpL-Z-SFM/",
           "createdAt": "2025-01-22T15:01:41Z",
           "updatedAt": "2025-01-22T15:01:41Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "close since this is related to another document. We can create a thread to discuss this,",
+          "createdAt": "2025-01-24T17:07:51Z",
+          "updatedAt": "2025-01-24T17:07:51Z"
         }
       ]
     },
@@ -1172,7 +1186,7 @@
       "labels": [],
       "body": "Hi WG,\r\n\r\nSection 3.5, \"Deployment Considerations,\" mentions both the Distributed and Centralized models.\r\nHowever, Section 4, \"CATS Framework Workflow,\" does not mention the Centralized model.\r\nI suggest adding a centralized workflow to the framework. Thank you.\r\n\r\n\r\nThanks,\r\nChangwang",
       "createdAt": "2024-07-09T14:16:46Z",
-      "updatedAt": "2025-01-22T14:40:12Z",
+      "updatedAt": "2025-01-24T17:02:41Z",
       "closedAt": null,
       "comments": [
         {
@@ -1188,6 +1202,13 @@
           "body": "No reply after sent email to CATS. https://mailarchive.ietf.org/arch/msg/cats/cuxT9LpLEvltxtpY8i28umNP1dM/\n",
           "createdAt": "2025-01-22T14:40:11Z",
           "updatedAt": "2025-01-22T14:40:11Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi changwang ,please the update https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/102\nI think the text can address your comments. Please confirm, so that we can close the issue.\n",
+          "createdAt": "2025-01-24T17:02:40Z",
+          "updatedAt": "2025-01-24T17:02:40Z"
         }
       ]
     },
@@ -1196,15 +1217,15 @@
       "id": "I_kwDOJBcdGs6O9BZT",
       "title": "Instance affinity comments from Castern and Sharon",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/78",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "\r\nhttps://mailarchive.ietf.org/arch/msg/cats/L0dNW8V1WGh_dHFOklxL6-6zmeU/",
       "createdAt": "2024-07-09T14:19:51Z",
-      "updatedAt": "2025-01-22T15:03:12Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-24T17:10:04Z",
+      "closedAt": "2025-01-24T17:10:03Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1212,6 +1233,13 @@
           "body": "no reply yet. ",
           "createdAt": "2025-01-22T15:01:58Z",
           "updatedAt": "2025-01-22T15:03:12Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Text has been provided and answer is not received for long time. Close for now. Can create a new one in WGLC if we receive the related comments again.",
+          "createdAt": "2025-01-24T17:10:03Z",
+          "updatedAt": "2025-01-24T17:10:03Z"
         }
       ]
     },
@@ -4584,7 +4612,7 @@
       "id": "PR_kwDOJBcdGs5_byep",
       "title": "contribution from Zongpeng regarding Policy delivery",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/100",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -4593,18 +4621,26 @@
       ],
       "body": "create a PR for review.\r\n\r\nNote: This is not the final decision, but an initial contribution from Zongpeng, create a PR for better review. \r\nPlease review and comment. ",
       "createdAt": "2024-10-22T09:41:17Z",
-      "updatedAt": "2024-10-30T08:18:35Z",
+      "updatedAt": "2025-01-23T17:22:38Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "fc0b17f3f1d44fad710305b672f8333b87388c1a",
+      "baseRefOid": "b07c8e7fd8db22cc26e7c3a7dedde33ada0bb536",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "2e44d0b9675b0629fbf545fe9feaef6a08c9121c",
-      "closedAt": null,
+      "headRefOid": "b07c8e7fd8db22cc26e7c3a7dedde33ada0bb536",
+      "closedAt": "2025-01-23T17:05:32Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "sorry I closed this issue wrongly. If you like to discuss further, you can reopen it again. ",
+          "createdAt": "2025-01-23T17:22:22Z",
+          "updatedAt": "2025-01-23T17:22:38Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJBcdGs6PBJwP",
@@ -4725,6 +4761,61 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 102,
+      "id": "PR_kwDOJBcdGs6Iyrw6",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/102",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "new modification from the beginning to section 4(not included). Will work on the rest sections in recent days.",
+      "createdAt": "2025-01-23T17:07:08Z",
+      "updatedAt": "2025-01-24T17:00:55Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "b07c8e7fd8db22cc26e7c3a7dedde33ada0bb536",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "35a274a8cce146252515f98f2575dfd5ae686873",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "1. added description of workflow in centralized model  to address Changwang's comments.\r\n2. Fixed errors in figures.\r\n3. Edited some text to simplify the logic for easier reading.",
+          "createdAt": "2025-01-24T17:00:54Z",
+          "updatedAt": "2025-01-24T17:00:54Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6ZNyK2",
+          "commit": {
+            "abbreviatedOid": "4f764cf"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T17:19:31Z",
+          "updatedAt": "2025-01-23T17:19:32Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I am not sure it is this version or not. It seems not. if not, then make it as 3 when merge",
+              "createdAt": "2025-01-23T17:19:31Z",
+              "updatedAt": "2025-01-23T17:19:32Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
