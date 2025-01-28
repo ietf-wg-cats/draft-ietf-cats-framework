@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-26T01:17:43.504830+00:00",
+  "timestamp": "2025-01-28T01:15:19.974532+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -4774,7 +4774,7 @@
       "labels": [],
       "body": "new modification from the beginning to section 4(not included). Will work on the rest sections in recent days.",
       "createdAt": "2025-01-23T17:07:08Z",
-      "updatedAt": "2025-01-24T17:00:55Z",
+      "updatedAt": "2025-01-27T15:39:49Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "b07c8e7fd8db22cc26e7c3a7dedde33ada0bb536",
@@ -4792,6 +4792,13 @@
           "body": "1. added description of workflow in centralized model  to address Changwang's comments.\r\n2. Fixed errors in figures.\r\n3. Edited some text to simplify the logic for easier reading.",
           "createdAt": "2025-01-24T17:00:54Z",
           "updatedAt": "2025-01-24T17:00:54Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Regarding https://datatracker.ietf.org/doc/html/draft-ietf-cats-framework-04#section-4.1, @boucadair do you have any input? this section was created by you, would like to hear from you. ",
+          "createdAt": "2025-01-27T15:39:48Z",
+          "updatedAt": "2025-01-27T15:39:48Z"
         }
       ],
       "reviews": [
