@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T01:14:25.415951+00:00",
+  "timestamp": "2025-02-06T01:16:58.864274+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -4767,21 +4767,21 @@
       "id": "PR_kwDOJBcdGs6Iyrw6",
       "title": "Update draft-ietf-cats-framework.md",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/102",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "new modification from the beginning to section 4(not included). Will work on the rest sections in recent days.",
       "createdAt": "2025-01-23T17:07:08Z",
-      "updatedAt": "2025-01-27T15:39:49Z",
+      "updatedAt": "2025-02-05T16:14:40Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "b07c8e7fd8db22cc26e7c3a7dedde33ada0bb536",
+      "baseRefOid": "aec21c53e645325790cd8a8204f94d5fc574d97c",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "35a274a8cce146252515f98f2575dfd5ae686873",
-      "closedAt": null,
+      "headRefOid": "aec21c53e645325790cd8a8204f94d5fc574d97c",
+      "closedAt": "2025-02-05T16:14:40Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -4819,6 +4819,53 @@
               "body": "I am not sure it is this version or not. It seems not. if not, then make it as 3 when merge",
               "createdAt": "2025-01-23T17:19:31Z",
               "updatedAt": "2025-01-23T17:19:32Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 103,
+      "id": "PR_kwDOJBcdGs6KKinE",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/103",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "modification to address zongpeng's comments. \r\n\r\nI cancel the previous PR, and mare a new one for better review. Please review.",
+      "createdAt": "2025-02-05T16:18:24Z",
+      "updatedAt": "2025-02-05T16:19:10Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "aec21c53e645325790cd8a8204f94d5fc574d97c",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "0ccf9dd14beeb8cb3623a1e98d15b656078131c9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6awKcB",
+          "commit": {
+            "abbreviatedOid": "0ccf9dd"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-05T16:19:10Z",
+          "updatedAt": "2025-02-05T16:19:10Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "need to modify to latest",
+              "createdAt": "2025-02-05T16:19:10Z",
+              "updatedAt": "2025-02-05T16:19:11Z"
             }
           ]
         }
