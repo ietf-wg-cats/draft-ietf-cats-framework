@@ -402,7 +402,7 @@ In the centralized model, CS-IDs with metrics can be distributed from the C-SMA 
 
 In the hybrid model, the metrics can be distributed to C-PSes in combination of distributed and centralized ways. The specific combination of metric distribution is an implementation choice, which is determined by the requirements of specific services.
 
-The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number, location of end-users who access the service contact instance at any given time, etc.
+The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number of end-users who access the service contact instance at any given time, etc.
 
 Computing metrics may change very frequently (see {{?I-D.ietf-cats-usecases-requirements}} for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, or policy-based updates.
 
