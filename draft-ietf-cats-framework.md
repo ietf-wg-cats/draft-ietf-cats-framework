@@ -121,7 +121,7 @@ The underlying networking infrastructures that include computing resources usual
 
 As described in {{?I-D.ietf-cats-usecases-requirements}}, traffic steering that takes into account computing resource metrics would benefit several services, including latency-sensitive services such as immersive services that rely upon the use of augmented reality or virtual reality (AR/VR) techniques. This document provides an architectural framework that aims at facilitating the making of compute- and network-aware traffic steering decisions in networking environments where computing service resources are deployed.
 
-The Computing-Aware Traffic Steering (CATS) framework assumes that there might be multiple service instances that are providing one given service, which are running in one or more service sites. Each of these service instances can be accessed via a service contact instance, which is a client-facing service function instance. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address the issues of lacking resources in a specific service site. 
+The Computing-Aware Traffic Steering (CATS) framework assumes that there might be multiple service instances that are providing one given service, which are running in one or more service sites. Each of these service instances can be accessed via a service contact instance, which is a client-facing service function instance. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address the issues of lacking resources in a specific service site.
 
 Steering in CATS is about selecting the appropriate service contact instance that will service a request according to a set of network and computing metrics. This selection may not necessarily reveal the actual service instance that will be invoked, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be the aggregated metrics from multiple service instances.
 
@@ -143,7 +143,7 @@ Computing-Aware Traffic Steering (CATS):
 Metric:
  : An information that provides suitable input to a selection mechanism to determine a CATS egress node.
 
-Computing metrics: 
+Computing metrics:
   : Computing metrics are the metrics come from the computing side.
 
 Service:
@@ -536,7 +536,6 @@ If the CATS framework is implemented using an hybrid model, the metric can be di
              :                                :      +-------+
              :<-------------------------------:
       Service CS-ID 1, contact instance CSCI-ID 3, <metric 4,5>
-     
 ~~~
 {: #fig-cats-hybrid title="An Example of CATS Metric Distribution in Hybrid Model"}
 
