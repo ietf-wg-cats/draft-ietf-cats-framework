@@ -551,7 +551,7 @@ In the example shown in {{fig-cats-example-overlay}}, the client sends a service
 
 ## Service Contact Instance Affinity
 
-Instance affinity means the packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. Specifically, the same Egress CATS-Forwarder may be solicited to forward the packets.
+Instance affinity means that packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. Specifically, the same Egress CATS-Forwarder may be solicited to forward the packets.
 
 The affinity is configured on the C-PS when the service is deployed, or is determined at the time of newly formulated service requests.
 
