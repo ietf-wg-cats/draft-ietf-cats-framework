@@ -323,7 +323,7 @@ A single service can be represented and accessed via several contact instances t
 
 ### CATS Service Metric Agent (C-SMA) {#sec-csma}
 
-The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. The C-SMAs may be located adjacent to the service contact instances, co-located with service contact instances, hosted by, or adjacent to, the Egress CATS-Forwarders ({{sec-ocr}}), etc.
+The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder ({{sec-ocr}}), etc.
 
 {{fig-cats-components}} shows one C-SMA embedded in "CATS-Forwarder 3", and another C-SMA that is adjacent to "CATS-Forwarder 1".
 
