@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-06T01:16:58.864274+00:00",
+  "timestamp": "2025-02-09T01:20:29.242787+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -4836,18 +4836,26 @@
       "labels": [],
       "body": "modification to address zongpeng's comments. \r\n\r\nI cancel the previous PR, and mare a new one for better review. Please review.",
       "createdAt": "2025-02-05T16:18:24Z",
-      "updatedAt": "2025-02-05T16:19:10Z",
+      "updatedAt": "2025-02-07T15:21:09Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "aec21c53e645325790cd8a8204f94d5fc574d97c",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "0ccf9dd14beeb8cb3623a1e98d15b656078131c9",
+      "headRefOid": "1efff08bcca84da8121e09177e9b68244ca48984",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Med, when you are ok with the PR, you can merge it. Otherwise, I will merge it next week guessing you are ok with the text :)",
+          "createdAt": "2025-02-07T15:21:07Z",
+          "updatedAt": "2025-02-07T15:21:07Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJBcdGs6awKcB",
@@ -4868,8 +4876,158 @@
               "updatedAt": "2025-02-05T16:19:11Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6bDHSG",
+          "commit": {
+            "abbreviatedOid": "0ccf9dd"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T09:49:44Z",
+          "updatedAt": "2025-02-07T09:49:44Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "No, this is set automatically. Worse, changing this will break CI/CD of the repo",
+              "createdAt": "2025-02-07T09:49:44Z",
+              "updatedAt": "2025-02-07T09:49:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6bDMJo",
+          "commit": {
+            "abbreviatedOid": "0ccf9dd"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T09:58:32Z",
+          "updatedAt": "2025-02-07T09:58:32Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "ok ",
+              "createdAt": "2025-02-07T09:58:32Z",
+              "updatedAt": "2025-02-07T09:58:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6bDMLw",
+          "commit": {
+            "abbreviatedOid": "0aec085"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2025-02-07T09:58:36Z",
+          "updatedAt": "2025-02-07T10:06:07Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\n```\r\n\r\nthe keywords do not need to repeat the words in the title.",
+              "createdAt": "2025-02-07T09:58:36Z",
+              "updatedAt": "2025-02-07T10:06:07Z"
+            },
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\n  : Computing metrics are the metrics that are produced and distributed from the computing side.\r\n```",
+              "createdAt": "2025-02-07T10:00:32Z",
+              "updatedAt": "2025-02-07T10:06:07Z"
+            },
+            {
+              "originalPosition": 105,
+              "body": "```suggestion\r\nThe CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder ({{sec-ocr}}), etc.\r\n```",
+              "createdAt": "2025-02-07T10:02:44Z",
+              "updatedAt": "2025-02-07T10:06:07Z"
+            },
+            {
+              "originalPosition": 197,
+              "body": "```suggestion\r\n{: #fig-cats-example-overlay title=\"An Example of CATS Metric Dissemination in a Distributed Model\"}\r\n```\r\n\r\n\"distribution in a distributed\" is heavy ",
+              "createdAt": "2025-02-07T10:05:08Z",
+              "updatedAt": "2025-02-07T10:06:07Z"
+            },
+            {
+              "originalPosition": 242,
+              "body": "```suggestion\r\nInstance affinity means that packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. Specifically, the same Egress CATS-Forwarder may be solicited to forward the packets.\r\n```",
+              "createdAt": "2025-02-07T10:05:45Z",
+              "updatedAt": "2025-02-07T10:06:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6bDcqL",
+          "commit": {
+            "abbreviatedOid": "0aec085"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T10:27:16Z",
+          "updatedAt": "2025-02-07T10:27:16Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "OK",
+              "createdAt": "2025-02-07T10:27:16Z",
+              "updatedAt": "2025-02-07T10:27:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6bDeH1",
+          "commit": {
+            "abbreviatedOid": "0aec085"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T10:29:58Z",
+          "updatedAt": "2025-02-07T10:29:59Z",
+          "comments": [
+            {
+              "originalPosition": 242,
+              "body": "'that the' may be better, but we can leave this for RFC editor",
+              "createdAt": "2025-02-07T10:29:58Z",
+              "updatedAt": "2025-02-07T10:29:59Z"
+            }
+          ]
         }
       ]
+    },
+    {
+      "number": 104,
+      "id": "PR_kwDOJBcdGs6KZbss",
+      "title": "svg rendering",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/104",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-02-07T10:09:57Z",
+      "updatedAt": "2025-02-07T10:09:57Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "aec21c53e645325790cd8a8204f94d5fc574d97c",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "01a7c1283b9720f365c4984caf3604db9cde4364",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
