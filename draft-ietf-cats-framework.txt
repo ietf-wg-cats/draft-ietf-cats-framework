@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 8 August 2025                                      China Mobile
+Expires: 14 August 2025                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                         4 February 2025
+                                                        10 February 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 August 2025.
+   This Internet-Draft will expire on 14 August 2025.
 
 Copyright Notice
 
@@ -367,7 +367,7 @@ Table of Contents
      +---+--+             +---+--+           +---+--+
          |                    |                  |
          | +----------------+ |            +-----+----------+
-         +-+    C-TC#1      +-+      +-----+    C-TC#2      |
+         '-+    C-TC#1      +-'      .-----+    C-TC#2      |
            |----------------|        |     |----------------|
            |     |C-PS#1    |    +------+  |CATS-Forwarder 4|
      ......|     +----------|....|C-PS#2|..|                |...
@@ -677,11 +677,11 @@ Table of Contents
                  :<----------------------:
                  :                       :               +---------+
                  :                       :               |CS-ID 1  |
-                 :                       :            +--|CSCI-ID 1|
+                 :                       :            .--|CSCI-ID 1|
                  :              +----------------+    |  +---------+
                  :              |    C-SMA       |----|   Service Site 2
                  :              +----------------+    |  +---------+
-                 :              |CATS-Forwarder 2|    +--|CS-ID 1  |
+                 :              |CATS-Forwarder 2|    '--|CS-ID 1  |
                  :              +----------------+       |CSCI-ID 2|
  +--------+      :                        |              +---------+
  | Client |      :  Network +----------------------+
@@ -693,13 +693,13 @@ Table of Contents
  +---------------------+    |       Underlay       |
                  :          |     Infrastructure   |     +---------+
                  :          |                      |     |CS-ID 1  |
-                 :          +----------------------+ +---|CSCI-ID 3|
+                 :          +----------------------+ .---|CSCI-ID 3|
                  :                    |              |   +---------+
                  :          +----------------+  +-------+
                  :          |CATS-Forwarder 3|--| C-SMA | Service Site 3
                  :          +----------------+  +-------+
                  :                                :  |   +-------+
-                 :                                :  +---|CS-ID 2|
+                 :                                :  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
           Service CS-ID 1, contact instance CSCI-ID 3 <metrics>
@@ -725,8 +725,8 @@ Table of Contents
                            Service CS-ID 2, <metrics>
 
                 :       +------+
-                :<------| C-PS |<-----------------------------------+
-                :       +------+ <------+              +---------+  |
+                :<------| C-PS |<-----------------------------------.
+                :       +------+ <------.              +---------+  |
                 :          ^            |           +--|CS-ID 1  |  |
                 :          |            |           |  |CSCI-ID 1|  |
                 :          |   +----------------+   |  +---------+  |
@@ -738,8 +738,8 @@ Table of Contents
     | Client |  :  Network |   +----------------------+             |
     +--------+  :  metrics |   | +-------+            |             |
          |      :          +-----| C-NMA |            |      +-----+
-         |      :          |   | +-------+            |      |C-SMA|<-+
-    +----------------+ <---+   |                      |      +-----+  |
+         |      :          |   | +-------+            |      |C-SMA|<-.
+    +----------------+ <---'   |                      |      +-----+  |
     |CATS-Forwarder 1|---------|                      |          ^    |
     +----------------+         |       Underlay       |          |    |
                 :              |     Infrastructure   |    +---------+|
@@ -750,7 +750,7 @@ Table of Contents
                 :          |CATS-Forwarder 3|         Service Site 3  |
                 :          +----------------+                         |
                 :                        |       :      +-------+     |
-                :                        +-------:------|CS-ID 2|-----+
+                :                        '-------:------|CS-ID 2|-----'
                 :                                :      +-------+
                 :<-------------------------------:
          Service CS-ID 1, contact instance CSCI-ID 3
@@ -777,8 +777,8 @@ Table of Contents
                       Service CS-ID 2, <metrics>
 
                 :       +------+
-                :<------| C-PS |<-----------------------------------+
-                :       +------+ <------+              +---------+  |
+                :<------| C-PS |<-----------------------------------.
+                :       +------+ <------.              +---------+  |
                 :          ^            |           +--|CS-ID 1  |  |
                 :          |            |           |  |CSCI-ID 1|  |
                 :          |   +----------------+   |  +---------+  |
@@ -791,7 +791,7 @@ Table of Contents
     +--------+  :  metrics |   | +-------+            |             |
          |      :          +-----| C-NMA |            |      +-----+
          |      :          |   | +-------+            |      |C-SMA|<-+
-    +----------------+ <---+   |                      |      +-----+  |
+    +----------------+ <---'   |                      |      +-----+  |
     |CATS-Forwarder 1|---------|                      |          ^    |
     |----------------+         |       Underlay       |          |    |
     |C-PS|      :              |     Infrastructure   |    +---------+|
@@ -802,7 +802,7 @@ Table of Contents
                 :          |CATS-Forwarder 3|         Service Site 3  |
                 :          +----------------+                         |
                 :                        |       :      +-------+     |
-                :                        +-------:------|CS-ID 2|-----+
+                :                        '-------:------|CS-ID 2|-----'
                 :                                :      +-------+
                 :<-------------------------------:
          Service CS-ID 1, contact instance CSCI-ID 3, <metric 4,5>
