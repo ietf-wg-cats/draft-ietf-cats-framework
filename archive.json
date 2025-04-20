@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-30T01:36:18.274703+00:00",
+  "timestamp": "2025-04-20T01:37:52.254199+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1582,6 +1582,22 @@
           "updatedAt": "2025-01-22T14:38:22Z"
         }
       ]
+    },
+    {
+      "number": 105,
+      "id": "I_kwDOJBcdGs6zHnpP",
+      "title": "Section 4.1 Provisioning of CATS Components and Management consideration",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/105",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Need to add text to describe provisioning and management consideration. Comments from IETF 122 meeting.",
+      "createdAt": "2025-04-18T14:53:01Z",
+      "updatedAt": "2025-04-18T14:53:01Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -5030,6 +5046,32 @@
       "mergeCommit": {
         "oid": "7d030bdaa0fd792255afbc6554a1656b340c8ada"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 106,
+      "id": "PR_kwDOJBcdGs6TIvFm",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/106",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "address Chair's review, part 1",
+      "createdAt": "2025-04-18T15:53:45Z",
+      "updatedAt": "2025-04-18T15:53:45Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "f73be673bec49f4679c78625815980edd8328920",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "1e80345e64bcfad6a4e37c910f4e38b4867a6692",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
