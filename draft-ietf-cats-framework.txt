@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 26 October 2025                                    China Mobile
+Expires: 27 October 2025                                    China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                           24 April 2025
+                                                           25 April 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 October 2025.
+   This Internet-Draft will expire on 27 October 2025.
 
 Copyright Notice
 
@@ -343,6 +343,12 @@ Table of Contents
                Network Domain                  Computing Domain
 
                       Figure 1: Main CATS Interactions
+
+   For the sake of illustration, "Service Instance" is shown as a single
+   box in Figure 1.  However, this does not imply that a service
+   instance is hosted in a single node.  Whether a service instance is
+   realized by invoking resources within a same node or by chaining
+   resources exposed by several nodes is deployment specific.
 
    The following planes are defined:
 
