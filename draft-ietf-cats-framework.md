@@ -262,6 +262,11 @@ A high-level view of the CATS framework, without expanding the functional entiti
 ~~~
 {: #fig-cats-fw title="Main CATS Interactions"}
 
+For the sake of illustration, "Service Instance" is shown as a single box in {{fig-cats-fw}}. However,
+this does not imply that a service instance is hosted in a single node. Whether  a service instance
+is realized by invoking resources within a same node or by chaining resources exposed by several nodes
+is deployment specific.
+
 The following planes are defined:
 
 * CATS Management Plane: Responsible for monitoring, configuring, and maintaining CATS network devices.
