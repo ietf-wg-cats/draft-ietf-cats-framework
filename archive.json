@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-27T01:38:10.398729+00:00",
+  "timestamp": "2025-05-01T01:42:09.059704+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1179,15 +1179,15 @@
       "id": "I_kwDOJBcdGs6O8_td",
       "title": "Comments from Changwang LIN",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/77",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Hi WG,\r\n\r\nSection 3.5, \"Deployment Considerations,\" mentions both the Distributed and Centralized models.\r\nHowever, Section 4, \"CATS Framework Workflow,\" does not mention the Centralized model.\r\nI suggest adding a centralized workflow to the framework. Thank you.\r\n\r\n\r\nThanks,\r\nChangwang",
       "createdAt": "2024-07-09T14:16:46Z",
-      "updatedAt": "2025-01-24T17:02:41Z",
-      "closedAt": null,
+      "updatedAt": "2025-04-30T08:14:09Z",
+      "closedAt": "2025-04-30T08:14:08Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1209,6 +1209,13 @@
           "body": "Hi changwang ,please the update https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/102\nI think the text can address your comments. Please confirm, so that we can close the issue.\n",
           "createdAt": "2025-01-24T17:02:40Z",
           "updatedAt": "2025-01-24T17:02:40Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "closed. confirmed by Changwang",
+          "createdAt": "2025-04-30T08:14:08Z",
+          "updatedAt": "2025-04-30T08:14:08Z"
         }
       ]
     },
