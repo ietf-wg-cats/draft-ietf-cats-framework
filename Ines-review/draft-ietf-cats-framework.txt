@@ -740,7 +740,7 @@ Table of Contents
                  :                                :  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <servoce metrics>
+          Service CS-ID 1, contact instance CSCI-ID 3 <service metrics>
           Service CS-ID 2, <service metrics>
 
         Figure 3: An Example of CATS Metric Dissemination in a
