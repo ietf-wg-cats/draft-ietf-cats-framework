@@ -470,7 +470,7 @@ The service metric advertisements are processed by the C-PS hosted by "CATS-Forw
                  :                                :  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <servoce metrics>
+          Service CS-ID 1, contact instance CSCI-ID 3 <service metrics>
           Service CS-ID 2, <service metrics>
 ~~~
 {: #fig-cats-example-overlay title="An Example of CATS Metric Dissemination in a Distributed Model"}
