@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-01T01:42:09.059704+00:00",
+  "timestamp": "2025-05-22T01:36:48.236004+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1651,6 +1651,22 @@
       "body": "[Adrian] The metric classification and aggregation should be added into the framework instead of the metric definition draft, because this draft shoulf focus on the definition of metric only.\n[Cheng] Happy to add this part into the framework draft.",
       "createdAt": "2025-04-23T15:27:45Z",
       "updatedAt": "2025-04-23T15:27:45Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 112,
+      "id": "I_kwDOJBcdGs63YvnG",
+      "title": "RTGDIR Pending comments",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/112",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> \n> 15.1- Perhaps, it may be helpful to clarify whether encryption is \n> expected at the transport layer, network layer, or at the \n> application/protocol level.\n> \n> 15.2- Also, it would be nice to indicate whether key management and \n> trust establishment are in scope, or explicitly state that encryption \n> recommendations are left to the specifications of the underlying \n> protocols used to carry CATS information.\n> \n> 16- Does CATS framework guarantees loop-free forwarding in multi- \n> domain or multi-path deployments?\n> \n> 17- How CATS interacts with traditional routing both behaviorally and \n> architecturally?\n> \n> 17.1- Does the CATS framework ensure that service instance selection \n> and path steering decisions remain consistent with existing routing \n> behavior (e.g., OSPF, BGP)?\n> \n> 17.2- In cases where CATS-based service selection results in a path \n> that differs from the one chosen by traditional routing protocols, \n> does CATS take precedence, or is it constrained by routing decisions?\n> \n> 17.3- Does the CATS framework operate entirely as a separate control \n> plane overlay, or are there scenarios where it is expected to \n> integrate with traditional routing control planes? For example, would \n> CATS components ever inject service-aware information directly into \n> routing advertisements, or is this considered out of scope.\n> \n> 18- Does the framework assume or require routing policy mechanisms to \n> support integration with CATS forwarding logic across domains?\n> \n> 19- Which component is responsible for maintaining flow or instance \n> affinity when routing changes occur?\n> \n> 19.1- Does the CATS framework allow the use of Equal-cost multi- path \n> (ECMP), and if so, how is flow affinity preserved across equal-cost \n> paths?\n> \n> 19.2- If the routing path changes mid-session due to metric updates or \n> topology shifts, how is the preserving affinity across a session \n> maintained to prevent service disruption?\n> \n> 20.- The draft mentions the use of aggregated per-site computing \n> metrics for scalability. In addition to metric aggregation, does the \n> framework support aggregation of CS-ID to locator mappings? For \n> example, are multiple CS-IDs ever grouped or summarized under a common \n> network locator to reduce control-plane or forwarding state?\n> Or is each CS-ID treated as a unique entry in resolution and \n> forwarding, even when service instances are co-located?\n",
+      "createdAt": "2025-05-20T11:43:04Z",
+      "updatedAt": "2025-05-20T11:43:04Z",
       "closedAt": null,
       "comments": []
     }
@@ -5158,6 +5174,40 @@
         "oid": "c09781df9b2de2bd833729909861408129066d7a"
       },
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 111,
+      "id": "PR_kwDOJBcdGs6W3cgx",
+      "title": "Ines review",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/111",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-20T10:34:45Z",
+      "updatedAt": "2025-05-20T15:59:41Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "c09781df9b2de2bd833729909861408129066d7a",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "Ines-review",
+      "headRefOid": "b209f09ada9480678e68db2738b5e90de9c28d4b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Points to be yet addressed are listed in https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/112",
+          "createdAt": "2025-05-20T11:43:27Z",
+          "updatedAt": "2025-05-20T11:43:27Z"
+        }
+      ],
       "reviews": []
     }
   ]
