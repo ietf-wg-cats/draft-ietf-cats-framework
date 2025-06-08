@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-05T01:38:15.359896+00:00",
+  "timestamp": "2025-06-08T01:46:24.182048+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1666,9 +1666,41 @@
       "labels": [],
       "body": "> \n> 15.1- Perhaps, it may be helpful to clarify whether encryption is \n> expected at the transport layer, network layer, or at the \n> application/protocol level.\n> \n> 15.2- Also, it would be nice to indicate whether key management and \n> trust establishment are in scope, or explicitly state that encryption \n> recommendations are left to the specifications of the underlying \n> protocols used to carry CATS information.\n> \n> 16- Does CATS framework guarantees loop-free forwarding in multi- \n> domain or multi-path deployments?\n> \n> 17- How CATS interacts with traditional routing both behaviorally and \n> architecturally?\n> \n> 17.1- Does the CATS framework ensure that service instance selection \n> and path steering decisions remain consistent with existing routing \n> behavior (e.g., OSPF, BGP)?\n> \n> 17.2- In cases where CATS-based service selection results in a path \n> that differs from the one chosen by traditional routing protocols, \n> does CATS take precedence, or is it constrained by routing decisions?\n> \n> 17.3- Does the CATS framework operate entirely as a separate control \n> plane overlay, or are there scenarios where it is expected to \n> integrate with traditional routing control planes? For example, would \n> CATS components ever inject service-aware information directly into \n> routing advertisements, or is this considered out of scope.\n> \n> 18- Does the framework assume or require routing policy mechanisms to \n> support integration with CATS forwarding logic across domains?\n> \n> 19- Which component is responsible for maintaining flow or instance \n> affinity when routing changes occur?\n> \n> 19.1- Does the CATS framework allow the use of Equal-cost multi- path \n> (ECMP), and if so, how is flow affinity preserved across equal-cost \n> paths?\n> \n> 19.2- If the routing path changes mid-session due to metric updates or \n> topology shifts, how is the preserving affinity across a session \n> maintained to prevent service disruption?\n> \n> 20.- The draft mentions the use of aggregated per-site computing \n> metrics for scalability. In addition to metric aggregation, does the \n> framework support aggregation of CS-ID to locator mappings? For \n> example, are multiple CS-IDs ever grouped or summarized under a common \n> network locator to reduce control-plane or forwarding state?\n> Or is each CS-ID treated as a unique entry in resolution and \n> forwarding, even when service instances are co-located?\n",
       "createdAt": "2025-05-20T11:43:04Z",
-      "updatedAt": "2025-05-20T11:43:04Z",
+      "updatedAt": "2025-06-05T08:36:03Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "already posted a PR for this, please see PR #113 ",
+          "createdAt": "2025-06-05T08:36:02Z",
+          "updatedAt": "2025-06-05T08:36:02Z"
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "id": "I_kwDOJBcdGs65_lYA",
+      "title": "Computing metric and service metric",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/114",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I found that we used two terms in the draft. \n\nComputing metric: 13 times.\nService metric:  17 times.\n\nThough I can understand the meaning. Should we unify them, to use one? or ?",
+      "createdAt": "2025-06-05T09:14:36Z",
+      "updatedAt": "2025-06-05T09:22:36Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I tagged only few for service metric, but mainly those are related to the use of \"CATS Service Metric Agent (C-SMA)\".\n\nMaybe change this one: \n\n   The service metric advertisements are processed by the C-PS hosted by\n   \"CATS-Forwarder 1\".\n\nand similar to use \"computing metric\" ?",
+          "createdAt": "2025-06-05T09:22:35Z",
+          "updatedAt": "2025-06-05T09:22:35Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -5224,7 +5256,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-06-04T22:05:56Z",
-      "updatedAt": "2025-06-04T22:05:56Z",
+      "updatedAt": "2025-06-05T09:23:46Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "7f903f59cf2bf19064d338b39fbf8b779e650bbe",
@@ -5236,7 +5268,48 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6s04TG",
+          "commit": {
+            "abbreviatedOid": "3495212"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-05T09:23:21Z",
+          "updatedAt": "2025-06-05T09:23:21Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\nService contact instance affinity means that packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder need to be solicited to forward the packets.\r\n```",
+              "createdAt": "2025-06-05T09:23:21Z",
+              "updatedAt": "2025-06-05T09:23:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6s04lT",
+          "commit": {
+            "abbreviatedOid": "3495212"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-05T09:23:45Z",
+          "updatedAt": "2025-06-05T09:23:46Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "We don't use the normative language",
+              "createdAt": "2025-06-05T09:23:46Z",
+              "updatedAt": "2025-06-05T09:23:46Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
