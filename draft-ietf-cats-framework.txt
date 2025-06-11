@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 6 December 2025                                    China Mobile
+Expires: 13 December 2025                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                             4 June 2025
+                                                            11 June 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 December 2025.
+   This Internet-Draft will expire on 13 December 2025.
 
 Copyright Notice
 
@@ -526,9 +526,10 @@ Table of Contents
    such cases, the Egress CATS-Forwarder selects a service contact
    instance using its knowledge of service and network capabilities as
    well as the current load as observed by the CATS-Forwarder, among
-   other considerations.  Absent explicit policy, an Egress CATS-
-   Forwarder must make sure to forward all packets that pertain to a
-   given service request towards the same service contact instance.
+   other considerations.  In the absence of an explicit policy, an
+   Egress CATS-Forwarder must make sure to forward all packets that
+   pertain to a given service request towards the same service contact
+   instance.
 
    Note that, depending on the design considerations and service
    requirements, per-service contact instance computing-related metrics
@@ -593,12 +594,12 @@ Table of Contents
          network devices, and others may be collected by a centralized
          control plane.  For example, some static information (e.g.,
          capabilities information) can be distributed among network
-         devices since they are quite stable.  Frequent changing
-         information (e.g., resource utilization) can be collected by a
-         centralized control plane to avoid frequent flooding in the
-         distributed control plane.  Service scheduling function can be
-         performed by a centralized control plane and/or the CATS-
-         Forwarder.  The entire or partial C-PS function may be
+         devices since they are quite stable (change infrequently).
+         Frequent changing information (e.g., resource utilization) can
+         be collected by a centralized control plane to avoid frequent
+         flooding in the distributed control plane.  Service scheduling
+         function can be performed by a centralized control plane and/or
+         the CATS-Forwarder.  The entire or partial C-PS function may be
          implemented in the centralized control plane, depending on the
          specific implementation and deployment.
 
@@ -903,9 +904,11 @@ Table of Contents
    flow associated with a service should always be sent to the same
    service contact instance.  Furthermore, packets of a given flow
    should be forwarded along the same path to avoid mis-ordering and to
-   prevent the introduction of unpredictable latency variations.
-   Specifically, the same Egress CATS-Forwarder may be solicited to
-   forward the packets.
+   prevent the introduction of unpredictable latency variations.  The
+   CATS framework must ensure that service instance selection and path
+   steering decisions remain consistent for a flow.  Specifically, the
+   same Egress CATS-Forwarder need to be solicited to forward the
+   packets.
 
    The affinity is configured on the C-PS when the service is deployed,
    or is determined at the time of newly formulated service requests.
@@ -942,7 +945,7 @@ Table of Contents
 
    The computing resource information changes over time very frequently,
    especially with the creation and termination of service instances.
-   When such an information is carried in a routing protocol, too many
+   When such information is carried in a routing protocol, too many
    updates may affect network stability.  This issue could be exploited
    by an attacker (e.g., by spawning and deleting service contact
    instances very rapidly).  CATS solutions must support guards against
@@ -976,7 +979,10 @@ Table of Contents
    clients, and even user identity.  This information is sensitive and
    should be encrypted.  To prevent the information leaking between CATS
    components, the C-PS computed path information should be encrypted in
-   distribution.
+   distribution.  The specific encryption method may be applied at the
+   network layer, transport layer, or at the application/protocol level
+   depending on the implementation, so this is out of the scope of this
+   document.
 
    For more discussion about privacy, refer to [RFC6462] and [RFC6973].
 
@@ -990,9 +996,9 @@ Table of Contents
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
               "Computing-Aware Traffic Steering (CATS) Problem
               Statement, Use Cases, and Requirements", Work in Progress,
-              Internet-Draft, draft-ietf-cats-usecases-requirements-06,
-              14 February 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-cats-usecases-requirements-06>.
+              Internet-Draft, draft-ietf-cats-usecases-requirements-07,
+              10 June 2025, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-usecases-requirements-07>.
 
    [I-D.yao-cats-awareness-architecture]
               Yao, H., wang, X., Li, Z., Huang, D., and C. Lin,
