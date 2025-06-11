@@ -701,8 +701,8 @@ Table of Contents
    Site 3" advertises the computing metrics for the two services hosted
    by "Service Site 3".
 
-   The service metric advertisements are processed by the C-PS hosted by
-   "CATS-Forwarder 1".  The C-PS also processes network metric
+   The computing metric advertisements are processed by the C-PS hosted
+   by "CATS-Forwarder 1".  The C-PS also processes network metric
    advertisements sent by the C-NMA.  All metrics are used by the C-PS
    to select the most relevant path that leads to the Egress CATS-
    Forwarder according to the initial client's service request, the
@@ -710,8 +710,8 @@ Table of Contents
    service contact instances as reported by the metrics, and the state
    of the network.
 
-          Service CS-ID 1, contact instance CSCI-ID 1 <service metrics>
-          Service CS-ID 1, contact instance CSCI-ID 2 <service metrics>
+          Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
+          Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
 
                  :<----------------------:
                  :                       :               +---------+
@@ -741,8 +741,8 @@ Table of Contents
                  :                                :  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <service metrics>
-          Service CS-ID 2, <service metrics>
+          Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
+          Service CS-ID 2, <computing metrics>
 
         Figure 3: An Example of CATS Metric Dissemination in a
                           Distributed Model
@@ -758,10 +758,10 @@ Table of Contents
    If the CATS framework is implemented using a centralized model, the
    metric can be, e.g., distributed as illustrated in Figure 4.
 
-                        Service CS-ID 1, instance CSCI-ID 1 <service metrics>
-                        Service CS-ID 1, instance CSCI-ID 2 <service metrics>
-                        Service CS-ID 1, instance CSCI-ID 3 <service metrics>
-                        Service CS-ID 2, <service metrics>
+                        Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                        Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                        Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                        Service CS-ID 2, <computing metrics>
 
                        +------+
                :<------| C-PS |<------------------------------------.
@@ -822,10 +822,10 @@ Table of Contents
    may also have some ability to compute the path for the subsequent
    service accessing packets.
 
-              Service CS-ID 1, instance CSCI-ID 1 <service metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 2 <service metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 3 <service metric 1,2,3>
-              Service CS-ID 2, <service metrics>
+              Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+              Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+              Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+              Service CS-ID 2, <computing metrics>
                      +------+
              :<------| C-PS |<-------------------------------------.
              :       |      |<-------.                             |
@@ -857,7 +857,7 @@ Table of Contents
              :                        '-------+------|CS-ID 2|-----'
              :                                :      +-------+
              :<-------------------------------:
-      Service CS-ID 1, contact instance CSCI-ID 3, <service metric 4,5>
+      Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 
    Figure 5: An Example of CATS Metric Distribution in Hybrid Model
 
