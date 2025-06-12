@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-08T01:46:24.182048+00:00",
+  "timestamp": "2025-06-12T01:38:56.503628+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1659,15 +1659,15 @@
       "id": "I_kwDOJBcdGs63YvnG",
       "title": "RTGDIR Pending comments",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/112",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "> \n> 15.1- Perhaps, it may be helpful to clarify whether encryption is \n> expected at the transport layer, network layer, or at the \n> application/protocol level.\n> \n> 15.2- Also, it would be nice to indicate whether key management and \n> trust establishment are in scope, or explicitly state that encryption \n> recommendations are left to the specifications of the underlying \n> protocols used to carry CATS information.\n> \n> 16- Does CATS framework guarantees loop-free forwarding in multi- \n> domain or multi-path deployments?\n> \n> 17- How CATS interacts with traditional routing both behaviorally and \n> architecturally?\n> \n> 17.1- Does the CATS framework ensure that service instance selection \n> and path steering decisions remain consistent with existing routing \n> behavior (e.g., OSPF, BGP)?\n> \n> 17.2- In cases where CATS-based service selection results in a path \n> that differs from the one chosen by traditional routing protocols, \n> does CATS take precedence, or is it constrained by routing decisions?\n> \n> 17.3- Does the CATS framework operate entirely as a separate control \n> plane overlay, or are there scenarios where it is expected to \n> integrate with traditional routing control planes? For example, would \n> CATS components ever inject service-aware information directly into \n> routing advertisements, or is this considered out of scope.\n> \n> 18- Does the framework assume or require routing policy mechanisms to \n> support integration with CATS forwarding logic across domains?\n> \n> 19- Which component is responsible for maintaining flow or instance \n> affinity when routing changes occur?\n> \n> 19.1- Does the CATS framework allow the use of Equal-cost multi- path \n> (ECMP), and if so, how is flow affinity preserved across equal-cost \n> paths?\n> \n> 19.2- If the routing path changes mid-session due to metric updates or \n> topology shifts, how is the preserving affinity across a session \n> maintained to prevent service disruption?\n> \n> 20.- The draft mentions the use of aggregated per-site computing \n> metrics for scalability. In addition to metric aggregation, does the \n> framework support aggregation of CS-ID to locator mappings? For \n> example, are multiple CS-IDs ever grouped or summarized under a common \n> network locator to reduce control-plane or forwarding state?\n> Or is each CS-ID treated as a unique entry in resolution and \n> forwarding, even when service instances are co-located?\n",
       "createdAt": "2025-05-20T11:43:04Z",
-      "updatedAt": "2025-06-05T08:36:03Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-11T18:32:52Z",
+      "closedAt": "2025-06-11T18:32:52Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1675,6 +1675,13 @@
           "body": "already posted a PR for this, please see PR #113 ",
           "createdAt": "2025-06-05T08:36:02Z",
           "updatedAt": "2025-06-05T08:36:02Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "closed as confirmed by Ines on the list",
+          "createdAt": "2025-06-11T18:32:52Z",
+          "updatedAt": "2025-06-11T18:32:52Z"
         }
       ]
     },
@@ -1683,15 +1690,15 @@
       "id": "I_kwDOJBcdGs65_lYA",
       "title": "Computing metric and service metric",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/114",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "I found that we used two terms in the draft. \n\nComputing metric: 13 times.\nService metric:  17 times.\n\nThough I can understand the meaning. Should we unify them, to use one? or ?",
       "createdAt": "2025-06-05T09:14:36Z",
-      "updatedAt": "2025-06-05T09:22:36Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-11T18:32:26Z",
+      "closedAt": "2025-06-11T18:32:26Z",
       "comments": [
         {
           "author": "boucadair",
@@ -1699,6 +1706,13 @@
           "body": "I tagged only few for service metric, but mainly those are related to the use of \"CATS Service Metric Agent (C-SMA)\".\n\nMaybe change this one: \n\n   The service metric advertisements are processed by the C-PS hosted by\n   \"CATS-Forwarder 1\".\n\nand similar to use \"computing metric\" ?",
           "createdAt": "2025-06-05T09:22:35Z",
           "updatedAt": "2025-06-05T09:22:35Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "acked\uff0cmodified and updated.",
+          "createdAt": "2025-06-11T18:30:24Z",
+          "updatedAt": "2025-06-11T18:30:24Z"
         }
       ]
     }
@@ -5249,24 +5263,26 @@
       "id": "PR_kwDOJBcdGs6ZGWqv",
       "title": "address Ines rest comments",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/113",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-06-04T22:05:56Z",
-      "updatedAt": "2025-06-05T09:23:46Z",
+      "updatedAt": "2025-06-11T18:27:16Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "7f903f59cf2bf19064d338b39fbf8b779e650bbe",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "3495212a2604708e6ede0f726da4de049e51a8f6",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "94ba895d1e1bc21607262a8c994ac807781f4abc",
+      "closedAt": "2025-06-11T18:27:16Z",
+      "mergedAt": "2025-06-11T18:27:16Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "871a684f7de38e35b130bdb858815644b1ef4e00"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5310,6 +5326,34 @@
           ]
         }
       ]
+    },
+    {
+      "number": 115,
+      "id": "PR_kwDOJBcdGs6aFXkI",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/115",
+      "state": "MERGED",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "modified service metrics to computing metrics",
+      "createdAt": "2025-06-11T18:31:51Z",
+      "updatedAt": "2025-06-11T18:32:14Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "871a684f7de38e35b130bdb858815644b1ef4e00",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "4600f76363542239b254bb998d2e6ec6c3a7b23d",
+      "closedAt": "2025-06-11T18:32:13Z",
+      "mergedAt": "2025-06-11T18:32:13Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "b1daedda28a60a466542819f184992e5b291e73a"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
