@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-12T01:38:56.503628+00:00",
+  "timestamp": "2025-06-15T01:48:07.816111+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -5352,6 +5352,79 @@
       "mergeCommit": {
         "oid": "b1daedda28a60a466542819f184992e5b291e73a"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 116,
+      "id": "PR_kwDOJBcdGs6aKaOV",
+      "title": "add provisioning/ops matters",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/116",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-06-12T07:54:14Z",
+      "updatedAt": "2025-06-12T15:45:00Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "b1daedda28a60a466542819f184992e5b291e73a",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "ops-manageabiliy",
+      "headRefOid": "c364abff0c5200eb28a17a3007fa5f2eb32f4aa9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6uJmTO",
+          "commit": {
+            "abbreviatedOid": "c364abf"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-12T15:44:59Z",
+          "updatedAt": "2025-06-12T15:45:00Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "Thank you for the input. Look good to me!",
+              "createdAt": "2025-06-12T15:44:59Z",
+              "updatedAt": "2025-06-12T15:45:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "id": "PR_kwDOJBcdGs6aPxVc",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/117",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Thanks for Ines' valuable input",
+      "createdAt": "2025-06-12T15:50:36Z",
+      "updatedAt": "2025-06-12T15:50:36Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "b1daedda28a60a466542819f184992e5b291e73a",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "5364ba6bb429ee9c0ab14b7f423e5245b16fc9a3",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
