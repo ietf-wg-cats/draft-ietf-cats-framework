@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 13 December 2025                                   China Mobile
+Expires: 20 December 2025                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            11 June 2025
+                                                            18 June 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 December 2025.
+   This Internet-Draft will expire on 20 December 2025.
 
 Copyright Notice
 
@@ -1087,8 +1087,8 @@ Appendix A.  Acknowledgements
    Farinacci, Adrian Farrel, Cullen Jennings, Linda Dunbar, Jeffrey
    Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li, Xinxin Yi, Jari
    Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian,
-   Zhenbin Li, Xinyue Zhang, Weier Li, and Nagendra Kumar for their
-   comments and suggestions.
+   Zhenbin Li, Xinyue Zhang, Weier Li, Ines Robles and Nagendra Kumar
+   for their comments and suggestions.
 
    Some text about various deployment models was originally documented
    in [I-D.yao-cats-awareness-architecture].
