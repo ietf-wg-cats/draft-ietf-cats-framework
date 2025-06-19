@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-15T01:48:07.816111+00:00",
+  "timestamp": "2025-06-19T01:40:41.397598+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1571,15 +1571,15 @@
       "id": "I_kwDOJBcdGs6bQsZC",
       "title": "Zongpeng\uff1a Some proposal for policy delivery ",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/99",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Hi\uff0c Cheng\r\n\r\n    We have prepared some context for a new section in the framework document.\r\n\r\n\r\n    Welcome for comments.\r\n\r\n\r\n4.6.  Policy Delivery\r\n\r\nAs shown in Figure1, the control plane and management plane need to communicate some policies to the data plane. The control plane and management plane can be implemented in a control center entity.\r\n\r\nIf the C-PS is logically centralized, it needs to communicate some policies to the CATS-Forwarders. In this case, the network entity containing the C-PS, such as a control center, should be able to perform management and/or control functions, including computing information awareness function, service scheduling function, etc. It collects computing and network information, and schedules service based on computing and network information. The CATS-Forwarders performs data plane functions or routing functions.\r\n\r\nIf the C-PS is collocated with an Ingress CATS-Forwarder, the functions that the Ingress CATS-Forwarder supports would include computing information awareness function, service scheduling function and data forwarding function. In this case, Ingress CATS-Forwarders make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service instances and network.\r\n\r\nIn either case, management plane policies need to be delivered to the CATS-Forwarders. For example, a general scheduling policy can be sent to the Ingress CATS-Forwarder, which would include policy execution node information, topology information and configuration information for real-time state collection of resources. If the C-PS is collocated with an Ingress CATS-Forwarder, the policy execution node would be the Ingress CATS-Forwarder. The topology information could be the nodes that need to be communicated to obtain the computing information. According to the topology information and configuration information in the received general scheduling policy, the Ingress CATS-Forwarder obtains the real-time status information of the computing resource, the service resource or the network resource. Based on these resource state information and the scheduling policy information in the general scheduling policy, the ingress CATS-Forwarder can obtain the target scheduling policy for the service requirement and schedule the corresponding service's traffic.\r\n\r\n\r\n\r\nBest Regards\r\nZongpeng Du\r\n",
       "createdAt": "2024-10-22T09:31:01Z",
-      "updatedAt": "2025-01-22T14:38:23Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-18T13:11:53Z",
+      "closedAt": "2025-06-18T13:11:53Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1587,6 +1587,13 @@
           "body": "See discussion in https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/100\n\nIf we can not get the consensus, we may not be able to merge text into the document. But we can keep the issue open until we decide to close it.",
           "createdAt": "2025-01-22T14:38:22Z",
           "updatedAt": "2025-01-22T14:38:22Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "we do not have further discussion on this. Close for now, Zongpeng can reopen the issue if you want.",
+          "createdAt": "2025-06-18T13:11:53Z",
+          "updatedAt": "2025-06-18T13:11:53Z"
         }
       ]
     },
@@ -1595,15 +1602,15 @@
       "id": "I_kwDOJBcdGs6zHnpP",
       "title": "Section 4.1 Provisioning of CATS Components and Management consideration",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/105",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Need to add text to describe provisioning and management consideration. Comments from IETF 122 meeting.",
       "createdAt": "2025-04-18T14:53:01Z",
-      "updatedAt": "2025-04-18T14:53:01Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-18T13:11:02Z",
+      "closedAt": "2025-06-18T13:11:02Z",
       "comments": []
     },
     {
@@ -1627,15 +1634,15 @@
       "id": "I_kwDOJBcdGs6zrBpm",
       "title": "Management consideration",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/108",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Please look at the PCE WG\u2019s Manageability Consideratons guidance and see what you might add to this document.(https://datatracker.ietf.org/doc/rfc6123/, shared by Dhruv in the Chat)",
       "createdAt": "2025-04-23T15:25:03Z",
-      "updatedAt": "2025-04-23T15:25:03Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-18T13:11:03Z",
+      "closedAt": "2025-06-18T13:11:03Z",
       "comments": []
     },
     {
@@ -5360,24 +5367,26 @@
       "id": "PR_kwDOJBcdGs6aKaOV",
       "title": "add provisioning/ops matters",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/116",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-06-12T07:54:14Z",
-      "updatedAt": "2025-06-12T15:45:00Z",
+      "updatedAt": "2025-06-18T13:11:03Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "b1daedda28a60a466542819f184992e5b291e73a",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "ops-manageabiliy",
       "headRefOid": "c364abff0c5200eb28a17a3007fa5f2eb32f4aa9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-18T13:11:01Z",
+      "mergedAt": "2025-06-18T13:11:01Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "d58b776faa2e051830d2f03350cf25897d99e0b7"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5407,24 +5416,26 @@
       "id": "PR_kwDOJBcdGs6aPxVc",
       "title": "Update draft-ietf-cats-framework.md",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/117",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Thanks for Ines' valuable input",
       "createdAt": "2025-06-12T15:50:36Z",
-      "updatedAt": "2025-06-12T15:50:36Z",
+      "updatedAt": "2025-06-18T13:10:48Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "b1daedda28a60a466542819f184992e5b291e73a",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
       "headRefOid": "5364ba6bb429ee9c0ab14b7f423e5245b16fc9a3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-18T13:10:48Z",
+      "mergedAt": "2025-06-18T13:10:48Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "31a06df56c780b64ede7b54e8a096a3db5c60226"
+      },
       "comments": [],
       "reviews": []
     }
