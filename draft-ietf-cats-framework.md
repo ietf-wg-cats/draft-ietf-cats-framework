@@ -106,7 +106,6 @@ normative:
 
 informative:
 
-
 --- abstract
 
 This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS components, describes their interactions, and provides illustrative workflows of the control and data planes.
@@ -381,13 +380,63 @@ Note that, depending on the design considerations and service requirements, per-
 
 The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a C-PS will be distributed among the CATS-Forwarders ({{sec-ocr}}), and will not affect the underlay nodes. Underlay nodes are typically P routers ({{Section 5.3.1 of ?RFC4026}}).
 
+# Operational and Mangeability Considerations
+
+## Provisioning of CATS Components
+
+Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.
+
+In addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but not limited to:
+
+* Provide C-PS elements with the locators of available Ingress CATS-Forwarder. Such locators may also be discovered from the network.
+* Enable required setup to connect C-PS elements with C-NMA and C-SMA.
+* Allocate various identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
+* Provide C-PS element with the set of optimization metrics (per service) and an optimization policy.
+* Expose Encapsulation capabilities supported by CATS-Frowarders.
+* Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
+* Expose classification capabilities of C-TC elements.
+* Retrieve active classification table of C-TC elements.
+* Reset the classification table of C-TC elements.
+* Set the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders. Such correlation is needed to help identify issues induced by the underlying encapsulation.
+* Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior)
+
+The above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, etc.). It is out of scope to discuss required CATS extension to these protocols.
+
+## Deployment Considerations
+
+This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a C-PS) and distributed CATS functions (e.g., CATS traffic classifiers) is deployment-specific and may reflect the preferences and policies of the (CATS) service provider.
+
+For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before the service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with CATS traffic classifiers (C-TCs).
+
+According to the method of distributing and collecting the computing related metrics, three deployment models can be considered for the deployment of the CATS framework:
+
+* **Distributed model**:
+: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control plane. Service scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
+
+* **Centralized model**:
+: Computing metrics are collected by a centralized control plane, and then the centralized control plane computes the forwarding path for service requests and syncs up with the Ingress CATS-Forwarder. In this model, C-PS is implemented in the centralized control plane.
+
+* **Hybrid model**:
+: Is a combination of distribution and centralized models.
+: A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
+
+## Verify Correct Operations
+
+CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.
+
+## Impact on Network Operations
+
+Computing metrics are collected and distributed in CATS. A new function is needed to be deployed to manage the cooperation between network elements and computing elements. For example, this function may be provided by an orchestrator connecting with C-SMA and C-NMA. This might bring more complexity of the network management, especially if this function is not leveraged for other purposes beyond CATS.
+
 # CATS Framework Workflow {#sec-cats-workflow}
 
 The following subsections provide an overview of how the CATS workflow operates.
 
 ## Service Announcement
 
-A service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS {{?RFC1034}}). Note that CATS framework does not assume nor preclude any specific name resolution service.
+In order to provide service to clients, a service needs to be known by the clients before the clients requesting for service. Typically, in the current practices of the web services, a service provider will register the IP addresses of the servers in a DNS server. A client can request for server IP addresses by the URL, and it can receive the IP addresses from the DNS server.
+
+In CATS framework, a service is associated with a unique identifier called a CS-ID by the service provider when deploying the service. Depending on the implementation, a CS-ID may be a network identifier, such as an IP address of servers, or other new defined IDs. If the CS-ID is not the server IP address, then the mapping of the CS-ID to network identifiers may be learned through a name resolution service (e.g., DNS {{?RFC1034}}), which will require for further protocol extensions and may be described in other documents. Note that CATS framework does not assume nor preclude any specific name resolution service. When a CS-ID is the server IP address, the service annoucement is not changed in the CATS framework comparing to the existing services. Therefore, this document suggest to use the IP addrees as the CS-ID in order to simplify the implementation.
 
 ## Metrics Distribution {#sec-met-dist}
 
@@ -565,47 +614,6 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 More importantly, the means for identifying a flow for ensuring instance affinity should be application-independent to avoid the need for service-specific instance affinity methods. However, service contact instance affinity information may be configurable on a per-service basis. For each service, the information can include the flow/packets identification type and means, affinity timeout value, etc.
 
 This document does not define any mechanism for defining or enforcing service contact instance affinity.
-
-# Operational and Mangeability Considerations
-
-## Provisioning of CATS Components
-
-Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.
-
-In addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but not limited to:
-
-* Provide C-PS elements with the locators of available Ingress CATS-Forwarder. Such locators may also be discovered from the network.
-* Enable required setup to connect C-PS elements with C-NMA and C-SMA.
-* Allocate various identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
-* Provide C-PS element with the set of optimization metrics (per service) and an optimization policy.
-* Expose Encapsulation capabilities supported by CATS-Frowarders.
-* Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
-* Expose classification capabilities of C-TC elements.
-* Retrieve active classification table of C-TC elements.
-* Reset the classification table of C-TC elements.
-* Set the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders. Such correlation is needed to help identify issues induced by the underlying encapsulation.
-* Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior)
-
-The above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, etc.). It is out of scope to discuss required CATS extension to these protocols.
-
-## Deployment Considerations
-
-This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a C-PS) and distributed CATS functions (e.g., CATS traffic classifiers) is deployment-specific and may reflect the preferences and policies of the (CATS) service provider.
-
-For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before the service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with CATS traffic classifiers (C-TCs).
-
-According to the method of distributing and collecting the computing related metrics, three deployment models can be considered for the deployment of the CATS framework:
-
-* **Distributed model**:
-: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control plane. Service scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
-
-* **Centralized model**:
-: Computing metrics are collected by a centralized control plane, and then the centralized control plane computes the forwarding path for service requests and syncs up with the Ingress CATS-Forwarder. In this model, C-PS is implemented in the centralized control plane.
-
-* **Hybrid model**:
-: Is a combination of distribution and centralized models.
-: A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
-
 
 # Security Considerations
 
