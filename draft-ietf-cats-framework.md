@@ -426,7 +426,7 @@ CATS is a framework of considering computing-related metrics based on the curren
 
 ## Verify Correct Operations
 
-CATS may be implemented by extending some existing control plane protocol, such as BGP. A CATS implementation MUST log error events for better network management and operation, and the detailed mechanism is out of the scope of this document, and can be specified in the solution draft in the future.
+CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation.
 
 ## Requirements on Other Protocols
 
