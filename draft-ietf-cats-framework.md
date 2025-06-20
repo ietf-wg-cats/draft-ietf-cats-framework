@@ -422,8 +422,7 @@ According to the method of distributing and collecting the computing related met
 
 ## Verify Correct Operations
 
-CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation.
-Means to assess the reachability and trace CATS paths should be supported.
+CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.
 
 ## Impact on Network Operations
 
