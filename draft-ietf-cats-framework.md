@@ -435,7 +435,7 @@ This document only defines the framework and workflow of CATS, and does not assu
 
 ## Impact on Network Operations
 
-Computing metrics are collected and distributed in the CATS system, therefore, some orchestrators between network elemets and computing elements may be needed, for example a orchestrator connecting with C-SMA and C-NMA. This will bring more complexity of the network management.
+Computing metrics are collected and distributed in CATS. A new function is needed to be deployed to manage the cooperation between network elements and computing elements. For example, this function may be provided by an orchestrator connecting with C-SMA and C-NMA. This might bring more complexity of the network management, especially if this function is not leveraged for other purposes beyond CATS.
 
 # CATS Framework Workflow {#sec-cats-workflow}
 
