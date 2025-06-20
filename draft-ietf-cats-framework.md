@@ -420,18 +420,10 @@ According to the method of distributing and collecting the computing related met
 : Is a combination of distribution and centralized models.
 : A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
 
-## Liveness Detection and Monitoring
-
-CATS is a framework of considering computing-related metrics based on the current routing system, therefore, the current liveness detection and monitoring mechanisms such as BFD, can be used in CATS framework. Telemetry mechanisms, such as Alternate-Marking Method in IPv6 {{?RFC9343}}, and other mechanisms listed in the appendix-A of {{?RFC9232}} can also be used in CATS framework. For detecting the link or connection in the egde site, LLDP (Link Layer Discovery Protocol) can be used.
-
 ## Verify Correct Operations
 
 CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation.
 Means to assess the reachability and trace CATS paths should be supported.
-
-## Requirements on Other Protocols
-
-This document only defines the framework and workflow of CATS, and does not assume as protocol solution in implementation. {{?I-D.ietf-cats-usecases-requirements}} lists some the general requirements of the CATS system including protocols. For the requirements of detailed protocol, this is out of the scope of this document, and may be described in other documents.
 
 ## Impact on Network Operations
 
