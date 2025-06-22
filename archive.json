@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-19T01:40:41.397598+00:00",
+  "timestamp": "2025-06-22T01:47:38.399787+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -5438,6 +5438,236 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 118,
+      "id": "PR_kwDOJBcdGs6bSXQu",
+      "title": "Restructure the content and add text in manageability section",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/118",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Restructure the content to make the logic clear.\r\nadd more text in the manageability section",
+      "createdAt": "2025-06-19T16:19:39Z",
+      "updatedAt": "2025-06-21T14:07:26Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "d58b776faa2e051830d2f03350cf25897d99e0b7",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "6acd5b0d6f11b90baa6bc7803f1d89fc540f152b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6venui",
+          "commit": {
+            "abbreviatedOid": "88edd95"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks, Cheng. Please find some comments.",
+          "createdAt": "2025-06-19T21:19:34Z",
+          "updatedAt": "2025-06-19T21:27:58Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "FWIW, the current order is following the reco at https://ietf-opsawg-wg.github.io/draft-opsarea-rfc5706bis/#go.draft-opsarea-rfc5706bis.html",
+              "createdAt": "2025-06-19T21:19:34Z",
+              "updatedAt": "2025-06-19T21:27:59Z"
+            },
+            {
+              "originalPosition": 52,
+              "body": "I'm afraid this text is too generic. Unless we add more CATS specific, I tend to suggest to not included.",
+              "createdAt": "2025-06-19T21:20:31Z",
+              "updatedAt": "2025-06-19T21:27:59Z"
+            },
+            {
+              "originalPosition": 58,
+              "body": "```suggestion\r\nCATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation.\r\n```",
+              "createdAt": "2025-06-19T21:21:54Z",
+              "updatedAt": "2025-06-19T21:27:59Z"
+            },
+            {
+              "originalPosition": 59,
+              "body": "```suggestion\r\nMeans to assess the reachability and trace CATS paths should be supported.\r\n\r\n```",
+              "createdAt": "2025-06-19T21:22:49Z",
+              "updatedAt": "2025-06-19T21:27:59Z"
+            },
+            {
+              "originalPosition": 60,
+              "body": "I don't think this section is needed. I suggest to delete it.",
+              "createdAt": "2025-06-19T21:23:42Z",
+              "updatedAt": "2025-06-19T21:27:59Z"
+            },
+            {
+              "originalPosition": 66,
+              "body": "```suggestion\r\nComputing metrics are collected and distributed in CATS. A new function is needed to be deployed to manage the cooperation between network elements and computing elements. For example, this function may be provided by an orchestrator connecting with C-SMA and C-NMA. This might bring more complexity of the network management, especially if this function is not leveraged for other purposes beyond CATS.\r\n```",
+              "createdAt": "2025-06-19T21:27:29Z",
+              "updatedAt": "2025-06-20T13:23:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6vma8c",
+          "commit": {
+            "abbreviatedOid": "88edd95"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-20T13:09:55Z",
+          "updatedAt": "2025-06-20T13:09:55Z",
+          "comments": [
+            {
+              "originalPosition": 52,
+              "body": "I actually agree with you. I was struggling to add these text. Let's delete them for now.",
+              "createdAt": "2025-06-20T13:09:55Z",
+              "updatedAt": "2025-06-20T13:09:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6vmnRb",
+          "commit": {
+            "abbreviatedOid": "88edd95"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-20T13:18:12Z",
+          "updatedAt": "2025-06-20T13:18:12Z",
+          "comments": [
+            {
+              "originalPosition": 60,
+              "body": "agree, I added for review, but also felt struggling when editing the text",
+              "createdAt": "2025-06-20T13:18:12Z",
+              "updatedAt": "2025-06-20T13:18:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6vnE2I",
+          "commit": {
+            "abbreviatedOid": "6acd5b0"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-20T13:47:33Z",
+          "updatedAt": "2025-06-20T13:47:34Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "for your rest comments, I have addressed. Regarding the order, I see your point.  It is recommended to put it immediately before the security section.  But in this document, the description of deployment models seems need to be before the workflow section.  Because we introduced 3 workflows according to the deployment models. Also, the provisioning/configuration section is preferred to add before the workflow and after the component discussion? \r\n\r\nor we might can separate the text? keeping deployment models in section 3 before workflow section. the rest text for provisioning, verifying, impact on the network operations can be added in the Operational and manageability consideration section immediately before the security section and after the workflow section?\r\n\r\nWhat do you prefer?",
+              "createdAt": "2025-06-20T13:47:33Z",
+              "updatedAt": "2025-06-20T13:47:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6vs4Mn",
+          "commit": {
+            "abbreviatedOid": "88edd95"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-21T14:07:26Z",
+          "updatedAt": "2025-06-21T14:07:26Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "> But in this document, the description of deployment models seems need to be before the workflow section.\r\n\r\nI really think that this can be fixed by cross-referencing sections. Deployments models are ops matters and I prefer to leave them grouped as in current version.\r\n\r\nThe workflow should ideally be independent of the deployment option, but let's not reopen that and simply make sure we have a flow that easy to digest.",
+              "createdAt": "2025-06-21T14:07:26Z",
+              "updatedAt": "2025-06-21T14:07:26Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "id": "PR_kwDOJBcdGs6bcYv2",
+      "title": "Service announcement update",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/119",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-06-20T16:06:30Z",
+      "updatedAt": "2025-06-21T14:28:52Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "d58b776faa2e051830d2f03350cf25897d99e0b7",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "service-announcement-update",
+      "headRefOid": "29187123cc325f1bc83be90d11527a691f443672",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "To ease reviewing, please keep only the changes to \"Service announcement\" Section. Thanks",
+          "createdAt": "2025-06-21T14:09:17Z",
+          "updatedAt": "2025-06-21T14:09:17Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6vs5JL",
+          "commit": {
+            "abbreviatedOid": "2918712"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2025-06-21T14:23:12Z",
+          "updatedAt": "2025-06-21T14:28:52Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "I would delete the first sentence as this is over-simplifying required DNS configurations. There are several RR types out there. More importantly, I suggest we focus on CATS specifics.",
+              "createdAt": "2025-06-21T14:23:12Z",
+              "updatedAt": "2025-06-21T14:28:52Z"
+            },
+            {
+              "originalPosition": 69,
+              "body": "We need to clarify how/whether CS-ID is different from the service identifier used by client to access a service?",
+              "createdAt": "2025-06-21T14:25:17Z",
+              "updatedAt": "2025-06-21T14:28:52Z"
+            },
+            {
+              "originalPosition": 69,
+              "body": "\"If the CS-ID is not the server IP address\"\r\n\r\nWhat \"server\" are we referring to here?",
+              "createdAt": "2025-06-21T14:25:54Z",
+              "updatedAt": "2025-06-21T14:28:52Z"
+            },
+            {
+              "originalPosition": 69,
+              "body": "\"Therefore, this document suggest to use the IP addrees as the CS-ID in order to simplify the implementation\"\r\n\r\nIt seems to me this is conflicting with CS-ID definition\r\n\r\n>    CATS Service ID (CS-ID):  An identifier representing a service, which\r\n>       the clients use to access it.  Such an ID identifies all the\r\n>       instances of a given service, regardless of their location.\r\n> \r\n>       The CS-ID is independent of which service contact instance serves\r\n>       the service request.\r\n> \r\n>       Service requests are spread over the service contact instances\r\n>       that can accommodate them, considering the location of the\r\n>       initiator of the service request and the availability (in terms of\r\n>       resource/traffic load, for example) of the service instances\r\n>       resource-wise among other considerations like traffic congestion\r\n>       conditions.",
+              "createdAt": "2025-06-21T14:28:23Z",
+              "updatedAt": "2025-06-21T14:28:52Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
