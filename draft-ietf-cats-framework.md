@@ -106,7 +106,6 @@ normative:
 
 informative:
 
-
 --- abstract
 
 This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS components, describes their interactions, and provides illustrative workflows of the control and data planes.
@@ -383,7 +382,7 @@ The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or 
 
 # CATS Framework Workflow {#sec-cats-workflow}
 
-The following subsections provide an overview of how the CATS workflow operates.
+The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.
 
 ## Service Announcement
 
@@ -568,7 +567,7 @@ This document does not define any mechanism for defining or enforcing service co
 
 # Operational and Mangeability Considerations
 
-## Provisioning of CATS Components
+## Provisioning of CATS Components {#sec-cats-provisioning}
 
 Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.
 
@@ -588,7 +587,7 @@ In addition the CATS steering policies that are communicated by a C-PS to an Ing
 
 The above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, etc.). It is out of scope to discuss required CATS extension to these protocols.
 
-## Deployment Considerations
+## Deployment Considerations {#sec-cats-deployment}
 
 This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a C-PS) and distributed CATS functions (e.g., CATS traffic classifiers) is deployment-specific and may reflect the preferences and policies of the (CATS) service provider.
 
@@ -606,6 +605,13 @@ According to the method of distributing and collecting the computing related met
 : Is a combination of distribution and centralized models.
 : A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
 
+## Verify Correct Operations
+
+CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.
+
+## Impact on Network Operations
+
+Computing metrics are collected and distributed in CATS. A new function is needed to be deployed to manage the cooperation between network elements and computing elements. For example, this function may be provided by an orchestrator connecting with C-SMA and C-NMA. This might bring more complexity of the network management, especially if this function is not leveraged for other purposes beyond CATS.
 
 # Security Considerations
 
