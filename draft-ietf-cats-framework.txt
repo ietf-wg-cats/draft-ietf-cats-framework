@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 20 December 2025                                   China Mobile
+Expires: 25 December 2025                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            18 June 2025
+                                                            23 June 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 December 2025.
+   This Internet-Draft will expire on 25 December 2025.
 
 Copyright Notice
 
@@ -81,6 +81,8 @@ Table of Contents
    5.  Operational and Mangeability Considerations
      5.1.  Provisioning of CATS Components
      5.2.  Deployment Considerations
+     5.3.  Verify Correct Operations
+     5.4.  Impact on Network Operations
    6.  Security Considerations
    7.  Privacy Considerations
    8.  IANA Considerations
@@ -553,8 +555,11 @@ Table of Contents
 
 4.  CATS Framework Workflow
 
-   The following subsections provide an overview of how the CATS
-   workflow operates.
+   The following subsections provide an overview of a typical CATS
+   workflow.  In order to enable CATS in a given domain, some
+   provisioning is needed; see more details in Section 5.1.  Section 5.2
+   describes several deployment options (distributed, centralized, and
+   hybrid model) to accommodate a variety of contexts.
 
 4.1.  Service Announcement
 
@@ -983,6 +988,23 @@ Table of Contents
          the CATS-Forwarder.  The entire or partial C-PS function may be
          implemented in the centralized control plane, depending on the
          specific implementation and deployment.
+
+5.3.  Verify Correct Operations
+
+   CATS may be implemented by extending some existing control plane
+   protocols, such as BGP or PCEP.  A CATS implementation must log error
+   events for better network management and operation.  Means to assess
+   the reachability and trace CATS paths should be supported.
+
+5.4.  Impact on Network Operations
+
+   Computing metrics are collected and distributed in CATS.  A new
+   function is needed to be deployed to manage the cooperation between
+   network elements and computing elements.  For example, this function
+   may be provided by an orchestrator connecting with C-SMA and C-NMA.
+   This might bring more complexity of the network management,
+   especially if this function is not leveraged for other purposes
+   beyond CATS.
 
 6.  Security Considerations
 
