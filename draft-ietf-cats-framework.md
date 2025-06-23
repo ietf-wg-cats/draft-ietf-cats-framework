@@ -382,7 +382,7 @@ The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or 
 
 # CATS Framework Workflow {#sec-cats-workflow}
 
-The following subsections provide an overview of how the CATS workflow operates. In order to set up the CATS framework, some related provisioning is needed, and it has been described in {{sec-cats-provisioning}}. According to the different requirements in deployment, distributed model, centralized and hybrid model are proposed in this document , please see {{sec-cats-deployment}} for details.
+The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.
 
 ## Service Announcement
 
