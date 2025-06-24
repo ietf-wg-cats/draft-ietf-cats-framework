@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-22T01:47:38.399787+00:00",
+  "timestamp": "2025-06-24T01:40:40.631402+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -5444,25 +5444,35 @@
       "id": "PR_kwDOJBcdGs6bSXQu",
       "title": "Restructure the content and add text in manageability section",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/118",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Restructure the content to make the logic clear.\r\nadd more text in the manageability section",
       "createdAt": "2025-06-19T16:19:39Z",
-      "updatedAt": "2025-06-21T14:07:26Z",
+      "updatedAt": "2025-06-23T15:38:38Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "d58b776faa2e051830d2f03350cf25897d99e0b7",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "6acd5b0d6f11b90baa6bc7803f1d89fc540f152b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "19623b66ab43c3cf55fc370039ded4aaff066d5b",
+      "closedAt": "2025-06-23T15:38:38Z",
+      "mergedAt": "2025-06-23T15:38:38Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "0d2356a0960cb9b626de526f1bb91210278b2688"
+      },
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "please review the update",
+          "createdAt": "2025-06-23T13:37:18Z",
+          "updatedAt": "2025-06-23T13:37:18Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJBcdGs6venui",
@@ -5593,6 +5603,46 @@
               "updatedAt": "2025-06-21T14:07:26Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6vy10V",
+          "commit": {
+            "abbreviatedOid": "88edd95"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-23T09:25:36Z",
+          "updatedAt": "2025-06-23T09:25:36Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "OK\uff0c then let me try to add some cross-referencing text. If any comments come in the future, we can address accordingly. Will do it ASAP.",
+              "createdAt": "2025-06-23T09:25:36Z",
+              "updatedAt": "2025-06-23T09:25:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6v3Tf6",
+          "commit": {
+            "abbreviatedOid": "dc37d26"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks",
+          "createdAt": "2025-06-23T15:13:42Z",
+          "updatedAt": "2025-06-23T15:14:25Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\nThe following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.\r\n```",
+              "createdAt": "2025-06-23T15:13:43Z",
+              "updatedAt": "2025-06-23T15:14:25Z"
+            }
+          ]
         }
       ]
     },
@@ -5608,13 +5658,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-06-20T16:06:30Z",
-      "updatedAt": "2025-06-21T14:28:52Z",
+      "updatedAt": "2025-06-23T16:03:33Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "d58b776faa2e051830d2f03350cf25897d99e0b7",
+      "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "service-announcement-update",
-      "headRefOid": "29187123cc325f1bc83be90d11527a691f443672",
+      "headRefOid": "a73f4b1eb8d914c9b28dc5f380c4c31857b9d791",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5664,6 +5714,86 @@
               "body": "\"Therefore, this document suggest to use the IP addrees as the CS-ID in order to simplify the implementation\"\r\n\r\nIt seems to me this is conflicting with CS-ID definition\r\n\r\n>    CATS Service ID (CS-ID):  An identifier representing a service, which\r\n>       the clients use to access it.  Such an ID identifies all the\r\n>       instances of a given service, regardless of their location.\r\n> \r\n>       The CS-ID is independent of which service contact instance serves\r\n>       the service request.\r\n> \r\n>       Service requests are spread over the service contact instances\r\n>       that can accommodate them, considering the location of the\r\n>       initiator of the service request and the availability (in terms of\r\n>       resource/traffic load, for example) of the service instances\r\n>       resource-wise among other considerations like traffic congestion\r\n>       conditions.",
               "createdAt": "2025-06-21T14:28:23Z",
               "updatedAt": "2025-06-21T14:28:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6v2MMR",
+          "commit": {
+            "abbreviatedOid": "2918712"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-23T13:50:59Z",
+          "updatedAt": "2025-06-23T13:50:59Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "It is true that this is over-simplifying the DNS configuration. The reason is to focus on CATS specific part. OK, I will delete the whole text in line 437. ",
+              "createdAt": "2025-06-23T13:50:59Z",
+              "updatedAt": "2025-06-23T13:50:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6v31id",
+          "commit": {
+            "abbreviatedOid": "2918712"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-23T15:57:29Z",
+          "updatedAt": "2025-06-23T15:57:29Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "aren't they the same thing?  See the definition \r\nCATS Service ID (CS-ID):\r\n : An identifier representing a service, which the clients use to access it. See {{cats-ids}}.  \r\n\r\nI think they are the same. ",
+              "createdAt": "2025-06-23T15:57:29Z",
+              "updatedAt": "2025-06-23T15:57:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6v33Tx",
+          "commit": {
+            "abbreviatedOid": "2918712"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-23T15:59:59Z",
+          "updatedAt": "2025-06-23T15:59:59Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "> \"If the CS-ID is not the server IP address\"\r\n> \r\n> What \"server\" are we referring to here?\r\nThe server providing the service. But we might have more than one server, so it might be good to use \r\n\r\nif the CS-ID is not the IP address of the server(s),\r\n\r\n",
+              "createdAt": "2025-06-23T15:59:59Z",
+              "updatedAt": "2025-06-23T15:59:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6v35ph",
+          "commit": {
+            "abbreviatedOid": "2918712"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-23T16:03:33Z",
+          "updatedAt": "2025-06-23T16:03:33Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "> \"Therefore, this document suggest to use the IP addrees as the CS-ID in order to simplify the implementation\"\r\n> \r\n> It seems to me this is conflicting with CS-ID definition\r\n> \r\n> > CATS Service ID (CS-ID):  An identifier representing a service, which\r\n> > the clients use to access it.  Such an ID identifies all the\r\n> > instances of a given service, regardless of their location.\r\n> > ```\r\n> >   The CS-ID is independent of which service contact instance serves\r\n> >   the service request.\r\n> > \r\n> >   Service requests are spread over the service contact instances\r\n> >   that can accommodate them, considering the location of the\r\n> >   initiator of the service request and the availability (in terms of\r\n> >   resource/traffic load, for example) of the service instances\r\n> >   resource-wise among other considerations like traffic congestion\r\n> >   conditions.\r\n> > ```\r\n\r\nIt is possible for more than one Service contact instances to use the same IP address to provide the same service, in this case, this address become an anycast IP address. An anycast IP address can fit into the definition of CS-ID. An independent new Service ID also work to me, but it might bring a lot of complexities to the CATS framework. ",
+              "createdAt": "2025-06-23T16:03:33Z",
+              "updatedAt": "2025-06-23T16:03:34Z"
             }
           ]
         }
