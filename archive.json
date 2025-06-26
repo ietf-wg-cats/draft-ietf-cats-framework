@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-24T01:40:40.631402+00:00",
+  "timestamp": "2025-06-26T01:39:57.511230+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -103,7 +103,7 @@
       "labels": [],
       "body": "--Discuss more threats: integrity-protection of advertized information, origin authentication, prevent ddos, ...",
       "createdAt": "2023-03-03T09:00:42Z",
-      "updatedAt": "2023-11-28T15:04:59Z",
+      "updatedAt": "2025-06-24T15:28:32Z",
       "closedAt": null,
       "comments": [
         {
@@ -119,6 +119,13 @@
           "body": "TBD, let's  address other comments before this one, leave it aside for now. ",
           "createdAt": "2023-11-28T15:04:58Z",
           "updatedAt": "2023-11-28T15:04:58Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "[6. ](https://datatracker.ietf.org/doc/html/draft-ietf-cats-framework-10#section-6)[Security Considerations](https://datatracker.ietf.org/doc/html/draft-ietf-cats-framework-10#name-security-considerations)\nThe computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service contact instances very rapidly). CATS solutions must support guards against such misbehaviors. For example, these solutions should support aggregation techniques, dampening mechanisms, and threshold-triggered distribution updates.\n\nThe information distributed by the C-SMAs and C-NMAs may be sensitive. Such information could indeed disclose intelligence about the network and the location of compute resources hosted in service sites. This information may be used by an attacker to identify weak spots in an operator's network. Furthermore, such information may be modified by an attacker resulting in disrupted service delivery for the clients, even including misdirection of traffic to an attacker's service implementation. CATS solutions must support authentication and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes, and between C-PSes and Ingress CATS-Forwarders. Also, C-SMA agents need to support a mechanism to authenticate the services for which they provide information to C-PS computation logics, among other CATS functions.\n\nThe above text is the security consideration in CATS framework draft. it covers the intergrity-protection, the routes dampening mechanisms. Do you have any thoughts on the text? I may try to add more in these days, but would like to know your idea before doing that.",
+          "createdAt": "2025-06-24T15:28:32Z",
+          "updatedAt": "2025-06-24T15:28:32Z"
         }
       ]
     },
@@ -919,7 +926,7 @@
       "labels": [],
       "body": "We do currently say that:\r\n\r\n> CATS Service ID (CS-ID):\r\n> An identifier representing a service, which the clients use to access it. See [Section 3.2](https://boucadair.github.io/CATS-framework/draft-ldbc-cats-framework.html#cats-ids).\r\n\r\nHowever, the identifiers that are used by clients is not always available in clear. There are some hidden assumptions that we need to dive into as this will have implication on the CATS Classification",
       "createdAt": "2024-02-07T10:08:57Z",
-      "updatedAt": "2024-09-09T17:37:32Z",
+      "updatedAt": "2025-06-24T15:24:04Z",
       "closedAt": null,
       "comments": [
         {
@@ -928,6 +935,13 @@
           "body": "Hi Med, do you mind to propose some text directly? Thank you so much!",
           "createdAt": "2024-09-09T17:37:31Z",
           "updatedAt": "2024-09-09T17:37:31Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Med, regarding this, I agree with Joel. He believe that no matter the CS-ID is encrypted or not, from the CATS point of view, e.g. C-TS, it always treat a flow by using some tuples, like source IP address, dst IP address(may be the CS-ID), ports, . Do you see the encryption impact the flow identification?",
+          "createdAt": "2025-06-24T15:24:04Z",
+          "updatedAt": "2025-06-24T15:24:04Z"
         }
       ]
     },
