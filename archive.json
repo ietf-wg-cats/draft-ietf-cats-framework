@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-26T01:39:57.511230+00:00",
+  "timestamp": "2025-06-29T01:49:35.641471+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -99,11 +99,14 @@
       "state": "OPEN",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "muzixing",
+        "boucadair"
+      ],
       "labels": [],
       "body": "--Discuss more threats: integrity-protection of advertized information, origin authentication, prevent ddos, ...",
       "createdAt": "2023-03-03T09:00:42Z",
-      "updatedAt": "2025-06-24T15:28:32Z",
+      "updatedAt": "2025-06-27T15:28:50Z",
       "closedAt": null,
       "comments": [
         {
@@ -922,11 +925,14 @@
       "state": "OPEN",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "muzixing",
+        "boucadair"
+      ],
       "labels": [],
       "body": "We do currently say that:\r\n\r\n> CATS Service ID (CS-ID):\r\n> An identifier representing a service, which the clients use to access it. See [Section 3.2](https://boucadair.github.io/CATS-framework/draft-ldbc-cats-framework.html#cats-ids).\r\n\r\nHowever, the identifiers that are used by clients is not always available in clear. There are some hidden assumptions that we need to dive into as this will have implication on the CATS Classification",
       "createdAt": "2024-02-07T10:08:57Z",
-      "updatedAt": "2025-06-24T15:24:04Z",
+      "updatedAt": "2025-06-27T15:28:57Z",
       "closedAt": null,
       "comments": [
         {
@@ -5672,13 +5678,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-06-20T16:06:30Z",
-      "updatedAt": "2025-06-23T16:03:33Z",
+      "updatedAt": "2025-06-27T12:55:51Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "service-announcement-update",
-      "headRefOid": "a73f4b1eb8d914c9b28dc5f380c4c31857b9d791",
+      "headRefOid": "6153c0956e39aa9d771487fd652c91ac9631a22e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5812,6 +5818,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 120,
+      "id": "PR_kwDOJBcdGs6cQ4vx",
+      "title": "adding text of metric implementation",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/120",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-06-26T16:25:45Z",
+      "updatedAt": "2025-06-27T12:55:43Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "2fed550fb7803a727e45206d5fb8c8367342d5ab",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
