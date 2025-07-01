@@ -146,7 +146,7 @@ Metric:
  : A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.
 
 Computing metrics:
-  : Computing metrics are the metrics that come specifically from the computing side of the system as distinct from other metrics that may be used in a CATS system, such as the metrics from network side. For details, a set of metrics from computing domain used for CATS has been defined in {{?I-D.ietf-cats-metric-definition}}.
+  : Computing metrics are the metrics that come specifically from the computing side of the system as distinct from other metrics that may be used in a CATS system, such as the metrics from network side. For details, a set of metrics from computing side used for CATS has been defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
   : An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).
