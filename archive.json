@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-29T01:49:35.641471+00:00",
+  "timestamp": "2025-07-03T01:40:59.377558+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1645,9 +1645,17 @@
       "labels": [],
       "body": ">> 4.2\n>>\n>> Need to sort out the passive voice. Who or what associates a service \n>> with a unique identifier called a CS-ID?\n>\n> [Cheng]Do you mean we need to add text to explain how a service is \n> associated with a CS-ID? If yes, let me add some text, TBD\n\nYes, that's the point. Always try to say what component does something, rather than saying that \"something is done\".\n\nDon't forget to track the TBDs.\n",
       "createdAt": "2025-04-23T14:34:50Z",
-      "updatedAt": "2025-04-23T14:34:50Z",
+      "updatedAt": "2025-07-02T08:55:03Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dzpzp",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I can understand the case that CS-ID is an anycast IP. In this scenario, the service instance can have two server addresses configured and announced into the network. While the advertisement, the computing metric can be carried. One of the IP address is the anycast IP, and the other is a unicast IP.\n\nSo within my understanding, the CS-ID can be an anycast IP directly, so that no DNS is needed here. The operator need to configure it on the service instance.\nOr, the CS-ID can be a domain name, so that a DNS is added here to resolve domain name to an anycast IP address. \n\nOld:\n[4.1.\u2002] [Service Announcement] \nA service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS\u00a0[RFC1034]). Note that CATS framework does not assume nor preclude any specific name resolution service.\n\nNew:\n[4.1.\u2002] [Service Announcement] \nA service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an anycast IP address. Optionally, the CS-ID can be a domain name. In this case, an additional step of address resolve is needed. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS\u00a0[RFC1034]). Note that CATS framework does not assume nor preclude any specific name resolution service.\nAn example of the service announcement is described as follows. The owner of the service instance configures the anycast IP address on the service instance. After that, the route for the anycast address is announced into the network. Computing metrics can be carried within the announcement.",
+          "createdAt": "2025-07-02T08:55:03Z",
+          "updatedAt": "2025-07-02T08:55:03Z"
+        }
+      ]
     },
     {
       "number": 108,
@@ -1740,6 +1748,78 @@
           "body": "acked\uff0cmodified and updated.",
           "createdAt": "2025-06-11T18:30:24Z",
           "updatedAt": "2025-06-11T18:30:24Z"
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "id": "I_kwDOJBcdGs6-bdpQ",
+      "title": "Some editorial suggestions of version10 for considerations",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/121",
+      "state": "OPEN",
+      "author": "dzpzp",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1.*Compute* is a verb. So I suggest that \n(1)Old: 2. Terminology \nComputing-Aware Traffic Steering (CATS):\nA traffic engineering approach [RFC9522] that takes into account the dynamic nature of computing resources (e.g., compute and storage)\n    New:  (e.g., computing and storage)\n\n(2)Old: Service:\nAn offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\nNew:   (networking, computing , storage, etc.).\n\n(3)Old: [3.4.1.\u2002] \nA compute service (e.g., for face recognition purposes or a game server) is identified by a CATS Service Identifier (CS-ID)\nNew:  A computing service \n\n2.Some places are short of the \u201ca, an, the, or s\u201d \nOld: 2. Terminology \nCATS-Forwarder:\nA CATS-Forwarder may behave as Ingress or Egress CATS-Forwarder.\nNew:  *an* Ingress or Egress CATS-Forwarder.\n\n3.Old: Ingress CATS-Forwarder:\nAn entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that host the service contact instance\nNew:  the most suitable service site that *hosts* the service contact instance\n\n4.Old: 3.2. CATS Identifiers\nCATS Service ID (CS-ID):\nAn identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.\nNew:  regardless of their locations\n\n5.Old: 3.4.1. Service Sites, Services Instances, and Service Contact Instances\nNew:  3.4.1. Service Sites, *Service*  Instances\n\n6.Old: 3.4.4. CATS Path Selector (C-PS)\nRefer to\u00a0[Section 4.2]\u00a0for a discussion on metric distribution (including, interaction with routing protocols).\nNew: (including interaction with routing protocols).\n\n7.Old: 4.2. Metrics Distribution\nDepending on deployment choice, CS-IDs with metrics may be distributed in different ways.\nNew: Depending on *the* deployment choice,\n\n8.Old: 4.2. Metrics Distribution Figure 5\nIf the CATS framework is implemented using an hybrid model, the metric can be distributed, e.g., as illustrated in the Figure 5.\nNew: If the CATS framework is implemented using *a* hybrid model\n\n9.Old: 4.2. Metrics Distribution Figure 5\nFigure 5: An Example of CATS Metric Distribution in Hybrid Model.\nNew: Figure 5: An Example of CATS Metric Distribution in *a* Hybrid Model\n\n10.Old: 4.4 Service Contact Instance Affinity \nSpecifically, the same Egress CATS-Forwarder need to be solicited to forward the packets.\nNew: the same Egress CATS-Forwarder *needs* to be\n\n11.Old: 5.1. Provisioning of CATS Components\nIn addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. \nNew: In addition *to* the CATS steering policies\n\n12.Old: 5.1. Provisioning of CATS Components\nExpose Encapsulation capabilities supported by CATS-Frowarders.\nNew: Expose *encapsulation* capabilities supported by *CATS-Forwarders*.\n\n13.Old: 5.1. Provisioning of CATS Components\nSet the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.\u00a0\nNew: Set the traffic *counters*\n\n14.Old: 5.2. Deployment Considerations\nService scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.\nNew: Service scheduling function is performed by the CATS-Forwarders in the *distributed* model * ; therefore, * the C-PS is integrated into an Ingress CATS-Forwarder.\n\n15.Old: 5.2. Deployment Considerations\nHybrid model: Is a combination of distribution and centralized models.\nNew: Hybrid model: Is a combination of *distributed* and centralized models.\n\n16.Old: 5.3. Verify Correct Operations\nNew: Verifying Correct Operations\n\n17.Section 7. Privacy Considerations\nOld: CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determine which client accesses which service).\u00a0\nNew: (e.g., *determining* which client accesses which service).\u00a0\n\n18.Section 8. IANA Considerations\nOld: This document makes no requests for IANA action.\u00a0\nNew:This document makes no request for IANA actions.",
+      "createdAt": "2025-07-02T07:20:08Z",
+      "updatedAt": "2025-07-02T08:55:12Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "good point, please share to the list",
+          "createdAt": "2025-07-02T08:55:12Z",
+          "updatedAt": "2025-07-02T08:55:12Z"
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "id": "I_kwDOJBcdGs6-bfkc",
+      "title": "Two suggestions on 4.2. Metrics Distribution",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/122",
+      "state": "OPEN",
+      "author": "dzpzp",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1.Old: 4.2. Metrics Distribution\n   Figure 3,  \nSimilarly, the C-SMA agent located at \"Service Site 3\" advertises the computing metrics for the two services hosted by \"Service Site 3\".\n   \nProblem: I think it is stated also in Section 4.2 that \nFor example, in a distributed model, CS-IDs with metrics can be distributed from the C-SMA to an Egress CATS-Forwarder firstly and then be redistributed by the Egress CATS-Forwarder to related C-PSes that are integrated into Ingress CATS-Forwarders.\n\nSo, it includes two steps. In the first step, C-SMA obtains the metric, and notifies the Egress. In the second step, the Egress notifies the Ingress. However, in the Figure 3, we only see a direct line to the Ingress from the C-SMA.\n\nNew: Similarly, the C-SMA agent located at \"Service Site 3\" advertises the computing metrics for the two services hosted by \"Service Site 3\". *The advertisement may need to be relayed by the CATS-Forwarders 3.*\n\n2.Section 4.2. Metrics Distribution\n   Figure 4,  Figure 5,\nIn Figure4, about the CATS-Forwarders 1, two arrows point to it.\nIn Figure5, about the CATS-Forwarders 1, one arrow points to it.\nHowever, the Figure 4 is about the centralized model. I think there is no need of arrows. Two lines are enough. ",
+      "createdAt": "2025-07-02T07:23:11Z",
+      "updatedAt": "2025-07-02T08:55:38Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "good points, please share to the list",
+          "createdAt": "2025-07-02T08:55:37Z",
+          "updatedAt": "2025-07-02T08:55:37Z"
+        }
+      ]
+    },
+    {
+      "number": 123,
+      "id": "I_kwDOJBcdGs6-b5wu",
+      "title": "Two Questions on Security and Privacy Sections",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/123",
+      "state": "OPEN",
+      "author": "dzpzp",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1.Section 6. Security Considerations\nOld: The computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service contact instances very rapidly).\n\nNew: (e.g., by spawning and deleting service instances very rapidly).\n\nReason: It is stated that the service instance is created and terminated, and after that the attacker operates the service contact instances. Should we say the same thing here?\n\n2.Section 7. Privacy Considerations\n Old: In some cases, the service will need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution.\n\n I am not sure what the service means here. Does it mean the CATS service or the CATS system? Or it means the service instance? However, the service instance should know the information, and the information is a privacy in both CATS and non-CATS applications.  ",
+      "createdAt": "2025-07-02T08:03:00Z",
+      "updatedAt": "2025-07-02T08:55:56Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "also ,please share to the list",
+          "createdAt": "2025-07-02T08:55:56Z",
+          "updatedAt": "2025-07-02T08:55:56Z"
         }
       ]
     }
@@ -5831,19 +5911,86 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-06-26T16:25:45Z",
-      "updatedAt": "2025-06-27T12:55:43Z",
+      "updatedAt": "2025-07-01T14:48:14Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "2fed550fb7803a727e45206d5fb8c8367342d5ab",
+      "headRefOid": "127eb727e893c078ab69243a8a724415d867b08f",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6xP29k",
+          "commit": {
+            "abbreviatedOid": "2fed550"
+          },
+          "author": "bpatient78",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-01T06:37:15Z",
+          "updatedAt": "2025-07-01T06:58:49Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Hi Cheng, Med said the notion of \"computing domain\" is only used once in the framework draft. Do you want to keep using this term? Anyway, I'm okay with this one. I just think we need to keep the notion in alignment in the three WG documents. ",
+              "createdAt": "2025-07-01T06:37:15Z",
+              "updatedAt": "2025-07-01T06:58:49Z"
+            },
+            {
+              "originalPosition": 23,
+              "body": "Do you think is it necessary to distinguish the terms of \"normalization function\" and \"aggregation function\"? Maybe adding the distinction into the metric draft. Since the sentence you add here suppose normalization and aggregation the same?  ",
+              "createdAt": "2025-07-01T06:58:41Z",
+              "updatedAt": "2025-07-01T06:58:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6xXvx5",
+          "commit": {
+            "abbreviatedOid": "2fed550"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-01T14:43:17Z",
+          "updatedAt": "2025-07-01T14:43:18Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "we can use computing side. That solves the problem.",
+              "createdAt": "2025-07-01T14:43:17Z",
+              "updatedAt": "2025-07-01T14:43:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6xXyV3",
+          "commit": {
+            "abbreviatedOid": "2fed550"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-01T14:45:36Z",
+          "updatedAt": "2025-07-01T14:45:37Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "Normalization and aggregation are not the same. I am ok to add text to explain. But they are clear to me.",
+              "createdAt": "2025-07-01T14:45:36Z",
+              "updatedAt": "2025-07-01T14:45:37Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
