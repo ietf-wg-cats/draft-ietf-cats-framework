@@ -146,7 +146,7 @@ Metric:
  : A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.
 
 Computing metrics:
-  : Computing metrics are the metrics that come specifically from the computing side of the system as distinct from other metrics that may be used in a CATS system, such as the metrics from network side.
+  : Computing metrics are the metrics that come specifically from the computing side of the system as distinct from other metrics that may be used in a CATS system, such as the metrics from network side. For details, a set of metrics from computing side used for CATS has been defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
   : An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).
@@ -390,7 +390,7 @@ A service is associated with a unique identifier called a CS-ID. A CS-ID may be 
 
 ## Metrics Distribution {#sec-met-dist}
 
-As described in {{sec-cats-arch}}, a C-SMA collects both computing-related capabilities and metrics, and associates them with a CS-ID that identifies the service. The C-SMA may aggregate the metrics for multiple service contact  instances, or maintain them separately or both.
+As described in {{sec-cats-arch}}, a C-SMA collects both computing-related capabilities and metrics, and associates them with a CS-ID that identifies the service. The C-SMA may aggregate the metrics for multiple service contact instances, or maintain them separately or both.
 
 The C-SMA then advertises CS-IDs along with metrics to related C-PSes in the network. Depending on deployment choice, CS-IDs with metrics may be distributed in different ways.
 
@@ -402,7 +402,7 @@ In the hybrid model, the metrics can be distributed to C-PSes in combination of 
 
 The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number of end-users who access the service contact instance at any given time, etc.
 
-Computing metrics may change very frequently (see {{?I-D.ietf-cats-usecases-requirements}} for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, or policy-based updates.
+Computing metrics may change very frequently (see {{?I-D.ietf-cats-usecases-requirements}} for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics {{?I-D.ietf-cats-metric-definition}}. Regarding using the normalized metrics, {{sec-metric-implementation}} provides some suggestions to implement computing metrics normalization and aggregation in CATS framework, to reduce the impact of the routing system.
 
 Additionally, the C-NMA collects network-related capabilities and metrics. These may be collected and distributed by existing measurement protocols and/or routing protocols, although extensions to such protocols may be required to carry additional information (e.g., link latency). The C-NMA distributes the network metrics to the C-PSes so that they can use the combination of service and network metrics to determine the best Egress CATS-Forwarder to provide access to a service contact instance and invoke the compute function required by a service request. Similar to computing-related metrics, the network-related metrics can be distributed using distributed, centralized, or hybrid schemes. This document does not describe such details since this is deployment-specific.
 
@@ -604,6 +604,17 @@ According to the method of distributing and collecting the computing related met
 * **Hybrid model**:
 : Is a combination of distribution and centralized models.
 : A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
+
+## Implementation Consideration on Using CATS Metrics {#sec-metric-implementation}
+
+According to the metric definition in {{?I-D.ietf-cats-metric-definition}}, computing metrics need to be normalized and/or aggregated in order to low down the scalability impact of the existing route system while providing sufficient detail for effective decision-making.
+
+Depeding on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
+
+When the C-SMA is co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in the C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instance. Regarding the aggregation functions, it can be implemented in the C-SMA, or the service contact instance.
+
+In the case of service contact instances and C-SMAs are provided by different vendors, it is needed to use the same common normalization function and aggregation functions, so that the service contact instance selection result can be fair among all the service contact instances.
+
 
 ## Verify Correct Operations
 
