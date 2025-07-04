@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 25 December 2025                                   China Mobile
+Expires: 5 January 2026                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            23 June 2025
+                                                             4 July 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 December 2025.
+   This Internet-Draft will expire on 5 January 2026.
 
 Copyright Notice
 
@@ -81,8 +81,9 @@ Table of Contents
    5.  Operational and Mangeability Considerations
      5.1.  Provisioning of CATS Components
      5.2.  Deployment Considerations
-     5.3.  Verify Correct Operations
-     5.4.  Impact on Network Operations
+     5.3.  Implementation Consideration on Using CATS Metrics
+     5.4.  Verify Correct Operations
+     5.5.  Impact on Network Operations
    6.  Security Considerations
    7.  Privacy Considerations
    8.  IANA Considerations
@@ -168,7 +169,9 @@ Table of Contents
    Computing metrics:  Computing metrics are the metrics that come
       specifically from the computing side of the system as distinct
       from other metrics that may be used in a CATS system, such as the
-      metrics from network side.
+      metrics from network side.  For details, a set of metrics from
+      computing side used for CATS has been defined in
+      [I-D.ietf-cats-metric-definition].
 
    Service:  An offering that is made available by a service provider by
       orchestrating a set of resources (networking, compute, storage,
@@ -606,8 +609,12 @@ Table of Contents
    part of the specification of any communication protocol (including
    routing protocols) that may be used to distribute the information.
    Various options can be considered, such as (but not limited to)
-   interval-based updates, threshold-triggered updates, or policy-based
-   updates.
+   interval-based updates, threshold-triggered updates, policy-based
+   updates, or using normalized metrics
+   [I-D.ietf-cats-metric-definition].  Regarding using the normalized
+   metrics, Section 5.3 provides some suggestions to implement computing
+   metrics normalization and aggregation in CATS framework, to reduce
+   the impact of the routing system.
 
    Additionally, the C-NMA collects network-related capabilities and
    metrics.  These may be collected and distributed by existing
@@ -989,14 +996,45 @@ Table of Contents
          implemented in the centralized control plane, depending on the
          specific implementation and deployment.
 
-5.3.  Verify Correct Operations
+5.3.  Implementation Consideration on Using CATS Metrics
+
+   According to the metric definition in
+   [I-D.ietf-cats-metric-definition], computing metrics need to be
+   normalized and/or aggregated in order to low down the scalability
+   impact of the existing route system while providing sufficient detail
+   for effective decision-making.
+
+   Depeding on the resources and processing capabilities of CATS
+   components, the normalization and aggregation functions can be
+   located in different CATS components.  The suggested solution is to
+   implement the normalization and aggregation functions located away
+   from the decision maker, CATS Path Selector (C-PS), especially when
+   C-PS is co-located with CATS-Forwarders.  With this in mind, the
+   normalization and aggregation functions of CATS metrics can be placed
+   at Service contact instance or CATS Service Metric Agent (C-SMA).
+
+   When the C-SMA is co-located with CATS-Forwarders where there is
+   limited resource for processing, the placement of normalization
+   functions in the C-SMA may bring too much overhead and may influence
+   the routing efficiency.  Therefore, this document suggests to
+   implement the normalization function at the service contact instance.
+   Regarding the aggregation functions, it can be implemented in the
+   C-SMA, or the service contact instance.
+
+   In the case of service contact instances and C-SMAs are provided by
+   different vendors, it is needed to use the same common normalization
+   function and aggregation functions, so that the service contact
+   instance selection result can be fair among all the service contact
+   instances.
+
+5.4.  Verify Correct Operations
 
    CATS may be implemented by extending some existing control plane
    protocols, such as BGP or PCEP.  A CATS implementation must log error
    events for better network management and operation.  Means to assess
    the reachability and trace CATS paths should be supported.
 
-5.4.  Impact on Network Operations
+5.5.  Impact on Network Operations
 
    Computing metrics are collected and distributed in CATS.  A new
    function is needed to be deployed to manage the cooperation between
@@ -1056,6 +1094,13 @@ Table of Contents
    This document makes no requests for IANA action.
 
 9.  Informative References
+
+   [I-D.ietf-cats-metric-definition]
+              Yao, K., Shi, H., Li, C., Contreras, L. M., and J. Ros-
+              Giralt, "CATS Metrics Definition", Work in Progress,
+              Internet-Draft, draft-ietf-cats-metric-definition-02, 3
+              March 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-cats-metric-definition-02>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
