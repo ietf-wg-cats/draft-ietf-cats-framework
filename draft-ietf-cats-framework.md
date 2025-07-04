@@ -386,7 +386,7 @@ The following subsections provide an overview of a typical CATS workflow. In ord
 
 ## Service Announcement
 
-A service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS {{?RFC1034}}). Note that CATS framework does not assume nor preclude any specific name resolution service.
+In CATS framework, a service is associated with a unique identifier called a CS-ID by the service provider when deploying the service. Depending on the implementation, a CS-ID may be a network identifier, such as an IP address of servers, or other new defined IDs. If the CS-ID is not the server IP address, then the mapping of the CS-ID to network identifiers may be learned through a name resolution service (e.g., DNS {{?RFC1034}}), which will require for further protocol extensions and may be described in other documents. Note that CATS framework does not assume nor preclude any specific name resolution service. When a CS-ID is the server IP address, the service annoucement is not changed in the CATS framework comparing to the existing services. Therefore, this document suggest to use the IP addrees as the CS-ID in order to simplify the implementation.
 
 ## Metrics Distribution {#sec-met-dist}
 
