@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-03T01:40:59.377558+00:00",
+  "timestamp": "2025-07-06T01:48:11.027086+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -5758,7 +5758,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-06-20T16:06:30Z",
-      "updatedAt": "2025-06-27T12:55:51Z",
+      "updatedAt": "2025-07-05T13:18:00Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
@@ -5896,6 +5896,19 @@
               "updatedAt": "2025-06-23T16:03:34Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6yOEk1",
+          "commit": {
+            "abbreviatedOid": "6153c09"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "After re-reading the proposed text again, I suggest we don't make these changes. The current text we have conveys the appropriate message without making deployment assumption.\r\n\r\nI suggest we reject this PR.",
+          "createdAt": "2025-07-05T13:18:00Z",
+          "updatedAt": "2025-07-05T13:18:00Z",
+          "comments": []
         }
       ]
     },
@@ -5904,24 +5917,26 @@
       "id": "PR_kwDOJBcdGs6cQ4vx",
       "title": "adding text of metric implementation",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/120",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-06-26T16:25:45Z",
-      "updatedAt": "2025-07-01T14:48:14Z",
+      "updatedAt": "2025-07-04T13:05:39Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
       "headRefOid": "127eb727e893c078ab69243a8a724415d867b08f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-07-04T13:05:39Z",
+      "mergedAt": "2025-07-04T13:05:39Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "40a2b57d8718bbdf23a2a8958ace32513c570ceb"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5991,6 +6006,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 124,
+      "id": "PR_kwDOJBcdGs6djmWS",
+      "title": "CS-ID may be carried or hidden in packets",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/124",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This is a minimum we can say to cover \"https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/63\"",
+      "createdAt": "2025-07-05T13:31:38Z",
+      "updatedAt": "2025-07-05T13:32:25Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "40a2b57d8718bbdf23a2a8958ace32513c570ceb",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "24ef1f7874d4d2736498e6567986b64814f1b7f4",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
