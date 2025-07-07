@@ -227,7 +227,7 @@ CATS assumes that there are multiple service instances running on different serv
 CATS uses the following identifiers:
 
 CATS Service ID (CS-ID):
-  : An identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.
+  : An identifier (ID) representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.
   : The CS-ID is independent of which service contact instance serves the service request.
   : Service requests are spread over the service contact instances that can accommodate them, considering the location of the initiator of the service request and the availability (in terms of resource/traffic load, for example) of the service instances resource-wise among other considerations like traffic congestion conditions.
 
@@ -365,7 +365,9 @@ Refer to {{sec-met-dist}} for a discussion on metric distribution (including, in
 
 ### CATS Traffic Classifier (C-TC) {#sec-ctc}
 
-The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS.
+The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to calssify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
+
+Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used.
 
 CATS classifiers are typically hosted in CATS-Forwarders.
 
