@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 5 January 2026                                     China Mobile
+Expires: 8 January 2026                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                             4 July 2025
+                                                             7 July 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2026.
+   This Internet-Draft will expire on 8 January 2026.
 
 Copyright Notice
 
@@ -309,8 +309,8 @@ Table of Contents
 
    CATS uses the following identifiers:
 
-   CATS Service ID (CS-ID):  An identifier representing a service, which
-      the clients use to access it.  Such an ID identifies all the
+   CATS Service ID (CS-ID):  An identifier (ID) representing a service,
+      which the clients use to access it.  Such an ID identifies all the
       instances of a given service, regardless of their location.
 
       The CS-ID is independent of which service contact instance serves
@@ -512,6 +512,13 @@ Table of Contents
    service requests.  CATS classifiers also ensure that packets that are
    bound to a specific service contact instance are all forwarded
    towards that same service contact instance, as instructed by a C-PS.
+   To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to
+   network locators) to calssify service requests.  Refer to Section 5.1
+   for more details about provisioning of classification rules.
+
+   Note that CS-IDs may be carried in packets if mechanisms such as TLS
+   Server Name Indication extension (SNI) (Section 3 of [RFC6066]) are
+   used.
 
    CATS classifiers are typically hosted in CATS-Forwarders.
 
@@ -1096,11 +1103,11 @@ Table of Contents
 9.  Informative References
 
    [I-D.ietf-cats-metric-definition]
-              Yao, K., Shi, H., Li, C., Contreras, L. M., and J. Ros-
-              Giralt, "CATS Metrics Definition", Work in Progress,
-              Internet-Draft, draft-ietf-cats-metric-definition-02, 3
-              March 2025, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-cats-metric-definition-02>.
+              Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and H.
+              Shi, "CATS Metrics Definition", Work in Progress,
+              Internet-Draft, draft-ietf-cats-metric-definition-03, 7
+              July 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-cats-metric-definition-03>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
@@ -1141,6 +1148,11 @@ Table of Contents
    [RFC5340]  Coltun, R., Ferguson, D., Moy, J., and A. Lindem, "OSPF
               for IPv6", RFC 5340, DOI 10.17487/RFC5340, July 2008,
               <https://www.rfc-editor.org/rfc/rfc5340>.
+
+   [RFC6066]  Eastlake 3rd, D., "Transport Layer Security (TLS)
+              Extensions: Extension Definitions", RFC 6066,
+              DOI 10.17487/RFC6066, January 2011,
+              <https://www.rfc-editor.org/rfc/rfc6066>.
 
    [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
               and A. Bierman, Ed., "Network Configuration Protocol

@@ -1055,7 +1055,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 5 January 2026</td>
+<td class="center">Expires 8 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1068,12 +1068,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-04" class="published">4 July 2025</time>
+<time datetime="2025-07-07" class="published">7 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-05">5 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-01-08">8 January 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1125,7 +1125,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 5 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1505,7 +1505,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <span class="break"></span><dl class="dlParallel" id="section-3.2-2">
           <dt id="section-3.2-2.1">CATS Service ID (CS-ID):</dt>
           <dd style="margin-left: 1.5em" id="section-3.2-2.2">
-            <p id="section-3.2-2.2.1">An identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.2.1">An identifier (ID) representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-3.2-2.3"></dt>
@@ -1857,8 +1857,9 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-cats-traffic-classifier-c-t">
 <a href="#section-3.4.5" class="section-number selfRef">3.4.5. </a><a href="#name-cats-traffic-classifier-c-t" class="section-name selfRef">CATS Traffic Classifier (C-TC)</a>
           </h4>
-<p id="section-3.4.5-1">The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS.<a href="#section-3.4.5-1" class="pilcrow">¶</a></p>
-<p id="section-3.4.5-2">CATS classifiers are typically hosted in CATS-Forwarders.<a href="#section-3.4.5-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-1">The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to calssify service requests. Refer to <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a> for more details about provisioning of classification rules.<a href="#section-3.4.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-2">Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) (<span><a href="https://rfc-editor.org/rfc/rfc6066#section-3" class="relref">Section 3</a> of [<a href="#RFC6066" class="cite xref">RFC6066</a>]</span>) are used.<a href="#section-3.4.5-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-3">CATS classifiers are typically hosted in CATS-Forwarders.<a href="#section-3.4.5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-ocr">
@@ -2684,7 +2685,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <dl class="references">
 <dt id="I-D.ietf-cats-metric-definition">[I-D.ietf-cats-metric-definition]</dt>
       <dd>
-<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Shi, H.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Contreras, L. M.</span>, and <span class="refAuthor">J. Ros-Giralt</span>, <span class="refTitle">"CATS Metrics Definition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-metric-definition-02</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-02">https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Ros-Giralt, J.</span>, and <span class="refAuthor">H. Shi</span>, <span class="refTitle">"CATS Metrics Definition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-metric-definition-03</span>, <time datetime="2025-07-07" class="refDate">7 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-03">https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-cats-usecases-requirements">[I-D.ietf-cats-usecases-requirements]</dt>
       <dd>
@@ -2713,6 +2714,10 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <dt id="RFC5340">[RFC5340]</dt>
       <dd>
 <span class="refAuthor">Coltun, R.</span>, <span class="refAuthor">Ferguson, D.</span>, <span class="refAuthor">Moy, J.</span>, and <span class="refAuthor">A. Lindem</span>, <span class="refTitle">"OSPF for IPv6"</span>, <span class="seriesInfo">RFC 5340</span>, <span class="seriesInfo">DOI 10.17487/RFC5340</span>, <time datetime="2008-07" class="refDate">July 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5340">https://www.rfc-editor.org/rfc/rfc5340</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6066">[RFC6066]</dt>
+      <dd>
+<span class="refAuthor">Eastlake 3rd, D.</span>, <span class="refTitle">"Transport Layer Security (TLS) Extensions: Extension Definitions"</span>, <span class="seriesInfo">RFC 6066</span>, <span class="seriesInfo">DOI 10.17487/RFC6066</span>, <time datetime="2011-01" class="refDate">January 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6066">https://www.rfc-editor.org/rfc/rfc6066</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC6241">[RFC6241]</dt>
       <dd>
