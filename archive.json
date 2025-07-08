@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-06T01:48:11.027086+00:00",
+  "timestamp": "2025-07-08T01:41:31.396034+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -922,7 +922,7 @@
       "id": "I_kwDOJBcdGs5-hSjD",
       "title": "Encrypted service identifiers",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/63",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -932,8 +932,8 @@
       "labels": [],
       "body": "We do currently say that:\r\n\r\n> CATS Service ID (CS-ID):\r\n> An identifier representing a service, which the clients use to access it. See [Section 3.2](https://boucadair.github.io/CATS-framework/draft-ldbc-cats-framework.html#cats-ids).\r\n\r\nHowever, the identifiers that are used by clients is not always available in clear. There are some hidden assumptions that we need to dive into as this will have implication on the CATS Classification",
       "createdAt": "2024-02-07T10:08:57Z",
-      "updatedAt": "2025-06-27T15:28:57Z",
-      "closedAt": null,
+      "updatedAt": "2025-07-07T13:56:09Z",
+      "closedAt": "2025-07-07T13:56:09Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1638,15 +1638,15 @@
       "id": "I_kwDOJBcdGs6zqe0W",
       "title": "section 4.2: need more text to describe the Service Announcement",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/107",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": ">> 4.2\n>>\n>> Need to sort out the passive voice. Who or what associates a service \n>> with a unique identifier called a CS-ID?\n>\n> [Cheng]Do you mean we need to add text to explain how a service is \n> associated with a CS-ID? If yes, let me add some text, TBD\n\nYes, that's the point. Always try to say what component does something, rather than saying that \"something is done\".\n\nDon't forget to track the TBDs.\n",
       "createdAt": "2025-04-23T14:34:50Z",
-      "updatedAt": "2025-07-02T08:55:03Z",
-      "closedAt": null,
+      "updatedAt": "2025-07-07T15:01:02Z",
+      "closedAt": "2025-07-07T15:01:02Z",
       "comments": [
         {
           "author": "dzpzp",
@@ -1654,6 +1654,13 @@
           "body": "I can understand the case that CS-ID is an anycast IP. In this scenario, the service instance can have two server addresses configured and announced into the network. While the advertisement, the computing metric can be carried. One of the IP address is the anycast IP, and the other is a unicast IP.\n\nSo within my understanding, the CS-ID can be an anycast IP directly, so that no DNS is needed here. The operator need to configure it on the service instance.\nOr, the CS-ID can be a domain name, so that a DNS is added here to resolve domain name to an anycast IP address. \n\nOld:\n[4.1.\u2002] [Service Announcement] \nA service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS\u00a0[RFC1034]). Note that CATS framework does not assume nor preclude any specific name resolution service.\n\nNew:\n[4.1.\u2002] [Service Announcement] \nA service is associated with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an anycast IP address. Optionally, the CS-ID can be a domain name. In this case, an additional step of address resolve is needed. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS\u00a0[RFC1034]). Note that CATS framework does not assume nor preclude any specific name resolution service.\nAn example of the service announcement is described as follows. The owner of the service instance configures the anycast IP address on the service instance. After that, the route for the anycast address is announced into the network. Computing metrics can be carried within the announcement.",
           "createdAt": "2025-07-02T08:55:03Z",
           "updatedAt": "2025-07-02T08:55:03Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In order to know introduce deployment assumption, we only update the first sentence for now. please see the update.",
+          "createdAt": "2025-07-07T15:01:01Z",
+          "updatedAt": "2025-07-07T15:01:01Z"
         }
       ]
     },
@@ -1678,16 +1685,24 @@
       "id": "I_kwDOJBcdGs6zrDcF",
       "title": "adding Metric clasification and aggregation.",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/109",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "[Adrian] The metric classification and aggregation should be added into the framework instead of the metric definition draft, because this draft shoulf focus on the definition of metric only.\n[Cheng] Happy to add this part into the framework draft.",
       "createdAt": "2025-04-23T15:27:45Z",
-      "updatedAt": "2025-04-23T15:27:45Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-07-07T14:59:35Z",
+      "closedAt": "2025-07-07T14:59:35Z",
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "already merged the text into framework draft",
+          "createdAt": "2025-07-07T14:59:35Z",
+          "updatedAt": "2025-07-07T14:59:35Z"
+        }
+      ]
     },
     {
       "number": 112,
@@ -5751,21 +5766,21 @@
       "id": "PR_kwDOJBcdGs6bcYv2",
       "title": "Service announcement update",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/119",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-06-20T16:06:30Z",
-      "updatedAt": "2025-07-05T13:18:00Z",
+      "updatedAt": "2025-07-07T14:52:40Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0d2356a0960cb9b626de526f1bb91210278b2688",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "service-announcement-update",
       "headRefOid": "6153c0956e39aa9d771487fd652c91ac9631a22e",
-      "closedAt": null,
+      "closedAt": "2025-07-07T14:52:40Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -5776,6 +5791,27 @@
           "body": "To ease reviewing, please keep only the changes to \"Service announcement\" Section. Thanks",
           "createdAt": "2025-06-21T14:09:17Z",
           "updatedAt": "2025-06-21T14:09:17Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "How about modifying the first sentence to \"A service is associated by the service provider with a unique identifier called a CS-ID. \"? so that we can address Adrian's comment of who associates the service ID? or do you still believe that this is depending on the deployment?",
+          "createdAt": "2025-07-07T14:01:00Z",
+          "updatedAt": "2025-07-07T14:03:35Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "\"A service is associated by the service provider with a unique identifier called a CS-ID.\" works for me.",
+          "createdAt": "2025-07-07T14:42:13Z",
+          "updatedAt": "2025-07-07T14:42:13Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Good. Then I will update the first sentence only.",
+          "createdAt": "2025-07-07T14:49:19Z",
+          "updatedAt": "2025-07-07T14:49:19Z"
         }
       ],
       "reviews": [
@@ -6012,24 +6048,54 @@
       "id": "PR_kwDOJBcdGs6djmWS",
       "title": "CS-ID may be carried or hidden in packets",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/124",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This is a minimum we can say to cover \"https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/63\"",
       "createdAt": "2025-07-05T13:31:38Z",
-      "updatedAt": "2025-07-05T13:32:25Z",
+      "updatedAt": "2025-07-07T13:56:09Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "40a2b57d8718bbdf23a2a8958ace32513c570ceb",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-2",
       "headRefOid": "24ef1f7874d4d2736498e6567986b64814f1b7f4",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-07-07T13:56:08Z",
+      "mergedAt": "2025-07-07T13:56:08Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "c49d86ece7719e4f75b9f2262b67e6b3476403ba"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 125,
+      "id": "PR_kwDOJBcdGs6dxz6b",
+      "title": "address Adrian's comment: service announcement",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/125",
+      "state": "MERGED",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-07-07T14:56:23Z",
+      "updatedAt": "2025-07-07T14:58:41Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "c49d86ece7719e4f75b9f2262b67e6b3476403ba",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "0b579c2d05c0d40504cf756c7b188791e47a8348",
+      "closedAt": "2025-07-07T14:58:41Z",
+      "mergedAt": "2025-07-07T14:58:41Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1"
+      },
       "comments": [],
       "reviews": []
     }
