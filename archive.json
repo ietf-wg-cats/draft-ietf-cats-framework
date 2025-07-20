@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-08T01:41:31.396034+00:00",
+  "timestamp": "2025-07-20T01:54:12.567393+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -96,7 +96,7 @@
       "id": "I_kwDOJBcdGs5f23nE",
       "title": "Discuss more threats in the Security Section",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/8",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -106,8 +106,8 @@
       "labels": [],
       "body": "--Discuss more threats: integrity-protection of advertized information, origin authentication, prevent ddos, ...",
       "createdAt": "2023-03-03T09:00:42Z",
-      "updatedAt": "2025-06-27T15:28:50Z",
-      "closedAt": null,
+      "updatedAt": "2025-07-17T07:07:33Z",
+      "closedAt": "2025-07-17T07:07:33Z",
       "comments": [
         {
           "author": "boucadair",
@@ -129,6 +129,13 @@
           "body": "[6. ](https://datatracker.ietf.org/doc/html/draft-ietf-cats-framework-10#section-6)[Security Considerations](https://datatracker.ietf.org/doc/html/draft-ietf-cats-framework-10#name-security-considerations)\nThe computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service contact instances very rapidly). CATS solutions must support guards against such misbehaviors. For example, these solutions should support aggregation techniques, dampening mechanisms, and threshold-triggered distribution updates.\n\nThe information distributed by the C-SMAs and C-NMAs may be sensitive. Such information could indeed disclose intelligence about the network and the location of compute resources hosted in service sites. This information may be used by an attacker to identify weak spots in an operator's network. Furthermore, such information may be modified by an attacker resulting in disrupted service delivery for the clients, even including misdirection of traffic to an attacker's service implementation. CATS solutions must support authentication and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes, and between C-PSes and Ingress CATS-Forwarders. Also, C-SMA agents need to support a mechanism to authenticate the services for which they provide information to C-PS computation logics, among other CATS functions.\n\nThe above text is the security consideration in CATS framework draft. it covers the intergrity-protection, the routes dampening mechanisms. Do you have any thoughts on the text? I may try to add more in these days, but would like to know your idea before doing that.",
           "createdAt": "2025-06-24T15:28:32Z",
           "updatedAt": "2025-06-24T15:28:32Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think the current text covers main items listed back in 2023. will close this one.",
+          "createdAt": "2025-07-17T07:07:33Z",
+          "updatedAt": "2025-07-17T07:07:33Z"
         }
       ]
     },
@@ -1778,7 +1785,7 @@
       "labels": [],
       "body": "1.*Compute* is a verb. So I suggest that \n(1)Old: 2. Terminology \nComputing-Aware Traffic Steering (CATS):\nA traffic engineering approach [RFC9522] that takes into account the dynamic nature of computing resources (e.g., compute and storage)\n    New:  (e.g., computing and storage)\n\n(2)Old: Service:\nAn offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\nNew:   (networking, computing , storage, etc.).\n\n(3)Old: [3.4.1.\u2002] \nA compute service (e.g., for face recognition purposes or a game server) is identified by a CATS Service Identifier (CS-ID)\nNew:  A computing service \n\n2.Some places are short of the \u201ca, an, the, or s\u201d \nOld: 2. Terminology \nCATS-Forwarder:\nA CATS-Forwarder may behave as Ingress or Egress CATS-Forwarder.\nNew:  *an* Ingress or Egress CATS-Forwarder.\n\n3.Old: Ingress CATS-Forwarder:\nAn entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that host the service contact instance\nNew:  the most suitable service site that *hosts* the service contact instance\n\n4.Old: 3.2. CATS Identifiers\nCATS Service ID (CS-ID):\nAn identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.\nNew:  regardless of their locations\n\n5.Old: 3.4.1. Service Sites, Services Instances, and Service Contact Instances\nNew:  3.4.1. Service Sites, *Service*  Instances\n\n6.Old: 3.4.4. CATS Path Selector (C-PS)\nRefer to\u00a0[Section 4.2]\u00a0for a discussion on metric distribution (including, interaction with routing protocols).\nNew: (including interaction with routing protocols).\n\n7.Old: 4.2. Metrics Distribution\nDepending on deployment choice, CS-IDs with metrics may be distributed in different ways.\nNew: Depending on *the* deployment choice,\n\n8.Old: 4.2. Metrics Distribution Figure 5\nIf the CATS framework is implemented using an hybrid model, the metric can be distributed, e.g., as illustrated in the Figure 5.\nNew: If the CATS framework is implemented using *a* hybrid model\n\n9.Old: 4.2. Metrics Distribution Figure 5\nFigure 5: An Example of CATS Metric Distribution in Hybrid Model.\nNew: Figure 5: An Example of CATS Metric Distribution in *a* Hybrid Model\n\n10.Old: 4.4 Service Contact Instance Affinity \nSpecifically, the same Egress CATS-Forwarder need to be solicited to forward the packets.\nNew: the same Egress CATS-Forwarder *needs* to be\n\n11.Old: 5.1. Provisioning of CATS Components\nIn addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. \nNew: In addition *to* the CATS steering policies\n\n12.Old: 5.1. Provisioning of CATS Components\nExpose Encapsulation capabilities supported by CATS-Frowarders.\nNew: Expose *encapsulation* capabilities supported by *CATS-Forwarders*.\n\n13.Old: 5.1. Provisioning of CATS Components\nSet the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.\u00a0\nNew: Set the traffic *counters*\n\n14.Old: 5.2. Deployment Considerations\nService scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.\nNew: Service scheduling function is performed by the CATS-Forwarders in the *distributed* model * ; therefore, * the C-PS is integrated into an Ingress CATS-Forwarder.\n\n15.Old: 5.2. Deployment Considerations\nHybrid model: Is a combination of distribution and centralized models.\nNew: Hybrid model: Is a combination of *distributed* and centralized models.\n\n16.Old: 5.3. Verify Correct Operations\nNew: Verifying Correct Operations\n\n17.Section 7. Privacy Considerations\nOld: CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determine which client accesses which service).\u00a0\nNew: (e.g., *determining* which client accesses which service).\u00a0\n\n18.Section 8. IANA Considerations\nOld: This document makes no requests for IANA action.\u00a0\nNew:This document makes no request for IANA actions.",
       "createdAt": "2025-07-02T07:20:08Z",
-      "updatedAt": "2025-07-02T08:55:12Z",
+      "updatedAt": "2025-07-17T07:14:25Z",
       "closedAt": null,
       "comments": [
         {
@@ -1787,6 +1794,13 @@
           "body": "good point, please share to the list",
           "createdAt": "2025-07-02T08:55:12Z",
           "updatedAt": "2025-07-02T08:55:12Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "\"compute\" is used in existing RFC. See, for example, RFC9543:\n\n   of Network Function instances and the required resources (e.g.\n   compute, storage and networking resources) which form a deployed\n\nI suggest to not make this change.\n\n",
+          "createdAt": "2025-07-17T07:14:25Z",
+          "updatedAt": "2025-07-17T07:14:25Z"
         }
       ]
     },
