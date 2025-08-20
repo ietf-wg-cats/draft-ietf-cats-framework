@@ -11,7 +11,7 @@ This is the working area for the individual Internet-Draft, "A Framework for Com
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/ietf-wg-cats/CATS-framework/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
