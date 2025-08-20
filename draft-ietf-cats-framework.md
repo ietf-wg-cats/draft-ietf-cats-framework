@@ -371,7 +371,7 @@ Refer to {{sec-met-dist}} for a discussion on metric distribution (including, in
 
 ### CATS Traffic Classifier (C-TC) {#sec-ctc}
 
-The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to calssify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
+The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
 
 Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used.
 
@@ -379,7 +379,7 @@ CATS classifiers are typically hosted in CATS-Forwarders.
 
 ### CATS-Forwarders {#sec-ocr}
 
-Ingress CATS-Forwarder are resposnible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-
+Ingress CATS-Forwarder are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-
 Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances MAY be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance MAY be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder MUST make sure to forward all packets that pertain to a given service request towards the same service contact instance.
 
 Note that, depending on the design considerations and service requirements, per-service  contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder MAY choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.
@@ -573,7 +573,7 @@ More importantly, the means for identifying a flow for ensuring instance affinit
 
 This document does not define any mechanism for defining or enforcing service contact instance affinity.
 
-# Operational and Mangeability Considerations
+# Operational and Manageability Considerations
 
 ## Provisioning of CATS Components {#sec-cats-provisioning}
 
@@ -585,7 +585,7 @@ In addition the CATS steering policies that are communicated by a C-PS to an Ing
 * Enable required setup to connect C-PS elements with C-NMA and C-SMA.
 * Allocate various identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
 * Provide C-PS element with the set of optimization metrics (per service) and an optimization policy.
-* Expose Encapsulation capabilities supported by CATS-Frowarders.
+* Expose Encapsulation capabilities supported by CATS-Forwarders.
 * Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
 * Expose classification capabilities of C-TC elements.
 * Retrieve active classification table of C-TC elements.
@@ -617,7 +617,7 @@ According to the method of distributing and collecting the computing related met
 
 According to the metric definition in {{?I-D.ietf-cats-metric-definition}}, computing metrics need to be normalized and/or aggregated in order to low down the scalability impact of the existing route system while providing sufficient detail for effective decision-making.
 
-Depeding on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
+Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
 
 When the C-SMA is co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in the C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instance. Regarding the aggregation functions, it can be implemented in the C-SMA, or the service contact instance.
 
