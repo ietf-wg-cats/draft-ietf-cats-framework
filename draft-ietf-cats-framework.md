@@ -444,7 +444,7 @@ The computing metric advertisements are processed by the C-PS hosted by "CATS-Fo
                  :          +----------------+  +------+
                  :          |CATS-Forwarder 3|--|C-SMA | Service Site 3
                  :          +----------------+  +------+
-                 :                                :  | 
+                 :                                :  |
                  :                                :  |   +-------+
                  :                                :  '---|CS-ID 2|
                  :                                :      +-------+
