@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-19T01:36:28.312101+00:00",
+  "timestamp": "2025-08-21T01:25:57.300723+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1785,7 +1785,7 @@
       "labels": [],
       "body": "1.*Compute* is a verb. So I suggest that \n(1)Old: 2. Terminology \nComputing-Aware Traffic Steering (CATS):\nA traffic engineering approach [RFC9522] that takes into account the dynamic nature of computing resources (e.g., compute and storage)\n    New:  (e.g., computing and storage)\n\n(2)Old: Service:\nAn offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\nNew:   (networking, computing , storage, etc.).\n\n(3)Old: [3.4.1.\u2002] \nA compute service (e.g., for face recognition purposes or a game server) is identified by a CATS Service Identifier (CS-ID)\nNew:  A computing service \n\n2.Some places are short of the \u201ca, an, the, or s\u201d \nOld: 2. Terminology \nCATS-Forwarder:\nA CATS-Forwarder may behave as Ingress or Egress CATS-Forwarder.\nNew:  *an* Ingress or Egress CATS-Forwarder.\n\n3.Old: Ingress CATS-Forwarder:\nAn entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that host the service contact instance\nNew:  the most suitable service site that *hosts* the service contact instance\n\n4.Old: 3.2. CATS Identifiers\nCATS Service ID (CS-ID):\nAn identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.\nNew:  regardless of their locations\n\n5.Old: 3.4.1. Service Sites, Services Instances, and Service Contact Instances\nNew:  3.4.1. Service Sites, *Service*  Instances\n\n6.Old: 3.4.4. CATS Path Selector (C-PS)\nRefer to\u00a0[Section 4.2]\u00a0for a discussion on metric distribution (including, interaction with routing protocols).\nNew: (including interaction with routing protocols).\n\n7.Old: 4.2. Metrics Distribution\nDepending on deployment choice, CS-IDs with metrics may be distributed in different ways.\nNew: Depending on *the* deployment choice,\n\n8.Old: 4.2. Metrics Distribution Figure 5\nIf the CATS framework is implemented using an hybrid model, the metric can be distributed, e.g., as illustrated in the Figure 5.\nNew: If the CATS framework is implemented using *a* hybrid model\n\n9.Old: 4.2. Metrics Distribution Figure 5\nFigure 5: An Example of CATS Metric Distribution in Hybrid Model.\nNew: Figure 5: An Example of CATS Metric Distribution in *a* Hybrid Model\n\n10.Old: 4.4 Service Contact Instance Affinity \nSpecifically, the same Egress CATS-Forwarder need to be solicited to forward the packets.\nNew: the same Egress CATS-Forwarder *needs* to be\n\n11.Old: 5.1. Provisioning of CATS Components\nIn addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. \nNew: In addition *to* the CATS steering policies\n\n12.Old: 5.1. Provisioning of CATS Components\nExpose Encapsulation capabilities supported by CATS-Frowarders.\nNew: Expose *encapsulation* capabilities supported by *CATS-Forwarders*.\n\n13.Old: 5.1. Provisioning of CATS Components\nSet the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.\u00a0\nNew: Set the traffic *counters*\n\n14.Old: 5.2. Deployment Considerations\nService scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.\nNew: Service scheduling function is performed by the CATS-Forwarders in the *distributed* model * ; therefore, * the C-PS is integrated into an Ingress CATS-Forwarder.\n\n15.Old: 5.2. Deployment Considerations\nHybrid model: Is a combination of distribution and centralized models.\nNew: Hybrid model: Is a combination of *distributed* and centralized models.\n\n16.Old: 5.3. Verify Correct Operations\nNew: Verifying Correct Operations\n\n17.Section 7. Privacy Considerations\nOld: CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determine which client accesses which service).\u00a0\nNew: (e.g., *determining* which client accesses which service).\u00a0\n\n18.Section 8. IANA Considerations\nOld: This document makes no requests for IANA action.\u00a0\nNew:This document makes no request for IANA actions.",
       "createdAt": "2025-07-02T07:20:08Z",
-      "updatedAt": "2025-07-17T07:14:25Z",
+      "updatedAt": "2025-08-19T14:39:20Z",
       "closedAt": null,
       "comments": [
         {
@@ -1801,6 +1801,13 @@
           "body": "\"compute\" is used in existing RFC. See, for example, RFC9543:\n\n   of Network Function instances and the required resources (e.g.\n   compute, storage and networking resources) which form a deployed\n\nI suggest to not make this change.\n\n",
           "createdAt": "2025-07-17T07:14:25Z",
           "updatedAt": "2025-07-17T07:14:25Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Interesting, I did not know that Compute can be used as a noun. But after searching in Google, it turns out that it CAN be. so we can keep it as is for now. If others propose the same comments or RFC editors would like to change to computing, it is ok to me. It does not change the fact, but make it clearer('more clear' can be used )",
+          "createdAt": "2025-08-19T14:39:19Z",
+          "updatedAt": "2025-08-19T14:39:19Z"
         }
       ]
     },
@@ -6137,6 +6144,40 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 127,
+      "id": "PR_kwDOJBcdGs6kjDun",
+      "title": "RFC8174 Key Word Guidance, Introduction grammatical edits, minor spelling and README fixes.",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/127",
+      "state": "OPEN",
+      "author": "taylorpaul",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "There are miscellaneous minor changes and fixes included in this pull request. I do not believe they substantively change the document. These include the following changes (by commit for cherry-picking) from most to least substantial (not commit order):\r\n\r\n- [da38334](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/da38334c0b076df413491e7ddb1f639ab1738f94) Implementing capitalization (or not) of key words that describe specifications or requirements and represent a well-defined meaning via [RFC2119](https://datatracker.ietf.org/doc/rfc2119/) and [RFC8174](https://datatracker.ietf.org/doc/rfc8174/).\r\n- [ac15139](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/ac151393e0faf17c8fd2ff7d85acfc0829c4d7c3) Grammatical edits to the introduction section ONLY to favor active voice or clarify items that confused me on first pass.\r\n- [4b6277c](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/4b6277ca48a5731d04e80d47c7d9ade622f7f2d0) Minor spelling corrections throughout the document.\r\n- [7227c0e](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7227c0e72b6377f69c980b22f377e212b9fab582) Fix broken CONTRIBUTIONS.md link in README.\r\n\r\n",
+      "createdAt": "2025-08-20T18:02:04Z",
+      "updatedAt": "2025-08-20T18:08:14Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
+      "headRepository": "taylorpaul/draft-ietf-cats-framework",
+      "headRefName": "grammatical-and-minor-edits",
+      "headRefOid": "4b6277ca48a5731d04e80d47c7d9ade622f7f2d0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "taylorpaul",
+          "authorAssociation": "NONE",
+          "body": "Also, this is my first time contributing to the IETF and CATS so please let me know if submitting changes this way is not helpful or correct.",
+          "createdAt": "2025-08-20T18:08:14Z",
+          "updatedAt": "2025-08-20T18:08:14Z"
+        }
+      ],
       "reviews": []
     }
   ]
