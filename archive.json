@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-21T01:25:57.300723+00:00",
+  "timestamp": "2025-08-24T01:43:21.965872+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6132,13 +6132,13 @@
       "labels": [],
       "body": "update 3 figures in metric distribution section.",
       "createdAt": "2025-08-18T16:04:27Z",
-      "updatedAt": "2025-08-18T16:04:27Z",
+      "updatedAt": "2025-08-21T15:25:20Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "771fe285afc7836e45e6063aa667be9aea769c3a",
+      "headRefOid": "ae29df4cb1966f6cbae05d0aec2269c7c11bf6ef",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -6158,13 +6158,13 @@
       "labels": [],
       "body": "There are miscellaneous minor changes and fixes included in this pull request. I do not believe they substantively change the document. These include the following changes (by commit for cherry-picking) from most to least substantial (not commit order):\r\n\r\n- [da38334](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/da38334c0b076df413491e7ddb1f639ab1738f94) Implementing capitalization (or not) of key words that describe specifications or requirements and represent a well-defined meaning via [RFC2119](https://datatracker.ietf.org/doc/rfc2119/) and [RFC8174](https://datatracker.ietf.org/doc/rfc8174/).\r\n- [ac15139](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/ac151393e0faf17c8fd2ff7d85acfc0829c4d7c3) Grammatical edits to the introduction section ONLY to favor active voice or clarify items that confused me on first pass.\r\n- [4b6277c](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/4b6277ca48a5731d04e80d47c7d9ade622f7f2d0) Minor spelling corrections throughout the document.\r\n- [7227c0e](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7227c0e72b6377f69c980b22f377e212b9fab582) Fix broken CONTRIBUTIONS.md link in README.\r\n\r\n",
       "createdAt": "2025-08-20T18:02:04Z",
-      "updatedAt": "2025-08-20T18:08:14Z",
+      "updatedAt": "2025-08-21T15:16:54Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
       "headRepository": "taylorpaul/draft-ietf-cats-framework",
       "headRefName": "grammatical-and-minor-edits",
-      "headRefOid": "4b6277ca48a5731d04e80d47c7d9ade622f7f2d0",
+      "headRefOid": "aa5b2696afd8bbd50857d958c40da30cd68b78d9",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -6176,6 +6176,20 @@
           "body": "Also, this is my first time contributing to the IETF and CATS so please let me know if submitting changes this way is not helpful or correct.",
           "createdAt": "2025-08-20T18:08:14Z",
           "updatedAt": "2025-08-20T18:08:14Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thank you @taylorpaul ! Really helpful! I have requested Med to review your contribution, hope he will do it soon. I will review it for sure.  BTW, do you mind me to share this on the CATS list? or you can share it to CATS mailing list? cats@ietf.org, In IETF, we are encouraged to discuss on the list :) ",
+          "createdAt": "2025-08-21T09:27:34Z",
+          "updatedAt": "2025-08-21T09:27:34Z"
+        },
+        {
+          "author": "taylorpaul",
+          "authorAssociation": "NONE",
+          "body": "@muzixing I sent an email to the list! Thanks for the pointer.",
+          "createdAt": "2025-08-21T15:13:04Z",
+          "updatedAt": "2025-08-21T15:13:04Z"
         }
       ],
       "reviews": []
