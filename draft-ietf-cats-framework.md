@@ -274,7 +274,7 @@ The following planes are defined:
 * CATS Control Plane: Responsible for scheduling services based on computing and network information. It is also responsible for making decisions about how packets should be forwarded by involved forwarding nodes and communicating such decisions to the CATS Data Plane for execution.
 * CATS Data Plane: Responsible for computing-aware routing, including handling packets in the data path, such as packet forwarding.
 
-Depending on implementation and deployment, these planes may consist of several functional elements/components, and the details will be described in the following sections.
+Depending on implementation and deployment, these planes may consist of several functional elements/components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.
 
 
 ## CATS Functional Components {#sec-cats-arch}
