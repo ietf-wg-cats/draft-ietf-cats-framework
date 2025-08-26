@@ -652,6 +652,6 @@ This document makes no request for IANA action.
 The authors would like to thank Joel Halpern, John Scudder, Dino Farinacci, Adrian Farrel,
 Cullen Jennings, Linda Dunbar, Jeffrey Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li,
 Xinxin Yi, Jari Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian, Zhenbin Li,
-Xinyue Zhang, Weier Li, Ines Robles and Nagendra Kumar for their comments and suggestions.
+Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles and Nagendra Kumar for their comments and suggestions.
 
 Some text about various deployment models was originally documented in {{?I-D.yao-cats-awareness-architecture}}.
