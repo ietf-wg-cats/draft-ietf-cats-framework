@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-24T01:43:21.965872+00:00",
+  "timestamp": "2025-08-28T01:23:59.523916+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1778,15 +1778,15 @@
       "id": "I_kwDOJBcdGs6-bdpQ",
       "title": "Some editorial suggestions of version10 for considerations",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/121",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "dzpzp",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "1.*Compute* is a verb. So I suggest that \n(1)Old: 2. Terminology \nComputing-Aware Traffic Steering (CATS):\nA traffic engineering approach [RFC9522] that takes into account the dynamic nature of computing resources (e.g., compute and storage)\n    New:  (e.g., computing and storage)\n\n(2)Old: Service:\nAn offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\nNew:   (networking, computing , storage, etc.).\n\n(3)Old: [3.4.1.\u2002] \nA compute service (e.g., for face recognition purposes or a game server) is identified by a CATS Service Identifier (CS-ID)\nNew:  A computing service \n\n2.Some places are short of the \u201ca, an, the, or s\u201d \nOld: 2. Terminology \nCATS-Forwarder:\nA CATS-Forwarder may behave as Ingress or Egress CATS-Forwarder.\nNew:  *an* Ingress or Egress CATS-Forwarder.\n\n3.Old: Ingress CATS-Forwarder:\nAn entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that host the service contact instance\nNew:  the most suitable service site that *hosts* the service contact instance\n\n4.Old: 3.2. CATS Identifiers\nCATS Service ID (CS-ID):\nAn identifier representing a service, which the clients use to access it. Such an ID identifies all the instances of a given service, regardless of their location.\nNew:  regardless of their locations\n\n5.Old: 3.4.1. Service Sites, Services Instances, and Service Contact Instances\nNew:  3.4.1. Service Sites, *Service*  Instances\n\n6.Old: 3.4.4. CATS Path Selector (C-PS)\nRefer to\u00a0[Section 4.2]\u00a0for a discussion on metric distribution (including, interaction with routing protocols).\nNew: (including interaction with routing protocols).\n\n7.Old: 4.2. Metrics Distribution\nDepending on deployment choice, CS-IDs with metrics may be distributed in different ways.\nNew: Depending on *the* deployment choice,\n\n8.Old: 4.2. Metrics Distribution Figure 5\nIf the CATS framework is implemented using an hybrid model, the metric can be distributed, e.g., as illustrated in the Figure 5.\nNew: If the CATS framework is implemented using *a* hybrid model\n\n9.Old: 4.2. Metrics Distribution Figure 5\nFigure 5: An Example of CATS Metric Distribution in Hybrid Model.\nNew: Figure 5: An Example of CATS Metric Distribution in *a* Hybrid Model\n\n10.Old: 4.4 Service Contact Instance Affinity \nSpecifically, the same Egress CATS-Forwarder need to be solicited to forward the packets.\nNew: the same Egress CATS-Forwarder *needs* to be\n\n11.Old: 5.1. Provisioning of CATS Components\nIn addition the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. \nNew: In addition *to* the CATS steering policies\n\n12.Old: 5.1. Provisioning of CATS Components\nExpose Encapsulation capabilities supported by CATS-Frowarders.\nNew: Expose *encapsulation* capabilities supported by *CATS-Forwarders*.\n\n13.Old: 5.1. Provisioning of CATS Components\nSet the traffic counter at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.\u00a0\nNew: Set the traffic *counters*\n\n14.Old: 5.2. Deployment Considerations\nService scheduling function is performed by the CATS-Forwarders in the distribution model, Therefore, the C-PS is integrated into an Ingress CATS-Forwarder.\nNew: Service scheduling function is performed by the CATS-Forwarders in the *distributed* model * ; therefore, * the C-PS is integrated into an Ingress CATS-Forwarder.\n\n15.Old: 5.2. Deployment Considerations\nHybrid model: Is a combination of distribution and centralized models.\nNew: Hybrid model: Is a combination of *distributed* and centralized models.\n\n16.Old: 5.3. Verify Correct Operations\nNew: Verifying Correct Operations\n\n17.Section 7. Privacy Considerations\nOld: CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determine which client accesses which service).\u00a0\nNew: (e.g., *determining* which client accesses which service).\u00a0\n\n18.Section 8. IANA Considerations\nOld: This document makes no requests for IANA action.\u00a0\nNew:This document makes no request for IANA actions.",
       "createdAt": "2025-07-02T07:20:08Z",
-      "updatedAt": "2025-08-19T14:39:20Z",
-      "closedAt": null,
+      "updatedAt": "2025-08-27T15:06:51Z",
+      "closedAt": "2025-08-27T15:06:51Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1808,6 +1808,13 @@
           "body": "Interesting, I did not know that Compute can be used as a noun. But after searching in Google, it turns out that it CAN be. so we can keep it as is for now. If others propose the same comments or RFC editors would like to change to computing, it is ok to me. It does not change the fact, but make it clearer('more clear' can be used )",
           "createdAt": "2025-08-19T14:39:19Z",
           "updatedAt": "2025-08-19T14:39:19Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "already addressed in revision 12.",
+          "createdAt": "2025-08-27T15:06:51Z",
+          "updatedAt": "2025-08-27T15:06:51Z"
         }
       ]
     },
@@ -6125,24 +6132,26 @@
       "id": "PR_kwDOJBcdGs6kI69x",
       "title": "update figures to address quan's comments",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/126",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "update 3 figures in metric distribution section.",
       "createdAt": "2025-08-18T16:04:27Z",
-      "updatedAt": "2025-08-21T15:25:20Z",
+      "updatedAt": "2025-08-26T09:39:19Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "ae29df4cb1966f6cbae05d0aec2269c7c11bf6ef",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "0ca461dd92006b39269c8d25e7473a463db841bb",
+      "closedAt": "2025-08-26T09:39:19Z",
+      "mergedAt": "2025-08-26T09:39:19Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "4dd459c0be12d9e4729300fa2fbbda9abc87bc92"
+      },
       "comments": [],
       "reviews": []
     },
@@ -6158,7 +6167,7 @@
       "labels": [],
       "body": "There are miscellaneous minor changes and fixes included in this pull request. I do not believe they substantively change the document. These include the following changes (by commit for cherry-picking) from most to least substantial (not commit order):\r\n\r\n- [da38334](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/da38334c0b076df413491e7ddb1f639ab1738f94) Implementing capitalization (or not) of key words that describe specifications or requirements and represent a well-defined meaning via [RFC2119](https://datatracker.ietf.org/doc/rfc2119/) and [RFC8174](https://datatracker.ietf.org/doc/rfc8174/).\r\n- [ac15139](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/ac151393e0faf17c8fd2ff7d85acfc0829c4d7c3) Grammatical edits to the introduction section ONLY to favor active voice or clarify items that confused me on first pass.\r\n- [4b6277c](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/4b6277ca48a5731d04e80d47c7d9ade622f7f2d0) Minor spelling corrections throughout the document.\r\n- [7227c0e](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7227c0e72b6377f69c980b22f377e212b9fab582) Fix broken CONTRIBUTIONS.md link in README.\r\n\r\n",
       "createdAt": "2025-08-20T18:02:04Z",
-      "updatedAt": "2025-08-21T15:16:54Z",
+      "updatedAt": "2025-08-27T20:16:09Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
@@ -6192,6 +6201,175 @@
           "updatedAt": "2025-08-21T15:13:04Z"
         }
       ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs68XskV",
+          "commit": {
+            "abbreviatedOid": "aa5b269"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T15:17:55Z",
+          "updatedAt": "2025-08-27T15:17:56Z",
+          "comments": [
+            {
+              "originalPosition": 1,
+              "body": "Thanks.",
+              "createdAt": "2025-08-27T15:17:55Z",
+              "updatedAt": "2025-08-27T15:17:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68XtcT",
+          "commit": {
+            "abbreviatedOid": "4b6277c"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T15:18:39Z",
+          "updatedAt": "2025-08-27T15:18:40Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "Thank you for your contributions, really nice.",
+              "createdAt": "2025-08-27T15:18:39Z",
+              "updatedAt": "2025-08-27T15:18:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68Xt_c",
+          "commit": {
+            "abbreviatedOid": "da38334"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T15:19:04Z",
+          "updatedAt": "2025-08-27T15:19:05Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Good to me",
+              "createdAt": "2025-08-27T15:19:04Z",
+              "updatedAt": "2025-08-27T15:19:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68XwjK",
+          "commit": {
+            "abbreviatedOid": "da38334"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T15:21:12Z",
+          "updatedAt": "2025-08-27T15:21:12Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "We may not use upper case in an information document, unless we DO want to highlight something, like, a requirement. In this case, upper case should be used. Let's have some discussion on the list. Chairs and other authors told me to remove upper case words long time ago.",
+              "createdAt": "2025-08-27T15:21:12Z",
+              "updatedAt": "2025-08-27T15:21:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68X_fv",
+          "commit": {
+            "abbreviatedOid": "ac15139"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T15:33:23Z",
+          "updatedAt": "2025-08-27T15:33:23Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "we might not need , 'an abstraction over existing network and compute resources,'",
+              "createdAt": "2025-08-27T15:33:23Z",
+              "updatedAt": "2025-08-27T15:33:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68cfgh",
+          "commit": {
+            "abbreviatedOid": "ac15139"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T20:04:45Z",
+          "updatedAt": "2025-08-27T20:04:46Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "On my first read it was not clear to me what \"overlay framework\" meant here.  I noted my confusion in the margins and thus added this line after reading the whole document and understanding the CATS framework better to try and help future readers.\r\n\r\nBut if it really is obvious to others, happy to drop that part.",
+              "createdAt": "2025-08-27T20:04:45Z",
+              "updatedAt": "2025-08-27T20:04:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68cojI",
+          "commit": {
+            "abbreviatedOid": "da38334"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T20:16:09Z",
+          "updatedAt": "2025-08-27T20:16:09Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "Yeah, I wasn't sure either. The cats-metrics draft does leverage the capitalization but only twice (see MUST usage here: [draft-ietf-cats-metric-definition.md](https://github.com/ietf-wg-cats/draft-ietf-cats-metric-definition/blob/main/draft-ietf-cats-metric-definition.md#design-principles---why-three-metric-levels)).  \r\n\r\nI think if we introduce it in the draft-ietf-cats-framework.md we certainly should only capitalize when it meets the RFC2119 definition and we may want to review the use of capitals.\r\n\r\nHappy to leave it out, I think consistency is key across the current cats draft.",
+              "createdAt": "2025-08-27T20:16:09Z",
+              "updatedAt": "2025-08-27T20:16:09Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 128,
+      "id": "PR_kwDOJBcdGs6lX8rc",
+      "title": "add Quan in Acknoledgement section",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/128",
+      "state": "MERGED",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-08-26T09:43:12Z",
+      "updatedAt": "2025-08-26T09:43:45Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "4dd459c0be12d9e4729300fa2fbbda9abc87bc92",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "e66b9dbc1d5ce27d49bd8c6fd251f802928d4b61",
+      "closedAt": "2025-08-26T09:43:45Z",
+      "mergedAt": "2025-08-26T09:43:45Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "e5f5d92f9898e103eac39384e88910584e04b071"
+      },
+      "comments": [],
       "reviews": []
     }
   ]
