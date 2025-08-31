@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-28T01:23:59.523916+00:00",
+  "timestamp": "2025-08-31T01:36:29.923303+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6167,7 +6167,7 @@
       "labels": [],
       "body": "There are miscellaneous minor changes and fixes included in this pull request. I do not believe they substantively change the document. These include the following changes (by commit for cherry-picking) from most to least substantial (not commit order):\r\n\r\n- [da38334](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/da38334c0b076df413491e7ddb1f639ab1738f94) Implementing capitalization (or not) of key words that describe specifications or requirements and represent a well-defined meaning via [RFC2119](https://datatracker.ietf.org/doc/rfc2119/) and [RFC8174](https://datatracker.ietf.org/doc/rfc8174/).\r\n- [ac15139](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/ac151393e0faf17c8fd2ff7d85acfc0829c4d7c3) Grammatical edits to the introduction section ONLY to favor active voice or clarify items that confused me on first pass.\r\n- [4b6277c](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/4b6277ca48a5731d04e80d47c7d9ade622f7f2d0) Minor spelling corrections throughout the document.\r\n- [7227c0e](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7227c0e72b6377f69c980b22f377e212b9fab582) Fix broken CONTRIBUTIONS.md link in README.\r\n\r\n",
       "createdAt": "2025-08-20T18:02:04Z",
-      "updatedAt": "2025-08-27T20:16:09Z",
+      "updatedAt": "2025-08-28T14:05:17Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
@@ -6339,6 +6339,46 @@
               "body": "Yeah, I wasn't sure either. The cats-metrics draft does leverage the capitalization but only twice (see MUST usage here: [draft-ietf-cats-metric-definition.md](https://github.com/ietf-wg-cats/draft-ietf-cats-metric-definition/blob/main/draft-ietf-cats-metric-definition.md#design-principles---why-three-metric-levels)).  \r\n\r\nI think if we introduce it in the draft-ietf-cats-framework.md we certainly should only capitalize when it meets the RFC2119 definition and we may want to review the use of capitals.\r\n\r\nHappy to leave it out, I think consistency is key across the current cats draft.",
               "createdAt": "2025-08-27T20:16:09Z",
               "updatedAt": "2025-08-27T20:16:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68pk0K",
+          "commit": {
+            "abbreviatedOid": "da38334"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-28T14:04:52Z",
+          "updatedAt": "2025-08-28T14:04:52Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "I may suggest to leave it for now, so that we can merge this PR.",
+              "createdAt": "2025-08-28T14:04:52Z",
+              "updatedAt": "2025-08-28T14:04:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs68plMF",
+          "commit": {
+            "abbreviatedOid": "ac15139"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-28T14:05:17Z",
+          "updatedAt": "2025-08-28T14:05:17Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "IMHO, suggest to delete 'an abstraction over existing network and compute resources,'",
+              "createdAt": "2025-08-28T14:05:17Z",
+              "updatedAt": "2025-08-28T14:05:17Z"
             }
           ]
         }
