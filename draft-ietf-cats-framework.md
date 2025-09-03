@@ -134,23 +134,23 @@ Furthermore, this document describes a workflow of the main CATS procedures (see
 This document makes use of the following terms:
 
 Client:
-: An endpoint that is connected to a service provider network.
+: An endpoint that requests service from a service provider network.
 
 Flow:
-: A flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).
+: "A set of IP packets passing an Observation Point in the network during a certain time interval. All packets that belong to a particular Flow have a set of common properties derived from the data contained in the packet and from the packet treatment at the Observation Point." {{?RFC3954}}. Typically CATS components identify flows by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).
 
 Computing-Aware Traffic Steering (CATS):
- :  A traffic engineering approach {{?RFC9522}} that takes into account the dynamic nature of computing resources (e.g., compute and storage) and network state to optimize service-specific traffic forwarding towards a given service contact instance. Various relevant metrics may be used to enable such computing-aware traffic steering policies.
+ : A traffic engineering approach {{?RFC9522}} that takes into account the dynamic nature of computing resources (e.g., compute and storage) and network state to optimize service-specific traffic forwarding towards a given service contact instance. The CATS framework leverages various metrics to enable computing-aware traffic steering policies.
 
 Metric:
- : A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.
+ : A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.
 
 Computing metrics:
-  : Computing metrics are the metrics that come specifically from the computing side of the system as distinct from other metrics that may be used in a CATS system, such as the metrics from network side. For details, a set of metrics from computing side used for CATS has been defined in {{?I-D.ietf-cats-metric-definition}}.
+  : Metrics specific to the computing resources in underlying CATS system(s) as distinct from other metrics, such as network metrics. For further detail, see the set of metrics of computing computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
-  : An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).
-  : Which and how these resources are used is part of the service logic which is internal to the service provider. For example, these resources may be:
+  : An interface made available by a service provider to a client by orchestrating a set of resources (networking, compute, storage, etc.).
+  : The service provider retains control of internal resources and the service logic. For example, these resources may be:
 
     * Exposed by one or multiple processes.
     * Provided by virtual instances, physical, or a combination thereof.
@@ -158,63 +158,63 @@ Service:
     * Hosted within the same or multiple service sites.
     * Chained to provide a service using a variety of means.
 
-  : How a service is structured is out of the scope of CATS.
-  : The same service can be provided in many locations; each of them constitutes a service instance.
+  : How a service provider structures its services remains out of the scope of CATS.
+  : Service providers may provide the same service in many locations; each of them constitutes a service instance.
 
 Computing Service:
-  : An offering is made available by a service provider by orchestrating a set of computing resources.
+  : A service offered to a client by a service provider by orchestrating a set of computing resources.
 
 CATS Service ID (CS-ID):
  : An identifier representing a service, which the clients use to access it. See {{cats-ids}}.
 
 Service instance:
   : An instance of running resources according to a given service logic.
-  : Many such instances can be enabled by a service provider. Instances that adhere to the same service logic provide the same service.
-  : An instance is running in a service site. Clients’ requests are serviced by one or more of these instances.
+  : A service provider may enable many service instances that adhere to the same service logic to provide the same service.
+  : A service instance runs in a service site and one or more instances may service a Clients’ requests.
 
 Service site:
- : A location that hosts the resources that are required to offer a service.
+ : A location that hosts the resources that implement an offered service.
  : A service site may be a node or a set of nodes.
- : A CATS-serviced site is a service site that is connected to a CATS-Forwarder.
+ : A CATS-serviced site is a service site connected to a CATS-Forwarder.
 
 Service contact instance:
-  : A client-facing service function instance that is responsible for receiving requests in the context of a given service.
+  : A client-facing service function instance responsible for receiving requests in the context of a given service.
   : A service contact instance can handle one or more service instances.
-  : Steering beyond a service contact instance is hidden to both clients and CATS components.
-  : A service request is processed according to the service logic (e.g., handle locally or solicit backend resources).
-  : A service contact instance is reachable via at least one Egress CATS-Forwarder.
-  : A service can be accessed via multiple service contact instances running at the same or different locations (service sites).
+  : Steering beyond a service contact instance remains transparent to both clients and CATS components.
+  : A service contact instance processes a client's service request a according to the service logic (e.g., handle locally or solicit backend resources).
+  : A service contact instance must be reachable via at least one Egress CATS-Forwarder.
+  : Clients may access a service via multiple service contact instances running at the same or different locations (service sites).
   : A service contact instance may dispatch service requests to one or more service instances (e.g., a service contact instance that behaves as a service load-balancer).
 
 CATS Service Contact Instance ID (CSCI-ID):
  : An identifier of a specific service contact instance. See {{cats-ids}}.
 
 Service request:
- : A request to access or invoke a specific service. Such a request is steered to a service contact instance via CATS-Forwarders.
- : A service request is placed using service-specific protocols.
- : Service requests are not explicitly sent by clients to CATS-Forwarders.
+ : A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.
+ : Clients must place a service request using service-specific protocols.
+ : Clients direct service requests to a CS-ID without explicit knowledge of CATS-Forwarders.
 
 CATS-Forwarder:
- : A network entity that steers traffic specific to a service request towards a corresponding yet selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.
+ : A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions.  A C-PS makes such decisions, which may or may not be on the CATS-Forwarder.
  : A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder.
 
 Ingress CATS-Forwarder:
  : An entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that hosts the service contact instance selected to satisfy the initial service request.
 
 Egress CATS-Forwarder:
-: An entity that is located at the end of a CATS-computed path and which connects to a CATS-serviced site.
+: An entity located at the end of a CATS-computed path which connects to a CATS-serviced site.
 
 CATS Path Selector (C-PS):
- : A functional entity that selects paths towards service locations and instances and which accommodates the requirements of service requests. Such a path selection engine takes into account the service and network status information. See {{sec-cps}}.
+ : A functional entity that selects paths towards service locations and instances in order to accommodate the requirements of service requests. Such a path selection engine takes into account the service and network status information. See {{sec-cps}}.
 
 CATS Service Metric Agent (C-SMA):
- : A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a CATS Path Selector (C-PS). See {{sec-csma}}.
+ : A functional entity responsible for collecting service capabilities and status, and for reporting them to a CATS Path Selector (C-PS). See {{sec-csma}}.
 
 CATS Network Metric Agent (C-NMA):
- : A functional entity that is responsible for collecting network capabilities and status, and for reporting them to a C-PS. See {{sec-cnma}}.
+ : A functional entity responsible for collecting network capabilities and status, and for reporting them to a C-PS. See {{sec-cnma}}.
 
 CATS Traffic Classifier (C-TC):
- : A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It is also responsible for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See {{sec-ctc}}.
+ : A functional entity responsible for determining which packets belong to a traffic flow for a specific service request and for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See {{sec-ctc}}.
 
 # CATS Framework and Components {#Framework-and-concepts}
 
