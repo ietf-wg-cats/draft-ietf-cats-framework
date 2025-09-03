@@ -930,7 +930,7 @@ Table of Contents
    *  Provide C-PS element with the set of optimization metrics (per
       service) and an optimization policy.
 
-   *  Expose encapsulation capabilities supported by CATS-Frowarders.
+   *  Expose encapsulation capabilities supported by CATS-Forwarders.
 
    *  Configure specific encapsulation capabilities of CATS-Forwarders
       for use, including any credentials for mutual authentication
