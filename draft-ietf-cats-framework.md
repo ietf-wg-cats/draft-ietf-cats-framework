@@ -114,19 +114,19 @@ This document describes a framework for Computing-Aware Traffic Steering (CATS).
 
 # Introduction
 
-Computing service architectures have evolved from single service site to multiple, sometimes collaborative, service sites to address various issues such as long response times or suboptimal utilization of service and network resources (e.g., resource under-utilization or exhaustion).
+Computing service architectures evolved from single service site to multiple, sometimes collaborative, service sites to address various issues such as long response times or suboptimal utilization of service and network resources (e.g., resource under-utilization or exhaustion).
 
 The underlying networking infrastructures that include computing resources usually provide relatively static service dispatching, e.g., the selection of the service instances for a request. In such infrastructures, service-specific traffic is often directed to the closest service site from a routing perspective without considering the actual network state (e.g., traffic congestion conditions) or the service site state.
 
-As described in {{?I-D.ietf-cats-usecases-requirements}}, traffic steering that takes into account computing resource metrics would benefit several services, including latency-sensitive services such as immersive services that rely upon the use of augmented reality or virtual reality (AR/VR) techniques. This document provides an architectural framework that aims at facilitating the making of compute- and network-aware traffic steering decisions in networking environments where computing service resources are deployed.
+As described in {{?I-D.ietf-cats-usecases-requirements}}, traffic steering that takes into account computing resource metrics would benefit several services, including latency-sensitive services such as immersive services that rely upon the use of augmented reality or virtual reality (AR/VR) techniques. This document provides an architectural framework that aims at facilitating the making of compute- and network-aware traffic steering decisions in dynamic networking environments with variable computing service resources.
 
-The Computing-Aware Traffic Steering (CATS) framework assumes that there might be multiple service instances that are providing one given service, which are running in one or more service sites. Each of these service instances can be accessed via a service contact instance, which is a client-facing service function instance. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address the issues of lacking resources in a specific service site.
+Today, organizations often distribute user services across on-premises and cloud service provider networks. To support both redundancy and responsiveness, the Computing-Aware Traffic Steering (CATS) framework supports single or multiple service instances providing one given service, which may exist in one or more service sites. Clients access service instances via client-facing service functions known as service contact instances. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address resource limitations in a specific service site.
 
-Steering in CATS is about selecting the appropriate service contact instance that will service a request according to a set of network and computing metrics. This selection may not necessarily reveal the actual service instance that will be invoked, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be the aggregated metrics from multiple service instances.
+Steering in CATS aims to select the appropriate service contact instance to service a request according to a set of network and computing metrics. This selection may not reveal the actual service instance that a client will invoke, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be aggregate metrics from multiple service instances.
 
-The CATS framework is an overlay framework for the selection of the suitable service contact instance(s) from a set of candidates. The exact characterization of 'suitable' is determined by a combination of networking and computing metrics.
+The CATS framework is an overlay framework for the selection of the suitable service contact instance(s) from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.
 
-Furthermore, this document describes a workflow of the main CATS procedures in {{sec-cats-workflow}}, which are executed in both the control and data planes.
+Furthermore, this document describes a workflow of the main CATS procedures (see {{sec-cats-workflow}}) executed in both the control and data planes.
 
 
 # Terminology
@@ -365,7 +365,7 @@ Refer to {{sec-met-dist}} for a discussion on metric distribution (including int
 
 ### CATS Traffic Classifier (C-TC) {#sec-ctc}
 
-The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to calssify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
+The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
 
 Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used.
 
@@ -373,7 +373,7 @@ CATS classifiers are typically hosted in CATS-Forwarders.
 
 ### CATS-Forwarders {#sec-ocr}
 
-Ingress CATS-Forwarder are resposnible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-
+Ingress CATS-Forwarder are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-
 Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.
 
 Note that, depending on the design considerations and service requirements, per-service  contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder may choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.
@@ -568,7 +568,7 @@ More importantly, the means for identifying a flow for ensuring instance affinit
 
 This document does not define any mechanism for defining or enforcing service contact instance affinity.
 
-# Operational and Mangeability Considerations
+# Operational and Manageability Considerations
 
 ## Provisioning of CATS Components {#sec-cats-provisioning}
 
@@ -612,7 +612,7 @@ According to the method of distributing and collecting the computing related met
 
 According to the metric definition in {{?I-D.ietf-cats-metric-definition}}, computing metrics need to be normalized and/or aggregated in order to low down the scalability impact of the existing route system while providing sufficient detail for effective decision-making.
 
-Depeding on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
+Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
 
 When the C-SMA is co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in the C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instance. Regarding the aggregation functions, it can be implemented in the C-SMA, or the service contact instance.
 
