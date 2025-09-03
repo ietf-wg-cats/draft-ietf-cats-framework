@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 27 February 2026                                   China Mobile
+Expires: 7 March 2026                                       China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                          26 August 2025
+                                                        3 September 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 February 2026.
+   This Internet-Draft will expire on 7 March 2026.
 
 Copyright Notice
 
@@ -78,7 +78,7 @@ Table of Contents
      4.2.  Metrics Distribution
      4.3.  Service Access Processing
      4.4.  Service Contact Instance Affinity
-   5.  Operational and Mangeability Considerations
+   5.  Operational and Manageability Considerations
      5.1.  Provisioning of CATS Components
      5.2.  Deployment Considerations
      5.3.  Implementation Consideration on Using CATS Metrics
@@ -94,10 +94,10 @@ Table of Contents
 
 1.  Introduction
 
-   Computing service architectures have evolved from single service site
-   to multiple, sometimes collaborative, service sites to address
-   various issues such as long response times or suboptimal utilization
-   of service and network resources (e.g., resource under-utilization or
+   Computing service architectures evolved from single service site to
+   multiple, sometimes collaborative, service sites to address various
+   issues such as long response times or suboptimal utilization of
+   service and network resources (e.g., resource under-utilization or
    exhaustion).
 
    The underlying networking infrastructures that include computing
@@ -114,37 +114,38 @@ Table of Contents
    as immersive services that rely upon the use of augmented reality or
    virtual reality (AR/VR) techniques.  This document provides an
    architectural framework that aims at facilitating the making of
-   compute- and network-aware traffic steering decisions in networking
-   environments where computing service resources are deployed.
+   compute- and network-aware traffic steering decisions in dynamic
+   networking environments with variable computing service resources.
 
-   The Computing-Aware Traffic Steering (CATS) framework assumes that
-   there might be multiple service instances that are providing one
-   given service, which are running in one or more service sites.  Each
-   of these service instances can be accessed via a service contact
-   instance, which is a client-facing service function instance.  A
-   single service site may host one or multiple service contact
-   instances.  A single service site may have limited computing
-   resources available at a given time, whereas the various service
-   sites may experience different resource availability issues over
-   time.  Therefore, steering traffic among different service sites can
-   address the issues of lacking resources in a specific service site.
+   Today, organizations often distribute user services across on-
+   premises and cloud service provider networks.  To support both
+   redundancy and responsiveness, the Computing-Aware Traffic Steering
+   (CATS) framework supports single or multiple service instances
+   providing one given service, which may exist in one or more service
+   sites.  Clients access service instances via client-facing service
+   functions known as service contact instances.  A single service site
+   may host one or multiple service contact instances.  A single service
+   site may have limited computing resources available at a given time,
+   whereas the various service sites may experience different resource
+   availability issues over time.  Therefore, steering traffic among
+   different service sites can address resource limitations in a
+   specific service site.
 
-   Steering in CATS is about selecting the appropriate service contact
-   instance that will service a request according to a set of network
-   and computing metrics.  This selection may not necessarily reveal the
-   actual service instance that will be invoked, e.g., in hierarchical
-   or recursive contexts.  Therefore, the metrics of the service contact
-   instance may be the aggregated metrics from multiple service
-   instances.
+   Steering in CATS aims to select the appropriate service contact
+   instance to service a request according to a set of network and
+   computing metrics.  This selection may not reveal the actual service
+   instance that a client will invoke, e.g., in hierarchical or
+   recursive contexts.  Therefore, the metrics of the service contact
+   instance may be aggregate metrics from multiple service instances.
 
    The CATS framework is an overlay framework for the selection of the
-   suitable service contact instance(s) from a set of candidates.  The
-   exact characterization of 'suitable' is determined by a combination
-   of networking and computing metrics.
+   suitable service contact instance(s) from a set of candidates.  A
+   combination of networking and computing metrics determine the exact
+   characterization of services as 'suitable' or not.
 
    Furthermore, this document describes a workflow of the main CATS
-   procedures in Section 4, which are executed in both the control and
-   data planes.
+   procedures (see Section 4) executed in both the control and data
+   planes.
 
 2.  Terminology
 
@@ -516,7 +517,7 @@ Table of Contents
    bound to a specific service contact instance are all forwarded
    towards that same service contact instance, as instructed by a C-PS.
    To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to
-   network locators) to calssify service requests.  Refer to Section 5.1
+   network locators) to classify service requests.  Refer to Section 5.1
    for more details about provisioning of classification rules.
 
    Note that CS-IDs may be carried in packets if mechanisms such as TLS
@@ -527,7 +528,7 @@ Table of Contents
 
 3.4.6.  CATS-Forwarders
 
-   Ingress CATS-Forwarder are resposnible for steering service-specific
+   Ingress CATS-Forwarder are responsible for steering service-specific
    traffic along a CATS-computed path that leads to an Egress CATS-
    Forwarder.  Egress CATS-Forwarders are the endpoints that behave as
    an egress for service requests that are forwarded over a CATS
@@ -906,7 +907,7 @@ Table of Contents
    This document does not define any mechanism for defining or enforcing
    service contact instance affinity.
 
-5.  Operational and Mangeability Considerations
+5.  Operational and Manageability Considerations
 
 5.1.  Provisioning of CATS Components
 
@@ -1015,7 +1016,7 @@ Table of Contents
    impact of the existing route system while providing sufficient detail
    for effective decision-making.
 
-   Depeding on the resources and processing capabilities of CATS
+   Depending on the resources and processing capabilities of CATS
    components, the normalization and aggregation functions can be
    located in different CATS components.  The suggested solution is to
    implement the normalization and aggregation functions located away
