@@ -580,7 +580,7 @@ In addition to the CATS steering policies that are communicated by a C-PS to an 
 * Enable required setup to connect C-PS elements with C-NMA and C-SMA.
 * Allocate various identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
 * Provide C-PS element with the set of optimization metrics (per service) and an optimization policy.
-* Expose encapsulation capabilities supported by CATS-Frowarders.
+* Expose encapsulation capabilities supported by CATS-Forwarders.
 * Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
 * Expose classification capabilities of C-TC elements.
 * Retrieve active classification table of C-TC elements.
