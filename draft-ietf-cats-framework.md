@@ -124,7 +124,7 @@ Today, organizations often distribute user services across on-premises and cloud
 
 Steering in CATS aims to select the appropriate service contact instance to service a request according to a set of network and computing metrics. This selection may not reveal the actual service instance that a client will invoke, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be aggregate metrics from multiple service instances.
 
-The CATS framework is an overlay framework, an abstraction over existing network and compute resources, for the selection of the suitable service contact instance(s) from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.
+The CATS framework is an overlay framework for the selection of the suitable service contact instance(s) from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.
 
 Furthermore, this document describes a workflow of the main CATS procedures (see {{sec-cats-workflow}}) executed in both the control and data planes.
 
