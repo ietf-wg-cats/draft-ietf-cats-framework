@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-31T01:36:29.923303+00:00",
+  "timestamp": "2025-09-04T01:20:13.609465+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6160,28 +6160,30 @@
       "id": "PR_kwDOJBcdGs6kjDun",
       "title": "RFC8174 Key Word Guidance, Introduction grammatical edits, minor spelling and README fixes.",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/127",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "taylorpaul",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "There are miscellaneous minor changes and fixes included in this pull request. I do not believe they substantively change the document. These include the following changes (by commit for cherry-picking) from most to least substantial (not commit order):\r\n\r\n- [da38334](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/da38334c0b076df413491e7ddb1f639ab1738f94) Implementing capitalization (or not) of key words that describe specifications or requirements and represent a well-defined meaning via [RFC2119](https://datatracker.ietf.org/doc/rfc2119/) and [RFC8174](https://datatracker.ietf.org/doc/rfc8174/).\r\n- [ac15139](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/ac151393e0faf17c8fd2ff7d85acfc0829c4d7c3) Grammatical edits to the introduction section ONLY to favor active voice or clarify items that confused me on first pass.\r\n- [4b6277c](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/4b6277ca48a5731d04e80d47c7d9ade622f7f2d0) Minor spelling corrections throughout the document.\r\n- [7227c0e](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7227c0e72b6377f69c980b22f377e212b9fab582) Fix broken CONTRIBUTIONS.md link in README.\r\n\r\n",
       "createdAt": "2025-08-20T18:02:04Z",
-      "updatedAt": "2025-08-28T14:05:17Z",
+      "updatedAt": "2025-09-03T14:02:39Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "a2b871a2bf4f63398acf43248e887552e2b2ecc1",
+      "baseRefOid": "e5f5d92f9898e103eac39384e88910584e04b071",
       "headRepository": "taylorpaul/draft-ietf-cats-framework",
       "headRefName": "grammatical-and-minor-edits",
-      "headRefOid": "aa5b2696afd8bbd50857d958c40da30cd68b78d9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c6bc2ad6a71e7f7544a14efa08ca40d5d3917532",
+      "closedAt": "2025-09-03T14:02:39Z",
+      "mergedAt": "2025-09-03T14:02:39Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "310c0d80117ac6deb7a8d376b9974ee17595ca55"
+      },
       "comments": [
         {
           "author": "taylorpaul",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "Also, this is my first time contributing to the IETF and CATS so please let me know if submitting changes this way is not helpful or correct.",
           "createdAt": "2025-08-20T18:08:14Z",
           "updatedAt": "2025-08-20T18:08:14Z"
@@ -6195,10 +6197,17 @@
         },
         {
           "author": "taylorpaul",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "@muzixing I sent an email to the list! Thanks for the pointer.",
           "createdAt": "2025-08-21T15:13:04Z",
           "updatedAt": "2025-08-21T15:13:04Z"
+        },
+        {
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@muzixing I will send a message to the mailing list too, but I believe the pull request is ready as I've done the following:\r\n- Reverted the capitalization commit (if you squash my commits the history of this will get cleaned up)\r\n- Removed the redundant phrase as you suggested.\r\n- Pulled changes from the main repo and rebased off of the last merge request accepted (#125)\r\n\r\nLet me know if you need anything else, I want to get this pull-request across the finish line before starting further grammatical edits in other sections.\r\n\r\nEDIT: Somehow there was one merge conflict that showed up here and not during my rebase (not quite sure why). Regardless, I resolved it below.",
+          "createdAt": "2025-09-03T13:21:28Z",
+          "updatedAt": "2025-09-03T13:42:51Z"
         }
       ],
       "reviews": [
@@ -6308,7 +6317,7 @@
             "abbreviatedOid": "ac15139"
           },
           "author": "taylorpaul",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-08-27T20:04:45Z",
@@ -6328,7 +6337,7 @@
             "abbreviatedOid": "da38334"
           },
           "author": "taylorpaul",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-08-27T20:16:09Z",
@@ -6381,6 +6390,46 @@
               "updatedAt": "2025-08-28T14:05:17Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs69lCdQ",
+          "commit": {
+            "abbreviatedOid": "da38334"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-03T13:09:15Z",
+          "updatedAt": "2025-09-03T13:09:15Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "I've reverted this change due to Adrian's guidance via a revert commit.",
+              "createdAt": "2025-09-03T13:09:15Z",
+              "updatedAt": "2025-09-03T13:09:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs69lL1U",
+          "commit": {
+            "abbreviatedOid": "ac15139"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-03T13:18:32Z",
+          "updatedAt": "2025-09-03T13:18:32Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "Resolved. Removed the redundant phrase.",
+              "createdAt": "2025-09-03T13:18:32Z",
+              "updatedAt": "2025-09-03T13:18:32Z"
+            }
+          ]
         }
       ]
     },
@@ -6409,6 +6458,32 @@
       "mergeCommit": {
         "oid": "e5f5d92f9898e103eac39384e88910584e04b071"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 129,
+      "id": "PR_kwDOJBcdGs6mrYYV",
+      "title": "Update draft-ietf-cats-framework.md to address Zongpeng's comments",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/129",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-03T15:40:58Z",
+      "updatedAt": "2025-09-03T15:57:31Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "d6f5cf6029219a19d309837d616cb4c9f97a1019",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
