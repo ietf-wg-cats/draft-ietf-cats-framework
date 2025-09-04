@@ -149,7 +149,7 @@ Computing metrics:
   : Metrics specific to the computing resources in the underlying CATS system(s) as distinct from other metrics, such as network metrics. For further detail, see the set of metrics of computing computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
-  : An interface made available by a service provider to a client by orchestrating a set of resources (networking, compute, storage, etc.).
+  : An interface a service provider exposes to a client to perform a function. Service providers establish services by orchestrating a set of resources (networking, compute, storage, etc.).
   : The service provider retains control of internal resources and the service logic. For example, these resources may be:
 
     * Exposed by one or multiple processes.
