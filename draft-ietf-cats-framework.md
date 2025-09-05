@@ -182,7 +182,7 @@ Service contact instance:
   : A service contact instance can handle one or more service instances.
   : Steering beyond a service contact instance remains transparent to both clients and CATS components.
   : A service contact instance processes a client's service request according to the service logic (e.g., handle locally or solicit backend resources).
-  : A service contact instance must be reachable via at least one Egress CATS-Forwarder.
+  : A service contact instance is reachable via at least one Egress CATS-Forwarder.
   : Clients may access a service via multiple service contact instances running at the same or different locations (service sites).
   : A service contact instance may dispatch service requests to one or more service instances (e.g., a service contact instance that behaves as a service load-balancer).
 
