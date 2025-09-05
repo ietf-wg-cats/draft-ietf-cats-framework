@@ -146,7 +146,7 @@ Metric:
  : A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.
 
 Computing metrics:
-  : Metrics specific to the computing resources in the underlying CATS system(s) as distinct from other metrics, such as network metrics. For further detail, see the set of metrics of computing computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
+  : Metrics specific to the computing resources in the underlying CATS system(s) as distinct from other metrics, such as network metrics. For further detail, see the set computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
   : An interface a service provider exposes to a client to perform a function. Service providers establish services by orchestrating a set of resources (networking, compute, storage, etc.).
