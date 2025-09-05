@@ -180,7 +180,7 @@ Service site:
 Service contact instance:
   : A client-facing service function instance that is responsible for receiving requests in the context of a given service.
   : A service contact instance can handle one or more service instances.
-  : Steering beyond a service contact instance remains transparent to both clients and CATS components.
+  : Steering beyond a service contact instance is hidden to both clients and CATS components.
   : A service contact instance processes a client's service request according to the service logic (e.g., handle locally or solicit backend resources).
   : A service contact instance is reachable via at least one Egress CATS-Forwarder.
   : Clients may access a service via multiple service contact instances running at the same or different locations (service sites).
