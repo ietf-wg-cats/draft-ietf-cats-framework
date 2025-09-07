@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-04T01:20:13.609465+00:00",
+  "timestamp": "2025-09-07T01:27:45.283571+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6473,7 +6473,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-03T15:40:58Z",
-      "updatedAt": "2025-09-03T15:57:31Z",
+      "updatedAt": "2025-09-04T09:11:07Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
@@ -6486,6 +6486,215 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 130,
+      "id": "PR_kwDOJBcdGs6m7vFm",
+      "title": "Terminology section: grammar edits, minor term edits leveraging existing RFCs.",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/130",
+      "state": "OPEN",
+      "author": "taylorpaul",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The preponderance of this merge requests consists of grammatical edits to improve clarity, conciseness and avoid passive voice (by stating the actor) where possible. \r\n\r\nHere are the changes that may warrant discussion on the mailing list: \r\n\r\n**1. Updated the client definition:**\r\n- OLD: An endpoint that is connected to a service provider network.\r\n- NEW: An endpoint that requests service from a service provider network.\r\n- DISCUSSION: A device connected to a network is a host, what makes it a client IMHO is the fact it enters into a client-server relationship by initiating a service request.\r\n\r\n**2. Update the flow definition:**\r\n- OLD: A flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- NEW: \"A set of IP packets passing an Observation Point in the network during a certain time interval. All packets that belong to a particular Flow have a set of common properties derived from the data contained in the packet and from the packet treatment at the Observation Point.\" {{?RFC3954}}. Typically CATS components identify flows by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- DISCUSSION: I think the OLD version only identified a flow without defining it. If we want to not quote so much text we could simply state see RFC3954 but I think that gets annoying for new readers pretty quickly.\r\n\r\n**3. Update the metric definition:**\r\n- OLD: A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.\r\n-NEW: A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.\r\n- DISCUSSION: More specific than piece of information -> \"quantitative measure\" see similar in [rfc8911:Registry for Performance Metrics](https://datatracker.ietf.org/doc/rfc8911/ ). Specifically, the terminology for \"Performance Metric\"\r\n\r\n**4. Update the service definition:**\r\n- OLD:  An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\r\n-NEW: An interface a service provider exposes to a client to perform a function. Service providers establish services by orchestrating a set of resources (networking, compute, storage, etc.).\r\n- DISCUSSION: I referenced the service definition here to guide this definition update: [RFC8309](https://datatracker.ietf.org/doc/html/rfc8309#section-2). I think interface to provide a function remains general enough but is more specific than \"an offering\".\r\n\r\n**5. Update the service request definition:**\r\n- OLD:\r\n : A request to access or invoke a specific service. Such a request is steered to a service contact instance via CATS-Forwarders.\r\n : A service request is placed using service-specific protocols.\r\n : Service requests are not explicitly sent by clients to CATS-Forwarders.\r\n\r\n- NEW:\r\n : A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.\r\n : Clients must place a service request using service-specific protocols.\r\n : Clients direct service requests to a CS-ID without explicit knowledge of CATS-Forwarders.\r\n - DISCUSSION: I was not sure about what the original authors intended about the third bullet relating to \"explicitly sent\". I bring to the groups attention to ensure I did not change the original meaning in my edits.",
+      "createdAt": "2025-09-04T19:58:50Z",
+      "updatedAt": "2025-09-05T15:22:53Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
+      "headRepository": "taylorpaul/draft-ietf-cats-framework",
+      "headRefName": "tpaul-terminology-edits",
+      "headRefOid": "a4b2e9a9ff1a47055922dbcbce6ff59660258984",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs6-G8jU",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks for the suggestions.",
+          "createdAt": "2025-09-05T13:58:01Z",
+          "updatedAt": "2025-09-05T14:09:54Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I have a preference for the OLD as this avoids mixing the providers of the ultimate service being accessed vs. the underlying connectivity service.",
+              "createdAt": "2025-09-05T13:58:02Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 9,
+              "body": "I don't think IPFIX-like definition of flow is useful here as it inherit concepts not needed for this spec (e.g., observation point). I would keep the OLD.",
+              "createdAt": "2025-09-05T13:59:27Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 21,
+              "body": "```suggestion\r\n  : Metrics specific to the computing resources in the underlying CATS system as distinct from other metrics, such as network metrics. For further detail, see the set of computing computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.\r\n```",
+              "createdAt": "2025-09-05T14:00:09Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 26,
+              "body": "I have a preference for the OLD.",
+              "createdAt": "2025-09-05T14:01:29Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 59,
+              "body": "I'm not sure this change is needed as this may infer who controls what, etc. I would keep the OLD.",
+              "createdAt": "2025-09-05T14:05:04Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 68,
+              "body": "\"is hidden\" reflects better the intent. I would leave the OLD.",
+              "createdAt": "2025-09-05T14:05:54Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 70,
+              "body": "```suggestion\r\n  : A service contact instance is reachable via at least one Egress CATS-Forwarder.\r\n```",
+              "createdAt": "2025-09-05T14:06:34Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            },
+            {
+              "originalPosition": 87,
+              "body": "The OLD reflect better the intent; C-PS computes paths, but actual forwarding decision are implemented/made by a CATS forwarder.",
+              "createdAt": "2025-09-05T14:08:28Z",
+              "updatedAt": "2025-09-05T14:09:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-Hqo2",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T14:48:23Z",
+          "updatedAt": "2025-09-05T14:48:23Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Thanks reading and your feedback!\r\n\r\nI think my confusion here (as a new comer) stems from my current assumption that CATS does not care about endpoints connected to a network (in general it does not interact with these endpoints) until they make a request to a CATS-backed service.  So this change narrows down the scope of devices considered a client from any connected device to only those requesting services that CATS devices must steer? Is this a bad assumption/logic?\r\n\r\nAlso, to me a host is a device that simply connects to a network as it is yet to enter into a client-server relationship? \r\n\r\nIf these thoughts don't make sense or are irrelevant, happy to just remove the passive voice, thoughts on:\r\n\"An endpoint that connects to a service provider network.\" ",
+              "createdAt": "2025-09-05T14:48:23Z",
+              "updatedAt": "2025-09-05T14:48:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-HxQ8",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T14:56:35Z",
+          "updatedAt": "2025-09-05T14:56:36Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Okay, that makes sense on dropping the observation point to avoid additional complexity (and the RFC citation), but I still think specifying the ID (the 5-tuple) does not actually define what a flow is.  \r\n\r\nThoughts on this change:\r\n\"A logical grouping of packets during a time interval as identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\"",
+              "createdAt": "2025-09-05T14:56:35Z",
+              "updatedAt": "2025-09-05T14:56:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-H2_Z",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T15:03:10Z",
+          "updatedAt": "2025-09-05T15:03:10Z",
+          "comments": [
+            {
+              "originalPosition": 21,
+              "body": "Thanks for catching this typo! I fixed it with the last commit.",
+              "createdAt": "2025-09-05T15:03:10Z",
+              "updatedAt": "2025-09-05T15:03:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-H6QK",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T15:07:21Z",
+          "updatedAt": "2025-09-05T15:07:21Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "Thanks for you thoughts here, I was not sure on this one (as commented above). \r\n\r\nTo simply address passive voice, how is: \"A CATS-serviced site is a service site connected to a CATS-Forwarder.\"\r\n\r\nOut of curiosity, do you know if these details (who does what) will get hashed out in a later document (as in one attempting to specify a CATS protocol)?",
+              "createdAt": "2025-09-05T15:07:21Z",
+              "updatedAt": "2025-09-05T15:20:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-IEbc",
+          "commit": {
+            "abbreviatedOid": "8fe01de"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T15:18:15Z",
+          "updatedAt": "2025-09-05T15:18:15Z",
+          "comments": [
+            {
+              "originalPosition": 87,
+              "body": "When I read the OLD: \"These decisions are supplied by a C-PS\" it makes me believe the C-PS made the decision.\r\n\r\nThoughts on: \"A C-PS, which may or may not be on the CATS-Forwarder, supplies the forwarding decisions for the CATS-Forwarder to implement.\" ",
+              "createdAt": "2025-09-05T15:18:15Z",
+              "updatedAt": "2025-09-05T15:18:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-IIdy",
+          "commit": {
+            "abbreviatedOid": "8fe01de"
+          },
+          "author": "taylorpaul",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T15:22:53Z",
+          "updatedAt": "2025-09-05T15:22:53Z",
+          "comments": [
+            {
+              "originalPosition": 68,
+              "body": "Reverted!",
+              "createdAt": "2025-09-05T15:22:53Z",
+              "updatedAt": "2025-09-05T15:22:53Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
