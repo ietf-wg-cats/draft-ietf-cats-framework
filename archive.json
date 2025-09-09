@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-07T01:27:45.283571+00:00",
+  "timestamp": "2025-09-09T01:23:48.905366+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1823,15 +1823,15 @@
       "id": "I_kwDOJBcdGs6-bfkc",
       "title": "Two suggestions on 4.2. Metrics Distribution",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/122",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "dzpzp",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "1.Old: 4.2. Metrics Distribution\n   Figure 3,  \nSimilarly, the C-SMA agent located at \"Service Site 3\" advertises the computing metrics for the two services hosted by \"Service Site 3\".\n   \nProblem: I think it is stated also in Section 4.2 that \nFor example, in a distributed model, CS-IDs with metrics can be distributed from the C-SMA to an Egress CATS-Forwarder firstly and then be redistributed by the Egress CATS-Forwarder to related C-PSes that are integrated into Ingress CATS-Forwarders.\n\nSo, it includes two steps. In the first step, C-SMA obtains the metric, and notifies the Egress. In the second step, the Egress notifies the Ingress. However, in the Figure 3, we only see a direct line to the Ingress from the C-SMA.\n\nNew: Similarly, the C-SMA agent located at \"Service Site 3\" advertises the computing metrics for the two services hosted by \"Service Site 3\". *The advertisement may need to be relayed by the CATS-Forwarders 3.*\n\n2.Section 4.2. Metrics Distribution\n   Figure 4,  Figure 5,\nIn Figure4, about the CATS-Forwarders 1, two arrows point to it.\nIn Figure5, about the CATS-Forwarders 1, one arrow points to it.\nHowever, the Figure 4 is about the centralized model. I think there is no need of arrows. Two lines are enough. ",
       "createdAt": "2025-07-02T07:23:11Z",
-      "updatedAt": "2025-07-02T08:55:38Z",
-      "closedAt": null,
+      "updatedAt": "2025-09-08T13:52:38Z",
+      "closedAt": "2025-09-08T13:52:38Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1839,6 +1839,13 @@
           "body": "good points, please share to the list",
           "createdAt": "2025-07-02T08:55:37Z",
           "updatedAt": "2025-07-02T08:55:37Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "confirmed  by zongpeng.",
+          "createdAt": "2025-09-08T13:52:38Z",
+          "updatedAt": "2025-09-08T13:52:38Z"
         }
       ]
     },
@@ -1847,15 +1854,15 @@
       "id": "I_kwDOJBcdGs6-b5wu",
       "title": "Two Questions on Security and Privacy Sections",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/123",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "dzpzp",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "1.Section 6. Security Considerations\nOld: The computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service contact instances very rapidly).\n\nNew: (e.g., by spawning and deleting service instances very rapidly).\n\nReason: It is stated that the service instance is created and terminated, and after that the attacker operates the service contact instances. Should we say the same thing here?\n\n2.Section 7. Privacy Considerations\n Old: In some cases, the service will need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution.\n\n I am not sure what the service means here. Does it mean the CATS service or the CATS system? Or it means the service instance? However, the service instance should know the information, and the information is a privacy in both CATS and non-CATS applications.  ",
       "createdAt": "2025-07-02T08:03:00Z",
-      "updatedAt": "2025-07-02T08:55:56Z",
-      "closedAt": null,
+      "updatedAt": "2025-09-08T13:52:57Z",
+      "closedAt": "2025-09-08T13:52:57Z",
       "comments": [
         {
           "author": "muzixing",
@@ -1863,6 +1870,13 @@
           "body": "also ,please share to the list",
           "createdAt": "2025-07-02T08:55:56Z",
           "updatedAt": "2025-07-02T08:55:56Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Confired by Zongpeng",
+          "createdAt": "2025-09-08T13:52:57Z",
+          "updatedAt": "2025-09-08T13:52:57Z"
         }
       ]
     }
@@ -6499,7 +6513,7 @@
       "labels": [],
       "body": "The preponderance of this merge requests consists of grammatical edits to improve clarity, conciseness and avoid passive voice (by stating the actor) where possible. \r\n\r\nHere are the changes that may warrant discussion on the mailing list: \r\n\r\n**1. Updated the client definition:**\r\n- OLD: An endpoint that is connected to a service provider network.\r\n- NEW: An endpoint that requests service from a service provider network.\r\n- DISCUSSION: A device connected to a network is a host, what makes it a client IMHO is the fact it enters into a client-server relationship by initiating a service request.\r\n\r\n**2. Update the flow definition:**\r\n- OLD: A flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- NEW: \"A set of IP packets passing an Observation Point in the network during a certain time interval. All packets that belong to a particular Flow have a set of common properties derived from the data contained in the packet and from the packet treatment at the Observation Point.\" {{?RFC3954}}. Typically CATS components identify flows by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- DISCUSSION: I think the OLD version only identified a flow without defining it. If we want to not quote so much text we could simply state see RFC3954 but I think that gets annoying for new readers pretty quickly.\r\n\r\n**3. Update the metric definition:**\r\n- OLD: A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.\r\n-NEW: A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.\r\n- DISCUSSION: More specific than piece of information -> \"quantitative measure\" see similar in [rfc8911:Registry for Performance Metrics](https://datatracker.ietf.org/doc/rfc8911/ ). Specifically, the terminology for \"Performance Metric\"\r\n\r\n**4. Update the service definition:**\r\n- OLD:  An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\r\n-NEW: An interface a service provider exposes to a client to perform a function. Service providers establish services by orchestrating a set of resources (networking, compute, storage, etc.).\r\n- DISCUSSION: I referenced the service definition here to guide this definition update: [RFC8309](https://datatracker.ietf.org/doc/html/rfc8309#section-2). I think interface to provide a function remains general enough but is more specific than \"an offering\".\r\n\r\n**5. Update the service request definition:**\r\n- OLD:\r\n : A request to access or invoke a specific service. Such a request is steered to a service contact instance via CATS-Forwarders.\r\n : A service request is placed using service-specific protocols.\r\n : Service requests are not explicitly sent by clients to CATS-Forwarders.\r\n\r\n- NEW:\r\n : A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.\r\n : Clients must place a service request using service-specific protocols.\r\n : Clients direct service requests to a CS-ID without explicit knowledge of CATS-Forwarders.\r\n - DISCUSSION: I was not sure about what the original authors intended about the third bullet relating to \"explicitly sent\". I bring to the groups attention to ensure I did not change the original meaning in my edits.",
       "createdAt": "2025-09-04T19:58:50Z",
-      "updatedAt": "2025-09-05T15:22:53Z",
+      "updatedAt": "2025-09-08T15:23:45Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
@@ -6691,6 +6705,206 @@
               "body": "Reverted!",
               "createdAt": "2025-09-05T15:22:53Z",
               "updatedAt": "2025-09-05T15:22:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-ijrZ",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T14:08:55Z",
+          "updatedAt": "2025-09-08T14:08:55Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "\"An endpoint that connects to a service provider network.\" this may be better. Indeed, service provider network means the underlying connectivity network here. Therefore, the old version is ok.  I can see your point of emphasizing the relationship/action. Thanks.",
+              "createdAt": "2025-09-08T14:08:55Z",
+              "updatedAt": "2025-09-08T14:08:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-ioVL",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T14:12:54Z",
+          "updatedAt": "2025-09-08T14:12:55Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "I would argue, we may not use 5-tuple, it can be 3-tuple, 4-tuple or even 6-tuple to identify. so making 5 as an example should be better.\r\n\r\n\"A logical grouping of packets during a time interval, which can be identified by some fields from the packet header, such as the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol) \"",
+              "createdAt": "2025-09-08T14:12:54Z",
+              "updatedAt": "2025-09-08T14:12:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jgaA",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:09:53Z",
+          "updatedAt": "2025-09-08T15:09:53Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "LGTM",
+              "createdAt": "2025-09-08T15:09:53Z",
+              "updatedAt": "2025-09-08T15:09:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jg_D",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:10:30Z",
+          "updatedAt": "2025-09-08T15:10:30Z",
+          "comments": [
+            {
+              "originalPosition": 21,
+              "body": "good suggestions.",
+              "createdAt": "2025-09-08T15:10:30Z",
+              "updatedAt": "2025-09-08T15:10:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jhcL",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:11:01Z",
+          "updatedAt": "2025-09-08T15:11:01Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "agree with Med",
+              "createdAt": "2025-09-08T15:11:01Z",
+              "updatedAt": "2025-09-08T15:11:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jl7X",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:16:04Z",
+          "updatedAt": "2025-09-08T15:16:04Z",
+          "comments": [
+            {
+              "originalPosition": 81,
+              "body": "to a CS-ID? This sentence highlight that the destination is the service provider address, not the CATS forwarder.\r\n\r\nClients direct service requests to a server (identified by a CS-ID),  without explicit knowledge of CATS-Forwarders.\r\nmay be better?",
+              "createdAt": "2025-09-08T15:16:04Z",
+              "updatedAt": "2025-09-08T15:16:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jm_u",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:17:18Z",
+          "updatedAt": "2025-09-08T15:17:18Z",
+          "comments": [
+            {
+              "originalPosition": 87,
+              "body": "I prefer to the OLD revision.",
+              "createdAt": "2025-09-08T15:17:18Z",
+              "updatedAt": "2025-09-08T15:17:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jrdI",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:22:07Z",
+          "updatedAt": "2025-09-08T15:22:07Z",
+          "comments": [
+            {
+              "originalPosition": 101,
+              "body": "I may prefer to the old one. This is not a complete sentence? I can not find the verb.",
+              "createdAt": "2025-09-08T15:22:07Z",
+              "updatedAt": "2025-09-08T15:22:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jruA",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:22:26Z",
+          "updatedAt": "2025-09-08T15:22:26Z",
+          "comments": [
+            {
+              "originalPosition": 105,
+              "body": "same as above. ",
+              "createdAt": "2025-09-08T15:22:26Z",
+              "updatedAt": "2025-09-08T15:22:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs6-jsyO",
+          "commit": {
+            "abbreviatedOid": "a4b2e9a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:23:45Z",
+          "updatedAt": "2025-09-08T15:23:45Z",
+          "comments": [
+            {
+              "originalPosition": 109,
+              "body": "OLD one may be better. This sentence is too long, making it hard to understand",
+              "createdAt": "2025-09-08T15:23:45Z",
+              "updatedAt": "2025-09-08T15:23:45Z"
             }
           ]
         }
