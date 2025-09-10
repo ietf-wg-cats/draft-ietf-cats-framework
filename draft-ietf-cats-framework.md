@@ -412,7 +412,7 @@ Network metrics may also change over time. Dynamic routing protocols may take ad
 
 {{fig-cats-example-overlay}} shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".
 
-In {{fig-cats-example-overlay}}, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3".
+In {{fig-cats-example-overlay}}, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress CATS-Forwarder 3. Then the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.
 
 The computing metric advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.
 
@@ -441,12 +441,12 @@ The computing metric advertisements are processed by the C-PS hosted by "CATS-Fo
                  :          |                      |     |CS-ID 1  |
                  :          +----------------------+ .---|CSCI-ID 3|
                  :                    |              |   +---------+
-                 :          +----------------+  +------+
-                 :          |CATS-Forwarder 3|--|C-SMA | Service Site 3
-                 :          +----------------+  +------+
-                 :                                :  |
-                 :                                :  |   +-------+
-                 :                                :  '---|CS-ID 2|
+                 :       +----------------+   +------+
+                 : <-----|CATS-Forwarder 3|---|C-SMA | Service Site 3
+                 :       +----------------+   +------+
+                 :                    ^           :  |
+                 :                    |           :  |   +-------+
+                 :                    +-----------:  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
           Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
@@ -629,7 +629,7 @@ Computing metrics are collected and distributed in CATS. A new function is neede
 
 # Security Considerations
 
-The computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service contact instances very rapidly). CATS solutions must support guards against such misbehaviors. For example, these solutions should support aggregation techniques, dampening mechanisms, and threshold-triggered distribution updates.
+The computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service instances very rapidly). CATS solutions must support guards against such misbehaviors. For example, these solutions should support aggregation techniques, dampening mechanisms, and threshold-triggered distribution updates.
 
 The information distributed by the C-SMAs and C-NMAs may be sensitive. Such information could indeed disclose intelligence about the network and the location of compute resources hosted in service sites. This information may be used by an attacker to identify weak spots in an operator's network. Furthermore, such information may be modified by an attacker resulting in disrupted service delivery for the clients, even including misdirection of traffic to an attacker's service implementation. CATS solutions must support authentication and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes, and between C-PSes and Ingress CATS-Forwarders. Also, C-SMA agents need to support a mechanism to authenticate the services for which they provide information to C-PS computation logics, among other CATS functions.
 
@@ -637,7 +637,7 @@ The information distributed by the C-SMAs and C-NMAs may be sensitive. Such info
 
 CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determining which client accesses which service). More generally, personal data must not be exposed to external parties by CATS beyond what is carried in the packet that was originally issued by the client.
 
-In some cases, the service will need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation, so this is out of the scope of this document.
+In some cases, the CATS solution may need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation, so this is out of the scope of this document.
 
 For more discussion about privacy, refer to {{?RFC6462}} and {{?RFC6973}}.
 
