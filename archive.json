@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-09T01:23:48.905366+00:00",
+  "timestamp": "2025-09-11T01:22:55.165344+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6480,24 +6480,26 @@
       "id": "PR_kwDOJBcdGs6mrYYV",
       "title": "Update draft-ietf-cats-framework.md to address Zongpeng's comments",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/129",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-09-03T15:40:58Z",
-      "updatedAt": "2025-09-04T09:11:07Z",
+      "updatedAt": "2025-09-10T09:39:29Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
       "headRefOid": "d6f5cf6029219a19d309837d616cb4c9f97a1019",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-09-10T09:39:29Z",
+      "mergedAt": "2025-09-10T09:39:29Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "fd828950c41eeb09c86da42a041c5b6537355aa3"
+      },
       "comments": [],
       "reviews": []
     },
