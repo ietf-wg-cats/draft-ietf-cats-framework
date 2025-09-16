@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-14T01:26:55.667012+00:00",
+  "timestamp": "2025-09-16T01:20:34.565156+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -6508,24 +6508,26 @@
       "id": "PR_kwDOJBcdGs6m7vFm",
       "title": "Terminology section: grammar edits, minor term edits leveraging existing RFCs.",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/130",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "taylorpaul",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The preponderance of this merge requests consists of grammatical edits to improve clarity, conciseness and avoid passive voice (by stating the actor) where possible. \r\n\r\nHere are the changes that may warrant discussion on the mailing list: \r\n\r\n**1. Updated the client definition:**\r\n- OLD: An endpoint that is connected to a service provider network.\r\n- NEW: An endpoint that requests service from a service provider network.\r\n- DISCUSSION: A device connected to a network is a host, what makes it a client IMHO is the fact it enters into a client-server relationship by initiating a service request.\r\n\r\n**2. Update the flow definition:**\r\n- OLD: A flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- NEW: \"A set of IP packets passing an Observation Point in the network during a certain time interval. All packets that belong to a particular Flow have a set of common properties derived from the data contained in the packet and from the packet treatment at the Observation Point.\" {{?RFC3954}}. Typically CATS components identify flows by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).\r\n- DISCUSSION: I think the OLD version only identified a flow without defining it. If we want to not quote so much text we could simply state see RFC3954 but I think that gets annoying for new readers pretty quickly.\r\n\r\n**3. Update the metric definition:**\r\n- OLD: A piece of information that provides suitable input to a selection mechanism to determine a CATS egress node.\r\n-NEW: A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.\r\n- DISCUSSION: More specific than piece of information -> \"quantitative measure\" see similar in [rfc8911:Registry for Performance Metrics](https://datatracker.ietf.org/doc/rfc8911/ ). Specifically, the terminology for \"Performance Metric\"\r\n\r\n**4. Update the service definition:**\r\n- OLD:  An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).\r\n-NEW: An interface a service provider exposes to a client to perform a function. Service providers establish services by orchestrating a set of resources (networking, compute, storage, etc.).\r\n- DISCUSSION: I referenced the service definition here to guide this definition update: [RFC8309](https://datatracker.ietf.org/doc/html/rfc8309#section-2). I think interface to provide a function remains general enough but is more specific than \"an offering\".\r\n\r\n**5. Update the service request definition:**\r\n- OLD:\r\n : A request to access or invoke a specific service. Such a request is steered to a service contact instance via CATS-Forwarders.\r\n : A service request is placed using service-specific protocols.\r\n : Service requests are not explicitly sent by clients to CATS-Forwarders.\r\n\r\n- NEW:\r\n : A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.\r\n : Clients must place a service request using service-specific protocols.\r\n : Clients direct service requests to a CS-ID without explicit knowledge of CATS-Forwarders.\r\n - DISCUSSION: I was not sure about what the original authors intended about the third bullet relating to \"explicitly sent\". I bring to the groups attention to ensure I did not change the original meaning in my edits.",
       "createdAt": "2025-09-04T19:58:50Z",
-      "updatedAt": "2025-09-12T18:08:36Z",
+      "updatedAt": "2025-09-15T14:18:40Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "0e752d4f2c7067ef9b1107df35a966c275e25d1a",
       "headRepository": "taylorpaul/draft-ietf-cats-framework",
       "headRefName": "tpaul-terminology-edits",
       "headRefOid": "3b79462dfcaece3e39b0ff1c8b1936ae2dbf1405",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-09-15T14:18:12Z",
+      "mergedAt": "2025-09-15T14:18:12Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "4169aa98bb7d977eaf1ba0d074fc558238d17c1d"
+      },
       "comments": [
         {
           "author": "muzixing",
@@ -6540,6 +6542,13 @@
           "body": "@muzixing sorry for the delay, had some other work to address.  I addressed (and resolved) all comments that do not warrant further discussion.  Mainly I reverted my changes back to the OLD versions as requested. \r\n\r\nThe two remaining unresolved comments may warrant review, but I feel like the changes are ready to be merged at your convenience (happy to address any further comments of course). \r\n\r\nP.S. I will hold off on further merge requests due to the WGLC.",
           "createdAt": "2025-09-12T18:08:36Z",
           "updatedAt": "2025-09-12T18:08:36Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks @taylorpaul . I will update the draft soon.",
+          "createdAt": "2025-09-15T14:18:40Z",
+          "updatedAt": "2025-09-15T14:18:40Z"
         }
       ],
       "reviews": [
@@ -7104,6 +7113,39 @@
               "updatedAt": "2025-09-12T18:06:53Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7AIbhK",
+          "commit": {
+            "abbreviatedOid": "9de07ce"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-15T08:24:57Z",
+          "updatedAt": "2025-09-15T08:24:58Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "> Just want to be sure, were the changes to line 153 good to go? I did not revert these. OLD (above in code snippet). NEW: \"The service provider retains control of internal resources and the service logic. For example, these resources may be:\"\r\n\r\nThat one is OK. Thanks\r\n",
+              "createdAt": "2025-09-15T08:24:58Z",
+              "updatedAt": "2025-09-15T08:24:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7AIcPV",
+          "commit": {
+            "abbreviatedOid": "3b79462"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-15T08:25:28Z",
+          "updatedAt": "2025-09-15T08:25:28Z",
+          "comments": []
         }
       ]
     }
