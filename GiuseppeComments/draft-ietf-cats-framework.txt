@@ -77,7 +77,7 @@ Table of Contents
      4.1.  Service Announcement
      4.2.  Metrics Distribution
        4.2.1.  Distributed Model
-       4.2.2.  Metrics Distribution in Centralized Model
+       4.2.2.  Centralized Model
        4.2.3.  Metrics Distribution in Hybrid Model
      4.3.  Service Access Processing
      4.4.  Service Contact Instance Affinity
@@ -752,7 +752,7 @@ Table of Contents
    the Egress CATS-Forwarder to explicitly indicate the site from where
    the aggregated metrics come.
 
-4.2.2.  Metrics Distribution in Centralized Model
+4.2.2.  Centralized Model
 
    If the CATS framework is implemented using a centralized model, the
    metric can be, e.g., distributed as illustrated in Figure 5.
