@@ -671,7 +671,7 @@ CATS solutions must support preventing on-path nodes in the underlay infrastruct
 
 In some cases, the CATS solution may need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation, so this is out of the scope of this document.
 
-This version of the framework mainly focuses on the scenario of a single service provider. Hence, the privacy issues about the multiple service providers are not included currently.
+This document focuses on the scenario of a single service provider. Hence, privacy considerations relevant to deployment with multiple service providers are out of scope.
 
 For more discussion about privacy, refer to {{?RFC6462}} and {{?RFC6973}}.
 
