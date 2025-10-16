@@ -636,7 +636,7 @@ According to the method of distributing and collecting the computing related met
 : Is a combination of distributed and centralized models.
 : A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
 
-The framework covers only the case of a single service provider currently. Thus, the deployment considerations about the case of multiple service providers are not mentioned here.
+The framework covers only the case of a single service provider. Deployment considerations about the case of multiple service providers are out of scope.
 
 ## Implementation Consideration on Using CATS Metrics {#sec-metric-implementation}
 
