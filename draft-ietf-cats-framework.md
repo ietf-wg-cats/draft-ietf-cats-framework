@@ -482,7 +482,7 @@ The computing metric advertisements are processed by the C-PS hosted by "CATS-Fo
 
 The example in {{fig-cats-example-overlay}} mainly describes a per-instance computing-related metric distribution. In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.
 
-### Metrics Distribution in Centralized Model {#sec-met-dist2}
+### Centralized Model {#sec-met-dist2}
 
 If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in {{fig-cats-centralized}}.
 
