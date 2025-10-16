@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 18 April 2026                                      China Mobile
+Expires: 19 April 2026                                      China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         15 October 2025
+                                                         16 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 April 2026.
+   This Internet-Draft will expire on 19 April 2026.
 
 Copyright Notice
 
@@ -76,7 +76,7 @@ Table of Contents
    4.  CATS Framework Workflow
      4.1.  Service Announcement
      4.2.  Metrics Distribution
-       4.2.1.  Metrics Distribution in Distributed Model
+       4.2.1.  Distributed Model
        4.2.2.  Metrics Distribution in Centralized Model
        4.2.3.  Metrics Distribution in Hybrid Model
      4.3.  Service Access Processing
@@ -672,7 +672,7 @@ Table of Contents
    also be configured or instructed like C-SMAs to determine when and
    how often updates should be notified to the C-PSes.
 
-4.2.1.  Metrics Distribution in Distributed Model
+4.2.1.  Distributed Model
 
    Figure 4 shows an example of how CATS metrics can be disseminated in
    the distributed model.  There is a client attached to the network via
