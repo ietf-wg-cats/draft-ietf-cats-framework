@@ -528,7 +528,7 @@ If the CATS framework is implemented using a centralized model, the metric can b
 
 In {{fig-cats-centralized}}, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed independently with the CATS-Forwarder 1. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to CATS-Forwarder 1 to indicate traffic steering.
 
-### Metrics Distribution in Hybrid Model {#sec-met-dist3}
+### Hybrid Model {#sec-met-dist3}
 
 If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the {{fig-cats-hybrid}}. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for the subsequent service accessing packets.
 
