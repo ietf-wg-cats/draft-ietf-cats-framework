@@ -1119,9 +1119,9 @@ Table of Contents
    they provide information to C-PS computation logics, among other CATS
    functions.
 
-   This version of the framework mainly focuses on the scenario of a
-   single service provider.  Hence, the security issues about the
-   multiple service providers are not included currently.
+   This document focuses on the scenario of a single service provider.
+   Hence, security considerations relevant to deployment with multiple
+   service providers are out of scope.
 
 7.  Privacy Considerations
 
@@ -1140,9 +1140,9 @@ Table of Contents
    depending on the implementation, so this is out of the scope of this
    document.
 
-   This version of the framework mainly focuses on the scenario of a
-   single service provider.  Hence, the privacy issues about the
-   multiple service providers are not included currently.
+   This document focuses on the scenario of a single service provider.
+   Hence, privacy considerations relevant to deployment with multiple
+   service providers are out of scope.
 
    For more discussion about privacy, refer to [RFC6462] and [RFC6973].
 
