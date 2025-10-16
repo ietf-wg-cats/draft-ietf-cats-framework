@@ -78,7 +78,7 @@ Table of Contents
      4.2.  Metrics Distribution
        4.2.1.  Distributed Model
        4.2.2.  Centralized Model
-       4.2.3.  Metrics Distribution in Hybrid Model
+       4.2.3.  Hybrid Model
      4.3.  Service Access Processing
      4.4.  Service Contact Instance Affinity
    5.  Operational and Manageability Considerations
@@ -809,7 +809,7 @@ Table of Contents
    paths will be sent from the C-PS to CATS-Forwarder 1 to indicate
    traffic steering.
 
-4.2.3.  Metrics Distribution in Hybrid Model
+4.2.3.  Hybrid Model
 
    If the CATS framework is implemented in the hybrid model, the metric
    can be distributed, e.g., as illustrated in the Figure 6.  For
