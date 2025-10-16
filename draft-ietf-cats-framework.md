@@ -386,30 +386,6 @@ The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or 
 
 The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.
 
-~~~ aasvg
-                +-----------------------------------+
-                |        Service Announcement       |
-                +-----------------------------------+
-                                  |
-                                  v
-                +-----------------------------------+
-                |         Metrics Distribution      |
-                +-----------------------------------+
-                                  |
-                                  v
-                +-----------------------------------+
-                |      Service Access Processing    |
-                +-----------------------------------+
-                                  |
-                                  v
-                +-----------------------------------+
-                | Service Contact Instance Affinity |
-                +-----------------------------------+
-
-~~~
-{: #fig-cats-workflow title="A Typical CATS Workflow"}
-
-
 ## Service Announcement
 
 A service is associated by the service provider with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS {{?RFC1034}}). Note that CATS framework does not assume nor preclude any specific name resolution service.
