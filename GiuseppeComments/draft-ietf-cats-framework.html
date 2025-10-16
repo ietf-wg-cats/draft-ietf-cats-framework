@@ -1901,53 +1901,6 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-cats-framework-workflow" class="section-name selfRef">CATS Framework Workflow</a>
       </h2>
 <p id="section-4-1">The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a>. <a href="#sec-cats-deployment" class="auto internal xref">Section 5.2</a> describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.<a href="#section-4-1" class="pilcrow">¶</a></p>
-<span id="name-a-typical-cats-workflow"></span><div id="fig-cats-workflow">
-<figure id="figure-3">
-        <div id="section-4-2.1">
-          <div class="alignLeft art-svg artwork" id="section-4-2.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="352" width="304" viewBox="0 0 304 352" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
-              <path d="M 8,32 L 8,64" fill="none" stroke="black"></path>
-              <path d="M 8,112 L 8,144" fill="none" stroke="black"></path>
-              <path d="M 8,192 L 8,224" fill="none" stroke="black"></path>
-              <path d="M 8,272 L 8,304" fill="none" stroke="black"></path>
-              <path d="M 152,72 L 152,104" fill="none" stroke="black"></path>
-              <path d="M 152,152 L 152,184" fill="none" stroke="black"></path>
-              <path d="M 152,232 L 152,264" fill="none" stroke="black"></path>
-              <path d="M 296,32 L 296,64" fill="none" stroke="black"></path>
-              <path d="M 296,112 L 296,144" fill="none" stroke="black"></path>
-              <path d="M 296,192 L 296,224" fill="none" stroke="black"></path>
-              <path d="M 296,272 L 296,304" fill="none" stroke="black"></path>
-              <path d="M 8,32 L 296,32" fill="none" stroke="black"></path>
-              <path d="M 8,64 L 296,64" fill="none" stroke="black"></path>
-              <path d="M 8,112 L 296,112" fill="none" stroke="black"></path>
-              <path d="M 8,144 L 296,144" fill="none" stroke="black"></path>
-              <path d="M 8,192 L 296,192" fill="none" stroke="black"></path>
-              <path d="M 8,224 L 296,224" fill="none" stroke="black"></path>
-              <path d="M 8,272 L 296,272" fill="none" stroke="black"></path>
-              <path d="M 8,304 L 296,304" fill="none" stroke="black"></path>
-              <polygon class="arrowhead" points="160,264 148,258.4 148,269.6" fill="black" transform="rotate(90,152,264)"></polygon>
-              <polygon class="arrowhead" points="160,184 148,178.4 148,189.6" fill="black" transform="rotate(90,152,184)"></polygon>
-              <polygon class="arrowhead" points="160,104 148,98.4 148,109.6" fill="black" transform="rotate(90,152,104)"></polygon>
-              <g class="text">
-                <text x="104" y="52">Service</text>
-                <text x="188" y="52">Announcement</text>
-                <text x="112" y="132">Metrics</text>
-                <text x="196" y="132">Distribution</text>
-                <text x="88" y="212">Service</text>
-                <text x="148" y="212">Access</text>
-                <text x="220" y="212">Processing</text>
-                <text x="48" y="292">Service</text>
-                <text x="112" y="292">Contact</text>
-                <text x="180" y="292">Instance</text>
-                <text x="252" y="292">Affinity</text>
-              </g>
-            </svg><a href="#section-4-2.1.1" class="pilcrow">¶</a>
-</div>
-</div>
-<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
-<a href="#name-a-typical-cats-workflow" class="selfRef">A Typical CATS Workflow</a>
-        </figcaption></figure>
-</div>
 <div id="service-announcement">
 <section id="section-4.1">
         <h3 id="name-service-announcement">
@@ -1975,11 +1928,11 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
           <h4 id="name-distributed-model">
 <a href="#section-4.2.1" class="section-number selfRef">4.2.1. </a><a href="#name-distributed-model" class="section-name selfRef">Distributed Model</a>
           </h4>
-<p id="section-4.2.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 4</a> shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#section-4.2.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.2.1-2">In <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 4</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress CATS-Forwarder 3. Then the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#section-4.2.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.2.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#section-4.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.2.1-2">In <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress CATS-Forwarder 3. Then the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#section-4.2.1-2" class="pilcrow">¶</a></p>
 <p id="section-4.2.1-3">The computing metric advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.<a href="#section-4.2.1-3" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-d"></span><div id="fig-cats-example-overlay">
-<figure id="figure-4">
+<figure id="figure-3">
             <div id="section-4.2.1-4.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.1-4.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="584" viewBox="0 0 584 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
@@ -2159,11 +2112,11 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                 </svg><a href="#section-4.2.1-4.1.1" class="pilcrow">¶</a>
 </div>
 </div>
-<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
 <a href="#name-an-example-of-cats-metric-d" class="selfRef">An Example of CATS Metric Dissemination in the Distributed Model</a>
             </figcaption></figure>
 </div>
-<p id="section-4.2.1-5">The example in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 4</a> mainly describes a per-instance computing-related metric distribution. In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#section-4.2.1-5" class="pilcrow">¶</a></p>
+<p id="section-4.2.1-5">The example in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> mainly describes a per-instance computing-related metric distribution. In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#section-4.2.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-met-dist2">
@@ -2171,9 +2124,9 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
           <h4 id="name-centralized-model">
 <a href="#section-4.2.2" class="section-number selfRef">4.2.2. </a><a href="#name-centralized-model" class="section-name selfRef">Centralized Model</a>
           </h4>
-<p id="section-4.2.2-1">If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 5</a>.<a href="#section-4.2.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2.2-1">If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>.<a href="#section-4.2.2-1" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-di"></span><div id="fig-cats-centralized">
-<figure id="figure-5">
+<figure id="figure-4">
             <div id="section-4.2.2-2.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.2-2.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="608" viewBox="0 0 608 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
@@ -2345,11 +2298,11 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                 </svg><a href="#section-4.2.2-2.1.1" class="pilcrow">¶</a>
 </div>
 </div>
-<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
+<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
 <a href="#name-an-example-of-cats-metric-di" class="selfRef">An Example of CATS Metric Distribution in the Centralized Model</a>
             </figcaption></figure>
 </div>
-<p id="section-4.2.2-3">In <a href="#fig-cats-centralized" class="auto internal xref">Figure 5</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed independently with the CATS-Forwarder 1. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to CATS-Forwarder 1 to indicate traffic steering.<a href="#section-4.2.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2.2-3">In <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed independently with the CATS-Forwarder 1. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to CATS-Forwarder 1 to indicate traffic steering.<a href="#section-4.2.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-met-dist3">
@@ -2357,9 +2310,9 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
           <h4 id="name-hybrid-model">
 <a href="#section-4.2.3" class="section-number selfRef">4.2.3. </a><a href="#name-hybrid-model" class="section-name selfRef">Hybrid Model</a>
           </h4>
-<p id="section-4.2.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 6</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for the subsequent service accessing packets.<a href="#section-4.2.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.2.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for the subsequent service accessing packets.<a href="#section-4.2.3-1" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-dis"></span><div id="fig-cats-hybrid">
-<figure id="figure-6">
+<figure id="figure-5">
             <div id="section-4.2.3-2.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.3-2.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="592" viewBox="0 0 592 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
@@ -2562,7 +2515,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                 </svg><a href="#section-4.2.3-2.1.1" class="pilcrow">¶</a>
 </div>
 </div>
-<figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
+<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
 <a href="#name-an-example-of-cats-metric-dis" class="selfRef">An Example of CATS Metric Distribution in the Hybrid Model</a>
             </figcaption></figure>
 </div>
@@ -2575,9 +2528,9 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
         <h3 id="name-service-access-processing">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-service-access-processing" class="section-name selfRef">Service Access Processing</a>
         </h3>
-<p id="section-4.3-1">A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 4</a>) or logically centralized (in the centralized model or hybrid model).<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-1">A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>) or logically centralized (in the centralized model or hybrid model).<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.3-2">This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such "appropriate information" may be utilized to differentiate selection mechanisms to enable service-specific selections.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
-<p id="section-4.3-3">In the example shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 4</a>, the client sends a service access via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service access may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) <span>[<a href="#RFC3261" class="cite xref">RFC3261</a>]</span>, HTTP <span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>, IPv6 <span>[<a href="#RFC8200" class="cite xref">RFC8200</a>]</span>, SRv6 <span>[<a href="#RFC8754" class="cite xref">RFC8754</a>]</span> or Real-Time Streaming Protocol (RTSP) <span>[<a href="#RFC7826" class="cite xref">RFC7826</a>]</span>) that carry the CS-ID and potential parameters. The Ingress CATS-Forwarder classifies the packets using the information provided by the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">In the example shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the client sends a service access via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service access may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) <span>[<a href="#RFC3261" class="cite xref">RFC3261</a>]</span>, HTTP <span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>, IPv6 <span>[<a href="#RFC8200" class="cite xref">RFC8200</a>]</span>, SRv6 <span>[<a href="#RFC8754" class="cite xref">RFC8754</a>]</span> or Real-Time Streaming Protocol (RTSP) <span>[<a href="#RFC7826" class="cite xref">RFC7826</a>]</span>) that carry the CS-ID and potential parameters. The Ingress CATS-Forwarder classifies the packets using the information provided by the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="service-contact-instance-affinity">

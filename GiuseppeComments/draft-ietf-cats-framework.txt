@@ -579,27 +579,6 @@ Table of Contents
    describes several deployment options (distributed, centralized, and
    hybrid model) to accommodate a variety of contexts.
 
-                   +-----------------------------------+
-                   |        Service Announcement       |
-                   +-----------------------------------+
-                                     |
-                                     v
-                   +-----------------------------------+
-                   |         Metrics Distribution      |
-                   +-----------------------------------+
-                                     |
-                                     v
-                   +-----------------------------------+
-                   |      Service Access Processing    |
-                   +-----------------------------------+
-                                     |
-                                     v
-                   +-----------------------------------+
-                   | Service Contact Instance Affinity |
-                   +-----------------------------------+
-
-                     Figure 3: A Typical CATS Workflow
-
 4.1.  Service Announcement
 
    A service is associated by the service provider with a unique
@@ -674,7 +653,7 @@ Table of Contents
 
 4.2.1.  Distributed Model
 
-   Figure 4 shows an example of how CATS metrics can be disseminated in
+   Figure 3 shows an example of how CATS metrics can be disseminated in
    the distributed model.  There is a client attached to the network via
    "CATS-Forwarder 1".  There are three service contact instances of the
    service with CS-ID "1": two service contact instances with CSCI-IDs
@@ -684,7 +663,7 @@ Table of Contents
    "3".  There is also a second service with CS-ID "2" with only one
    service contact instance located at "Service Site 3".
 
-   In Figure 4, the C-SMA collocated with "CATS-Forwarder 2" distributes
+   In Figure 3, the C-SMA collocated with "CATS-Forwarder 2" distributes
    the computing metrics for both service contact instances (i.e., (CS-
    ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)).  Note that this
    information may be aggregated into a single advertisement, but in
@@ -741,10 +720,10 @@ Table of Contents
           Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
           Service CS-ID 2, <computing metrics>
 
-       Figure 4: An Example of CATS Metric Dissemination in the
+       Figure 3: An Example of CATS Metric Dissemination in the
                           Distributed Model
 
-   The example in Figure 4 mainly describes a per-instance computing-
+   The example in Figure 3 mainly describes a per-instance computing-
    related metric distribution.  In the case of distributing aggregated
    per-site computing-related metrics, the per-instance CSCI-ID
    information will not be included in the advertisement.  Instead, a
@@ -755,7 +734,7 @@ Table of Contents
 4.2.2.  Centralized Model
 
    If the CATS framework is implemented using a centralized model, the
-   metric can be, e.g., distributed as illustrated in Figure 5.
+   metric can be, e.g., distributed as illustrated in Figure 4.
 
                     Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
                     Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
@@ -793,10 +772,10 @@ Table of Contents
                                    +--------------|CS-ID 2|-------+
                                                   +-------+
 
-       Figure 5: An Example of CATS Metric Distribution in the
+       Figure 4: An Example of CATS Metric Distribution in the
                           Centralized Model
 
-   In Figure 5, the C-SMA collocated with "CATS-Forwarder 2" distributes
+   In Figure 4, the C-SMA collocated with "CATS-Forwarder 2" distributes
    the computing metrics for both service contact instances (i.e., (CS-
    ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS.
    In this case, the C-PS is a logically centralized element deployed
@@ -812,7 +791,7 @@ Table of Contents
 4.2.3.  Hybrid Model
 
    If the CATS framework is implemented in the hybrid model, the metric
-   can be distributed, e.g., as illustrated in the Figure 6.  For
+   can be distributed, e.g., as illustrated in the Figure 5.  For
    example, the metrics 1,2,3 associated with the CS-ID1 are collected
    by the centralized C-PS, and the metrics 4 and 5 are distributed via
    distributed protocols to the ingress CATS-Forwarder directly.  For a
@@ -860,13 +839,13 @@ Table of Contents
              :<------------------------------------------------------+
       Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 
- Figure 6: An Example of CATS Metric Distribution in the Hybrid Model
+ Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
 
 4.3.  Service Access Processing
 
    A C-PS selects paths that lead to Egress CATS-Forwarders according to
    both service and network metrics that were advertised.  A C-PS may be
-   collocated with an Ingress CATS-Forwarder (as shown in Figure 4) or
+   collocated with an Ingress CATS-Forwarder (as shown in Figure 3) or
    logically centralized (in the centralized model or hybrid model).
 
    This document does not specify any specific algorithm for path
@@ -879,7 +858,7 @@ Table of Contents
    may be utilized to differentiate selection mechanisms to enable
    service-specific selections.
 
-   In the example shown in Figure 4, the client sends a service access
+   In the example shown in Figure 3, the client sends a service access
    via the network through the "CATS-Forwarder 1", which is an Ingress
    CATS-Forwarder.  Note that, a service access may consist of one or
    more service packets (e.g., Session Initiation Protocol (SIP)
