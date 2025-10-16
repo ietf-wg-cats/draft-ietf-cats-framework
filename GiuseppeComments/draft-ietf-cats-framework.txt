@@ -1041,9 +1041,9 @@ Table of Contents
          implemented in the centralized control plane, depending on the
          specific implementation and deployment.
 
-   The framework covers only the case of a single service provider
-   currently.  Thus, the deployment considerations about the case of
-   multiple service providers are not mentioned here.
+   The framework covers only the case of a single service provider.
+   Deployment considerations about the case of multiple service
+   providers are out of scope.
 
 5.3.  Implementation Consideration on Using CATS Metrics
 
