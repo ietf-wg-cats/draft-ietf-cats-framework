@@ -572,7 +572,7 @@ More importantly, the means for identifying a flow for ensuring instance affinit
 
 This document does not define any mechanism for defining or enforcing service contact instance affinity.
 
-# Operational and Manageability Considerations
+# Operational Considerations
 
 ## Provisioning of CATS Components {#sec-cats-provisioning}
 
