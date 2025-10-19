@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-16T01:24:00.085315+00:00",
+  "timestamp": "2025-10-19T01:40:55.434381+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -7154,24 +7154,26 @@
       "id": "PR_kwDOJBcdGs6tyLqY",
       "title": "Update draft-ietf-cats-framework.md",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/131",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dzpzp",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Old1\r\n\r\n   The above task can be enabled using a variety of means (NETCONF\r\n   [RFC6241], IPFIX [RFC7011], etc.).  It is out of scope to discuss\r\n   required CATS extension to these protocols.\r\n\r\n5.2.  Deployment Considerations\r\n\r\nNew1\r\n\tThe above task can be enabled using a variety of means (NETCONF\r\n   [RFC6241], IPFIX [RFC7011], RESTCONF [RFC8040], YANG-Push [[RFC8639](https://github.com/ietf-wg-cats/draft-ietf-cats-framework/compare/GiuseppeComments?expand=1#RFC8639)], etc.).  It is out of scope to discuss\r\n   required CATS extension to these protocols.\r\n\r\nOld2\r\n\r\n5.2.  Deployment Considerations\r\n\r\n   This document does not make any assumption about how the various CATS\r\n   functional elements are implemented and deployed.  Concretely,\r\n   whether a CATS deployment follows a fully distributed design or\r\n   relies upon a mix of centralized (e.g., a C-PS) and distributed CATS\r\n   functions (e.g., CATS traffic classifiers) is deployment-specific and\r\n   may reflect the preferences and policies of the (CATS) service\r\n   provider.\r\nNew2\r\n5.2.  Deployment Considerations\r\n\r\n   This document does not make any assumption about how the various CATS\r\n   functional elements are implemented and deployed.  Concretely,\r\n   whether a CATS deployment follows a fully distributed design or\r\n   relies upon a mix of centralized (e.g., a C-PS) and distributed CATS\r\n   functions (e.g., CATS traffic classifiers) is deployment-specific *, which*\r\n   may reflect the preferences and policies of the (CATS) service\r\n   provider, and requirements of the usecases [draft-ietf-cats-usecases-requirements].\r\n\r\nOld3\r\n\r\n5.3.  Implementation Consideration on Using CATS Metrics\r\n\r\n   According to the metric definition in\r\n\r\nNew3\r\nThe framework covers only the case of a single service provider currently. Thus, the deployment considerations about the case of multiple service providers are not mentioned here.\r\n5.3.  Implementation Consideration on Using CATS Metrics\r\n\r\n   According to the metric definition in\r\n\r\nOld4\r\n\r\n      Note that multi-homed clients may be connected to multiple CATS\r\n      infrastructures that may be operated by the same or distinct\r\n      service providers.  This version of the framework does not cover\r\n      multihoming specifics.\r\n\r\n4.4.  Service Contact Instance Affinity\r\nNew4\r\n      <del>Note that multi-homed clients may be connected to multiple CATS\r\n      infrastructures that may be operated by the same or distinct\r\n      service providers.  This version of the framework does not cover\r\n      multihoming specifics.\r\n\r\nOld5\r\n\r\n4.  CATS Framework Workflow\r\n\r\n   The following subsections provide an overview of a typical CATS\r\n   workflow.  In order to enable CATS in a given domain, some\r\n   provisioning is needed; see more details in Section 5.1.  Section 5.2\r\n   describes several deployment options (distributed, centralized, and\r\n   hybrid model) to accommodate a variety of contexts.\r\n\r\nNew5\r\n4.  CATS Framework Workflow\r\n\r\n   The following subsections provide an overview of a typical CATS\r\n   workflow.  In order to enable CATS in a given domain, some\r\n   provisioning is needed; see more details in Section 5.1.  Section 5.2\r\n   describes several deployment options (distributed, centralized, and\r\n   hybrid model) to accommodate a variety of contexts.\r\n\r\n+-----------------------------------+ \r\n|         Service Announcement        |\r\n+-----------------------------------+ \r\n                    |\r\n\t          V\r\n+-----------------------------------+ \r\n|         Metrics Distribution        |\r\n+-----------------------------------+ \r\n                    |\r\n\t          V\r\n+-----------------------------------+ \r\n|       Service Access Processing    |\r\n+-----------------------------------+ \r\n                    |\r\n\t          V\r\n+-----------------------------------+ \r\n| Service Contact Instance Affinity |\r\n+-----------------------------------+ \r\n \r\nFigure 3:   A Typical CATS Workflow\r\n\r\nOld6\r\n4.2.  Metrics Distribution\r\n\r\n   Figure 3 shows an example of how CATS metrics can be disseminated in\r\n   the distributed model. \r\n\r\n   If the CATS framework is implemented using a centralized model, the\r\n   metric can be, e.g., distributed as illustrated in Figure 4.\r\n\r\n   If the CATS framework is implemented in the hybrid model, the metric\r\n   can be distributed, e.g., as illustrated in the Figure 5. \r\nNew6\r\n4.2.  Metrics Distribution\r\n4.2.1 Metrics Distribution in Distributed Model\r\n   Figure 3 shows an example of how CATS metrics can be disseminated in\r\n   the distributed model. \r\n4.2.2 Metrics Distribution in Centralized Model\r\n\r\n   If the CATS framework is implemented using a centralized model, the\r\n   metric can be, e.g., distributed as illustrated in Figure 4.\r\n4.2.3 Metrics Distribution in Hybrid Model\r\n\r\n   If the CATS framework is implemented in the hybrid model, the metric\r\n   can be distributed, e.g., as illustrated in the Figure 5. \r\n\r\n\u00a0Old7\r\n6.  Security Considerations\r\n\r\n   The computing resource information changes over time very frequently,\r\n...\r\nAlso, C-SMA agents\r\n   need to support a mechanism to authenticate the services for which\r\n   they provide information to C-PS computation logics, among other CATS\r\n   functions.\r\n\r\n\r\n7.  Privacy Considerations\r\n\r\n   CATS solutions must support preventing on-path nodes in the underlay\r\n   infrastructure to fingerprint and track clients (e.g., determining\r\n   which client accesses which service).\r\n\r\n...\r\nThe specific encryption method may be applied at the\r\n   network layer, transport layer, or at the application/protocol level\r\n   depending on the implementation, so this is out of the scope of this\r\n   document.\r\n\r\n   For more discussion about privacy, refer to [RFC6462] and [RFC6973].\r\n\r\n\r\nNew7\r\n\r\n6.  Security Considerations\r\n\r\n   The computing resource information changes over time very frequently,\r\n...\r\nAlso, C-SMA agents\r\n   need to support a mechanism to authenticate the services for which\r\n   they provide information to C-PS computation logics, among other CATS\r\n   functions.\r\n\r\nThis version of the framework mainly focuses on the scenario of a single service provider. Hence, the security issues about the multiple service providers are not included currently.\u00a0\r\n\r\n7.  Privacy Considerations\r\n\r\n   CATS solutions must support preventing on-path nodes in the underlay\r\n   infrastructure to fingerprint and track clients (e.g., determining\r\n   which client accesses which service).\r\n\r\n...\r\nThe specific encryption method may be applied at the\r\n   network layer, transport layer, or at the application/protocol level\r\n   depending on the implementation, so this is out of the scope of this\r\n   document.\r\n\r\nThis version of the framework mainly focuses on the scenario of a single service provider. Hence, the privacy issues about the multiple service providers are not included currently.\r\n\r\n   For more discussion about privacy, refer to [RFC6462] and [RFC6973].",
       "createdAt": "2025-10-15T02:40:45Z",
-      "updatedAt": "2025-10-15T07:47:58Z",
+      "updatedAt": "2025-10-17T02:03:48Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "4169aa98bb7d977eaf1ba0d074fc558238d17c1d",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "GiuseppeComments",
-      "headRefOid": "e208f6a50cb8a18a8691aecb3ae03cb436d8c7bf",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "da527172647dc25a070890c0789cb4672c91a8ca",
+      "closedAt": "2025-10-17T02:03:47Z",
+      "mergedAt": "2025-10-17T02:03:47Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "cf3c423bb77096c18ffeaa750404d8ab12242b0a"
+      },
       "comments": [],
       "reviews": [
         {
@@ -7308,8 +7310,67 @@
               "updatedAt": "2025-10-15T07:47:58Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7HTSaU",
+          "commit": {
+            "abbreviatedOid": "da52717"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-16T08:47:27Z",
+          "updatedAt": "2025-10-16T08:47:27Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7HSy52",
+          "commit": {
+            "abbreviatedOid": "da52717"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-16T08:12:44Z",
+          "updatedAt": "2025-10-17T02:03:06Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "@dzpzp please take a look",
+              "createdAt": "2025-10-16T08:12:44Z",
+              "updatedAt": "2025-10-17T02:03:06Z"
+            }
+          ]
         }
       ]
+    },
+    {
+      "number": 132,
+      "id": "PR_kwDOJBcdGs6uQkUb",
+      "title": "be consistent with RFC5706bis",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/132",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-10-17T08:53:21Z",
+      "updatedAt": "2025-10-17T08:53:21Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "cf3c423bb77096c18ffeaa750404d8ab12242b0a",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "62865e1a5200bbbcaa3310b6b2281542707f1dbb",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
