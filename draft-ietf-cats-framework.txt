@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 20 April 2026                                      China Mobile
+Expires: 23 April 2026                                      China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         17 October 2025
+                                                         20 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 April 2026.
+   This Internet-Draft will expire on 23 April 2026.
 
 Copyright Notice
 
@@ -81,7 +81,7 @@ Table of Contents
        4.2.3.  Hybrid Model
      4.3.  Service Access Processing
      4.4.  Service Contact Instance Affinity
-   5.  Operational and Manageability Considerations
+   5.  Operational Considerations
      5.1.  Provisioning of CATS Components
      5.2.  Deployment Considerations
      5.3.  Implementation Consideration on Using CATS Metrics
@@ -916,7 +916,7 @@ Table of Contents
    This document does not define any mechanism for defining or enforcing
    service contact instance affinity.
 
-5.  Operational and Manageability Considerations
+5.  Operational Considerations
 
 5.1.  Provisioning of CATS Components
 
@@ -1134,9 +1134,9 @@ Table of Contents
    [I-D.ietf-cats-metric-definition]
               Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and H.
               Shi, "CATS Metrics Definition", Work in Progress,
-              Internet-Draft, draft-ietf-cats-metric-definition-03, 7
-              July 2025, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-cats-metric-definition-03>.
+              Internet-Draft, draft-ietf-cats-metric-definition-04, 20
+              October 2025, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-metric-definition-04>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
