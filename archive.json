@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-19T01:40:55.434381+00:00",
+  "timestamp": "2025-10-21T01:26:07.251334+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -7351,26 +7351,42 @@
       "id": "PR_kwDOJBcdGs6uQkUb",
       "title": "be consistent with RFC5706bis",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/132",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-17T08:53:21Z",
-      "updatedAt": "2025-10-17T08:53:21Z",
+      "updatedAt": "2025-10-20T12:44:00Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "cf3c423bb77096c18ffeaa750404d8ab12242b0a",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-2",
       "headRefOid": "62865e1a5200bbbcaa3310b6b2281542707f1dbb",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-20T12:43:58Z",
+      "mergedAt": "2025-10-20T12:43:58Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "e9e5461240302a4d2d32bb54beed289e649f582c"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7IDXk9",
+          "commit": {
+            "abbreviatedOid": "62865e1"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-20T12:43:49Z",
+          "updatedAt": "2025-10-20T12:43:49Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
