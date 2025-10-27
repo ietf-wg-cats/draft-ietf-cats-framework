@@ -214,7 +214,7 @@ CATS Network Metric Agent (C-NMA):
  : A functional entity that is responsible for collecting network capabilities and status, and for reporting them to a C-PS. See {{sec-cnma}}.
 
 CATS Traffic Classifier (C-TC):
- : A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It is also responsible for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See {{sec-ctc}}.
+:  A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See {{sec-ctc}}.
 
 # CATS Framework and Components {#Framework-and-concepts}
 
