@@ -173,7 +173,7 @@ Service instance:
   : A service instance runs in a service site and one or more instances may service clients' requests.
 
 Service site:
- : A location that hosts the resources that implement an offered service.
+ : A location that hosts the resources that implement one or more service instances.
  : A service site may be a node or a set of nodes.
  : A CATS-serviced site is a service site connected to a CATS-Forwarder.
 
