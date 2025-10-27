@@ -614,11 +614,12 @@ According to the method of distributing and collecting the computing related met
 
 The framework covers only the case of a single service provider. Deployment considerations about the case of multiple service providers are out of scope.
 
-## Implementation Consideration on Using CATS Metrics {#sec-metric-implementation}
+## Implementation Considerations on Using CATS Metrics {#sec-metric-implementation}
 
-According to the metric definition in {{?I-D.ietf-cats-metric-definition}}, computing metrics need to be normalized and/or aggregated in order to low down the scalability impact of the existing route system while providing sufficient detail for effective decision-making.
+According to the metric definition in {{?I-D.ietf-cats-metric-definition}}, computing metrics need to be normalized (i.e., convert metric values with or without units
+into unitless scores) and/or aggregated in order to low down the scalability impact of the existing route system while providing sufficient detail for effective decision-making.
 
-Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. The suggested solution is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
+Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. An approach is to implement the normalization and aggregation functions located away from the decision maker, CATS Path Selector (C-PS), especially when C-PS is co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at Service contact instance or CATS Service Metric Agent (C-SMA).
 
 When the C-SMA is co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in the C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instance. Regarding the aggregation functions, it can be implemented in the C-SMA, or the service contact instance.
 
