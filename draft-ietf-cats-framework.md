@@ -195,7 +195,7 @@ Service request:
  : Clients direct service requests to a server (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.
 
 CATS-Forwarder:
- : A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.
+ : A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.
  : A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder.
 
 Ingress CATS-Forwarder:
