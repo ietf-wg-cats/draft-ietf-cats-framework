@@ -592,7 +592,7 @@ In addition to the CATS steering policies that are communicated by a C-PS to an 
 * Set the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders. Such correlation is needed to help identify issues induced by the underlying encapsulation.
 * Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior)
 
-The above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, RESTCONF {{?RFC8040}}, YANG-Push {{?RFC8639}}, etc.). It is out of scope to discuss required CATS extension to these protocols.
+Provisioning includes configuration as well as distribution through protocols. Specifically, the above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, RESTCONF {{?RFC8040}}, YANG-Push {{?RFC8639}}, etc.). It is out of scope to discuss required CATS extension to these protocols.
 
 ## Deployment Considerations {#sec-cats-deployment}
 
