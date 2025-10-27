@@ -216,8 +216,8 @@ Table of Contents
       A service instance runs in a service site and one or more
       instances may service clients' requests.
 
-   Service site:  A location that hosts the resources that implement an
-      offered service.
+   Service site:  A location that hosts the resources that implement one
+      or more service instances.
 
       A service site may be a node or a set of nodes.
 
