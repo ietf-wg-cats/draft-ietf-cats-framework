@@ -224,9 +224,9 @@ Table of Contents
       A CATS-serviced site is a service site connected to a CATS-
       Forwarder.
 
-   Service contact instance:  A client-facing service function instance
-      that is responsible for receiving requests in the context of a
-      given service.
+   Service contact instance:  A client-facing function that is
+      responsible for receiving requests in the context of a given
+      service.
 
       A service contact instance can handle one or more service
       instances.
