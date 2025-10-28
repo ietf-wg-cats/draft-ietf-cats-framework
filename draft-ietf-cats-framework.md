@@ -518,7 +518,7 @@ This document makes no request for IANA action.
 
 This section provides examples to illustrate examples of CATS metrics distribution. These examples are not deployment recommendations.
 
-The following example mainly describes a per-instance computing-related metric distribution for illustration pruposes. Such information may be aggregated into a single advertisement. That is, n the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.
+The following example mainly describes a per-instance computing-related metric distribution for illustration purposes. Such information may be aggregated into a single advertisement. That is, in the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.
 
 ## Distributed Model {#sec-met-dist1}
 
