@@ -419,8 +419,8 @@ In {{fig-cats-example-overlay}}, the C-SMA collocated with "CATS-Forwarder 2" di
 The computing metric advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.
 
 ~~~ aasvg
-          Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
-          Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
 
                  :<----------------------:
                  :                       :               +---------+
@@ -451,8 +451,8 @@ The computing metric advertisements are processed by the C-PS hosted by "CATS-Fo
                  :                    +-----------:  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
-          Service CS-ID 2, <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
+        Service CS-ID 2, <computing metrics>
 ~~~
 {: #fig-cats-example-overlay title="An Example of CATS Metric Dissemination in the Distributed Model"}
 
@@ -463,10 +463,10 @@ The example in {{fig-cats-example-overlay}} mainly describes a per-instance comp
 If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in {{fig-cats-centralized}}.
 
 ~~~ aasvg
-                    Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                    Service CS-ID 2, <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                  Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -510,10 +510,10 @@ If the CATS framework is implemented in the hybrid model, the metric can be dist
 
 ~~~ aasvg
 
-              Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-              Service CS-ID 2, <computing metrics>
+            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+            Service CS-ID 2, <computing metrics>
                      +------+
              :<------| C-PS |<-------------------------------------.
              :       |      |<-------.                             |
@@ -545,7 +545,7 @@ If the CATS framework is implemented in the hybrid model, the metric can be dist
              :                        '--------------|CS-ID 2|-----+ |
              :                                       +-------+       |
              :<------------------------------------------------------+
-      Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
+    Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 ~~~
 {: #fig-cats-hybrid title="An Example of CATS Metric Distribution in the Hybrid Model"}
 
