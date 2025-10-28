@@ -536,8 +536,8 @@ Table of Contents
 
    Ingress CATS-Forwarders are responsible for steering service-specific
    traffic along a CATS-computed path that leads to an Egress CATS-
-   Forwarder.  Egress CATS-Forwarders are the endpoints that behave as
-   an egress for service requests that are forwarded over a CATS
+   Forwarder.  Egress CATS-Forwarders are the elements that behave as an
+   egress for service requests that are forwarded over a CATS
    infrastructure.  A service site that hosts service instances may be
    connected to one or more Egress CATS-Forwarders (e.g., multi-homing
    design).  If a C-PS has selected a specific service contact instance
