@@ -222,9 +222,6 @@ Table of Contents
 
       A service site may be a node or a set of nodes.
 
-      A CATS-serviced site is a service site connected to a CATS-
-      Forwarder.
-
    Service contact instance:  A client-facing function that is
       responsible for receiving requests in the context of a given
       service.
@@ -269,7 +266,7 @@ Table of Contents
       which may or may not be part of the CATS-Forwarder.
 
       A CATS-Forwarder may behave as an Ingress or Egress CATS-
-      Forwarder.
+      Forwarder.  See Section 3.4.6.
 
    Ingress CATS-Forwarder:  An entity that steers service-specific
       traffic along a CATS-computed path that leads to an Egress CATS-
@@ -278,7 +275,7 @@ Table of Contents
       service request.
 
    Egress CATS-Forwarder:  An entity located at the end of a CATS-
-      computed path which connects to a CATS-serviced site.
+      computed path which connects to a service site.
 
    CATS Path Selector (C-PS):  A functional entity that selects paths
       towards service sites and instances (and thus service contact

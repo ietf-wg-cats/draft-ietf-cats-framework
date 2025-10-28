@@ -1390,104 +1390,99 @@ svg :is([fill="white"], [fill^="#fff"]) {
           <p id="section-2-2.32.1">A service site may be a node or a set of nodes.<a href="#section-2-2.32.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.33"></dt>
+<dt id="section-2-2.33">Service contact instance:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.34">
-          <p id="section-2-2.34.1">A CATS-serviced site is a service site connected to a CATS-Forwarder.<a href="#section-2-2.34.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.34.1">A client-facing function that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.34.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.35">Service contact instance:</dt>
+<dt id="section-2-2.35"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.36">
-          <p id="section-2-2.36.1">A client-facing function that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.36.1">A service contact instance can handle one or more service instances.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.37"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.38">
-          <p id="section-2-2.38.1">A service contact instance can handle one or more service instances.<a href="#section-2-2.38.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.38.1">Steering beyond a service contact instance is hidden to both clients and CATS components.<a href="#section-2-2.38.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.39"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.40">
-          <p id="section-2-2.40.1">Steering beyond a service contact instance is hidden to both clients and CATS components.<a href="#section-2-2.40.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.40.1">A service contact instance processes a client's service request according to the service logic (e.g., handle locally or solicit backend resources).<a href="#section-2-2.40.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.41"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.42">
-          <p id="section-2-2.42.1">A service contact instance processes a client's service request according to the service logic (e.g., handle locally or solicit backend resources).<a href="#section-2-2.42.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.42.1">A service contact instance is reachable via at least one Egress CATS-Forwarder.<a href="#section-2-2.42.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.43"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.44">
-          <p id="section-2-2.44.1">A service contact instance is reachable via at least one Egress CATS-Forwarder.<a href="#section-2-2.44.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.44.1">Clients may access a service via multiple service contact instances running at the same or different locations (service sites).<a href="#section-2-2.44.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.45"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.46">
-          <p id="section-2-2.46.1">Clients may access a service via multiple service contact instances running at the same or different locations (service sites).<a href="#section-2-2.46.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.46.1">A service contact instance may dispatch service requests to one or more service instances (e.g., a service contact instance that behaves as a service load-balancer).<a href="#section-2-2.46.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.47"></dt>
+<dt id="section-2-2.47">CATS Service Contact Instance ID (CSCI-ID):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.48">
-          <p id="section-2-2.48.1">A service contact instance may dispatch service requests to one or more service instances (e.g., a service contact instance that behaves as a service load-balancer).<a href="#section-2-2.48.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.48.1">An identifier of a specific service contact instance. See <a href="#cats-ids" class="auto internal xref">Section 3.2</a>.<a href="#section-2-2.48.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.49">CATS Service Contact Instance ID (CSCI-ID):</dt>
+<dt id="section-2-2.49">Service request:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.50">
-          <p id="section-2-2.50.1">An identifier of a specific service contact instance. See <a href="#cats-ids" class="auto internal xref">Section 3.2</a>.<a href="#section-2-2.50.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.50.1">A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.<a href="#section-2-2.50.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.51">Service request:</dt>
+<dt id="section-2-2.51"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.52">
-          <p id="section-2-2.52.1">A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.<a href="#section-2-2.52.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.52.1">Clients generate service requests using service-specific protocols.<a href="#section-2-2.52.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.53"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.54">
-          <p id="section-2-2.54.1">Clients generate service requests using service-specific protocols.<a href="#section-2-2.54.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.54.1">Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.<a href="#section-2-2.54.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.55"></dt>
+<dt id="section-2-2.55">CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.56">
-          <p id="section-2-2.56.1">Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.56.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.57">CATS-Forwarder:</dt>
+<dt id="section-2-2.57"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.58">
-          <p id="section-2-2.58.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.58.1">A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder. See <a href="#sec-ocr" class="auto internal xref">Section 3.4.6</a>.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.59"></dt>
+<dt id="section-2-2.59">Ingress CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.60">
-          <p id="section-2-2.60.1">A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder.<a href="#section-2-2.60.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.60.1">An entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that hosts the service contact instance selected to satisfy the initial service request.<a href="#section-2-2.60.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.61">Ingress CATS-Forwarder:</dt>
+<dt id="section-2-2.61">Egress CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.62">
-          <p id="section-2-2.62.1">An entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that hosts the service contact instance selected to satisfy the initial service request.<a href="#section-2-2.62.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.62.1">An entity located at the end of a CATS-computed path which connects to a service site.<a href="#section-2-2.62.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.63">Egress CATS-Forwarder:</dt>
+<dt id="section-2-2.63">CATS Path Selector (C-PS):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.64">
-          <p id="section-2-2.64.1">An entity located at the end of a CATS-computed path which connects to a CATS-serviced site.<a href="#section-2-2.64.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.64.1">A functional entity that selects paths towards service sites and instances (and thus service contact instances) in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.64.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.65">CATS Path Selector (C-PS):</dt>
+<dt id="section-2-2.65">CATS Service Metric Agent (C-SMA):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.66">
-          <p id="section-2-2.66.1">A functional entity that selects paths towards service sites and instances (and thus service contact instances) in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.66.1">A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a C-PS. See <a href="#sec-csma" class="auto internal xref">Section 3.4.2</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.67">CATS Service Metric Agent (C-SMA):</dt>
+<dt id="section-2-2.67">CATS Network Metric Agent (C-NMA):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.68">
-          <p id="section-2-2.68.1">A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a C-PS. See <a href="#sec-csma" class="auto internal xref">Section 3.4.2</a>.<a href="#section-2-2.68.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.68.1">A functional entity that is responsible for collecting network capabilities and status, and for reporting them to a C-PS. See <a href="#sec-cnma" class="auto internal xref">Section 3.4.3</a>.<a href="#section-2-2.68.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.69">CATS Network Metric Agent (C-NMA):</dt>
+<dt id="section-2-2.69">CATS Traffic Classifier (C-TC):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.70">
-          <p id="section-2-2.70.1">A functional entity that is responsible for collecting network capabilities and status, and for reporting them to a C-PS. See <a href="#sec-cnma" class="auto internal xref">Section 3.4.3</a>.<a href="#section-2-2.70.1" class="pilcrow">¶</a></p>
-</dd>
-        <dd class="break"></dd>
-<dt id="section-2-2.71">CATS Traffic Classifier (C-TC):</dt>
-        <dd style="margin-left: 1.5em" id="section-2-2.72">
-          <p id="section-2-2.72.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.72.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.70.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.70.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
