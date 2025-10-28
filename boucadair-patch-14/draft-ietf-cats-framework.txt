@@ -903,8 +903,8 @@ Table of Contents
    service contact instances as reported by the metrics, and the state
    of the network.
 
-          Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
-          Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
 
                  :<----------------------:
                  :                       :               +---------+
@@ -935,8 +935,8 @@ Table of Contents
                  :                    +-----------:  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
-          Service CS-ID 2, <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
+        Service CS-ID 2, <computing metrics>
 
        Figure 3: An Example of CATS Metric Dissemination in the
                           Distributed Model
@@ -954,10 +954,10 @@ Table of Contents
    If the CATS framework is implemented using a centralized model, the
    metric can be, e.g., distributed as illustrated in Figure 4.
 
-                    Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                    Service CS-ID 2, <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                  Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -1020,10 +1020,10 @@ Table of Contents
    may also have some ability to compute the path for the subsequent
    service accessing packets.
 
-              Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-              Service CS-ID 2, <computing metrics>
+            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+            Service CS-ID 2, <computing metrics>
                      +------+
              :<------| C-PS |<-------------------------------------.
              :       |      |<-------.                             |
@@ -1263,7 +1263,7 @@ Appendix A.  Acknowledgements
    Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li, Xinxin Yi, Jari
    Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian,
    Zhenbin Li, Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra
-   Kumar and Taylor Paul for their comments and suggestions.
+   Kumar, and Taylor Paul for their comments and suggestions.
 
    Some text about various deployment models was originally documented
    in [I-D.yao-cats-awareness-architecture].
