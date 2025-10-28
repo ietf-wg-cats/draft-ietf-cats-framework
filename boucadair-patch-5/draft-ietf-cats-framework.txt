@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 30 April 2026                                      China Mobile
+Expires: 1 May 2026                                         China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         27 October 2025
+                                                         28 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2026.
+   This Internet-Draft will expire on 1 May 2026.
 
 Copyright Notice
 
@@ -306,8 +306,8 @@ Table of Contents
 3.1.  Assumptions
 
    CATS assumes that there might be one or multiple service instances
-   running on different service sites, which provide a given service
-   that is represented by the same service identifier (see Section 3.2).
+   hosted by service sites, which provide a given service that is
+   represented by the same service identifier (see Section 3.2).
    However, CATS does not make any assumption about these instances
    other than they are reachable via one or multiple service contact
    instances.
