@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 30 April 2026                                      China Mobile
+Expires: 1 May 2026                                         China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         27 October 2025
+                                                         28 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2026.
+   This Internet-Draft will expire on 1 May 2026.
 
 Copyright Notice
 
@@ -97,7 +97,7 @@ Table of Contents
 
 1.  Introduction
 
-   Computing service architectures evolved from single service site to
+   Computing service architectures evolved from a single service site to
    multiple, sometimes collaborative, service sites to address various
    issues such as long response times or suboptimal utilization of
    service and network resources (e.g., resource under-utilization or
@@ -142,7 +142,7 @@ Table of Contents
    instance may be aggregate metrics from multiple service instances.
 
    The CATS framework is an overlay framework for the selection of the
-   suitable service contact instance(s) from a set of candidates.  A
+   suitable service contact instances from a set of candidates.  A
    combination of networking and computing metrics determine the exact
    characterization of services as 'suitable' or not.
 
@@ -172,7 +172,7 @@ Table of Contents
       selection mechanism for CATS decision making.
 
    Computing metrics:  Metrics specific to the computing resources in
-      the underlying CATS system(s) as distinct from other metrics, such
+      the underlying CATS systems as distinct from other metrics, such
       as network metrics.  For further detail, see the set computing
       metrics defined in [I-D.ietf-cats-metric-definition].
 
@@ -206,8 +206,10 @@ Table of Contents
    CATS Service ID (CS-ID):  An identifier representing a service, which
       the clients use to access it.  See Section 3.2.
 
-   Service instance:  An instance of running resources according to a
-      given service logic.
+   Service instance:  A collection of running resources that are
+      orchestrated following a service logic.  When invoked by a client
+      request, these resources will collectively provide the intended
+      service.
 
       A service provider may enable many service instances that adhere
       to the same service logic to provide the same service.
@@ -215,17 +217,17 @@ Table of Contents
       A service instance runs in a service site and one or more
       instances may service clients' requests.
 
-   Service site:  A location that hosts the resources that implement an
-      offered service.
+   Service site:  A location that hosts the resources that implement one
+      or more service instances.
 
       A service site may be a node or a set of nodes.
 
       A CATS-serviced site is a service site connected to a CATS-
       Forwarder.
 
-   Service contact instance:  A client-facing service function instance
-      that is responsible for receiving requests in the context of a
-      given service.
+   Service contact instance:  A client-facing function that is
+      responsible for receiving requests in the context of a given
+      service.
 
       A service contact instance can handle one or more service
       instances.
@@ -255,17 +257,16 @@ Table of Contents
       CATS-Forwarders steer a service request to a service contact
       instance.
 
-      Clients must place a service request using service-specific
+      Clients generate service requests using service-specific
       protocols.
 
-      Clients direct service requests to a server (identified by a CS-
-      ID), without explicit knowledge of CATS-Forwarders.
+      Clients send service requests to a service instance (identified by
+      a CS-ID), without explicit knowledge of CATS-Forwarders.
 
    CATS-Forwarder:  A network entity that steers traffic specific to a
-      service request towards a corresponding yet-selected service
-      contact instance according to provisioned forwarding decisions.
-      These decisions are supplied by a C-PS, which may or may not be on
-      the CATS-Forwarder.
+      service request towards a service contact instance according to
+      forwarding decisions supplied by a CATS Path Selector (C-PS),
+      which may or may not be part of the CATS-Forwarder.
 
       A CATS-Forwarder may behave as an Ingress or Egress CATS-
       Forwarder.
@@ -280,15 +281,14 @@ Table of Contents
       computed path which connects to a CATS-serviced site.
 
    CATS Path Selector (C-PS):  A functional entity that selects paths
-      towards service locations and instances in order to accommodate
-      the requirements of service requests.  The path selection engine
-      takes into account the service and network status information.
-      See Section 3.4.4.
+      towards service sites and instances (and thus service contact
+      instances) in order to accommodate the requirements of service
+      requests.  The path selection engine takes into account the
+      service and network status information.  See Section 3.4.4.
 
    CATS Service Metric Agent (C-SMA):  A functional entity that is
       responsible for collecting service capabilities and status, and
-      for reporting them to a CATS Path Selector (C-PS).  See
-      Section 3.4.2.
+      for reporting them to a C-PS.  See Section 3.4.2.
 
    CATS Network Metric Agent (C-NMA):  A functional entity that is
       responsible for collecting network capabilities and status, and
@@ -296,20 +296,21 @@ Table of Contents
 
    CATS Traffic Classifier (C-TC):  A functional entity that is
       responsible for determining which packets belong to a traffic flow
-      for a specific service request.  It is also responsible for
-      forwarding such packets along a C-PS computed path that leads to
-      the relevant service contact instance.  See Section 3.4.5.
+      for a specific service request.  It coordinates with the Ingress
+      CATS-Forwarder so that such packets are placed onto a path
+      computed by the C-PS that leads to the selected service contact
+      instance.  See Section 3.4.5.
 
 3.  CATS Framework and Components
 
 3.1.  Assumptions
 
-   CATS assumes that there are multiple service instances running on
-   different service sites, which provide a given service that is
-   represented by the same service identifier (see Section 3.2).
-   However, CATS does not make any assumption about these instances
-   other than they are reachable via one or multiple service contact
-   instances.
+   CATS assumes that a service might be provided by one or multiple
+   service instances.  Such instances may be hosted within the same or
+   distinct service sites.  A given service is represented by the same
+   service identifier (Section 3.2).  CATS does not make any additional
+   assumption about these instances other than they are reachable via
+   one or multiple service contact instances.
 
 3.2.  CATS Identifiers
 
@@ -363,7 +364,7 @@ Table of Contents
    For the sake of illustration, "Service Instance" is shown as a single
    box in Figure 1.  However, this does not imply that a service
    instance is hosted in a single node.  Whether a service instance is
-   realized by invoking resources within a same node or by chaining
+   realized by invoking resources within the same node or by chaining
    resources exposed by several nodes is deployment specific.
 
    The following planes are defined:
@@ -377,9 +378,10 @@ Table of Contents
       forwarding nodes and communicating such decisions to the CATS Data
       Plane for execution.
 
-   *  CATS Data Plane: Responsible for computing-aware routing,
-      including handling packets in the data path, such as packet
-      forwarding.
+   *  CATS Data Plane: Responsible for computing-aware forwarding,
+      including classifying packets, steering them onto chosen paths
+      toward selected service contact instances, and forwarding the
+      packets along the paths to the service contact instances.
 
    Depending on implementation and deployment, these planes may consist
    of several functional elements/components, and the details will be
@@ -393,48 +395,49 @@ Table of Contents
    has been received from a client according to the capabilities and
    status information of both service contact instances and network.
    The main CATS functional elements and their interactions are shown in
-   Figure 2.
+   Figure 2.  The main functional components are described in the sub-
+   sections that follow.
 
-       +-----+              +------+           +------+
-     +------+|            +------+ |         +------+ |
-     |client|+            |client|-+         |client|-+
-     +---+--+             +---+--+           +---+--+
-         |                    |                  |
-         | +----------------+ |            +-----+----------+
-         '-+    C-TC#1      +-'      .-----+    C-TC#2      |
-           |----------------|        |     |----------------|
-           |     |C-PS#1    |    +------+  |CATS-Forwarder 4|
-     ......|     +----------|....|C-PS#2|..|                |...
-     :     |CATS-Forwarder 2|    |      |  |                |  .
-     :     +----------------+    +------+  +----------------+  :
-     :                                                         :
-     :                                            +-------+    :
-     :                         Underlay           | C-NMA |    :
-     :                      Infrastructure        +-------+    :
-     :                                                         :
-     :                                                         :
-     : +----------------+                +----------------+    :
-     : |CATS-Forwarder 1|  +-------+     |CATS-Forwarder 3|    :
-     :.|                |..|C-SMA#1|.... |                |....:
-       +---------+------+  +-------+     +----------------+
-                 |         |             |   C-SMA#2      |
-                 |         |             +-------+--------+
-                 |         |                     |
-                 |         |                     |
-              +------------+               +------------+
-             +------------+ |             +------------+ |
-             |  Service   | |             |  Service   | |
-             |  Contact   | |             |  Contact   | |
-             |  Instance  |-+             |  Instance  |-+
-             +------------+               +------------+
-                          |                         |
-                     +----------+              +----------+
-                   +----------+ |            +----------+ |
-                 +----------+ | |            | Service  | |
-                 | Service  | |-+            | Instance |-+
-                 | Instance |-+              +----------+
-                 +----------+
-              Service Site 1              Service Site 2
+          +-----+              +------+           +------+
+        +------+|            +------+ |         +------+ |
+        |client|+            |client|-+         |client|-+
+        +---+--+             +---+--+           +---+--+
+            |                    |                  |
+            | +----------------+ |            +-----+----------+
+            '-+    C-TC#1      +-'      .-----+    C-TC#2      |
+              |----------------|        |     |----------------|
+              |     |C-PS#1    |    +------+  |CATS-Forwarder 4|
+        ......|     +----------|....|C-PS#2|..|                |...
+        :     |CATS-Forwarder 2|    |      |  |                |  .
+        :     +----------------+    +------+  +----------------+  :
+        :                                                         :
+        :                                            +-------+    :
+        :                         Underlay           | C-NMA |    :
+        :                      Infrastructure        +-------+    :
+        :                                                         :
+        :                                                         :
+        : +----------------+                +----------------+    :
+        : |CATS-Forwarder 1|  +-------+     |CATS-Forwarder 3|    :
+        :.|                |..|C-SMA#1|.... |                |....:
+          +---------+------+  ++------+     +----------------+
+                    |          |            |   C-SMA#2      |
+                    |          |            +-------+--------+
+                    |          |                    |
+                    |          |                    |
+                   +------------+             +------------+
+                 +------------+ |           +------------+ |
+                 |  Service   | |           |  Service   | |
+                 |  Contact   | |           |  Contact   | |
+                 |  Instance  |-+           |  Instance  |-+
+                 +------------+             +------------+
+                        |                          |
+                  +----------+               +----------+
+                +----------+ |             +----------+ |
+              +----------+ | |             | Service  | |
+              | Service  | |-+             | Instance |-+
+              | Instance |-+               +----------+
+              +----------+                Service Site 2
+             Service Site 1
 
                     Figure 2: CATS Functional Components
 
@@ -517,25 +520,25 @@ Table of Contents
 
    The CATS Traffic Classifier (C-TC) is a functional component that is
    responsible for associating incoming packets from clients with
-   service requests.  CATS classifiers also ensure that packets that are
-   bound to a specific service contact instance are all forwarded
-   towards that same service contact instance, as instructed by a C-PS.
-   To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to
-   network locators) to classify service requests.  Refer to Section 5.1
-   for more details about provisioning of classification rules.
+   service requests.  C-TCs also ensure that packets that are bound to a
+   specific service contact instance are all forwarded towards that same
+   service contact instance, as instructed by a C-PS.  To that aim, a
+   C-TC uses CS-IDs (or their resolution of CS-ID to network locators)
+   to classify service requests.  Refer to Section 5.1 for more details
+   about provisioning of classification rules.
 
    Note that CS-IDs may be carried in packets if mechanisms such as TLS
    Server Name Indication extension (SNI) (Section 3 of [RFC6066]) are
    used.
 
-   CATS classifiers are typically hosted in CATS-Forwarders.
+   C-TCs are typically hosted in CATS-Forwarders.
 
 3.4.6.  CATS-Forwarders
 
-   Ingress CATS-Forwarder are responsible for steering service-specific
+   Ingress CATS-Forwarders are responsible for steering service-specific
    traffic along a CATS-computed path that leads to an Egress CATS-
-   Forwarder.  Egress CATS-Forwarders are the endpoints that behave as
-   an egress for service requests that are forwarded over a CATS
+   Forwarder.  Egress CATS-Forwarders are the elements that behave as an
+   egress for service requests that are forwarded over a CATS
    infrastructure.  A service site that hosts service instances may be
    connected to one or more Egress CATS-Forwarders (e.g., multi-homing
    design).  If a C-PS has selected a specific service contact instance
@@ -585,7 +588,7 @@ Table of Contents
    identifier called a CS-ID.  A CS-ID may be a network identifier, such
    as an IP address.  The mapping of CS-IDs to network identifiers may
    be learned through a name resolution service (e.g., DNS [RFC1034]).
-   Note that CATS framework does not assume nor preclude any specific
+   Note that CATS framework does not assume or preclude any specific
    name resolution service.
 
 4.2.  Metrics Distribution
@@ -609,7 +612,7 @@ Table of Contents
    the C-SMA to a centralized control plane, for instance, a standalone
    C-PS.
 
-   In the hybrid model, the metrics can be distributed to C-PSes in
+   In the hybrid model, the metrics can be distributed to C-PSes in a
    combination of distributed and centralized ways.  The specific
    combination of metric distribution is an implementation choice, which
    is determined by the requirements of specific services.
@@ -685,8 +688,8 @@ Table of Contents
    service contact instances as reported by the metrics, and the state
    of the network.
 
-          Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
-          Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
 
                  :<----------------------:
                  :                       :               +---------+
@@ -717,8 +720,8 @@ Table of Contents
                  :                    +-----------:  '---|CS-ID 2|
                  :                                :      +-------+
                  :<-------------------------------:
-          Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
-          Service CS-ID 2, <computing metrics>
+        Service CS-ID 1, contact instance CSCI-ID 3 <computing metrics>
+        Service CS-ID 2, <computing metrics>
 
        Figure 3: An Example of CATS Metric Dissemination in the
                           Distributed Model
@@ -736,10 +739,10 @@ Table of Contents
    If the CATS framework is implemented using a centralized model, the
    metric can be, e.g., distributed as illustrated in Figure 4.
 
-                    Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                    Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                    Service CS-ID 2, <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                  Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -799,13 +802,13 @@ Table of Contents
    C-PS.  The CATS-computed path result will be distributed to the
    Ingress CATS-Forwarders from the C-PS by considering both the metrics
    from the C-SMA and C-NMA.  Furthermore, the Ingress CATS-Forwarder
-   may also have some ability to compute the path for the subsequent
-   service accessing packets.
+   may also have some ability to compute the path for subsequent packets
+   accessing the same service.
 
-              Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-              Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-              Service CS-ID 2, <computing metrics>
+            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+            Service CS-ID 2, <computing metrics>
                      +------+
              :<------| C-PS |<-------------------------------------.
              :       |      |<-------.                             |
@@ -834,10 +837,10 @@ Table of Contents
              :          |CATS-Forwarder 3|--------------+          | |
              :          +----------------+         Service Site 3  | |
              :                        |              +-------+     | |
-             :                        '-------+------|CS-ID 2|-----+ |
+             :                        '--------------|CS-ID 2|-----+ |
              :                                       +-------+       |
              :<------------------------------------------------------+
-      Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
+    Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 
  Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
 
@@ -858,16 +861,15 @@ Table of Contents
    may be utilized to differentiate selection mechanisms to enable
    service-specific selections.
 
-   In the example shown in Figure 3, the client sends a service access
+   In the example shown in Figure 3, the client sends a service request
    via the network through the "CATS-Forwarder 1", which is an Ingress
-   CATS-Forwarder.  Note that, a service access may consist of one or
-   more service packets (e.g., Session Initiation Protocol (SIP)
-   [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6 [RFC8754] or Real-
-   Time Streaming Protocol (RTSP) [RFC7826]) that carry the CS-ID and
-   potential parameters.  The Ingress CATS-Forwarder classifies the
-   packets using the information provided by the CATS classifier (C-TC).
-   When a matching classification entry is found for the packets, the
-   Ingress CATS-Forwarder encapsulates and forwards them to the C-PS
+   CATS-Forwarder.  Note that, a service request to access the service
+   may consist of one or more service packets (e.g., Session Initiation
+   Protocol (SIP) [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6
+   [RFC8754], or Real-Time Streaming Protocol (RTSP) [RFC7826]) that
+   carry the CS-ID and potential parameters.  When a matching
+   classification entry maintained by a C-TC is found for the packets,
+   the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS
    selected Egress CATS-Forwarder.  When these packets reach the Egress
    CATS-Forwarder, the outer header of the possible overlay
    encapsulation will be removed and the inner packets will be sent to
@@ -876,8 +878,8 @@ Table of Contents
 4.4.  Service Contact Instance Affinity
 
    Service contact instance affinity means that packets that belong to a
-   flow associated with a service should always be sent to the same
-   service contact instance.  Furthermore, packets of a given flow
+   flow associated with a service request should always be sent to the
+   same service contact instance.  Furthermore, packets of a given flow
    should be forwarded along the same path to avoid mis-ordering and to
    prevent the introduction of unpredictable latency variations.  The
    CATS framework must ensure that service instance selection and path
@@ -885,8 +887,10 @@ Table of Contents
    same Egress CATS-Forwarder needs to be solicited to forward the
    packets.
 
-   The affinity is configured on the C-PS when the service is deployed,
-   or is determined at the time of newly formulated service requests.
+   Ensuring service affinity for flows is a feature that can be
+   configured on the C-PS when the service is deployed (i.e., all flows
+   bound to a service) or determined at the time of newly formulated
+   service requests (i.e., specific flow).
 
    Note that different services may have different notions of what
    constitutes a 'flow' and may, thus, identify a flow differently.
@@ -899,19 +903,19 @@ Table of Contents
    contact instance.
 
    Hence, when specifying a protocol to communicate information about
-   service contact instance affinity, the protocol should support
-   flexible mechanisms for identifying flows.  Or, from a more general
-   perspective, there should be a mechanism to specify and identify the
-   set of packets that are subject to a service contact instance
-   affinity.
+   service contact instance affinity to C-TCs in particular, the
+   protocol should support flexible mechanisms for identifying flows.
+   Or, from a more general perspective, there should be a mechanism to
+   specify and identify the set of packets that are subject to a service
+   contact instance affinity.
 
    More importantly, the means for identifying a flow for ensuring
    instance affinity should be application-independent to avoid the need
    for service-specific instance affinity methods.  However, service
    contact instance affinity information may be configurable on a per-
    service basis.  For each service, the information can include the
-   flow/packets identification type and means, affinity timeout value,
-   etc.
+   flow or packets identification type and means, affinity timeout
+   value, etc.
 
    This document does not define any mechanism for defining or enforcing
    service contact instance affinity.
@@ -925,18 +929,18 @@ Table of Contents
 
    In addition to the CATS steering policies that are communicated by a
    C-PS to an Ingress CATS-Forwarder, some provisioning tasks are
-   required.  This includes, but not limited to:
+   required.  This includes, but is not limited to:
 
    *  Provide C-PS elements with the locators of available Ingress CATS-
       Forwarder.  Such locators may also be discovered from the network.
 
-   *  Enable required setup to connect C-PS elements with C-NMA and
-      C-SMA.
+   *  Supply information needed to connect C-PS elements with C-NMAs and
+      C-SMAs.
 
-   *  Allocate various identifiers CS-ID/CSCI-ID and bind them to
-      specific service contact instances.
+   *  Allocate identifiers CS-ID/CSCI-ID and bind them to specific
+      service contact instances.
 
-   *  Provide C-PS element with the set of optimization metrics (per
+   *  Provide C-PS elements with the set of optimization metrics (per
       service) and an optimization policy.
 
    *  Expose encapsulation capabilities supported by CATS-Forwarders.
@@ -960,10 +964,11 @@ Table of Contents
       (e.g., classification rules, steering rules, and forwarding
       behavior)
 
-   The above task can be enabled using a variety of means (NETCONF
-   [RFC6241], IPFIX [RFC7011], RESTCONF [RFC8040], YANG-Push [RFC8639],
-   etc.).  It is out of scope to discuss required CATS extension to
-   these protocols.
+   Provisioning includes configuration as well as distribution through
+   protocols.  Specifically, the above tasks can be enabled using a
+   variety of means (NETCONF [RFC6241], IPFIX [RFC7011], RESTCONF
+   [RFC8040], YANG-Push [RFC8639], etc.).  It is out of scope to discuss
+   required CATS extensions to these protocols.
 
 5.2.  Deployment Considerations
 
@@ -1063,10 +1068,9 @@ Table of Contents
 
 5.4.  Verifying Correct Operations
 
-   CATS may be implemented by extending some existing control plane
-   protocols, such as BGP or PCEP.  A CATS implementation must log error
-   events for better network management and operation.  Means to assess
-   the reachability and trace CATS paths should be supported.
+   A CATS implementation must log error events for better network
+   management and operation.  Means to assess the reachability and trace
+   CATS paths should be supported.
 
 5.5.  Impact on Network Operations
 
@@ -1293,8 +1297,8 @@ Contributors
 
 
    Dirk Trossen
-   Huawei Technologies
-   Email: dirk.trossen@huawei.com
+   DaPaDOT Tech UG (haftungsbeschraenkt)
+   Email: dirk@dapadot-tech.eu
 
 
    Luigi Iannone

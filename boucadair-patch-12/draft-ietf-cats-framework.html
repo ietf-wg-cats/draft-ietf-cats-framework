@@ -1054,7 +1054,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 30 April 2026</td>
+<td class="center">Expires 1 May 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1067,12 +1067,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-27" class="published">27 October 2025</time>
+<time datetime="2025-10-28" class="published">28 October 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-04-30">30 April 2026</time></dd>
+<dd class="expires"><time datetime="2026-05-01">1 May 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1124,7 +1124,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 1 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1277,12 +1277,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Computing service architectures evolved from single service site to multiple, sometimes collaborative, service sites to address various issues such as long response times or suboptimal utilization of service and network resources (e.g., resource under-utilization or exhaustion).<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Computing service architectures evolved from a single service site to multiple, sometimes collaborative, service sites to address various issues such as long response times or suboptimal utilization of service and network resources (e.g., resource under-utilization or exhaustion).<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">The underlying networking infrastructures that include computing resources usually provide relatively static service dispatching, e.g., the selection of the service instances for a request. In such infrastructures, service-specific traffic is often directed to the closest service site from a routing perspective without considering the actual network state (e.g., traffic congestion conditions) or the service site state.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">As described in <span>[<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span>, traffic steering that takes into account computing resource metrics would benefit several services, including latency-sensitive services such as immersive services that rely upon the use of augmented reality or virtual reality (AR/VR) techniques. This document provides an architectural framework that aims at facilitating the making of compute- and network-aware traffic steering decisions in dynamic networking environments with variable computing service resources.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">Today, organizations often distribute user services across on-premises and cloud service provider networks. To support both redundancy and responsiveness, the Computing-Aware Traffic Steering (CATS) framework supports single or multiple service instances providing one given service, which may exist in one or more service sites. Clients access service instances via client-facing service functions known as service contact instances. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address resource limitations in a specific service site.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">Steering in CATS aims to select the appropriate service contact instance to service a request according to a set of network and computing metrics. This selection may not reveal the actual service instance that a client will invoke, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be aggregate metrics from multiple service instances.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">The CATS framework is an overlay framework for the selection of the suitable service contact instance(s) from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-6">The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">Furthermore, this document describes a workflow of the main CATS procedures (see <a href="#sec-cats-workflow" class="auto internal xref">Section 4</a>) executed in both the control and data planes.<a href="#section-1-7" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1315,7 +1315,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.9">Computing metrics:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.10">
-          <p id="section-2-2.10.1">Metrics specific to the computing resources in the underlying CATS system(s) as distinct from other metrics, such as network metrics. For further detail, see the set computing metrics defined in <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span>.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.10.1">Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. For further detail, see the set computing metrics defined in <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span>.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.11">Service:</dt>
@@ -1367,7 +1367,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.23">Service instance:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.24">
-          <p id="section-2-2.24.1">An instance of running resources according to a given service logic.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.24.1">A collection of running resources that are orchestrated following a service logic. When invoked by a client request, these resources will collectively provide the intended service.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.25"></dt>
@@ -1382,7 +1382,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.29">Service site:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.30">
-          <p id="section-2-2.30.1">A location that hosts the resources that implement an offered service.<a href="#section-2-2.30.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.30.1">A location that hosts the resources that implement one or more service instances.<a href="#section-2-2.30.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.31"></dt>
@@ -1397,7 +1397,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.35">Service contact instance:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.36">
-          <p id="section-2-2.36.1">A client-facing service function instance that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.36.1">A client-facing function that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.37"></dt>
@@ -1442,17 +1442,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.53"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.54">
-          <p id="section-2-2.54.1">Clients must place a service request using service-specific protocols.<a href="#section-2-2.54.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.54.1">Clients generate service requests using service-specific protocols.<a href="#section-2-2.54.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.55"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.56">
-          <p id="section-2-2.56.1">Clients direct service requests to a server (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.56.1">Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.57">CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.58">
-          <p id="section-2-2.58.1">A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.58.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.59"></dt>
@@ -1472,12 +1472,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.65">CATS Path Selector (C-PS):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.66">
-          <p id="section-2-2.66.1">A functional entity that selects paths towards service locations and instances in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.66.1">A functional entity that selects paths towards service sites and instances (and thus service contact instances) in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.67">CATS Service Metric Agent (C-SMA):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.68">
-          <p id="section-2-2.68.1">A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a CATS Path Selector (C-PS). See <a href="#sec-csma" class="auto internal xref">Section 3.4.2</a>.<a href="#section-2-2.68.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.68.1">A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a C-PS. See <a href="#sec-csma" class="auto internal xref">Section 3.4.2</a>.<a href="#section-2-2.68.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.69">CATS Network Metric Agent (C-NMA):</dt>
@@ -1487,7 +1487,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.71">CATS Traffic Classifier (C-TC):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.72">
-          <p id="section-2-2.72.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It is also responsible for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.72.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.72.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.72.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
@@ -1503,7 +1503,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-assumptions">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-assumptions" class="section-name selfRef">Assumptions</a>
         </h3>
-<p id="section-3.1-1">CATS assumes that there are multiple service instances running on different service sites, which provide a given service that is represented by the same service identifier (see <a href="#cats-ids" class="auto internal xref">Section 3.2</a>). However, CATS does not make any assumption about these instances other than they are reachable via one or multiple service contact instances.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">CATS assumes that a service might be provided by one or multiple service instances. Such instances may be hosted within the same or distinct service sites. A given service is represented by the same service identifier (<a href="#cats-ids" class="auto internal xref">Section 3.2</a>). CATS does not make any additional assumption about these instances other than they are reachable via one or multiple service contact instances.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="cats-ids">
@@ -1611,7 +1611,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </div>
 <p id="section-3.3-3">For the sake of illustration, "Service Instance" is shown as a single box in <a href="#fig-cats-fw" class="auto internal xref">Figure 1</a>. However,
 this does not imply that a service instance is hosted in a single node. Whether  a service instance
-is realized by invoking resources within a same node or by chaining resources exposed by several nodes
+is realized by invoking resources within the same node or by chaining resources exposed by several nodes
 is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
 <p id="section-3.3-4">The following planes are defined:<a href="#section-3.3-4" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1622,7 +1622,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
             <p id="section-3.3-5.2.1">CATS Control Plane: Responsible for scheduling services based on computing and network information. It is also responsible for making decisions about how packets should be forwarded by involved forwarding nodes and communicating such decisions to the CATS Data Plane for execution.<a href="#section-3.3-5.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.3-5.3">
-            <p id="section-3.3-5.3.1">CATS Data Plane: Responsible for computing-aware routing, including handling packets in the data path, such as packet forwarding.<a href="#section-3.3-5.3.1" class="pilcrow">¶</a></p>
+            <p id="section-3.3-5.3.1">CATS Data Plane: Responsible for computing-aware forwarding, including classifying packets, steering them onto chosen paths toward selected service contact instances, and forwarding the packets along the paths to the service contact instances.<a href="#section-3.3-5.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-3.3-6">Depending on implementation and deployment, these planes may consist of several functional elements/components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.<a href="#section-3.3-6" class="pilcrow">¶</a></p>
@@ -1633,7 +1633,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
         <h3 id="name-cats-functional-components">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-cats-functional-components" class="section-name selfRef">CATS Functional Components</a>
         </h3>
-<p id="section-3.4-1">CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional elements and their interactions are shown in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional elements and their interactions are shown in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>. The main functional components are described in the sub-sections that follow.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-cats-functional-components-2"></span><div id="fig-cats-components">
 <figure id="figure-2">
           <div id="section-3.4-2.1">
@@ -1643,44 +1643,45 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                 <path d="M 24,320 L 24,368" fill="none" stroke="black"></path>
                 <path d="M 40,80 L 40,128" fill="none" stroke="black"></path>
                 <path d="M 56,112 L 56,208" fill="none" stroke="black"></path>
+                <path d="M 56,592 L 56,640" fill="none" stroke="black"></path>
                 <path d="M 64,48 L 64,80" fill="none" stroke="black"></path>
                 <path d="M 72,32 L 72,64" fill="none" stroke="black"></path>
-                <path d="M 72,464 L 72,528" fill="none" stroke="black"></path>
+                <path d="M 80,464 L 80,528" fill="none" stroke="black"></path>
                 <path d="M 104,152 L 104,176" fill="none" stroke="black"></path>
                 <path d="M 104,368 L 104,440" fill="none" stroke="black"></path>
-                <path d="M 104,592 L 104,640" fill="none" stroke="black"></path>
+                <path d="M 144,592 L 144,640" fill="none" stroke="black"></path>
                 <path d="M 160,320 L 160,368" fill="none" stroke="black"></path>
+                <path d="M 160,576 L 160,624" fill="none" stroke="black"></path>
                 <path d="M 176,48 L 176,80" fill="none" stroke="black"></path>
-                <path d="M 176,464 L 176,552" fill="none" stroke="black"></path>
-                <path d="M 184,336 L 184,448" fill="none" stroke="black"></path>
+                <path d="M 176,560 L 176,608" fill="none" stroke="black"></path>
+                <path d="M 184,336 L 184,368" fill="none" stroke="black"></path>
+                <path d="M 184,464 L 184,528" fill="none" stroke="black"></path>
                 <path d="M 192,112 L 192,208" fill="none" stroke="black"></path>
-                <path d="M 192,464 L 192,512" fill="none" stroke="black"></path>
-                <path d="M 192,592 L 192,640" fill="none" stroke="black"></path>
+                <path d="M 192,368 L 192,440" fill="none" stroke="black"></path>
+                <path d="M 200,448 L 200,512" fill="none" stroke="black"></path>
                 <path d="M 208,80 L 208,128" fill="none" stroke="black"></path>
-                <path d="M 208,576 L 208,624" fill="none" stroke="black"></path>
-                <path d="M 224,560 L 224,608" fill="none" stroke="black"></path>
                 <path d="M 232,48 L 232,80" fill="none" stroke="black"></path>
                 <path d="M 232,160 L 232,208" fill="none" stroke="black"></path>
                 <path d="M 248,32 L 248,64" fill="none" stroke="black"></path>
                 <path d="M 248,336 L 248,368" fill="none" stroke="black"></path>
                 <path d="M 264,128 L 264,152" fill="none" stroke="black"></path>
                 <path d="M 288,160 L 288,208" fill="none" stroke="black"></path>
+                <path d="M 288,576 L 288,624" fill="none" stroke="black"></path>
                 <path d="M 296,320 L 296,400" fill="none" stroke="black"></path>
-                <path d="M 304,464 L 304,528" fill="none" stroke="black"></path>
+                <path d="M 296,464 L 296,528" fill="none" stroke="black"></path>
                 <path d="M 312,112 L 312,208" fill="none" stroke="black"></path>
                 <path d="M 328,48 L 328,80" fill="none" stroke="black"></path>
-                <path d="M 328,576 L 328,624" fill="none" stroke="black"></path>
                 <path d="M 360,80 L 360,112" fill="none" stroke="black"></path>
                 <path d="M 360,400 L 360,440" fill="none" stroke="black"></path>
                 <path d="M 368,240 L 368,272" fill="none" stroke="black"></path>
+                <path d="M 376,576 L 376,624" fill="none" stroke="black"></path>
                 <path d="M 384,48 L 384,80" fill="none" stroke="black"></path>
+                <path d="M 392,560 L 392,608" fill="none" stroke="black"></path>
                 <path d="M 400,32 L 400,64" fill="none" stroke="black"></path>
-                <path d="M 408,464 L 408,528" fill="none" stroke="black"></path>
-                <path d="M 416,576 L 416,624" fill="none" stroke="black"></path>
-                <path d="M 424,464 L 424,512" fill="none" stroke="black"></path>
+                <path d="M 400,464 L 400,528" fill="none" stroke="black"></path>
+                <path d="M 416,448 L 416,512" fill="none" stroke="black"></path>
                 <path d="M 432,240 L 432,272" fill="none" stroke="black"></path>
                 <path d="M 432,320 L 432,400" fill="none" stroke="black"></path>
-                <path d="M 432,560 L 432,608" fill="none" stroke="black"></path>
                 <path d="M 448,112 L 448,208" fill="none" stroke="black"></path>
                 <path d="M 24,32 L 72,32" fill="none" stroke="black"></path>
                 <path d="M 192,32 L 248,32" fill="none" stroke="black"></path>
@@ -1712,28 +1713,23 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                 <path d="M 184,368 L 248,368" fill="none" stroke="black"></path>
                 <path d="M 296,368 L 432,368" fill="none" stroke="black"></path>
                 <path d="M 296,400 L 432,400" fill="none" stroke="black"></path>
-                <path d="M 88,448 L 176,448" fill="none" stroke="black"></path>
-                <path d="M 320,448 L 408,448" fill="none" stroke="black"></path>
-                <path d="M 72,464 L 168,464" fill="none" stroke="black"></path>
-                <path d="M 304,464 L 400,464" fill="none" stroke="black"></path>
-                <path d="M 72,528 L 176,528" fill="none" stroke="black"></path>
-                <path d="M 304,528 L 408,528" fill="none" stroke="black"></path>
-                <path d="M 136,560 L 224,560" fill="none" stroke="black"></path>
-                <path d="M 344,560 L 432,560" fill="none" stroke="black"></path>
-                <path d="M 120,576 L 208,576" fill="none" stroke="black"></path>
-                <path d="M 328,576 L 416,576" fill="none" stroke="black"></path>
-                <path d="M 104,592 L 192,592" fill="none" stroke="black"></path>
-                <path d="M 328,624 L 416,624" fill="none" stroke="black"></path>
-                <path d="M 104,640 L 192,640" fill="none" stroke="black"></path>
+                <path d="M 96,448 L 200,448" fill="none" stroke="black"></path>
+                <path d="M 312,448 L 416,448" fill="none" stroke="black"></path>
+                <path d="M 80,464 L 184,464" fill="none" stroke="black"></path>
+                <path d="M 296,464 L 400,464" fill="none" stroke="black"></path>
+                <path d="M 80,528 L 184,528" fill="none" stroke="black"></path>
+                <path d="M 296,528 L 400,528" fill="none" stroke="black"></path>
+                <path d="M 88,560 L 176,560" fill="none" stroke="black"></path>
+                <path d="M 304,560 L 392,560" fill="none" stroke="black"></path>
+                <path d="M 72,576 L 160,576" fill="none" stroke="black"></path>
+                <path d="M 288,576 L 376,576" fill="none" stroke="black"></path>
+                <path d="M 56,592 L 144,592" fill="none" stroke="black"></path>
+                <path d="M 288,624 L 376,624" fill="none" stroke="black"></path>
+                <path d="M 56,640 L 144,640" fill="none" stroke="black"></path>
                 <path d="M 56,48 C 64.83064,48 72,55.16936 72,64" fill="none" stroke="black"></path>
                 <path d="M 56,48 C 64.83064,48 72,40.83064 72,32" fill="none" stroke="black"></path>
                 <path d="M 56,80 C 64.83064,80 72,72.83064 72,64" fill="none" stroke="black"></path>
-                <path d="M 88,448 C 79.16936,448 72,455.16936 72,464" fill="none" stroke="black"></path>
-                <path d="M 176,448 C 184.83064,448 192,455.16936 192,464" fill="none" stroke="black"></path>
-                <path d="M 320,448 C 311.16936,448 304,455.16936 304,464" fill="none" stroke="black"></path>
-                <path d="M 408,448 C 416.83064,448 424,455.16936 424,464" fill="none" stroke="black"></path>
-                <path d="M 168,464 C 176.83064,464 184,456.83064 184,448" fill="none" stroke="black"></path>
-                <path d="M 400,464 C 408.83064,464 416,456.83064 416,448" fill="none" stroke="black"></path>
+                <path d="M 200,368 C 191.16936,368 184,360.83064 184,352" fill="none" stroke="black"></path>
                 <g class="text">
                   <text x="36" y="68">client</text>
                   <text x="204" y="68">client</text>
@@ -1785,28 +1781,29 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                   <text x="268" y="356">....</text>
                   <text x="456" y="356">....:</text>
                   <text x="352" y="388">C-SMA#2</text>
-                  <text x="120" y="484">Service</text>
-                  <text x="352" y="484">Service</text>
-                  <text x="120" y="500">Contact</text>
-                  <text x="352" y="500">Contact</text>
-                  <text x="124" y="516">Instance</text>
-                  <text x="184" y="516">-</text>
-                  <text x="356" y="516">Instance</text>
-                  <text x="416" y="516">-</text>
-                  <text x="384" y="548">|</text>
-                  <text x="368" y="596">Service</text>
-                  <text x="144" y="612">Service</text>
-                  <text x="216" y="612">-</text>
-                  <text x="372" y="612">Instance</text>
-                  <text x="424" y="612">-</text>
-                  <text x="148" y="628">Instance</text>
-                  <text x="200" y="628">-</text>
-                  <text x="104" y="660">Service</text>
-                  <text x="156" y="660">Site</text>
-                  <text x="184" y="660">1</text>
-                  <text x="328" y="660">Service</text>
-                  <text x="380" y="660">Site</text>
-                  <text x="408" y="660">2</text>
+                  <text x="128" y="484">Service</text>
+                  <text x="344" y="484">Service</text>
+                  <text x="128" y="500">Contact</text>
+                  <text x="344" y="500">Contact</text>
+                  <text x="132" y="516">Instance</text>
+                  <text x="192" y="516">-</text>
+                  <text x="348" y="516">Instance</text>
+                  <text x="408" y="516">-</text>
+                  <text x="136" y="548">|</text>
+                  <text x="352" y="548">|</text>
+                  <text x="328" y="596">Service</text>
+                  <text x="96" y="612">Service</text>
+                  <text x="168" y="612">-</text>
+                  <text x="332" y="612">Instance</text>
+                  <text x="384" y="612">-</text>
+                  <text x="100" y="628">Instance</text>
+                  <text x="152" y="628">-</text>
+                  <text x="304" y="644">Service</text>
+                  <text x="356" y="644">Site</text>
+                  <text x="384" y="644">2</text>
+                  <text x="72" y="660">Service</text>
+                  <text x="124" y="660">Site</text>
+                  <text x="152" y="660">1</text>
                 </g>
               </svg><a href="#section-3.4-2.1.1" class="pilcrow">¶</a>
 </div>
@@ -1867,9 +1864,9 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-cats-traffic-classifier-c-t">
 <a href="#section-3.4.5" class="section-number selfRef">3.4.5. </a><a href="#name-cats-traffic-classifier-c-t" class="section-name selfRef">CATS Traffic Classifier (C-TC)</a>
           </h4>
-<p id="section-3.4.5-1">The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. CATS classifiers also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a> for more details about provisioning of classification rules.<a href="#section-3.4.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-1">The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. C-TCs also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a> for more details about provisioning of classification rules.<a href="#section-3.4.5-1" class="pilcrow">¶</a></p>
 <p id="section-3.4.5-2">Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) (<span><a href="https://rfc-editor.org/rfc/rfc6066#section-3" class="relref">Section 3</a> of [<a href="#RFC6066" class="cite xref">RFC6066</a>]</span>) are used.<a href="#section-3.4.5-2" class="pilcrow">¶</a></p>
-<p id="section-3.4.5-3">CATS classifiers are typically hosted in CATS-Forwarders.<a href="#section-3.4.5-3" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-3">C-TCs are typically hosted in CATS-Forwarders.<a href="#section-3.4.5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-ocr">
@@ -1877,8 +1874,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-cats-forwarders">
 <a href="#section-3.4.6" class="section-number selfRef">3.4.6. </a><a href="#name-cats-forwarders" class="section-name selfRef">CATS-Forwarders</a>
           </h4>
-<p id="section-3.4.6-1">Ingress CATS-Forwarder are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-
-Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.4.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.6-1">Ingress CATS-Forwarders are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder. Egress CATS-Forwarders are the elements that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.4.6-1" class="pilcrow">¶</a></p>
 <p id="section-3.4.6-2">Note that, depending on the design considerations and service requirements, per-service  contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder may choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.<a href="#section-3.4.6-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1905,7 +1901,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
         <h3 id="name-service-announcement">
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-service-announcement" class="section-name selfRef">Service Announcement</a>
         </h3>
-<p id="section-4.1-1">A service is associated by the service provider with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS <span>[<a href="#RFC1034" class="cite xref">RFC1034</a>]</span>). Note that CATS framework does not assume nor preclude any specific name resolution service.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-1">A service is associated by the service provider with a unique identifier called a CS-ID. A CS-ID may be a network identifier, such as an IP address. The mapping of CS-IDs to network identifiers may be learned through a name resolution service (e.g., DNS <span>[<a href="#RFC1034" class="cite xref">RFC1034</a>]</span>). Note that CATS framework does not assume or preclude any specific name resolution service.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-met-dist">
@@ -1917,7 +1913,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
 <p id="section-4.2-2">The C-SMA then advertises CS-IDs along with metrics to related C-PSes in the network. Depending on the deployment choice, CS-IDs with metrics may be distributed in different ways.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2-3">For example, in a distributed model, CS-IDs with metrics can be distributed from the C-SMA to an Egress CATS-Forwarder firstly and then be redistributed by the Egress CATS-Forwarder to related C-PSes that are integrated into Ingress CATS-Forwarders.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
 <p id="section-4.2-4">In the centralized model, CS-IDs with metrics can be distributed from the C-SMA to a centralized control plane, for instance, a standalone C-PS.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
-<p id="section-4.2-5">In the hybrid model, the metrics can be distributed to C-PSes in combination of distributed and centralized ways. The specific combination of metric distribution is an implementation choice, which is determined by the requirements of specific services.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
+<p id="section-4.2-5">In the hybrid model, the metrics can be distributed to C-PSes in a combination of distributed and centralized ways. The specific combination of metric distribution is an implementation choice, which is determined by the requirements of specific services.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
 <p id="section-4.2-6">The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number of end-users who access the service contact instance at any given time, etc.<a href="#section-4.2-6" class="pilcrow">¶</a></p>
 <p id="section-4.2-7">Computing metrics may change very frequently (see <span>[<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span> for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span>. Regarding using the normalized metrics, <a href="#sec-metric-implementation" class="auto internal xref">Section 5.3</a> provides some suggestions to implement computing metrics normalization and aggregation in CATS framework, to reduce the impact of the routing system.<a href="#section-4.2-7" class="pilcrow">¶</a></p>
 <p id="section-4.2-8">Additionally, the C-NMA collects network-related capabilities and metrics. These may be collected and distributed by existing measurement protocols and/or routing protocols, although extensions to such protocols may be required to carry additional information (e.g., link latency). The C-NMA distributes the network metrics to the C-PSes so that they can use the combination of service and network metrics to determine the best Egress CATS-Forwarder to provide access to a service contact instance and invoke the compute function required by a service request. Similar to computing-related metrics, the network-related metrics can be distributed using distributed, centralized, or hybrid schemes. This document does not describe such details since this is deployment-specific.<a href="#section-4.2-8" class="pilcrow">¶</a></p>
@@ -1934,7 +1930,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
 <figure id="figure-3">
             <div id="section-4.2.1-4.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.1-4.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="584" viewBox="0 0 584 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="576" viewBox="0 0 576 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                   <path d="M 8,224 L 8,256" fill="none" stroke="black"></path>
                   <path d="M 8,304 L 8,336" fill="none" stroke="black"></path>
                   <path d="M 48,264 L 48,296" fill="none" stroke="black"></path>
@@ -2002,24 +1998,24 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                   <polygon class="arrowhead" points="152,528 140,522.4 140,533.6" fill="black" transform="rotate(180,144,528)"></polygon>
                   <polygon class="arrowhead" points="152,80 140,74.4 140,85.6" fill="black" transform="rotate(180,144,80)"></polygon>
                   <g class="text">
-                    <text x="104" y="36">Service</text>
-                    <text x="160" y="36">CS-ID</text>
-                    <text x="196" y="36">1,</text>
-                    <text x="240" y="36">contact</text>
-                    <text x="308" y="36">instance</text>
-                    <text x="376" y="36">CSCI-ID</text>
-                    <text x="416" y="36">1</text>
-                    <text x="468" y="36">&lt;computing</text>
-                    <text x="548" y="36">metrics&gt;</text>
-                    <text x="104" y="52">Service</text>
-                    <text x="160" y="52">CS-ID</text>
-                    <text x="196" y="52">1,</text>
-                    <text x="240" y="52">contact</text>
-                    <text x="308" y="52">instance</text>
-                    <text x="376" y="52">CSCI-ID</text>
-                    <text x="416" y="52">2</text>
-                    <text x="468" y="52">&lt;computing</text>
-                    <text x="548" y="52">metrics&gt;</text>
+                    <text x="88" y="36">Service</text>
+                    <text x="144" y="36">CS-ID</text>
+                    <text x="180" y="36">1,</text>
+                    <text x="224" y="36">contact</text>
+                    <text x="292" y="36">instance</text>
+                    <text x="360" y="36">CSCI-ID</text>
+                    <text x="400" y="36">1</text>
+                    <text x="452" y="36">&lt;computing</text>
+                    <text x="532" y="36">metrics&gt;</text>
+                    <text x="88" y="52">Service</text>
+                    <text x="144" y="52">CS-ID</text>
+                    <text x="180" y="52">1,</text>
+                    <text x="224" y="52">contact</text>
+                    <text x="292" y="52">instance</text>
+                    <text x="360" y="52">CSCI-ID</text>
+                    <text x="400" y="52">2</text>
+                    <text x="452" y="52">&lt;computing</text>
+                    <text x="532" y="52">metrics&gt;</text>
                     <text x="136" y="84">:</text>
                     <text x="328" y="84">:</text>
                     <text x="136" y="100">:</text>
@@ -2093,20 +2089,20 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                     <text x="400" y="516">:</text>
                     <text x="136" y="532">:</text>
                     <text x="400" y="532">:</text>
-                    <text x="104" y="548">Service</text>
-                    <text x="160" y="548">CS-ID</text>
-                    <text x="196" y="548">1,</text>
-                    <text x="240" y="548">contact</text>
-                    <text x="308" y="548">instance</text>
-                    <text x="376" y="548">CSCI-ID</text>
-                    <text x="416" y="548">3</text>
-                    <text x="468" y="548">&lt;computing</text>
-                    <text x="548" y="548">metrics&gt;</text>
-                    <text x="104" y="564">Service</text>
-                    <text x="160" y="564">CS-ID</text>
-                    <text x="196" y="564">2,</text>
-                    <text x="252" y="564">&lt;computing</text>
-                    <text x="332" y="564">metrics&gt;</text>
+                    <text x="88" y="548">Service</text>
+                    <text x="144" y="548">CS-ID</text>
+                    <text x="180" y="548">1,</text>
+                    <text x="224" y="548">contact</text>
+                    <text x="292" y="548">instance</text>
+                    <text x="360" y="548">CSCI-ID</text>
+                    <text x="400" y="548">3</text>
+                    <text x="452" y="548">&lt;computing</text>
+                    <text x="532" y="548">metrics&gt;</text>
+                    <text x="88" y="564">Service</text>
+                    <text x="144" y="564">CS-ID</text>
+                    <text x="180" y="564">2,</text>
+                    <text x="236" y="564">&lt;computing</text>
+                    <text x="316" y="564">metrics&gt;</text>
                   </g>
                 </svg><a href="#section-4.2.1-4.1.1" class="pilcrow">¶</a>
 </div>
@@ -2128,7 +2124,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
 <figure id="figure-4">
             <div id="section-4.2.2-2.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.2-2.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="608" viewBox="0 0 608 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="592" viewBox="0 0 592 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                   <path d="M 8,288 L 8,320" fill="none" stroke="black"></path>
                   <path d="M 8,368 L 8,416" fill="none" stroke="black"></path>
                   <path d="M 48,328 L 48,360" fill="none" stroke="black"></path>
@@ -2212,35 +2208,35 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                   <polygon class="arrowhead" points="160,384 148,378.4 148,389.6" fill="black" transform="rotate(180,152,384)"></polygon>
                   <polygon class="arrowhead" points="112,128 100,122.4 100,133.6" fill="black" transform="rotate(180,104,128)"></polygon>
                   <g class="text">
-                    <text x="192" y="36">Service</text>
-                    <text x="248" y="36">CS-ID</text>
-                    <text x="284" y="36">1,</text>
-                    <text x="332" y="36">instance</text>
-                    <text x="400" y="36">CSCI-ID</text>
-                    <text x="440" y="36">1</text>
-                    <text x="492" y="36">&lt;computing</text>
-                    <text x="572" y="36">metrics&gt;</text>
-                    <text x="192" y="52">Service</text>
-                    <text x="248" y="52">CS-ID</text>
-                    <text x="284" y="52">1,</text>
-                    <text x="332" y="52">instance</text>
-                    <text x="400" y="52">CSCI-ID</text>
-                    <text x="440" y="52">2</text>
-                    <text x="492" y="52">&lt;computing</text>
-                    <text x="572" y="52">metrics&gt;</text>
-                    <text x="192" y="68">Service</text>
-                    <text x="248" y="68">CS-ID</text>
-                    <text x="284" y="68">1,</text>
-                    <text x="332" y="68">instance</text>
-                    <text x="400" y="68">CSCI-ID</text>
-                    <text x="440" y="68">3</text>
-                    <text x="492" y="68">&lt;computing</text>
-                    <text x="572" y="68">metrics&gt;</text>
-                    <text x="192" y="84">Service</text>
-                    <text x="248" y="84">CS-ID</text>
-                    <text x="284" y="84">2,</text>
-                    <text x="340" y="84">&lt;computing</text>
-                    <text x="420" y="84">metrics&gt;</text>
+                    <text x="176" y="36">Service</text>
+                    <text x="232" y="36">CS-ID</text>
+                    <text x="268" y="36">1,</text>
+                    <text x="316" y="36">instance</text>
+                    <text x="384" y="36">CSCI-ID</text>
+                    <text x="424" y="36">1</text>
+                    <text x="476" y="36">&lt;computing</text>
+                    <text x="556" y="36">metrics&gt;</text>
+                    <text x="176" y="52">Service</text>
+                    <text x="232" y="52">CS-ID</text>
+                    <text x="268" y="52">1,</text>
+                    <text x="316" y="52">instance</text>
+                    <text x="384" y="52">CSCI-ID</text>
+                    <text x="424" y="52">2</text>
+                    <text x="476" y="52">&lt;computing</text>
+                    <text x="556" y="52">metrics&gt;</text>
+                    <text x="176" y="68">Service</text>
+                    <text x="232" y="68">CS-ID</text>
+                    <text x="268" y="68">1,</text>
+                    <text x="316" y="68">instance</text>
+                    <text x="384" y="68">CSCI-ID</text>
+                    <text x="424" y="68">3</text>
+                    <text x="476" y="68">&lt;computing</text>
+                    <text x="556" y="68">metrics&gt;</text>
+                    <text x="176" y="84">Service</text>
+                    <text x="232" y="84">CS-ID</text>
+                    <text x="268" y="84">2,</text>
+                    <text x="324" y="84">&lt;computing</text>
+                    <text x="404" y="84">metrics&gt;</text>
                     <text x="96" y="132">:</text>
                     <text x="188" y="132">C-PS</text>
                     <text x="96" y="148">:</text>
@@ -2309,12 +2305,12 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
           <h4 id="name-hybrid-model">
 <a href="#section-4.2.3" class="section-number selfRef">4.2.3. </a><a href="#name-hybrid-model" class="section-name selfRef">Hybrid Model</a>
           </h4>
-<p id="section-4.2.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for the subsequent service accessing packets.<a href="#section-4.2.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.2.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for subsequent packets accessing the same service.<a href="#section-4.2.3-1" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-dis"></span><div id="fig-cats-hybrid">
 <figure id="figure-5">
             <div id="section-4.2.3-2.1">
               <div class="alignLeft art-svg artwork" id="section-4.2.3-2.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="592" viewBox="0 0 592 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="576" viewBox="0 0 576 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                   <path d="M 8,272 L 8,304" fill="none" stroke="black"></path>
                   <path d="M 8,368 L 8,448" fill="none" stroke="black"></path>
                   <path d="M 48,312 L 48,360" fill="none" stroke="black"></path>
@@ -2404,38 +2400,38 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                   <polygon class="arrowhead" points="120,576 108,570.4 108,581.6" fill="black" transform="rotate(180,112,576)"></polygon>
                   <polygon class="arrowhead" points="120,112 108,106.4 108,117.6" fill="black" transform="rotate(180,112,112)"></polygon>
                   <g class="text">
-                    <text x="136" y="36">Service</text>
-                    <text x="192" y="36">CS-ID</text>
-                    <text x="228" y="36">1,</text>
-                    <text x="276" y="36">instance</text>
-                    <text x="344" y="36">CSCI-ID</text>
-                    <text x="384" y="36">1</text>
-                    <text x="436" y="36">&lt;computing</text>
-                    <text x="508" y="36">metric</text>
-                    <text x="564" y="36">1,2,3&gt;</text>
-                    <text x="136" y="52">Service</text>
-                    <text x="192" y="52">CS-ID</text>
-                    <text x="228" y="52">1,</text>
-                    <text x="276" y="52">instance</text>
-                    <text x="344" y="52">CSCI-ID</text>
-                    <text x="384" y="52">2</text>
-                    <text x="436" y="52">&lt;computing</text>
-                    <text x="508" y="52">metric</text>
-                    <text x="564" y="52">1,2,3&gt;</text>
-                    <text x="136" y="68">Service</text>
-                    <text x="192" y="68">CS-ID</text>
-                    <text x="228" y="68">1,</text>
-                    <text x="276" y="68">instance</text>
-                    <text x="344" y="68">CSCI-ID</text>
-                    <text x="384" y="68">3</text>
-                    <text x="436" y="68">&lt;computing</text>
-                    <text x="508" y="68">metric</text>
-                    <text x="564" y="68">1,2,3&gt;</text>
-                    <text x="136" y="84">Service</text>
-                    <text x="192" y="84">CS-ID</text>
-                    <text x="228" y="84">2,</text>
-                    <text x="284" y="84">&lt;computing</text>
-                    <text x="364" y="84">metrics&gt;</text>
+                    <text x="120" y="36">Service</text>
+                    <text x="176" y="36">CS-ID</text>
+                    <text x="212" y="36">1,</text>
+                    <text x="260" y="36">instance</text>
+                    <text x="328" y="36">CSCI-ID</text>
+                    <text x="368" y="36">1</text>
+                    <text x="420" y="36">&lt;computing</text>
+                    <text x="492" y="36">metric</text>
+                    <text x="548" y="36">1,2,3&gt;</text>
+                    <text x="120" y="52">Service</text>
+                    <text x="176" y="52">CS-ID</text>
+                    <text x="212" y="52">1,</text>
+                    <text x="260" y="52">instance</text>
+                    <text x="328" y="52">CSCI-ID</text>
+                    <text x="368" y="52">2</text>
+                    <text x="420" y="52">&lt;computing</text>
+                    <text x="492" y="52">metric</text>
+                    <text x="548" y="52">1,2,3&gt;</text>
+                    <text x="120" y="68">Service</text>
+                    <text x="176" y="68">CS-ID</text>
+                    <text x="212" y="68">1,</text>
+                    <text x="260" y="68">instance</text>
+                    <text x="328" y="68">CSCI-ID</text>
+                    <text x="368" y="68">3</text>
+                    <text x="420" y="68">&lt;computing</text>
+                    <text x="492" y="68">metric</text>
+                    <text x="548" y="68">1,2,3&gt;</text>
+                    <text x="120" y="84">Service</text>
+                    <text x="176" y="84">CS-ID</text>
+                    <text x="212" y="84">2,</text>
+                    <text x="268" y="84">&lt;computing</text>
+                    <text x="348" y="84">metrics&gt;</text>
                     <text x="104" y="116">:</text>
                     <text x="196" y="116">C-PS</text>
                     <text x="104" y="132">:</text>
@@ -2500,16 +2496,16 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
                     <text x="480" y="548">2</text>
                     <text x="104" y="564">:</text>
                     <text x="104" y="580">:</text>
-                    <text x="72" y="596">Service</text>
-                    <text x="128" y="596">CS-ID</text>
-                    <text x="164" y="596">1,</text>
-                    <text x="208" y="596">contact</text>
-                    <text x="276" y="596">instance</text>
-                    <text x="344" y="596">CSCI-ID</text>
-                    <text x="388" y="596">3,</text>
-                    <text x="444" y="596">&lt;computing</text>
-                    <text x="516" y="596">metric</text>
-                    <text x="564" y="596">4,5&gt;</text>
+                    <text x="56" y="596">Service</text>
+                    <text x="112" y="596">CS-ID</text>
+                    <text x="148" y="596">1,</text>
+                    <text x="192" y="596">contact</text>
+                    <text x="260" y="596">instance</text>
+                    <text x="328" y="596">CSCI-ID</text>
+                    <text x="372" y="596">3,</text>
+                    <text x="428" y="596">&lt;computing</text>
+                    <text x="500" y="596">metric</text>
+                    <text x="548" y="596">4,5&gt;</text>
                   </g>
                 </svg><a href="#section-4.2.3-2.1.1" class="pilcrow">¶</a>
 </div>
@@ -2529,7 +2525,7 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
         </h3>
 <p id="section-4.3-1">A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>) or logically centralized (in the centralized model or hybrid model).<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.3-2">This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such "appropriate information" may be utilized to differentiate selection mechanisms to enable service-specific selections.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
-<p id="section-4.3-3">In the example shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the client sends a service access via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service access may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) <span>[<a href="#RFC3261" class="cite xref">RFC3261</a>]</span>, HTTP <span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>, IPv6 <span>[<a href="#RFC8200" class="cite xref">RFC8200</a>]</span>, SRv6 <span>[<a href="#RFC8754" class="cite xref">RFC8754</a>]</span> or Real-Time Streaming Protocol (RTSP) <span>[<a href="#RFC7826" class="cite xref">RFC7826</a>]</span>) that carry the CS-ID and potential parameters. The Ingress CATS-Forwarder classifies the packets using the information provided by the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">In the example shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the client sends a service request via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service request to access the service may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) <span>[<a href="#RFC3261" class="cite xref">RFC3261</a>]</span>, HTTP <span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>, IPv6 <span>[<a href="#RFC8200" class="cite xref">RFC8200</a>]</span>, SRv6 <span>[<a href="#RFC8754" class="cite xref">RFC8754</a>]</span>, or Real-Time Streaming Protocol (RTSP) <span>[<a href="#RFC7826" class="cite xref">RFC7826</a>]</span>) that carry the CS-ID and potential parameters. When a matching classification entry maintained by a C-TC is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="service-contact-instance-affinity">
@@ -2537,12 +2533,12 @@ Forwarder. Egress CATS-Forwarders are the endpoints that behave as an egress for
         <h3 id="name-service-contact-instance-af">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-service-contact-instance-af" class="section-name selfRef">Service Contact Instance Affinity</a>
         </h3>
-<p id="section-4.4-1">Service contact instance affinity means that packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
-<p id="section-4.4-2">The affinity is configured on the C-PS when the service is deployed, or is determined at the time of newly formulated service requests.<a href="#section-4.4-2" class="pilcrow">¶</a></p>
+<p id="section-4.4-1">Service contact instance affinity means that packets that belong to a flow associated with a service request should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4-2">Ensuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service) or determined at the time of newly formulated service requests (i.e., specific flow).<a href="#section-4.4-2" class="pilcrow">¶</a></p>
 <p id="section-4.4-3">Note that different services may have different notions of what constitutes a 'flow' and may, thus, identify a flow differently. Typically, a flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol). However, for instance, an RTP video stream may use different port numbers for video and audio channels: in that case, affinity may be identified as a combination of the two 5-tuple flow identifiers so that both flows are addressed to the same service contact instance.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
-<p id="section-4.4-4">Hence, when specifying a protocol to communicate information about service contact instance affinity, the protocol should support
+<p id="section-4.4-4">Hence, when specifying a protocol to communicate information about service contact instance affinity to C-TCs in particular, the protocol should support
 flexible mechanisms for identifying flows. Or, from a more general perspective, there should be a mechanism to specify and identify the set of packets that are subject to a service contact instance affinity.<a href="#section-4.4-4" class="pilcrow">¶</a></p>
-<p id="section-4.4-5">More importantly, the means for identifying a flow for ensuring instance affinity should be application-independent to avoid the need for service-specific instance affinity methods. However, service contact instance affinity information may be configurable on a per-service basis. For each service, the information can include the flow/packets identification type and means, affinity timeout value, etc.<a href="#section-4.4-5" class="pilcrow">¶</a></p>
+<p id="section-4.4-5">More importantly, the means for identifying a flow for ensuring instance affinity should be application-independent to avoid the need for service-specific instance affinity methods. However, service contact instance affinity information may be configurable on a per-service basis. For each service, the information can include the flow or packets identification type and means, affinity timeout value, etc.<a href="#section-4.4-5" class="pilcrow">¶</a></p>
 <p id="section-4.4-6">This document does not define any mechanism for defining or enforcing service contact instance affinity.<a href="#section-4.4-6" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2559,19 +2555,19 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-provisioning-of-cats-compon" class="section-name selfRef">Provisioning of CATS Components</a>
         </h3>
 <p id="section-5.1-1">Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">In addition to the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but not limited to:<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-2">In addition to the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but is not limited to:<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.1-3.1">
             <p id="section-5.1-3.1.1">Provide C-PS elements with the locators of available Ingress CATS-Forwarder. Such locators may also be discovered from the network.<a href="#section-5.1-3.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.1-3.2">
-            <p id="section-5.1-3.2.1">Enable required setup to connect C-PS elements with C-NMA and C-SMA.<a href="#section-5.1-3.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-3.2.1">Supply information needed to connect C-PS elements with C-NMAs and C-SMAs.<a href="#section-5.1-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.1-3.3">
-            <p id="section-5.1-3.3.1">Allocate various identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.<a href="#section-5.1-3.3.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-3.3.1">Allocate identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.<a href="#section-5.1-3.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.1-3.4">
-            <p id="section-5.1-3.4.1">Provide C-PS element with the set of optimization metrics (per service) and an optimization policy.<a href="#section-5.1-3.4.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-3.4.1">Provide C-PS elements with the set of optimization metrics (per service) and an optimization policy.<a href="#section-5.1-3.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.1-3.5">
             <p id="section-5.1-3.5.1">Expose encapsulation capabilities supported by CATS-Forwarders.<a href="#section-5.1-3.5.1" class="pilcrow">¶</a></p>
@@ -2595,7 +2591,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
             <p id="section-5.1-3.11.1">Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior)<a href="#section-5.1-3.11.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-5.1-4">The above task can be enabled using a variety of means (NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>, IPFIX <span>[<a href="#RFC7011" class="cite xref">RFC7011</a>]</span>, RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>, YANG-Push <span>[<a href="#RFC8639" class="cite xref">RFC8639</a>]</span>, etc.). It is out of scope to discuss required CATS extension to these protocols.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
+<p id="section-5.1-4">Provisioning includes configuration as well as distribution through protocols. Specifically, the above tasks can be enabled using a variety of means (NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>, IPFIX <span>[<a href="#RFC7011" class="cite xref">RFC7011</a>]</span>, RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>, YANG-Push <span>[<a href="#RFC8639" class="cite xref">RFC8639</a>]</span>, etc.). It is out of scope to discuss required CATS extensions to these protocols.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-cats-deployment">
@@ -2662,7 +2658,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         <h3 id="name-verifying-correct-operation">
 <a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-verifying-correct-operation" class="section-name selfRef">Verifying Correct Operations</a>
         </h3>
-<p id="section-5.4-1">CATS may be implemented by extending some existing control plane protocols, such as BGP or PCEP. A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+<p id="section-5.4-1">A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="impact-on-network-operations">
@@ -2856,10 +2852,10 @@ Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar and Taylor Paul 
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Dirk Trossen</span></div>
-<div dir="auto" class="left"><span class="org">Huawei Technologies</span></div>
+<div dir="auto" class="left"><span class="org">DaPaDOT Tech UG (haftungsbeschraenkt)</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:dirk.trossen@huawei.com" class="email">dirk.trossen@huawei.com</a>
+<a href="mailto:dirk@dapadot-tech.eu" class="email">dirk@dapadot-tech.eu</a>
 </div>
 </address>
 <address class="vcard">
