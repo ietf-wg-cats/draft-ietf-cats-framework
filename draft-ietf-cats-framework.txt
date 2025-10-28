@@ -307,9 +307,10 @@ Table of Contents
 
    CATS assumes that a service might be provided by one or multiple
    service instances.  Such instances may be hosted within the same or
-   distinct service sites.  CATS does not make any additional assumption
-   about these instances other than they are reachable via one or
-   multiple service contact instances.
+   distinct service sites.  A given service is represented by the same
+   service identifier (Section 3.2).  CATS does not make any additional
+   assumption about these instances other than they are reachable via
+   one or multiple service contact instances.
 
 3.2.  CATS Identifiers
 
