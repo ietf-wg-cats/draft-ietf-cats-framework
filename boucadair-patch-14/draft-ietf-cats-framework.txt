@@ -855,6 +855,22 @@ Table of Contents
    expose a configuration parameter to control the activation of
    normalization and aggregation functions.
 
+   Several deployment options may be considered, for example:
+
+   *  Distributed model: CS-IDs with metrics can be distributed from the
+      C-SMA to an Egress CATS-Forwarder and then be redistributed by the
+      Egress CATS-Forwarder to related C-PSes that are integrated into
+      Ingress CATS-Forwarders.
+
+   *  Centralized model: CS-IDs with metrics can be distributed from the
+      C-SMA to a centralized control element, for instance, a standalone
+      C-PS.
+
+   *  Hybrid model: the metrics can be distributed to C-PSes in a
+      combination of distributed and centralized ways.  The specific
+      combination of metric distribution is an implementation choice,
+      which is determined by the requirements of specific services.
+
 5.3.1.  Distributed Model
 
    Figure 3 shows an example of how CATS metrics can be disseminated in

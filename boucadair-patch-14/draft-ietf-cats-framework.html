@@ -2045,6 +2045,18 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <p id="section-5.3-2">Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. An approach is to implement the normalization and aggregation functions located away from C-PSes, especially when C-PSes are co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at service contact instances or C-SMAs.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <p id="section-5.3-3">When C-SMAs are co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in a C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instances. Regarding the aggregation functions, it can be implemented in a C-SMA or the service contact instances.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 <p id="section-5.3-4">In order to ensure consistent CATS decisions, the same normalization and aggregation functions must be enabled in all involved CATS components. Also, in the case of service contact instances and C-SMAs are provided by different vendors, it is needed to use the same common normalization function and aggregation functions, so that the service contact instance selection result can be fair among all the service contact instances. To that aim, a set of normalization and aggregation functions must standardized. To accommodate contexts where multiple functions are supported, CATS implementations must expose a configuration parameter to control the activation of normalization and aggregation functions.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
+<p id="section-5.3-5">Several deployment options may be considered, for example:<a href="#section-5.3-5" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5.3-6.1">
+            <p id="section-5.3-6.1.1">Distributed model: CS-IDs with metrics can be distributed from the C-SMA to an Egress CATS-Forwarder and then be redistributed by the Egress CATS-Forwarder to related C-PSes that are integrated into Ingress CATS-Forwarders.<a href="#section-5.3-6.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.3-6.2">
+            <p id="section-5.3-6.2.1">Centralized model: CS-IDs with metrics can be distributed from the C-SMA to a centralized control element, for instance, a standalone C-PS.<a href="#section-5.3-6.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.3-6.3">
+            <p id="section-5.3-6.3.1">Hybrid model: the metrics can be distributed to C-PSes in a combination of distributed and centralized ways. The specific combination of metric distribution is an implementation choice, which is determined by the requirements of specific services.<a href="#section-5.3-6.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
 <div id="sec-met-dist1">
 <section id="section-5.3.1">
           <h4 id="name-distributed-model">
