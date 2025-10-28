@@ -451,21 +451,21 @@ The above task can be enabled using a variety of means (NETCONF {{?RFC6241}}, IP
 
 ## Deployment Considerations {#sec-cats-deployment}
 
-This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a centralized C-PS) and distributed CATS functions (e.g., CATS traffic classifiers) is deployment-specific, which may reflect the preferences and policies of the (CATS) service provider. The deployment can also be informed by specific use case requirements {{?I-D.ietf-cats-usecases-requirements}}.
+This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a centralized C-PS) and distributed CATS functions (e.g., C-TCs) is deployment-specific, which may reflect the preferences and policies of the (CATS) service provider. The deployment can also be informed by specific use case requirements {{?I-D.ietf-cats-usecases-requirements}}.
 
-For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before the service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with CATS traffic classifiers (C-TCs).
+For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before the service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with C-TCs.
 
 According to the method of distributing and collecting the computing related metrics, three deployment models can be considered for the deployment of the CATS framework:
 
 * **Distributed model**:
-: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control plane. Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
+: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control element (e.g., network controller). Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
 
 * **Centralized model**:
-: Computing metrics are collected by a centralized control plane, and then the centralized control plane computes the forwarding path for service requests and syncs up with the Ingress CATS-Forwarder. In this model, C-PS is implemented in the centralized control plane.
+: Computing metrics are collected by centralized control elements. These elements then compute the forwarding path for service requests and syncs up with Ingress CATS-Forwarders. In this model, C-PS is implemented in a centralized control element.
 
 * **Hybrid model**:
 : Is a combination of distributed and centralized models.
-: A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control plane. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control plane to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control plane and/or the CATS-Forwarder. The entire or partial C-PS function may be implemented in the centralized control plane, depending on the specific implementation and deployment.
+: A part of computing metrics are distributed among involved network devices, and others may be collected by a centralized control element. For example, some static information (e.g., capabilities information) can be distributed among network devices since they are quite stable (change infrequently). Frequent changing information (e.g., resource utilization) can be collected by a centralized control element to avoid frequent flooding in the distributed control plane. Service scheduling function can be performed by a centralized control element, the CATS-Forwarder, or both. The entire or partial C-PS function may be implemented in the centralized control element, depending on the specific implementation and deployment.
 
 The framework covers only the case of a single service provider. Deployment considerations about the case of multiple service providers are out of scope.
 
