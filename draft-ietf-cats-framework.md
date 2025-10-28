@@ -71,8 +71,8 @@ contributor:
   email: liyizhou@huawei.com
  -
   name: Dirk Trossen
-  org: Huawei Technologies
-  email: dirk.trossen@huawei.com
+  org: DaPaDOT Tech UG (haftungsbeschränkt)
+  email: dirk@dapadot-tech.eu
  -
   name: Luigi Iannone
   org: Huawei Technologies
