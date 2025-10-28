@@ -168,7 +168,7 @@ CATS Service ID (CS-ID):
  : An identifier representing a service, which the clients use to access it. See {{cats-ids}}.
 
 Service instance:
-  : A collection of running resources that are orchestrated following a service logic. When invoked, these resources will collectively provide the intended service.
+  : A collection of running resources that are orchestrated following a service logic. When invoked by a client request, these resources will collectively provide the intended service.
   : A service provider may enable many service instances that adhere to the same service logic to provide the same service.
   : A service instance runs in a service site and one or more instances may service clients' requests.
 
