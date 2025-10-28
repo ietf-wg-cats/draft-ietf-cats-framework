@@ -220,7 +220,7 @@ CATS Traffic Classifier (C-TC):
 
 ## Assumptions
 
-CATS assumes that a service might be provided by one or multiple service instances. Such instances may be hosted within the same or distinct service sites. CATS does not make any additional assumption about these instances other than they are reachable via one or multiple service contact instances.
+CATS assumes that a service might be provided by one or multiple service instances. Such instances may be hosted within the same or distinct service sites. A given service is represented by the same service identifier ({{cats-ids}}). CATS does not make any additional assumption about these instances other than they are reachable via one or multiple service contact instances.
 
 ## CATS Identifiers {#cats-ids}
 
