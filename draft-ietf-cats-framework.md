@@ -561,7 +561,7 @@ In the example shown in {{fig-cats-example-overlay}}, the client sends a service
 
 Service contact instance affinity means that packets that belong to a flow associated with a service should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.
 
-Ensuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service), or is determined at the time of newly formulated service requests (i.e., specific flow).
+Ensuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service) or determined at the time of newly formulated service requests (i.e., specific flow).
 
 Note that different services may have different notions of what constitutes a 'flow' and may, thus, identify a flow differently. Typically, a flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol). However, for instance, an RTP video stream may use different port numbers for video and audio channels: in that case, affinity may be identified as a combination of the two 5-tuple flow identifiers so that both flows are addressed to the same service contact instance.
 
