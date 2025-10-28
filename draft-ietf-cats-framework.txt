@@ -1166,10 +1166,10 @@ A.2.  Centralized Model
    will be sent from the C-PS to "CATS-Forwarder 1" to indicate traffic
    steering.
 
-                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                  Service CS-ID 2, <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                 Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -1219,44 +1219,44 @@ A.3.  Hybrid Model
    have some ability to compute the path for subsequent packets
    accessing the same service.
 
-            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-            Service CS-ID 2, <computing metrics>
-                     +------+
-             :<------| C-PS |<-------------------------------------.
-             :       |      |<-------.                             |
-             :       +------+        |               +---------+   |
-             :          ^            |           +---|CS-ID 1  |   |
-             :          |            |           |   |CSCI-ID 1|   |
-             :          |   +----------------+   |   +---------+   |
-             :          |   |    C-SMA       |---| Service Site 2  |
-             :          |   +----------------+   |   +---------+   |
-             :          |   |CATS-Forwarder 2|   +---|CS-ID 1  |   |
-             :          |   +----------------+       |CSCI-ID 2|   |
- +--------+  :          |             |              +---------+   |
- | Client |  :  Network |   +----------------------+               |
- +--------+  :  metrics |   | +-------+            |      +-----+  |
-      |      :          +-----| C-NMA |            |      |     |--+
-      |      :              | +-------+            |      |C-SMA|----+
-      |      :              |    |                 |      |     |<-+ |
- +----------------+         |    |                 |      +-----+  | |
- |CATS-Forwarder 1|<-------------+                 |          ^    | |
- |                |---------|       Underlay       |          |    | |
- |----------------+         |     Infrastructure   |  +---------+  | |
- |C-PS|      :              |                      |  |CS-ID 1  |  | |
- +----+      :              +----------------------+  |CSCI-ID 3|  | |
-             :                        |               +---------+  | |
-             :          +----------------+              |          | |
-             :          |CATS-Forwarder 3|--------------+          | |
-             :          +----------------+         Service Site 3  | |
-             :                        |              +-------+     | |
-             :                        '--------------|CS-ID 2|-----+ |
-             :                                       +-------+       |
-             :<------------------------------------------------------+
-    Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
+           Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+           Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+           Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+           Service CS-ID 2, <computing metrics>
+                      +------+
+              :<------| C-PS |<-------------------------------------.
+              :       |      |<-------.                             |
+              :       +------+        |               +---------+   |
+              :          ^            |           +---|CS-ID 1  |   |
+              :          |            |           |   |CSCI-ID 1|   |
+              :          |   +----------------+   |   +---------+   |
+              :          |   |    C-SMA       |---| Service Site 2  |
+              :          |   +----------------+   |   +---------+   |
+              :          |   |CATS-Forwarder 2|   +---|CS-ID 1  |   |
+              :          |   +----------------+       |CSCI-ID 2|   |
+  +--------+  :          |             |              +---------+   |
+  | Client |  :  Network |   +----------------------+               |
+  +--------+  :  metrics |   | +-------+            |      +-----+  |
+       |      :          +-----| C-NMA |            |      |     |--+
+       |      :              | +-------+            |      |C-SMA|----+
+       |      :              |    |                 |      |     |<-+ |
+  +----------------+         |    |                 |      +-----+  | |
+  |CATS-Forwarder 1|<-------------+                 |          ^    | |
+  |                |---------|       Underlay       |          |    | |
+  |----------------+         |     Infrastructure   |  +---------+  | |
+  |C-PS|      :              |                      |  |CS-ID 1  |  | |
+  +----+      :              +----------------------+  |CSCI-ID 3|  | |
+              :                        |               +---------+  | |
+              :          +----------------+              |          | |
+              :          |CATS-Forwarder 3|--------------+          | |
+              :          +----------------+         Service Site 3  | |
+              :                        |              +-------+     | |
+              :                        '--------------|CS-ID 2|-----+ |
+              :                                       +-------+       |
+              :<------------------------------------------------------+
+     Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 
- Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
+  Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
 
 Appendix B.  Acknowledgements
 
