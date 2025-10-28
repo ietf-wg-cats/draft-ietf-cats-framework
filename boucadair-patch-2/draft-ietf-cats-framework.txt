@@ -148,8 +148,7 @@ Table of Contents
    characterization of services as 'suitable' or not.
 
    Furthermore, this document describes a workflow of the main CATS
-   procedures (see Section 4) executed in both the control and data
-   planes.
+   procedures (Section 4) executed in both the control and data planes.
 
 2.  Terminology
 
@@ -174,7 +173,7 @@ Table of Contents
 
    Computing metrics:  Metrics specific to the computing resources in
       the underlying CATS systems as distinct from other metrics, such
-      as network metrics.  For further detail, see the set computing
+      as network metrics.  For further detail, see the set of computing
       metrics defined in [I-D.ietf-cats-metric-definition].
 
    Service:  An offering that is made available by a service provider by
@@ -331,6 +330,11 @@ Table of Contents
    CATS Service Contact Instance ID (CSCI-ID):  An identifier of a
       specific service contact instance.
 
+      This document does not make any assumption about the structure and
+      semantic of this identifier.  An example of such ID is a unicast
+      IP address that uniquely identifies the location of a service
+      instance.
+
 3.3.  Framework Overview
 
    A high-level view of the CATS framework, without expanding the
@@ -482,7 +486,7 @@ Table of Contents
    gathers information about the state of the underlay network.  The
    C-NMAs may be implemented as standalone components or may be hosted
    by other components, such as CATS-Forwarders or CATS Path Selectors
-   (C-PS) (Section 3.4.4).
+   (C-PSes) (Section 3.4.4).
 
    C-NMA is likely to leverage existing techniques (e.g., [RFC7471],
    [RFC8570], and [RFC8571]).
@@ -492,15 +496,15 @@ Table of Contents
 
 3.4.4.  CATS Path Selector (C-PS)
 
-   The C-SMAs and C-NMAs share the collected information with CATS Path
-   Selectors (C-PSes) that use such information to select the Egress
-   CATS-Forwarders (and potentially the service contact instances) where
-   to forward traffic for a given service request.  C-PSes also
-   determine the best paths (possibly using tunnels) to forward traffic,
-   according to various criteria that include network state and traffic
-   congestion conditions.  The collected information is encoded into one
-   or more metrics that feed the C-PS path selection logic.  Such
-   information also includes CS-ID and possibly CSCI-IDs.
+   The C-SMAs and C-NMAs share the collected information with C-PSes
+   that use such information to select the Egress CATS-Forwarders (and
+   potentially the service contact instances) where to forward traffic
+   for a given service request.  C-PSes also determine the best paths
+   (possibly using tunnels) to forward traffic, according to various
+   criteria that include network state and traffic congestion
+   conditions.  The collected information is encoded into one or more
+   metrics that feed the C-PS path selection logic.  Such information
+   also includes CS-ID and possibly CSCI-IDs.
 
    There might be one or more C-PSes used to select CATS paths in a CATS
    infrastructure.
@@ -767,11 +771,10 @@ Table of Contents
    functional elements are implemented and deployed.  Concretely,
    whether a CATS deployment follows a fully distributed design or
    relies upon a mix of centralized (e.g., a centralized C-PS) and
-   distributed CATS functions (e.g., CATS traffic classifiers) is
-   deployment-specific, which may reflect the preferences and policies
-   of the (CATS) service provider.  The deployment can also be informed
-   by specific use case requirements
-   [I-D.ietf-cats-usecases-requirements].
+   distributed CATS functions (e.g., C-TCs) is deployment-specific,
+   which may reflect the preferences and policies of the (CATS) service
+   provider.  The deployment can also be informed by specific use case
+   requirements [I-D.ietf-cats-usecases-requirements].
 
    For example, in a centralized design, both the computing related
    metrics from the C-SMAs and the network metrics are collected by a
@@ -1166,10 +1169,10 @@ A.2.  Centralized Model
    will be sent from the C-PS to "CATS-Forwarder 1" to indicate traffic
    steering.
 
-                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                  Service CS-ID 2, <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                 Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -1219,44 +1222,44 @@ A.3.  Hybrid Model
    have some ability to compute the path for subsequent packets
    accessing the same service.
 
-            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-            Service CS-ID 2, <computing metrics>
-                     +------+
-             :<------| C-PS |<-------------------------------------.
-             :       |      |<-------.                             |
-             :       +------+        |               +---------+   |
-             :          ^            |           +---|CS-ID 1  |   |
-             :          |            |           |   |CSCI-ID 1|   |
-             :          |   +----------------+   |   +---------+   |
-             :          |   |    C-SMA       |---| Service Site 2  |
-             :          |   +----------------+   |   +---------+   |
-             :          |   |CATS-Forwarder 2|   +---|CS-ID 1  |   |
-             :          |   +----------------+       |CSCI-ID 2|   |
- +--------+  :          |             |              +---------+   |
- | Client |  :  Network |   +----------------------+               |
- +--------+  :  metrics |   | +-------+            |      +-----+  |
-      |      :          +-----| C-NMA |            |      |     |--+
-      |      :              | +-------+            |      |C-SMA|----+
-      |      :              |    |                 |      |     |<-+ |
- +----------------+         |    |                 |      +-----+  | |
- |CATS-Forwarder 1|<-------------+                 |          ^    | |
- |                |---------|       Underlay       |          |    | |
- |----------------+         |     Infrastructure   |  +---------+  | |
- |C-PS|      :              |                      |  |CS-ID 1  |  | |
- +----+      :              +----------------------+  |CSCI-ID 3|  | |
-             :                        |               +---------+  | |
-             :          +----------------+              |          | |
-             :          |CATS-Forwarder 3|--------------+          | |
-             :          +----------------+         Service Site 3  | |
-             :                        |              +-------+     | |
-             :                        '--------------|CS-ID 2|-----+ |
-             :                                       +-------+       |
-             :<------------------------------------------------------+
-    Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
+           Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+           Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+           Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+           Service CS-ID 2, <computing metrics>
+                      +------+
+              :<------| C-PS |<-------------------------------------.
+              :       |      |<-------.                             |
+              :       +------+        |               +---------+   |
+              :          ^            |           +---|CS-ID 1  |   |
+              :          |            |           |   |CSCI-ID 1|   |
+              :          |   +----------------+   |   +---------+   |
+              :          |   |    C-SMA       |---| Service Site 2  |
+              :          |   +----------------+   |   +---------+   |
+              :          |   |CATS-Forwarder 2|   +---|CS-ID 1  |   |
+              :          |   +----------------+       |CSCI-ID 2|   |
+  +--------+  :          |             |              +---------+   |
+  | Client |  :  Network |   +----------------------+               |
+  +--------+  :  metrics |   | +-------+            |      +-----+  |
+       |      :          +-----| C-NMA |            |      |     |--+
+       |      :              | +-------+            |      |C-SMA|----+
+       |      :              |    |                 |      |     |<-+ |
+  +----------------+         |    |                 |      +-----+  | |
+  |CATS-Forwarder 1|<-------------+                 |          ^    | |
+  |                |---------|       Underlay       |          |    | |
+  |----------------+         |     Infrastructure   |  +---------+  | |
+  |C-PS|      :              |                      |  |CS-ID 1  |  | |
+  +----+      :              +----------------------+  |CSCI-ID 3|  | |
+              :                        |               +---------+  | |
+              :          +----------------+              |          | |
+              :          |CATS-Forwarder 3|--------------+          | |
+              :          +----------------+         Service Site 3  | |
+              :                        |              +-------+     | |
+              :                        '--------------|CS-ID 2|-----+ |
+              :                                       +-------+       |
+              :<------------------------------------------------------+
+     Service CS-ID 1, contact instance CSCI-ID 3, <computing metric 4,5>
 
- Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
+  Figure 5: An Example of CATS Metric Distribution in the Hybrid Model
 
 Appendix B.  Acknowledgements
 
