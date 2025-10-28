@@ -1227,17 +1227,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-implementation-consideratio" class="internal xref">Implementation Considerations on Using CATS Metrics</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.1">
-                    <p id="section-toc.1-1.5.2.3.2.1.1"><a href="#section-5.3.1" class="auto internal xref">5.3.1</a>.  <a href="#name-distributed-model" class="internal xref">Distributed Model</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.2">
-                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="auto internal xref">5.3.2</a>.  <a href="#name-centralized-model" class="internal xref">Centralized Model</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.3">
-                    <p id="section-toc.1-1.5.2.3.2.3.1"><a href="#section-5.3.3" class="auto internal xref">5.3.3</a>.  <a href="#name-hybrid-model" class="internal xref">Hybrid Model</a></p>
-</li>
-                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
                 <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-verifying-correct-operation" class="internal xref">Verifying Correct Operations</a></p>
@@ -1260,13 +1249,27 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-deployment-examples" class="internal xref">Deployment Examples</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
+                <p id="section-toc.1-1.10.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-distributed-model" class="internal xref">Distributed Model</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
+                <p id="section-toc.1-1.10.2.2.1"><a href="#appendix-A.2" class="auto internal xref">A.2</a>.  <a href="#name-centralized-model" class="internal xref">Centralized Model</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.3">
+                <p id="section-toc.1-1.10.2.3.1"><a href="#appendix-A.3" class="auto internal xref">A.3</a>.  <a href="#name-hybrid-model" class="internal xref">Hybrid Model</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-contributors" class="internal xref">Contributors</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="auto internal xref">Appendix B</a>.  <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-contributors" class="internal xref">Contributors</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
+            <p id="section-toc.1-1.13.1"><a href="#appendix-D" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -2033,7 +2036,8 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 </dl>
 </li>
         </ul>
-<p id="section-5.2-5">The framework covers only the case of a single service provider. Deployment considerations about the case of multiple service providers are out of scope.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
+<p id="section-5.2-5">Examples to illustrate these modes are provided in <a href="#sec-appendix" class="auto internal xref">Appendix A</a>.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
+<p id="section-5.2-6">The framework covers only the case of a single service provider. Deployment considerations about the case of multiple service providers are out of scope.<a href="#section-5.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-metric-implementation">
@@ -2045,616 +2049,6 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <p id="section-5.3-2">Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. An approach is to implement the normalization and aggregation functions located away from C-PSes, especially when C-PSes are co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at service contact instances or C-SMAs.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <p id="section-5.3-3">When C-SMAs are co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in a C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instances. Regarding the aggregation functions, it can be implemented in a C-SMA or the service contact instances.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 <p id="section-5.3-4">In order to ensure consistent CATS decisions, the same normalization and aggregation functions must be enabled in all involved CATS components. Also, in the case of service contact instances and C-SMAs are provided by different vendors, it is needed to use the same common normalization function and aggregation functions, so that the service contact instance selection result can be fair among all the service contact instances. To that aim, a set of normalization and aggregation functions must standardized. To accommodate contexts where multiple functions are supported, CATS implementations must expose a configuration parameter to control the activation of normalization and aggregation functions.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
-<p id="section-5.3-5">Several deployment options may be considered, for example:<a href="#section-5.3-5" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-5.3-6.1">
-            <p id="section-5.3-6.1.1">Distributed model: CS-IDs with metrics can be distributed from the C-SMA to an Egress CATS-Forwarder and then be redistributed by the Egress CATS-Forwarder to related C-PSes that are integrated into Ingress CATS-Forwarders.<a href="#section-5.3-6.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-5.3-6.2">
-            <p id="section-5.3-6.2.1">Centralized model: CS-IDs with metrics can be distributed from the C-SMA to a centralized control element, for instance, a standalone C-PS.<a href="#section-5.3-6.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-5.3-6.3">
-            <p id="section-5.3-6.3.1">Hybrid model: the metrics can be distributed to C-PSes in a combination of distributed and centralized ways. The specific combination of metric distribution is an implementation choice, which is determined by the requirements of specific services.<a href="#section-5.3-6.3.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<div id="sec-met-dist1">
-<section id="section-5.3.1">
-          <h4 id="name-distributed-model">
-<a href="#section-5.3.1" class="section-number selfRef">5.3.1. </a><a href="#name-distributed-model" class="section-name selfRef">Distributed Model</a>
-          </h4>
-<p id="section-5.3.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.3.1-2">In <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress CATS-Forwarder 3. Then the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#section-5.3.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.3.1-3">The computing metric advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.<a href="#section-5.3.1-3" class="pilcrow">¶</a></p>
-<span id="name-an-example-of-cats-metric-d"></span><div id="fig-cats-example-overlay">
-<figure id="figure-3">
-            <div id="section-5.3.1-4.1">
-              <div class="alignLeft art-svg artwork" id="section-5.3.1-4.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="576" viewBox="0 0 576 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
-                  <path d="M 8,224 L 8,256" fill="none" stroke="black"></path>
-                  <path d="M 8,304 L 8,336" fill="none" stroke="black"></path>
-                  <path d="M 48,264 L 48,296" fill="none" stroke="black"></path>
-                  <path d="M 80,224 L 80,256" fill="none" stroke="black"></path>
-                  <path d="M 184,304 L 184,336" fill="none" stroke="black"></path>
-                  <path d="M 200,416 L 200,448" fill="none" stroke="black"></path>
-                  <path d="M 224,240 L 224,264" fill="none" stroke="black"></path>
-                  <path d="M 224,280 L 224,384" fill="none" stroke="black"></path>
-                  <path d="M 240,256 L 240,288" fill="none" stroke="black"></path>
-                  <path d="M 256,144 L 256,208" fill="none" stroke="black"></path>
-                  <path d="M 304,256 L 304,288" fill="none" stroke="black"></path>
-                  <path d="M 304,456 L 304,496" fill="none" stroke="black"></path>
-                  <path d="M 336,416 L 336,448" fill="none" stroke="black"></path>
-                  <path d="M 368,416 L 368,448" fill="none" stroke="black"></path>
-                  <path d="M 392,144 L 392,208" fill="none" stroke="black"></path>
-                  <path d="M 408,240 L 408,384" fill="none" stroke="black"></path>
-                  <path d="M 424,384 L 424,496" fill="none" stroke="black"></path>
-                  <path d="M 432,128 L 432,192" fill="none" stroke="black"></path>
-                  <path d="M 456,96 L 456,144" fill="none" stroke="black"></path>
-                  <path d="M 456,176 L 456,224" fill="none" stroke="black"></path>
-                  <path d="M 456,352 L 456,400" fill="none" stroke="black"></path>
-                  <path d="M 456,480 L 456,512" fill="none" stroke="black"></path>
-                  <path d="M 520,480 L 520,512" fill="none" stroke="black"></path>
-                  <path d="M 536,96 L 536,144" fill="none" stroke="black"></path>
-                  <path d="M 536,176 L 536,224" fill="none" stroke="black"></path>
-                  <path d="M 536,352 L 536,400" fill="none" stroke="black"></path>
-                  <path d="M 144,80 L 320,80" fill="none" stroke="black"></path>
-                  <path d="M 456,96 L 536,96" fill="none" stroke="black"></path>
-                  <path d="M 432,128 L 448,128" fill="none" stroke="black"></path>
-                  <path d="M 256,144 L 392,144" fill="none" stroke="black"></path>
-                  <path d="M 456,144 L 536,144" fill="none" stroke="black"></path>
-                  <path d="M 400,160 L 424,160" fill="none" stroke="black"></path>
-                  <path d="M 256,176 L 392,176" fill="none" stroke="black"></path>
-                  <path d="M 456,176 L 536,176" fill="none" stroke="black"></path>
-                  <path d="M 432,192 L 448,192" fill="none" stroke="black"></path>
-                  <path d="M 256,208 L 392,208" fill="none" stroke="black"></path>
-                  <path d="M 8,224 L 80,224" fill="none" stroke="black"></path>
-                  <path d="M 456,224 L 536,224" fill="none" stroke="black"></path>
-                  <path d="M 224,240 L 408,240" fill="none" stroke="black"></path>
-                  <path d="M 8,256 L 80,256" fill="none" stroke="black"></path>
-                  <path d="M 240,256 L 304,256" fill="none" stroke="black"></path>
-                  <path d="M 160,272 L 232,272" fill="none" stroke="black"></path>
-                  <path d="M 240,288 L 304,288" fill="none" stroke="black"></path>
-                  <path d="M 8,304 L 184,304" fill="none" stroke="black"></path>
-                  <path d="M 192,320 L 216,320" fill="none" stroke="black"></path>
-                  <path d="M 8,336 L 184,336" fill="none" stroke="black"></path>
-                  <path d="M 456,352 L 536,352" fill="none" stroke="black"></path>
-                  <path d="M 224,384 L 408,384" fill="none" stroke="black"></path>
-                  <path d="M 424,384 L 448,384" fill="none" stroke="black"></path>
-                  <path d="M 456,400 L 536,400" fill="none" stroke="black"></path>
-                  <path d="M 200,416 L 336,416" fill="none" stroke="black"></path>
-                  <path d="M 368,416 L 424,416" fill="none" stroke="black"></path>
-                  <path d="M 152,432 L 192,432" fill="none" stroke="black"></path>
-                  <path d="M 344,432 L 360,432" fill="none" stroke="black"></path>
-                  <path d="M 200,448 L 336,448" fill="none" stroke="black"></path>
-                  <path d="M 368,448 L 424,448" fill="none" stroke="black"></path>
-                  <path d="M 456,480 L 520,480" fill="none" stroke="black"></path>
-                  <path d="M 304,496 L 392,496" fill="none" stroke="black"></path>
-                  <path d="M 424,496 L 448,496" fill="none" stroke="black"></path>
-                  <path d="M 456,512 L 520,512" fill="none" stroke="black"></path>
-                  <path d="M 144,528 L 392,528" fill="none" stroke="black"></path>
-                  <polygon class="arrowhead" points="312,456 300,450.4 300,461.6" fill="black" transform="rotate(270,304,456)"></polygon>
-                  <polygon class="arrowhead" points="168,272 156,266.4 156,277.6" fill="black" transform="rotate(180,160,272)"></polygon>
-                  <polygon class="arrowhead" points="160,432 148,426.4 148,437.6" fill="black" transform="rotate(180,152,432)"></polygon>
-                  <polygon class="arrowhead" points="152,528 140,522.4 140,533.6" fill="black" transform="rotate(180,144,528)"></polygon>
-                  <polygon class="arrowhead" points="152,80 140,74.4 140,85.6" fill="black" transform="rotate(180,144,80)"></polygon>
-                  <g class="text">
-                    <text x="88" y="36">Service</text>
-                    <text x="144" y="36">CS-ID</text>
-                    <text x="180" y="36">1,</text>
-                    <text x="224" y="36">contact</text>
-                    <text x="292" y="36">instance</text>
-                    <text x="360" y="36">CSCI-ID</text>
-                    <text x="400" y="36">1</text>
-                    <text x="452" y="36">&lt;computing</text>
-                    <text x="532" y="36">metrics&gt;</text>
-                    <text x="88" y="52">Service</text>
-                    <text x="144" y="52">CS-ID</text>
-                    <text x="180" y="52">1,</text>
-                    <text x="224" y="52">contact</text>
-                    <text x="292" y="52">instance</text>
-                    <text x="360" y="52">CSCI-ID</text>
-                    <text x="400" y="52">2</text>
-                    <text x="452" y="52">&lt;computing</text>
-                    <text x="532" y="52">metrics&gt;</text>
-                    <text x="136" y="84">:</text>
-                    <text x="328" y="84">:</text>
-                    <text x="136" y="100">:</text>
-                    <text x="328" y="100">:</text>
-                    <text x="136" y="116">:</text>
-                    <text x="328" y="116">:</text>
-                    <text x="480" y="116">CS-ID</text>
-                    <text x="512" y="116">1</text>
-                    <text x="136" y="132">:</text>
-                    <text x="328" y="132">:</text>
-                    <text x="488" y="132">CSCI-ID</text>
-                    <text x="528" y="132">1</text>
-                    <text x="136" y="148">:</text>
-                    <text x="136" y="164">:</text>
-                    <text x="312" y="164">C-SMA</text>
-                    <text x="488" y="164">Service</text>
-                    <text x="540" y="164">Site</text>
-                    <text x="568" y="164">2</text>
-                    <text x="136" y="180">:</text>
-                    <text x="136" y="196">:</text>
-                    <text x="316" y="196">CATS-Forwarder</text>
-                    <text x="384" y="196">2</text>
-                    <text x="480" y="196">CS-ID</text>
-                    <text x="512" y="196">1</text>
-                    <text x="136" y="212">:</text>
-                    <text x="488" y="212">CSCI-ID</text>
-                    <text x="528" y="212">2</text>
-                    <text x="136" y="228">:</text>
-                    <text x="336" y="228">|</text>
-                    <text x="44" y="244">Client</text>
-                    <text x="136" y="244">:</text>
-                    <text x="184" y="244">Network</text>
-                    <text x="136" y="260">:</text>
-                    <text x="184" y="260">metrics</text>
-                    <text x="136" y="276">:</text>
-                    <text x="152" y="276">:</text>
-                    <text x="272" y="276">C-NMA</text>
-                    <text x="136" y="292">:</text>
-                    <text x="152" y="292">:</text>
-                    <text x="68" y="324">CATS-Forwarder</text>
-                    <text x="156" y="324">1|C-PS</text>
-                    <text x="316" y="340">Underlay</text>
-                    <text x="136" y="356">:</text>
-                    <text x="324" y="356">Infrastructure</text>
-                    <text x="136" y="372">:</text>
-                    <text x="480" y="372">CS-ID</text>
-                    <text x="512" y="372">1</text>
-                    <text x="136" y="388">:</text>
-                    <text x="488" y="388">CSCI-ID</text>
-                    <text x="528" y="388">3</text>
-                    <text x="136" y="404">:</text>
-                    <text x="304" y="404">|</text>
-                    <text x="136" y="420">:</text>
-                    <text x="136" y="436">:</text>
-                    <text x="260" y="436">CATS-Forwarder</text>
-                    <text x="328" y="436">3</text>
-                    <text x="392" y="436">C-SMA</text>
-                    <text x="464" y="436">Service</text>
-                    <text x="516" y="436">Site</text>
-                    <text x="544" y="436">3</text>
-                    <text x="136" y="452">:</text>
-                    <text x="136" y="468">:</text>
-                    <text x="400" y="468">:</text>
-                    <text x="136" y="484">:</text>
-                    <text x="400" y="484">:</text>
-                    <text x="136" y="500">:</text>
-                    <text x="400" y="500">:</text>
-                    <text x="480" y="500">CS-ID</text>
-                    <text x="512" y="500">2</text>
-                    <text x="136" y="516">:</text>
-                    <text x="400" y="516">:</text>
-                    <text x="136" y="532">:</text>
-                    <text x="400" y="532">:</text>
-                    <text x="88" y="548">Service</text>
-                    <text x="144" y="548">CS-ID</text>
-                    <text x="180" y="548">1,</text>
-                    <text x="224" y="548">contact</text>
-                    <text x="292" y="548">instance</text>
-                    <text x="360" y="548">CSCI-ID</text>
-                    <text x="400" y="548">3</text>
-                    <text x="452" y="548">&lt;computing</text>
-                    <text x="532" y="548">metrics&gt;</text>
-                    <text x="88" y="564">Service</text>
-                    <text x="144" y="564">CS-ID</text>
-                    <text x="180" y="564">2,</text>
-                    <text x="236" y="564">&lt;computing</text>
-                    <text x="316" y="564">metrics&gt;</text>
-                  </g>
-                </svg><a href="#section-5.3.1-4.1.1" class="pilcrow">¶</a>
-</div>
-</div>
-<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
-<a href="#name-an-example-of-cats-metric-d" class="selfRef">An Example of CATS Metric Dissemination in the Distributed Model</a>
-            </figcaption></figure>
-</div>
-<p id="section-5.3.1-5">The example in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> mainly describes a per-instance computing-related metric distribution. In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#section-5.3.1-5" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="sec-met-dist2">
-<section id="section-5.3.2">
-          <h4 id="name-centralized-model">
-<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-centralized-model" class="section-name selfRef">Centralized Model</a>
-          </h4>
-<p id="section-5.3.2-1">If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>.<a href="#section-5.3.2-1" class="pilcrow">¶</a></p>
-<span id="name-an-example-of-cats-metric-di"></span><div id="fig-cats-centralized">
-<figure id="figure-4">
-            <div id="section-5.3.2-2.1">
-              <div class="alignLeft art-svg artwork" id="section-5.3.2-2.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="592" viewBox="0 0 592 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
-                  <path d="M 8,288 L 8,320" fill="none" stroke="black"></path>
-                  <path d="M 8,368 L 8,416" fill="none" stroke="black"></path>
-                  <path d="M 48,328 L 48,360" fill="none" stroke="black"></path>
-                  <path d="M 80,288 L 80,320" fill="none" stroke="black"></path>
-                  <path d="M 144,368 L 144,416" fill="none" stroke="black"></path>
-                  <path d="M 160,112 L 160,160" fill="none" stroke="black"></path>
-                  <path d="M 176,496 L 176,528" fill="none" stroke="black"></path>
-                  <path d="M 184,168 L 184,336" fill="none" stroke="black"></path>
-                  <path d="M 208,208 L 208,272" fill="none" stroke="black"></path>
-                  <path d="M 208,304 L 208,328" fill="none" stroke="black"></path>
-                  <path d="M 208,344 L 208,376" fill="none" stroke="black"></path>
-                  <path d="M 208,392 L 208,464" fill="none" stroke="black"></path>
-                  <path d="M 216,112 L 216,160" fill="none" stroke="black"></path>
-                  <path d="M 224,320 L 224,352" fill="none" stroke="black"></path>
-                  <path d="M 248,360 L 248,384" fill="none" stroke="black"></path>
-                  <path d="M 280,144 L 280,200" fill="none" stroke="black"></path>
-                  <path d="M 288,320 L 288,352" fill="none" stroke="black"></path>
-                  <path d="M 288,536 L 288,560" fill="none" stroke="black"></path>
-                  <path d="M 312,496 L 312,528" fill="none" stroke="black"></path>
-                  <path d="M 344,208 L 344,272" fill="none" stroke="black"></path>
-                  <path d="M 376,176 L 376,256" fill="none" stroke="black"></path>
-                  <path d="M 392,304 L 392,464" fill="none" stroke="black"></path>
-                  <path d="M 408,160 L 408,208" fill="none" stroke="black"></path>
-                  <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
-                  <path d="M 408,544 L 408,576" fill="none" stroke="black"></path>
-                  <path d="M 432,432 L 432,480" fill="none" stroke="black"></path>
-                  <path d="M 440,320 L 440,384" fill="none" stroke="black"></path>
-                  <path d="M 448,488 L 448,512" fill="none" stroke="black"></path>
-                  <path d="M 472,544 L 472,576" fill="none" stroke="black"></path>
-                  <path d="M 480,392 L 480,424" fill="none" stroke="black"></path>
-                  <path d="M 488,160 L 488,208" fill="none" stroke="black"></path>
-                  <path d="M 488,240 L 488,288" fill="none" stroke="black"></path>
-                  <path d="M 488,320 L 488,384" fill="none" stroke="black"></path>
-                  <path d="M 512,432 L 512,480" fill="none" stroke="black"></path>
-                  <path d="M 536,128 L 536,336" fill="none" stroke="black"></path>
-                  <path d="M 536,368 L 536,560" fill="none" stroke="black"></path>
-                  <path d="M 160,112 L 216,112" fill="none" stroke="black"></path>
-                  <path d="M 104,128 L 152,128" fill="none" stroke="black"></path>
-                  <path d="M 224,128 L 536,128" fill="none" stroke="black"></path>
-                  <path d="M 224,144 L 280,144" fill="none" stroke="black"></path>
-                  <path d="M 160,160 L 216,160" fill="none" stroke="black"></path>
-                  <path d="M 408,160 L 488,160" fill="none" stroke="black"></path>
-                  <path d="M 376,176 L 400,176" fill="none" stroke="black"></path>
-                  <path d="M 208,208 L 344,208" fill="none" stroke="black"></path>
-                  <path d="M 408,208 L 488,208" fill="none" stroke="black"></path>
-                  <path d="M 352,224 L 368,224" fill="none" stroke="black"></path>
-                  <path d="M 208,240 L 344,240" fill="none" stroke="black"></path>
-                  <path d="M 408,240 L 488,240" fill="none" stroke="black"></path>
-                  <path d="M 376,256 L 400,256" fill="none" stroke="black"></path>
-                  <path d="M 208,272 L 344,272" fill="none" stroke="black"></path>
-                  <path d="M 8,288 L 80,288" fill="none" stroke="black"></path>
-                  <path d="M 408,288 L 488,288" fill="none" stroke="black"></path>
-                  <path d="M 208,304 L 392,304" fill="none" stroke="black"></path>
-                  <path d="M 8,320 L 80,320" fill="none" stroke="black"></path>
-                  <path d="M 224,320 L 288,320" fill="none" stroke="black"></path>
-                  <path d="M 440,320 L 488,320" fill="none" stroke="black"></path>
-                  <path d="M 184,336 L 216,336" fill="none" stroke="black"></path>
-                  <path d="M 496,336 L 536,336" fill="none" stroke="black"></path>
-                  <path d="M 224,352 L 288,352" fill="none" stroke="black"></path>
-                  <path d="M 8,368 L 144,368" fill="none" stroke="black"></path>
-                  <path d="M 496,368 L 536,368" fill="none" stroke="black"></path>
-                  <path d="M 152,384 L 248,384" fill="none" stroke="black"></path>
-                  <path d="M 440,384 L 488,384" fill="none" stroke="black"></path>
-                  <path d="M 152,400 L 200,400" fill="none" stroke="black"></path>
-                  <path d="M 8,416 L 144,416" fill="none" stroke="black"></path>
-                  <path d="M 432,432 L 512,432" fill="none" stroke="black"></path>
-                  <path d="M 208,464 L 392,464" fill="none" stroke="black"></path>
-                  <path d="M 432,480 L 512,480" fill="none" stroke="black"></path>
-                  <path d="M 176,496 L 312,496" fill="none" stroke="black"></path>
-                  <path d="M 320,512 L 448,512" fill="none" stroke="black"></path>
-                  <path d="M 176,528 L 312,528" fill="none" stroke="black"></path>
-                  <path d="M 408,544 L 472,544" fill="none" stroke="black"></path>
-                  <path d="M 288,560 L 400,560" fill="none" stroke="black"></path>
-                  <path d="M 480,560 L 536,560" fill="none" stroke="black"></path>
-                  <path d="M 408,576 L 472,576" fill="none" stroke="black"></path>
-                  <polygon class="arrowhead" points="504,368 492,362.4 492,373.6" fill="black" transform="rotate(180,496,368)"></polygon>
-                  <polygon class="arrowhead" points="488,392 476,386.4 476,397.6" fill="black" transform="rotate(270,480,392)"></polygon>
-                  <polygon class="arrowhead" points="232,144 220,138.4 220,149.6" fill="black" transform="rotate(180,224,144)"></polygon>
-                  <polygon class="arrowhead" points="232,128 220,122.4 220,133.6" fill="black" transform="rotate(180,224,128)"></polygon>
-                  <polygon class="arrowhead" points="192,168 180,162.4 180,173.6" fill="black" transform="rotate(270,184,168)"></polygon>
-                  <polygon class="arrowhead" points="160,384 148,378.4 148,389.6" fill="black" transform="rotate(180,152,384)"></polygon>
-                  <polygon class="arrowhead" points="112,128 100,122.4 100,133.6" fill="black" transform="rotate(180,104,128)"></polygon>
-                  <g class="text">
-                    <text x="176" y="36">Service</text>
-                    <text x="232" y="36">CS-ID</text>
-                    <text x="268" y="36">1,</text>
-                    <text x="316" y="36">instance</text>
-                    <text x="384" y="36">CSCI-ID</text>
-                    <text x="424" y="36">1</text>
-                    <text x="476" y="36">&lt;computing</text>
-                    <text x="556" y="36">metrics&gt;</text>
-                    <text x="176" y="52">Service</text>
-                    <text x="232" y="52">CS-ID</text>
-                    <text x="268" y="52">1,</text>
-                    <text x="316" y="52">instance</text>
-                    <text x="384" y="52">CSCI-ID</text>
-                    <text x="424" y="52">2</text>
-                    <text x="476" y="52">&lt;computing</text>
-                    <text x="556" y="52">metrics&gt;</text>
-                    <text x="176" y="68">Service</text>
-                    <text x="232" y="68">CS-ID</text>
-                    <text x="268" y="68">1,</text>
-                    <text x="316" y="68">instance</text>
-                    <text x="384" y="68">CSCI-ID</text>
-                    <text x="424" y="68">3</text>
-                    <text x="476" y="68">&lt;computing</text>
-                    <text x="556" y="68">metrics&gt;</text>
-                    <text x="176" y="84">Service</text>
-                    <text x="232" y="84">CS-ID</text>
-                    <text x="268" y="84">2,</text>
-                    <text x="324" y="84">&lt;computing</text>
-                    <text x="404" y="84">metrics&gt;</text>
-                    <text x="96" y="132">:</text>
-                    <text x="188" y="132">C-PS</text>
-                    <text x="96" y="148">:</text>
-                    <text x="96" y="164">:</text>
-                    <text x="96" y="180">:</text>
-                    <text x="432" y="180">CS-ID</text>
-                    <text x="464" y="180">1</text>
-                    <text x="96" y="196">:</text>
-                    <text x="440" y="196">CSCI-ID</text>
-                    <text x="480" y="196">1</text>
-                    <text x="96" y="212">:</text>
-                    <text x="96" y="228">:</text>
-                    <text x="264" y="228">C-SMA</text>
-                    <text x="416" y="228">Service</text>
-                    <text x="468" y="228">Site</text>
-                    <text x="496" y="228">2</text>
-                    <text x="96" y="244">:</text>
-                    <text x="96" y="260">:</text>
-                    <text x="268" y="260">CATS-Forwarder</text>
-                    <text x="336" y="260">2</text>
-                    <text x="432" y="260">CS-ID</text>
-                    <text x="464" y="260">1</text>
-                    <text x="96" y="276">:</text>
-                    <text x="440" y="276">CSCI-ID</text>
-                    <text x="480" y="276">2</text>
-                    <text x="96" y="292">:</text>
-                    <text x="288" y="292">|</text>
-                    <text x="44" y="308">Client</text>
-                    <text x="96" y="308">:</text>
-                    <text x="144" y="308">Network</text>
-                    <text x="96" y="324">:</text>
-                    <text x="144" y="324">metrics</text>
-                    <text x="96" y="340">:</text>
-                    <text x="256" y="340">C-NMA</text>
-                    <text x="96" y="356">:</text>
-                    <text x="464" y="356">C-SMA</text>
-                    <text x="68" y="388">CATS-Forwarder</text>
-                    <text x="136" y="388">1</text>
-                    <text x="300" y="420">Underlay</text>
-                    <text x="308" y="436">Infrastructure</text>
-                    <text x="456" y="452">CS-ID</text>
-                    <text x="488" y="452">1</text>
-                    <text x="464" y="468">CSCI-ID</text>
-                    <text x="504" y="468">3</text>
-                    <text x="288" y="484">|</text>
-                    <text x="236" y="516">CATS-Forwarder</text>
-                    <text x="304" y="516">3</text>
-                    <text x="416" y="532">Service</text>
-                    <text x="468" y="532">Site</text>
-                    <text x="496" y="532">3</text>
-                    <text x="432" y="564">CS-ID</text>
-                    <text x="464" y="564">2</text>
-                  </g>
-                </svg><a href="#section-5.3.2-2.1.1" class="pilcrow">¶</a>
-</div>
-</div>
-<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
-<a href="#name-an-example-of-cats-metric-di" class="selfRef">An Example of CATS Metric Distribution in the Centralized Model</a>
-            </figcaption></figure>
-</div>
-<p id="section-5.3.2-3">In <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed independently with the CATS-Forwarder 1. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to CATS-Forwarder 1 to indicate traffic steering.<a href="#section-5.3.2-3" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="sec-met-dist3">
-<section id="section-5.3.3">
-          <h4 id="name-hybrid-model">
-<a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-hybrid-model" class="section-name selfRef">Hybrid Model</a>
-          </h4>
-<p id="section-5.3.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for subsequent packets accessing the same service.<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
-<span id="name-an-example-of-cats-metric-dis"></span><div id="fig-cats-hybrid">
-<figure id="figure-5">
-            <div id="section-5.3.3-2.1">
-              <div class="alignLeft art-svg artwork" id="section-5.3.3-2.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="576" viewBox="0 0 576 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
-                  <path d="M 8,272 L 8,304" fill="none" stroke="black"></path>
-                  <path d="M 8,368 L 8,448" fill="none" stroke="black"></path>
-                  <path d="M 48,312 L 48,360" fill="none" stroke="black"></path>
-                  <path d="M 48,424 L 48,448" fill="none" stroke="black"></path>
-                  <path d="M 80,272 L 80,304" fill="none" stroke="black"></path>
-                  <path d="M 144,368 L 144,416" fill="none" stroke="black"></path>
-                  <path d="M 168,96 L 168,144" fill="none" stroke="black"></path>
-                  <path d="M 192,152 L 192,320" fill="none" stroke="black"></path>
-                  <path d="M 192,480 L 192,512" fill="none" stroke="black"></path>
-                  <path d="M 224,96 L 224,144" fill="none" stroke="black"></path>
-                  <path d="M 224,192 L 224,256" fill="none" stroke="black"></path>
-                  <path d="M 224,288 L 224,312" fill="none" stroke="black"></path>
-                  <path d="M 224,328 L 224,376" fill="none" stroke="black"></path>
-                  <path d="M 224,392 L 224,448" fill="none" stroke="black"></path>
-                  <path d="M 240,304 L 240,336" fill="none" stroke="black"></path>
-                  <path d="M 264,344 L 264,384" fill="none" stroke="black"></path>
-                  <path d="M 296,128 L 296,184" fill="none" stroke="black"></path>
-                  <path d="M 304,304 L 304,336" fill="none" stroke="black"></path>
-                  <path d="M 304,520 L 304,544" fill="none" stroke="black"></path>
-                  <path d="M 328,480 L 328,512" fill="none" stroke="black"></path>
-                  <path d="M 360,192 L 360,256" fill="none" stroke="black"></path>
-                  <path d="M 392,160 L 392,240" fill="none" stroke="black"></path>
-                  <path d="M 408,288 L 408,448" fill="none" stroke="black"></path>
-                  <path d="M 424,144 L 424,192" fill="none" stroke="black"></path>
-                  <path d="M 424,224 L 424,272" fill="none" stroke="black"></path>
-                  <path d="M 424,528 L 424,560" fill="none" stroke="black"></path>
-                  <path d="M 432,416 L 432,464" fill="none" stroke="black"></path>
-                  <path d="M 448,472 L 448,496" fill="none" stroke="black"></path>
-                  <path d="M 464,304 L 464,368" fill="none" stroke="black"></path>
-                  <path d="M 488,528 L 488,560" fill="none" stroke="black"></path>
-                  <path d="M 496,376 L 496,408" fill="none" stroke="black"></path>
-                  <path d="M 504,144 L 504,192" fill="none" stroke="black"></path>
-                  <path d="M 504,224 L 504,272" fill="none" stroke="black"></path>
-                  <path d="M 512,304 L 512,368" fill="none" stroke="black"></path>
-                  <path d="M 512,416 L 512,464" fill="none" stroke="black"></path>
-                  <path d="M 536,112 L 536,320" fill="none" stroke="black"></path>
-                  <path d="M 536,352 L 536,544" fill="none" stroke="black"></path>
-                  <path d="M 552,336 L 552,576" fill="none" stroke="black"></path>
-                  <path d="M 168,96 L 224,96" fill="none" stroke="black"></path>
-                  <path d="M 112,112 L 160,112" fill="none" stroke="black"></path>
-                  <path d="M 232,112 L 536,112" fill="none" stroke="black"></path>
-                  <path d="M 232,128 L 296,128" fill="none" stroke="black"></path>
-                  <path d="M 168,144 L 224,144" fill="none" stroke="black"></path>
-                  <path d="M 424,144 L 504,144" fill="none" stroke="black"></path>
-                  <path d="M 392,160 L 416,160" fill="none" stroke="black"></path>
-                  <path d="M 224,192 L 360,192" fill="none" stroke="black"></path>
-                  <path d="M 424,192 L 504,192" fill="none" stroke="black"></path>
-                  <path d="M 368,208 L 384,208" fill="none" stroke="black"></path>
-                  <path d="M 224,224 L 360,224" fill="none" stroke="black"></path>
-                  <path d="M 424,224 L 504,224" fill="none" stroke="black"></path>
-                  <path d="M 392,240 L 416,240" fill="none" stroke="black"></path>
-                  <path d="M 224,256 L 360,256" fill="none" stroke="black"></path>
-                  <path d="M 8,272 L 80,272" fill="none" stroke="black"></path>
-                  <path d="M 424,272 L 504,272" fill="none" stroke="black"></path>
-                  <path d="M 224,288 L 408,288" fill="none" stroke="black"></path>
-                  <path d="M 8,304 L 80,304" fill="none" stroke="black"></path>
-                  <path d="M 240,304 L 304,304" fill="none" stroke="black"></path>
-                  <path d="M 464,304 L 512,304" fill="none" stroke="black"></path>
-                  <path d="M 192,320 L 232,320" fill="none" stroke="black"></path>
-                  <path d="M 520,320 L 536,320" fill="none" stroke="black"></path>
-                  <path d="M 240,336 L 304,336" fill="none" stroke="black"></path>
-                  <path d="M 520,336 L 552,336" fill="none" stroke="black"></path>
-                  <path d="M 520,352 L 536,352" fill="none" stroke="black"></path>
-                  <path d="M 8,368 L 144,368" fill="none" stroke="black"></path>
-                  <path d="M 464,368 L 512,368" fill="none" stroke="black"></path>
-                  <path d="M 152,384 L 264,384" fill="none" stroke="black"></path>
-                  <path d="M 152,400 L 216,400" fill="none" stroke="black"></path>
-                  <path d="M 16,416 L 144,416" fill="none" stroke="black"></path>
-                  <path d="M 432,416 L 512,416" fill="none" stroke="black"></path>
-                  <path d="M 8,448 L 48,448" fill="none" stroke="black"></path>
-                  <path d="M 224,448 L 408,448" fill="none" stroke="black"></path>
-                  <path d="M 432,464 L 512,464" fill="none" stroke="black"></path>
-                  <path d="M 192,480 L 328,480" fill="none" stroke="black"></path>
-                  <path d="M 336,496 L 448,496" fill="none" stroke="black"></path>
-                  <path d="M 192,512 L 328,512" fill="none" stroke="black"></path>
-                  <path d="M 424,528 L 488,528" fill="none" stroke="black"></path>
-                  <path d="M 304,544 L 416,544" fill="none" stroke="black"></path>
-                  <path d="M 496,544 L 536,544" fill="none" stroke="black"></path>
-                  <path d="M 424,560 L 488,560" fill="none" stroke="black"></path>
-                  <path d="M 112,576 L 552,576" fill="none" stroke="black"></path>
-                  <polygon class="arrowhead" points="528,352 516,346.4 516,357.6" fill="black" transform="rotate(180,520,352)"></polygon>
-                  <polygon class="arrowhead" points="504,376 492,370.4 492,381.6" fill="black" transform="rotate(270,496,376)"></polygon>
-                  <polygon class="arrowhead" points="240,128 228,122.4 228,133.6" fill="black" transform="rotate(180,232,128)"></polygon>
-                  <polygon class="arrowhead" points="240,112 228,106.4 228,117.6" fill="black" transform="rotate(180,232,112)"></polygon>
-                  <polygon class="arrowhead" points="200,152 188,146.4 188,157.6" fill="black" transform="rotate(270,192,152)"></polygon>
-                  <polygon class="arrowhead" points="160,384 148,378.4 148,389.6" fill="black" transform="rotate(180,152,384)"></polygon>
-                  <polygon class="arrowhead" points="120,576 108,570.4 108,581.6" fill="black" transform="rotate(180,112,576)"></polygon>
-                  <polygon class="arrowhead" points="120,112 108,106.4 108,117.6" fill="black" transform="rotate(180,112,112)"></polygon>
-                  <g class="text">
-                    <text x="120" y="36">Service</text>
-                    <text x="176" y="36">CS-ID</text>
-                    <text x="212" y="36">1,</text>
-                    <text x="260" y="36">instance</text>
-                    <text x="328" y="36">CSCI-ID</text>
-                    <text x="368" y="36">1</text>
-                    <text x="420" y="36">&lt;computing</text>
-                    <text x="492" y="36">metric</text>
-                    <text x="548" y="36">1,2,3&gt;</text>
-                    <text x="120" y="52">Service</text>
-                    <text x="176" y="52">CS-ID</text>
-                    <text x="212" y="52">1,</text>
-                    <text x="260" y="52">instance</text>
-                    <text x="328" y="52">CSCI-ID</text>
-                    <text x="368" y="52">2</text>
-                    <text x="420" y="52">&lt;computing</text>
-                    <text x="492" y="52">metric</text>
-                    <text x="548" y="52">1,2,3&gt;</text>
-                    <text x="120" y="68">Service</text>
-                    <text x="176" y="68">CS-ID</text>
-                    <text x="212" y="68">1,</text>
-                    <text x="260" y="68">instance</text>
-                    <text x="328" y="68">CSCI-ID</text>
-                    <text x="368" y="68">3</text>
-                    <text x="420" y="68">&lt;computing</text>
-                    <text x="492" y="68">metric</text>
-                    <text x="548" y="68">1,2,3&gt;</text>
-                    <text x="120" y="84">Service</text>
-                    <text x="176" y="84">CS-ID</text>
-                    <text x="212" y="84">2,</text>
-                    <text x="268" y="84">&lt;computing</text>
-                    <text x="348" y="84">metrics&gt;</text>
-                    <text x="104" y="116">:</text>
-                    <text x="196" y="116">C-PS</text>
-                    <text x="104" y="132">:</text>
-                    <text x="104" y="148">:</text>
-                    <text x="104" y="164">:</text>
-                    <text x="448" y="164">CS-ID</text>
-                    <text x="480" y="164">1</text>
-                    <text x="104" y="180">:</text>
-                    <text x="456" y="180">CSCI-ID</text>
-                    <text x="496" y="180">1</text>
-                    <text x="104" y="196">:</text>
-                    <text x="104" y="212">:</text>
-                    <text x="280" y="212">C-SMA</text>
-                    <text x="432" y="212">Service</text>
-                    <text x="484" y="212">Site</text>
-                    <text x="512" y="212">2</text>
-                    <text x="104" y="228">:</text>
-                    <text x="104" y="244">:</text>
-                    <text x="284" y="244">CATS-Forwarder</text>
-                    <text x="352" y="244">2</text>
-                    <text x="448" y="244">CS-ID</text>
-                    <text x="480" y="244">1</text>
-                    <text x="104" y="260">:</text>
-                    <text x="456" y="260">CSCI-ID</text>
-                    <text x="496" y="260">2</text>
-                    <text x="104" y="276">:</text>
-                    <text x="304" y="276">|</text>
-                    <text x="44" y="292">Client</text>
-                    <text x="104" y="292">:</text>
-                    <text x="152" y="292">Network</text>
-                    <text x="104" y="308">:</text>
-                    <text x="152" y="308">metrics</text>
-                    <text x="104" y="324">:</text>
-                    <text x="272" y="324">C-NMA</text>
-                    <text x="104" y="340">:</text>
-                    <text x="488" y="340">C-SMA</text>
-                    <text x="104" y="356">:</text>
-                    <text x="68" y="388">CATS-Forwarder</text>
-                    <text x="136" y="388">1</text>
-                    <text x="316" y="404">Underlay</text>
-                    <text x="324" y="420">Infrastructure</text>
-                    <text x="28" y="436">C-PS</text>
-                    <text x="104" y="436">:</text>
-                    <text x="456" y="436">CS-ID</text>
-                    <text x="488" y="436">1</text>
-                    <text x="104" y="452">:</text>
-                    <text x="464" y="452">CSCI-ID</text>
-                    <text x="504" y="452">3</text>
-                    <text x="104" y="468">:</text>
-                    <text x="304" y="468">|</text>
-                    <text x="104" y="484">:</text>
-                    <text x="104" y="500">:</text>
-                    <text x="252" y="500">CATS-Forwarder</text>
-                    <text x="320" y="500">3</text>
-                    <text x="104" y="516">:</text>
-                    <text x="432" y="516">Service</text>
-                    <text x="484" y="516">Site</text>
-                    <text x="512" y="516">3</text>
-                    <text x="104" y="532">:</text>
-                    <text x="104" y="548">:</text>
-                    <text x="448" y="548">CS-ID</text>
-                    <text x="480" y="548">2</text>
-                    <text x="104" y="564">:</text>
-                    <text x="104" y="580">:</text>
-                    <text x="56" y="596">Service</text>
-                    <text x="112" y="596">CS-ID</text>
-                    <text x="148" y="596">1,</text>
-                    <text x="192" y="596">contact</text>
-                    <text x="260" y="596">instance</text>
-                    <text x="328" y="596">CSCI-ID</text>
-                    <text x="372" y="596">3,</text>
-                    <text x="428" y="596">&lt;computing</text>
-                    <text x="500" y="596">metric</text>
-                    <text x="548" y="596">4,5&gt;</text>
-                  </g>
-                </svg><a href="#section-5.3.3-2.1.1" class="pilcrow">¶</a>
-</div>
-</div>
-<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
-<a href="#name-an-example-of-cats-metric-dis" class="selfRef">An Example of CATS Metric Distribution in the Hybrid Model</a>
-            </figcaption></figure>
-</div>
-</section>
-</div>
 </section>
 </div>
 <div id="verifying-correct-operations">
@@ -2805,21 +2199,627 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 </dl>
 </section>
 </div>
-<div id="acknowledgements">
+<div id="sec-appendix">
 <section id="appendix-A">
-      <h2 id="name-acknowledgements">
-<a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      <h2 id="name-deployment-examples">
+<a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-deployment-examples" class="section-name selfRef">Deployment Examples</a>
       </h2>
-<p id="appendix-A-1">The authors would like to thank Joel Halpern, John Scudder, Dino Farinacci, Adrian Farrel,
+<p id="appendix-A-1">This section provides examples to illustrate the distribution of the metrics. These examples are not deployment recommendations.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<div id="sec-met-dist1">
+<section id="appendix-A.1">
+        <h3 id="name-distributed-model">
+<a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-distributed-model" class="section-name selfRef">Distributed Model</a>
+        </h3>
+<p id="appendix-A.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-2">In <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Note that this information may be aggregated into a single advertisement, but in this case, the metrics for each service contact instance are indicated separately. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress CATS-Forwarder 3. Then the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#appendix-A.1-2" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-3">The computing metric advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.<a href="#appendix-A.1-3" class="pilcrow">¶</a></p>
+<span id="name-an-example-of-cats-metric-d"></span><div id="fig-cats-example-overlay">
+<figure id="figure-3">
+          <div id="appendix-A.1-4.1">
+            <div class="alignLeft art-svg artwork" id="appendix-A.1-4.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="576" viewBox="0 0 576 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,224 L 8,256" fill="none" stroke="black"></path>
+                <path d="M 8,304 L 8,336" fill="none" stroke="black"></path>
+                <path d="M 48,264 L 48,296" fill="none" stroke="black"></path>
+                <path d="M 80,224 L 80,256" fill="none" stroke="black"></path>
+                <path d="M 184,304 L 184,336" fill="none" stroke="black"></path>
+                <path d="M 200,416 L 200,448" fill="none" stroke="black"></path>
+                <path d="M 224,240 L 224,264" fill="none" stroke="black"></path>
+                <path d="M 224,280 L 224,384" fill="none" stroke="black"></path>
+                <path d="M 240,256 L 240,288" fill="none" stroke="black"></path>
+                <path d="M 256,144 L 256,208" fill="none" stroke="black"></path>
+                <path d="M 304,256 L 304,288" fill="none" stroke="black"></path>
+                <path d="M 304,456 L 304,496" fill="none" stroke="black"></path>
+                <path d="M 336,416 L 336,448" fill="none" stroke="black"></path>
+                <path d="M 368,416 L 368,448" fill="none" stroke="black"></path>
+                <path d="M 392,144 L 392,208" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,384" fill="none" stroke="black"></path>
+                <path d="M 424,384 L 424,496" fill="none" stroke="black"></path>
+                <path d="M 432,128 L 432,192" fill="none" stroke="black"></path>
+                <path d="M 456,96 L 456,144" fill="none" stroke="black"></path>
+                <path d="M 456,176 L 456,224" fill="none" stroke="black"></path>
+                <path d="M 456,352 L 456,400" fill="none" stroke="black"></path>
+                <path d="M 456,480 L 456,512" fill="none" stroke="black"></path>
+                <path d="M 520,480 L 520,512" fill="none" stroke="black"></path>
+                <path d="M 536,96 L 536,144" fill="none" stroke="black"></path>
+                <path d="M 536,176 L 536,224" fill="none" stroke="black"></path>
+                <path d="M 536,352 L 536,400" fill="none" stroke="black"></path>
+                <path d="M 144,80 L 320,80" fill="none" stroke="black"></path>
+                <path d="M 456,96 L 536,96" fill="none" stroke="black"></path>
+                <path d="M 432,128 L 448,128" fill="none" stroke="black"></path>
+                <path d="M 256,144 L 392,144" fill="none" stroke="black"></path>
+                <path d="M 456,144 L 536,144" fill="none" stroke="black"></path>
+                <path d="M 400,160 L 424,160" fill="none" stroke="black"></path>
+                <path d="M 256,176 L 392,176" fill="none" stroke="black"></path>
+                <path d="M 456,176 L 536,176" fill="none" stroke="black"></path>
+                <path d="M 432,192 L 448,192" fill="none" stroke="black"></path>
+                <path d="M 256,208 L 392,208" fill="none" stroke="black"></path>
+                <path d="M 8,224 L 80,224" fill="none" stroke="black"></path>
+                <path d="M 456,224 L 536,224" fill="none" stroke="black"></path>
+                <path d="M 224,240 L 408,240" fill="none" stroke="black"></path>
+                <path d="M 8,256 L 80,256" fill="none" stroke="black"></path>
+                <path d="M 240,256 L 304,256" fill="none" stroke="black"></path>
+                <path d="M 160,272 L 232,272" fill="none" stroke="black"></path>
+                <path d="M 240,288 L 304,288" fill="none" stroke="black"></path>
+                <path d="M 8,304 L 184,304" fill="none" stroke="black"></path>
+                <path d="M 192,320 L 216,320" fill="none" stroke="black"></path>
+                <path d="M 8,336 L 184,336" fill="none" stroke="black"></path>
+                <path d="M 456,352 L 536,352" fill="none" stroke="black"></path>
+                <path d="M 224,384 L 408,384" fill="none" stroke="black"></path>
+                <path d="M 424,384 L 448,384" fill="none" stroke="black"></path>
+                <path d="M 456,400 L 536,400" fill="none" stroke="black"></path>
+                <path d="M 200,416 L 336,416" fill="none" stroke="black"></path>
+                <path d="M 368,416 L 424,416" fill="none" stroke="black"></path>
+                <path d="M 152,432 L 192,432" fill="none" stroke="black"></path>
+                <path d="M 344,432 L 360,432" fill="none" stroke="black"></path>
+                <path d="M 200,448 L 336,448" fill="none" stroke="black"></path>
+                <path d="M 368,448 L 424,448" fill="none" stroke="black"></path>
+                <path d="M 456,480 L 520,480" fill="none" stroke="black"></path>
+                <path d="M 304,496 L 392,496" fill="none" stroke="black"></path>
+                <path d="M 424,496 L 448,496" fill="none" stroke="black"></path>
+                <path d="M 456,512 L 520,512" fill="none" stroke="black"></path>
+                <path d="M 144,528 L 392,528" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="312,456 300,450.4 300,461.6" fill="black" transform="rotate(270,304,456)"></polygon>
+                <polygon class="arrowhead" points="168,272 156,266.4 156,277.6" fill="black" transform="rotate(180,160,272)"></polygon>
+                <polygon class="arrowhead" points="160,432 148,426.4 148,437.6" fill="black" transform="rotate(180,152,432)"></polygon>
+                <polygon class="arrowhead" points="152,528 140,522.4 140,533.6" fill="black" transform="rotate(180,144,528)"></polygon>
+                <polygon class="arrowhead" points="152,80 140,74.4 140,85.6" fill="black" transform="rotate(180,144,80)"></polygon>
+                <g class="text">
+                  <text x="88" y="36">Service</text>
+                  <text x="144" y="36">CS-ID</text>
+                  <text x="180" y="36">1,</text>
+                  <text x="224" y="36">contact</text>
+                  <text x="292" y="36">instance</text>
+                  <text x="360" y="36">CSCI-ID</text>
+                  <text x="400" y="36">1</text>
+                  <text x="452" y="36">&lt;computing</text>
+                  <text x="532" y="36">metrics&gt;</text>
+                  <text x="88" y="52">Service</text>
+                  <text x="144" y="52">CS-ID</text>
+                  <text x="180" y="52">1,</text>
+                  <text x="224" y="52">contact</text>
+                  <text x="292" y="52">instance</text>
+                  <text x="360" y="52">CSCI-ID</text>
+                  <text x="400" y="52">2</text>
+                  <text x="452" y="52">&lt;computing</text>
+                  <text x="532" y="52">metrics&gt;</text>
+                  <text x="136" y="84">:</text>
+                  <text x="328" y="84">:</text>
+                  <text x="136" y="100">:</text>
+                  <text x="328" y="100">:</text>
+                  <text x="136" y="116">:</text>
+                  <text x="328" y="116">:</text>
+                  <text x="480" y="116">CS-ID</text>
+                  <text x="512" y="116">1</text>
+                  <text x="136" y="132">:</text>
+                  <text x="328" y="132">:</text>
+                  <text x="488" y="132">CSCI-ID</text>
+                  <text x="528" y="132">1</text>
+                  <text x="136" y="148">:</text>
+                  <text x="136" y="164">:</text>
+                  <text x="312" y="164">C-SMA</text>
+                  <text x="488" y="164">Service</text>
+                  <text x="540" y="164">Site</text>
+                  <text x="568" y="164">2</text>
+                  <text x="136" y="180">:</text>
+                  <text x="136" y="196">:</text>
+                  <text x="316" y="196">CATS-Forwarder</text>
+                  <text x="384" y="196">2</text>
+                  <text x="480" y="196">CS-ID</text>
+                  <text x="512" y="196">1</text>
+                  <text x="136" y="212">:</text>
+                  <text x="488" y="212">CSCI-ID</text>
+                  <text x="528" y="212">2</text>
+                  <text x="136" y="228">:</text>
+                  <text x="336" y="228">|</text>
+                  <text x="44" y="244">Client</text>
+                  <text x="136" y="244">:</text>
+                  <text x="184" y="244">Network</text>
+                  <text x="136" y="260">:</text>
+                  <text x="184" y="260">metrics</text>
+                  <text x="136" y="276">:</text>
+                  <text x="152" y="276">:</text>
+                  <text x="272" y="276">C-NMA</text>
+                  <text x="136" y="292">:</text>
+                  <text x="152" y="292">:</text>
+                  <text x="68" y="324">CATS-Forwarder</text>
+                  <text x="156" y="324">1|C-PS</text>
+                  <text x="316" y="340">Underlay</text>
+                  <text x="136" y="356">:</text>
+                  <text x="324" y="356">Infrastructure</text>
+                  <text x="136" y="372">:</text>
+                  <text x="480" y="372">CS-ID</text>
+                  <text x="512" y="372">1</text>
+                  <text x="136" y="388">:</text>
+                  <text x="488" y="388">CSCI-ID</text>
+                  <text x="528" y="388">3</text>
+                  <text x="136" y="404">:</text>
+                  <text x="304" y="404">|</text>
+                  <text x="136" y="420">:</text>
+                  <text x="136" y="436">:</text>
+                  <text x="260" y="436">CATS-Forwarder</text>
+                  <text x="328" y="436">3</text>
+                  <text x="392" y="436">C-SMA</text>
+                  <text x="464" y="436">Service</text>
+                  <text x="516" y="436">Site</text>
+                  <text x="544" y="436">3</text>
+                  <text x="136" y="452">:</text>
+                  <text x="136" y="468">:</text>
+                  <text x="400" y="468">:</text>
+                  <text x="136" y="484">:</text>
+                  <text x="400" y="484">:</text>
+                  <text x="136" y="500">:</text>
+                  <text x="400" y="500">:</text>
+                  <text x="480" y="500">CS-ID</text>
+                  <text x="512" y="500">2</text>
+                  <text x="136" y="516">:</text>
+                  <text x="400" y="516">:</text>
+                  <text x="136" y="532">:</text>
+                  <text x="400" y="532">:</text>
+                  <text x="88" y="548">Service</text>
+                  <text x="144" y="548">CS-ID</text>
+                  <text x="180" y="548">1,</text>
+                  <text x="224" y="548">contact</text>
+                  <text x="292" y="548">instance</text>
+                  <text x="360" y="548">CSCI-ID</text>
+                  <text x="400" y="548">3</text>
+                  <text x="452" y="548">&lt;computing</text>
+                  <text x="532" y="548">metrics&gt;</text>
+                  <text x="88" y="564">Service</text>
+                  <text x="144" y="564">CS-ID</text>
+                  <text x="180" y="564">2,</text>
+                  <text x="236" y="564">&lt;computing</text>
+                  <text x="316" y="564">metrics&gt;</text>
+                </g>
+              </svg><a href="#appendix-A.1-4.1.1" class="pilcrow">¶</a>
+</div>
+</div>
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
+<a href="#name-an-example-of-cats-metric-d" class="selfRef">An Example of CATS Metric Dissemination in the Distributed Model</a>
+          </figcaption></figure>
+</div>
+<p id="appendix-A.1-5">The example in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> mainly describes a per-instance computing-related metric distribution. In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#appendix-A.1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-met-dist2">
+<section id="appendix-A.2">
+        <h3 id="name-centralized-model">
+<a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-centralized-model" class="section-name selfRef">Centralized Model</a>
+        </h3>
+<p id="appendix-A.2-1">If the CATS framework is implemented using a centralized model, the metric can be, e.g., distributed as illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
+<span id="name-an-example-of-cats-metric-di"></span><div id="fig-cats-centralized">
+<figure id="figure-4">
+          <div id="appendix-A.2-2.1">
+            <div class="alignLeft art-svg artwork" id="appendix-A.2-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="592" viewBox="0 0 592 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,288 L 8,320" fill="none" stroke="black"></path>
+                <path d="M 8,368 L 8,416" fill="none" stroke="black"></path>
+                <path d="M 48,328 L 48,360" fill="none" stroke="black"></path>
+                <path d="M 80,288 L 80,320" fill="none" stroke="black"></path>
+                <path d="M 144,368 L 144,416" fill="none" stroke="black"></path>
+                <path d="M 160,112 L 160,160" fill="none" stroke="black"></path>
+                <path d="M 176,496 L 176,528" fill="none" stroke="black"></path>
+                <path d="M 184,168 L 184,336" fill="none" stroke="black"></path>
+                <path d="M 208,208 L 208,272" fill="none" stroke="black"></path>
+                <path d="M 208,304 L 208,328" fill="none" stroke="black"></path>
+                <path d="M 208,344 L 208,376" fill="none" stroke="black"></path>
+                <path d="M 208,392 L 208,464" fill="none" stroke="black"></path>
+                <path d="M 216,112 L 216,160" fill="none" stroke="black"></path>
+                <path d="M 224,320 L 224,352" fill="none" stroke="black"></path>
+                <path d="M 248,360 L 248,384" fill="none" stroke="black"></path>
+                <path d="M 280,144 L 280,200" fill="none" stroke="black"></path>
+                <path d="M 288,320 L 288,352" fill="none" stroke="black"></path>
+                <path d="M 288,536 L 288,560" fill="none" stroke="black"></path>
+                <path d="M 312,496 L 312,528" fill="none" stroke="black"></path>
+                <path d="M 344,208 L 344,272" fill="none" stroke="black"></path>
+                <path d="M 376,176 L 376,256" fill="none" stroke="black"></path>
+                <path d="M 392,304 L 392,464" fill="none" stroke="black"></path>
+                <path d="M 408,160 L 408,208" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 408,544 L 408,576" fill="none" stroke="black"></path>
+                <path d="M 432,432 L 432,480" fill="none" stroke="black"></path>
+                <path d="M 440,320 L 440,384" fill="none" stroke="black"></path>
+                <path d="M 448,488 L 448,512" fill="none" stroke="black"></path>
+                <path d="M 472,544 L 472,576" fill="none" stroke="black"></path>
+                <path d="M 480,392 L 480,424" fill="none" stroke="black"></path>
+                <path d="M 488,160 L 488,208" fill="none" stroke="black"></path>
+                <path d="M 488,240 L 488,288" fill="none" stroke="black"></path>
+                <path d="M 488,320 L 488,384" fill="none" stroke="black"></path>
+                <path d="M 512,432 L 512,480" fill="none" stroke="black"></path>
+                <path d="M 536,128 L 536,336" fill="none" stroke="black"></path>
+                <path d="M 536,368 L 536,560" fill="none" stroke="black"></path>
+                <path d="M 160,112 L 216,112" fill="none" stroke="black"></path>
+                <path d="M 104,128 L 152,128" fill="none" stroke="black"></path>
+                <path d="M 224,128 L 536,128" fill="none" stroke="black"></path>
+                <path d="M 224,144 L 280,144" fill="none" stroke="black"></path>
+                <path d="M 160,160 L 216,160" fill="none" stroke="black"></path>
+                <path d="M 408,160 L 488,160" fill="none" stroke="black"></path>
+                <path d="M 376,176 L 400,176" fill="none" stroke="black"></path>
+                <path d="M 208,208 L 344,208" fill="none" stroke="black"></path>
+                <path d="M 408,208 L 488,208" fill="none" stroke="black"></path>
+                <path d="M 352,224 L 368,224" fill="none" stroke="black"></path>
+                <path d="M 208,240 L 344,240" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 488,240" fill="none" stroke="black"></path>
+                <path d="M 376,256 L 400,256" fill="none" stroke="black"></path>
+                <path d="M 208,272 L 344,272" fill="none" stroke="black"></path>
+                <path d="M 8,288 L 80,288" fill="none" stroke="black"></path>
+                <path d="M 408,288 L 488,288" fill="none" stroke="black"></path>
+                <path d="M 208,304 L 392,304" fill="none" stroke="black"></path>
+                <path d="M 8,320 L 80,320" fill="none" stroke="black"></path>
+                <path d="M 224,320 L 288,320" fill="none" stroke="black"></path>
+                <path d="M 440,320 L 488,320" fill="none" stroke="black"></path>
+                <path d="M 184,336 L 216,336" fill="none" stroke="black"></path>
+                <path d="M 496,336 L 536,336" fill="none" stroke="black"></path>
+                <path d="M 224,352 L 288,352" fill="none" stroke="black"></path>
+                <path d="M 8,368 L 144,368" fill="none" stroke="black"></path>
+                <path d="M 496,368 L 536,368" fill="none" stroke="black"></path>
+                <path d="M 152,384 L 248,384" fill="none" stroke="black"></path>
+                <path d="M 440,384 L 488,384" fill="none" stroke="black"></path>
+                <path d="M 152,400 L 200,400" fill="none" stroke="black"></path>
+                <path d="M 8,416 L 144,416" fill="none" stroke="black"></path>
+                <path d="M 432,432 L 512,432" fill="none" stroke="black"></path>
+                <path d="M 208,464 L 392,464" fill="none" stroke="black"></path>
+                <path d="M 432,480 L 512,480" fill="none" stroke="black"></path>
+                <path d="M 176,496 L 312,496" fill="none" stroke="black"></path>
+                <path d="M 320,512 L 448,512" fill="none" stroke="black"></path>
+                <path d="M 176,528 L 312,528" fill="none" stroke="black"></path>
+                <path d="M 408,544 L 472,544" fill="none" stroke="black"></path>
+                <path d="M 288,560 L 400,560" fill="none" stroke="black"></path>
+                <path d="M 480,560 L 536,560" fill="none" stroke="black"></path>
+                <path d="M 408,576 L 472,576" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="504,368 492,362.4 492,373.6" fill="black" transform="rotate(180,496,368)"></polygon>
+                <polygon class="arrowhead" points="488,392 476,386.4 476,397.6" fill="black" transform="rotate(270,480,392)"></polygon>
+                <polygon class="arrowhead" points="232,144 220,138.4 220,149.6" fill="black" transform="rotate(180,224,144)"></polygon>
+                <polygon class="arrowhead" points="232,128 220,122.4 220,133.6" fill="black" transform="rotate(180,224,128)"></polygon>
+                <polygon class="arrowhead" points="192,168 180,162.4 180,173.6" fill="black" transform="rotate(270,184,168)"></polygon>
+                <polygon class="arrowhead" points="160,384 148,378.4 148,389.6" fill="black" transform="rotate(180,152,384)"></polygon>
+                <polygon class="arrowhead" points="112,128 100,122.4 100,133.6" fill="black" transform="rotate(180,104,128)"></polygon>
+                <g class="text">
+                  <text x="176" y="36">Service</text>
+                  <text x="232" y="36">CS-ID</text>
+                  <text x="268" y="36">1,</text>
+                  <text x="316" y="36">instance</text>
+                  <text x="384" y="36">CSCI-ID</text>
+                  <text x="424" y="36">1</text>
+                  <text x="476" y="36">&lt;computing</text>
+                  <text x="556" y="36">metrics&gt;</text>
+                  <text x="176" y="52">Service</text>
+                  <text x="232" y="52">CS-ID</text>
+                  <text x="268" y="52">1,</text>
+                  <text x="316" y="52">instance</text>
+                  <text x="384" y="52">CSCI-ID</text>
+                  <text x="424" y="52">2</text>
+                  <text x="476" y="52">&lt;computing</text>
+                  <text x="556" y="52">metrics&gt;</text>
+                  <text x="176" y="68">Service</text>
+                  <text x="232" y="68">CS-ID</text>
+                  <text x="268" y="68">1,</text>
+                  <text x="316" y="68">instance</text>
+                  <text x="384" y="68">CSCI-ID</text>
+                  <text x="424" y="68">3</text>
+                  <text x="476" y="68">&lt;computing</text>
+                  <text x="556" y="68">metrics&gt;</text>
+                  <text x="176" y="84">Service</text>
+                  <text x="232" y="84">CS-ID</text>
+                  <text x="268" y="84">2,</text>
+                  <text x="324" y="84">&lt;computing</text>
+                  <text x="404" y="84">metrics&gt;</text>
+                  <text x="96" y="132">:</text>
+                  <text x="188" y="132">C-PS</text>
+                  <text x="96" y="148">:</text>
+                  <text x="96" y="164">:</text>
+                  <text x="96" y="180">:</text>
+                  <text x="432" y="180">CS-ID</text>
+                  <text x="464" y="180">1</text>
+                  <text x="96" y="196">:</text>
+                  <text x="440" y="196">CSCI-ID</text>
+                  <text x="480" y="196">1</text>
+                  <text x="96" y="212">:</text>
+                  <text x="96" y="228">:</text>
+                  <text x="264" y="228">C-SMA</text>
+                  <text x="416" y="228">Service</text>
+                  <text x="468" y="228">Site</text>
+                  <text x="496" y="228">2</text>
+                  <text x="96" y="244">:</text>
+                  <text x="96" y="260">:</text>
+                  <text x="268" y="260">CATS-Forwarder</text>
+                  <text x="336" y="260">2</text>
+                  <text x="432" y="260">CS-ID</text>
+                  <text x="464" y="260">1</text>
+                  <text x="96" y="276">:</text>
+                  <text x="440" y="276">CSCI-ID</text>
+                  <text x="480" y="276">2</text>
+                  <text x="96" y="292">:</text>
+                  <text x="288" y="292">|</text>
+                  <text x="44" y="308">Client</text>
+                  <text x="96" y="308">:</text>
+                  <text x="144" y="308">Network</text>
+                  <text x="96" y="324">:</text>
+                  <text x="144" y="324">metrics</text>
+                  <text x="96" y="340">:</text>
+                  <text x="256" y="340">C-NMA</text>
+                  <text x="96" y="356">:</text>
+                  <text x="464" y="356">C-SMA</text>
+                  <text x="68" y="388">CATS-Forwarder</text>
+                  <text x="136" y="388">1</text>
+                  <text x="300" y="420">Underlay</text>
+                  <text x="308" y="436">Infrastructure</text>
+                  <text x="456" y="452">CS-ID</text>
+                  <text x="488" y="452">1</text>
+                  <text x="464" y="468">CSCI-ID</text>
+                  <text x="504" y="468">3</text>
+                  <text x="288" y="484">|</text>
+                  <text x="236" y="516">CATS-Forwarder</text>
+                  <text x="304" y="516">3</text>
+                  <text x="416" y="532">Service</text>
+                  <text x="468" y="532">Site</text>
+                  <text x="496" y="532">3</text>
+                  <text x="432" y="564">CS-ID</text>
+                  <text x="464" y="564">2</text>
+                </g>
+              </svg><a href="#appendix-A.2-2.1.1" class="pilcrow">¶</a>
+</div>
+</div>
+<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
+<a href="#name-an-example-of-cats-metric-di" class="selfRef">An Example of CATS Metric Distribution in the Centralized Model</a>
+          </figcaption></figure>
+</div>
+<p id="appendix-A.2-3">In <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>, the C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed independently with the CATS-Forwarder 1. Similarly, the C-SMA agent located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to CATS-Forwarder 1 to indicate traffic steering.<a href="#appendix-A.2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-met-dist3">
+<section id="appendix-A.3">
+        <h3 id="name-hybrid-model">
+<a href="#appendix-A.3" class="section-number selfRef">A.3. </a><a href="#name-hybrid-model" class="section-name selfRef">Hybrid Model</a>
+        </h3>
+<p id="appendix-A.3-1">If the CATS framework is implemented in the hybrid model, the metric can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1,2,3 associated with the CS-ID1 are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the ingress CATS-Forwarder directly. For a service with CS-ID2, all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for subsequent packets accessing the same service.<a href="#appendix-A.3-1" class="pilcrow">¶</a></p>
+<span id="name-an-example-of-cats-metric-dis"></span><div id="fig-cats-hybrid">
+<figure id="figure-5">
+          <div id="appendix-A.3-2.1">
+            <div class="alignLeft art-svg artwork" id="appendix-A.3-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="576" viewBox="0 0 576 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,272 L 8,304" fill="none" stroke="black"></path>
+                <path d="M 8,368 L 8,448" fill="none" stroke="black"></path>
+                <path d="M 48,312 L 48,360" fill="none" stroke="black"></path>
+                <path d="M 48,424 L 48,448" fill="none" stroke="black"></path>
+                <path d="M 80,272 L 80,304" fill="none" stroke="black"></path>
+                <path d="M 144,368 L 144,416" fill="none" stroke="black"></path>
+                <path d="M 168,96 L 168,144" fill="none" stroke="black"></path>
+                <path d="M 192,152 L 192,320" fill="none" stroke="black"></path>
+                <path d="M 192,480 L 192,512" fill="none" stroke="black"></path>
+                <path d="M 224,96 L 224,144" fill="none" stroke="black"></path>
+                <path d="M 224,192 L 224,256" fill="none" stroke="black"></path>
+                <path d="M 224,288 L 224,312" fill="none" stroke="black"></path>
+                <path d="M 224,328 L 224,376" fill="none" stroke="black"></path>
+                <path d="M 224,392 L 224,448" fill="none" stroke="black"></path>
+                <path d="M 240,304 L 240,336" fill="none" stroke="black"></path>
+                <path d="M 264,344 L 264,384" fill="none" stroke="black"></path>
+                <path d="M 296,128 L 296,184" fill="none" stroke="black"></path>
+                <path d="M 304,304 L 304,336" fill="none" stroke="black"></path>
+                <path d="M 304,520 L 304,544" fill="none" stroke="black"></path>
+                <path d="M 328,480 L 328,512" fill="none" stroke="black"></path>
+                <path d="M 360,192 L 360,256" fill="none" stroke="black"></path>
+                <path d="M 392,160 L 392,240" fill="none" stroke="black"></path>
+                <path d="M 408,288 L 408,448" fill="none" stroke="black"></path>
+                <path d="M 424,144 L 424,192" fill="none" stroke="black"></path>
+                <path d="M 424,224 L 424,272" fill="none" stroke="black"></path>
+                <path d="M 424,528 L 424,560" fill="none" stroke="black"></path>
+                <path d="M 432,416 L 432,464" fill="none" stroke="black"></path>
+                <path d="M 448,472 L 448,496" fill="none" stroke="black"></path>
+                <path d="M 464,304 L 464,368" fill="none" stroke="black"></path>
+                <path d="M 488,528 L 488,560" fill="none" stroke="black"></path>
+                <path d="M 496,376 L 496,408" fill="none" stroke="black"></path>
+                <path d="M 504,144 L 504,192" fill="none" stroke="black"></path>
+                <path d="M 504,224 L 504,272" fill="none" stroke="black"></path>
+                <path d="M 512,304 L 512,368" fill="none" stroke="black"></path>
+                <path d="M 512,416 L 512,464" fill="none" stroke="black"></path>
+                <path d="M 536,112 L 536,320" fill="none" stroke="black"></path>
+                <path d="M 536,352 L 536,544" fill="none" stroke="black"></path>
+                <path d="M 552,336 L 552,576" fill="none" stroke="black"></path>
+                <path d="M 168,96 L 224,96" fill="none" stroke="black"></path>
+                <path d="M 112,112 L 160,112" fill="none" stroke="black"></path>
+                <path d="M 232,112 L 536,112" fill="none" stroke="black"></path>
+                <path d="M 232,128 L 296,128" fill="none" stroke="black"></path>
+                <path d="M 168,144 L 224,144" fill="none" stroke="black"></path>
+                <path d="M 424,144 L 504,144" fill="none" stroke="black"></path>
+                <path d="M 392,160 L 416,160" fill="none" stroke="black"></path>
+                <path d="M 224,192 L 360,192" fill="none" stroke="black"></path>
+                <path d="M 424,192 L 504,192" fill="none" stroke="black"></path>
+                <path d="M 368,208 L 384,208" fill="none" stroke="black"></path>
+                <path d="M 224,224 L 360,224" fill="none" stroke="black"></path>
+                <path d="M 424,224 L 504,224" fill="none" stroke="black"></path>
+                <path d="M 392,240 L 416,240" fill="none" stroke="black"></path>
+                <path d="M 224,256 L 360,256" fill="none" stroke="black"></path>
+                <path d="M 8,272 L 80,272" fill="none" stroke="black"></path>
+                <path d="M 424,272 L 504,272" fill="none" stroke="black"></path>
+                <path d="M 224,288 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 8,304 L 80,304" fill="none" stroke="black"></path>
+                <path d="M 240,304 L 304,304" fill="none" stroke="black"></path>
+                <path d="M 464,304 L 512,304" fill="none" stroke="black"></path>
+                <path d="M 192,320 L 232,320" fill="none" stroke="black"></path>
+                <path d="M 520,320 L 536,320" fill="none" stroke="black"></path>
+                <path d="M 240,336 L 304,336" fill="none" stroke="black"></path>
+                <path d="M 520,336 L 552,336" fill="none" stroke="black"></path>
+                <path d="M 520,352 L 536,352" fill="none" stroke="black"></path>
+                <path d="M 8,368 L 144,368" fill="none" stroke="black"></path>
+                <path d="M 464,368 L 512,368" fill="none" stroke="black"></path>
+                <path d="M 152,384 L 264,384" fill="none" stroke="black"></path>
+                <path d="M 152,400 L 216,400" fill="none" stroke="black"></path>
+                <path d="M 16,416 L 144,416" fill="none" stroke="black"></path>
+                <path d="M 432,416 L 512,416" fill="none" stroke="black"></path>
+                <path d="M 8,448 L 48,448" fill="none" stroke="black"></path>
+                <path d="M 224,448 L 408,448" fill="none" stroke="black"></path>
+                <path d="M 432,464 L 512,464" fill="none" stroke="black"></path>
+                <path d="M 192,480 L 328,480" fill="none" stroke="black"></path>
+                <path d="M 336,496 L 448,496" fill="none" stroke="black"></path>
+                <path d="M 192,512 L 328,512" fill="none" stroke="black"></path>
+                <path d="M 424,528 L 488,528" fill="none" stroke="black"></path>
+                <path d="M 304,544 L 416,544" fill="none" stroke="black"></path>
+                <path d="M 496,544 L 536,544" fill="none" stroke="black"></path>
+                <path d="M 424,560 L 488,560" fill="none" stroke="black"></path>
+                <path d="M 112,576 L 552,576" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="528,352 516,346.4 516,357.6" fill="black" transform="rotate(180,520,352)"></polygon>
+                <polygon class="arrowhead" points="504,376 492,370.4 492,381.6" fill="black" transform="rotate(270,496,376)"></polygon>
+                <polygon class="arrowhead" points="240,128 228,122.4 228,133.6" fill="black" transform="rotate(180,232,128)"></polygon>
+                <polygon class="arrowhead" points="240,112 228,106.4 228,117.6" fill="black" transform="rotate(180,232,112)"></polygon>
+                <polygon class="arrowhead" points="200,152 188,146.4 188,157.6" fill="black" transform="rotate(270,192,152)"></polygon>
+                <polygon class="arrowhead" points="160,384 148,378.4 148,389.6" fill="black" transform="rotate(180,152,384)"></polygon>
+                <polygon class="arrowhead" points="120,576 108,570.4 108,581.6" fill="black" transform="rotate(180,112,576)"></polygon>
+                <polygon class="arrowhead" points="120,112 108,106.4 108,117.6" fill="black" transform="rotate(180,112,112)"></polygon>
+                <g class="text">
+                  <text x="120" y="36">Service</text>
+                  <text x="176" y="36">CS-ID</text>
+                  <text x="212" y="36">1,</text>
+                  <text x="260" y="36">instance</text>
+                  <text x="328" y="36">CSCI-ID</text>
+                  <text x="368" y="36">1</text>
+                  <text x="420" y="36">&lt;computing</text>
+                  <text x="492" y="36">metric</text>
+                  <text x="548" y="36">1,2,3&gt;</text>
+                  <text x="120" y="52">Service</text>
+                  <text x="176" y="52">CS-ID</text>
+                  <text x="212" y="52">1,</text>
+                  <text x="260" y="52">instance</text>
+                  <text x="328" y="52">CSCI-ID</text>
+                  <text x="368" y="52">2</text>
+                  <text x="420" y="52">&lt;computing</text>
+                  <text x="492" y="52">metric</text>
+                  <text x="548" y="52">1,2,3&gt;</text>
+                  <text x="120" y="68">Service</text>
+                  <text x="176" y="68">CS-ID</text>
+                  <text x="212" y="68">1,</text>
+                  <text x="260" y="68">instance</text>
+                  <text x="328" y="68">CSCI-ID</text>
+                  <text x="368" y="68">3</text>
+                  <text x="420" y="68">&lt;computing</text>
+                  <text x="492" y="68">metric</text>
+                  <text x="548" y="68">1,2,3&gt;</text>
+                  <text x="120" y="84">Service</text>
+                  <text x="176" y="84">CS-ID</text>
+                  <text x="212" y="84">2,</text>
+                  <text x="268" y="84">&lt;computing</text>
+                  <text x="348" y="84">metrics&gt;</text>
+                  <text x="104" y="116">:</text>
+                  <text x="196" y="116">C-PS</text>
+                  <text x="104" y="132">:</text>
+                  <text x="104" y="148">:</text>
+                  <text x="104" y="164">:</text>
+                  <text x="448" y="164">CS-ID</text>
+                  <text x="480" y="164">1</text>
+                  <text x="104" y="180">:</text>
+                  <text x="456" y="180">CSCI-ID</text>
+                  <text x="496" y="180">1</text>
+                  <text x="104" y="196">:</text>
+                  <text x="104" y="212">:</text>
+                  <text x="280" y="212">C-SMA</text>
+                  <text x="432" y="212">Service</text>
+                  <text x="484" y="212">Site</text>
+                  <text x="512" y="212">2</text>
+                  <text x="104" y="228">:</text>
+                  <text x="104" y="244">:</text>
+                  <text x="284" y="244">CATS-Forwarder</text>
+                  <text x="352" y="244">2</text>
+                  <text x="448" y="244">CS-ID</text>
+                  <text x="480" y="244">1</text>
+                  <text x="104" y="260">:</text>
+                  <text x="456" y="260">CSCI-ID</text>
+                  <text x="496" y="260">2</text>
+                  <text x="104" y="276">:</text>
+                  <text x="304" y="276">|</text>
+                  <text x="44" y="292">Client</text>
+                  <text x="104" y="292">:</text>
+                  <text x="152" y="292">Network</text>
+                  <text x="104" y="308">:</text>
+                  <text x="152" y="308">metrics</text>
+                  <text x="104" y="324">:</text>
+                  <text x="272" y="324">C-NMA</text>
+                  <text x="104" y="340">:</text>
+                  <text x="488" y="340">C-SMA</text>
+                  <text x="104" y="356">:</text>
+                  <text x="68" y="388">CATS-Forwarder</text>
+                  <text x="136" y="388">1</text>
+                  <text x="316" y="404">Underlay</text>
+                  <text x="324" y="420">Infrastructure</text>
+                  <text x="28" y="436">C-PS</text>
+                  <text x="104" y="436">:</text>
+                  <text x="456" y="436">CS-ID</text>
+                  <text x="488" y="436">1</text>
+                  <text x="104" y="452">:</text>
+                  <text x="464" y="452">CSCI-ID</text>
+                  <text x="504" y="452">3</text>
+                  <text x="104" y="468">:</text>
+                  <text x="304" y="468">|</text>
+                  <text x="104" y="484">:</text>
+                  <text x="104" y="500">:</text>
+                  <text x="252" y="500">CATS-Forwarder</text>
+                  <text x="320" y="500">3</text>
+                  <text x="104" y="516">:</text>
+                  <text x="432" y="516">Service</text>
+                  <text x="484" y="516">Site</text>
+                  <text x="512" y="516">3</text>
+                  <text x="104" y="532">:</text>
+                  <text x="104" y="548">:</text>
+                  <text x="448" y="548">CS-ID</text>
+                  <text x="480" y="548">2</text>
+                  <text x="104" y="564">:</text>
+                  <text x="104" y="580">:</text>
+                  <text x="56" y="596">Service</text>
+                  <text x="112" y="596">CS-ID</text>
+                  <text x="148" y="596">1,</text>
+                  <text x="192" y="596">contact</text>
+                  <text x="260" y="596">instance</text>
+                  <text x="328" y="596">CSCI-ID</text>
+                  <text x="372" y="596">3,</text>
+                  <text x="428" y="596">&lt;computing</text>
+                  <text x="500" y="596">metric</text>
+                  <text x="548" y="596">4,5&gt;</text>
+                </g>
+              </svg><a href="#appendix-A.3-2.1.1" class="pilcrow">¶</a>
+</div>
+</div>
+<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
+<a href="#name-an-example-of-cats-metric-dis" class="selfRef">An Example of CATS Metric Distribution in the Hybrid Model</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+</section>
+</div>
+<div id="acknowledgements">
+<section id="appendix-B">
+      <h2 id="name-acknowledgements">
+<a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="appendix-B-1">The authors would like to thank Joel Halpern, John Scudder, Dino Farinacci, Adrian Farrel,
 Cullen Jennings, Linda Dunbar, Jeffrey Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li,
 Xinxin Yi, Jari Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian, Zhenbin Li,
-Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar, and Taylor Paul for their comments and suggestions.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">Some text about various deployment models was originally documented in <span>[<a href="#I-D.yao-cats-awareness-architecture" class="cite xref">I-D.yao-cats-awareness-architecture</a>]</span>.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
-<p id="appendix-A-3">Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this specification.<a href="#appendix-A-3" class="pilcrow">¶</a></p>
+Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar, and Taylor Paul for their comments and suggestions.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">Some text about various deployment models was originally documented in <span>[<a href="#I-D.yao-cats-awareness-architecture" class="cite xref">I-D.yao-cats-awareness-architecture</a>]</span>.<a href="#appendix-B-2" class="pilcrow">¶</a></p>
+<p id="appendix-B-3">Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this specification.<a href="#appendix-B-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="contributors">
-<section id="appendix-B">
+<section id="appendix-C">
       <h2 id="name-contributors">
 <a href="#name-contributors" class="section-name selfRef">Contributors</a>
       </h2>
@@ -2914,7 +2914,7 @@ Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar, and Taylor Paul
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-C">
+<section id="appendix-D">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
