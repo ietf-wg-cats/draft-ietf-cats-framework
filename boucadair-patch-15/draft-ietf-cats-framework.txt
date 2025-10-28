@@ -265,7 +265,7 @@ Table of Contents
       the CATS-Forwarder.
 
       A CATS-Forwarder may behave as an Ingress or Egress CATS-
-      Forwarder.
+      Forwarder. see Section 3.4.6.
 
    Ingress CATS-Forwarder:  An entity that steers service-specific
       traffic along a CATS-computed path that leads to an Egress CATS-
