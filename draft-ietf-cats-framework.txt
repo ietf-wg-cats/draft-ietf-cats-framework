@@ -206,8 +206,10 @@ Table of Contents
    CATS Service ID (CS-ID):  An identifier representing a service, which
       the clients use to access it.  See Section 3.2.
 
-   Service instance:  An instance of running resources according to a
-      given service logic.
+   Service instance:  A collection of running resources that are
+      orchestrated following a service logic.  When invoked by a client
+      request, these resources will collectively provide the intended
+      service.
 
       A service provider may enable many service instances that adhere
       to the same service logic to provide the same service.
@@ -215,17 +217,17 @@ Table of Contents
       A service instance runs in a service site and one or more
       instances may service clients' requests.
 
-   Service site:  A location that hosts the resources that implement an
-      offered service.
+   Service site:  A location that hosts the resources that implement one
+      or more service instances.
 
       A service site may be a node or a set of nodes.
 
       A CATS-serviced site is a service site connected to a CATS-
       Forwarder.
 
-   Service contact instance:  A client-facing service function instance
-      that is responsible for receiving requests in the context of a
-      given service.
+   Service contact instance:  A client-facing function that is
+      responsible for receiving requests in the context of a given
+      service.
 
       A service contact instance can handle one or more service
       instances.
@@ -303,12 +305,11 @@ Table of Contents
 
 3.1.  Assumptions
 
-   CATS assumes that there are multiple service instances running on
-   different service sites, which provide a given service that is
-   represented by the same service identifier (see Section 3.2).
-   However, CATS does not make any assumption about these instances
-   other than they are reachable via one or multiple service contact
-   instances.
+   CATS assumes that a service might be provided by one or multiple
+   service instances.  Such instances may be hosted within the same or
+   distinct service sites.  CATS does not make any additional assumption
+   about these instances other than they are reachable via one or
+   multiple service contact instances.
 
 3.2.  CATS Identifiers
 

@@ -1367,7 +1367,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.23">Service instance:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.24">
-          <p id="section-2-2.24.1">An instance of running resources according to a given service logic.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.24.1">A collection of running resources that are orchestrated following a service logic. When invoked by a client request, these resources will collectively provide the intended service.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.25"></dt>
@@ -1382,7 +1382,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.29">Service site:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.30">
-          <p id="section-2-2.30.1">A location that hosts the resources that implement an offered service.<a href="#section-2-2.30.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.30.1">A location that hosts the resources that implement one or more service instances.<a href="#section-2-2.30.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.31"></dt>
@@ -1397,7 +1397,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.35">Service contact instance:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.36">
-          <p id="section-2-2.36.1">A client-facing service function instance that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.36.1">A client-facing function that is responsible for receiving requests in the context of a given service.<a href="#section-2-2.36.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.37"></dt>
@@ -1503,7 +1503,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-assumptions">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-assumptions" class="section-name selfRef">Assumptions</a>
         </h3>
-<p id="section-3.1-1">CATS assumes that there are multiple service instances running on different service sites, which provide a given service that is represented by the same service identifier (see <a href="#cats-ids" class="auto internal xref">Section 3.2</a>). However, CATS does not make any assumption about these instances other than they are reachable via one or multiple service contact instances.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">CATS assumes that a service might be provided by one or multiple service instances. Such instances may be hosted within the same or distinct service sites. CATS does not make any additional assumption about these instances other than they are reachable via one or multiple service contact instances.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="cats-ids">
