@@ -574,10 +574,10 @@ In a centralized model, the metrics can be, e.g., distributed as illustrated in 
 The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed separately with the "CATS-Forwarder 1". Similarly, the C-SMA located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to "CATS-Forwarder 1" to indicate traffic steering.
 
 ~~~ aasvg
-                  Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
-                  Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
-                  Service CS-ID 2, <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 1 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 2 <computing metrics>
+                 Service CS-ID 1, instance CSCI-ID 3 <computing metrics>
+                 Service CS-ID 2, <computing metrics>
 
                    +------+
            :<------| C-PS |<--------------------------------------.
@@ -618,10 +618,10 @@ In the hybrid model, the metrics can be distributed, e.g., as illustrated in the
 
 ~~~ aasvg
 
-            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
-            Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
-            Service CS-ID 2, <computing metrics>
+          Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
+          Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
+          Service CS-ID 1, instance CSCI-ID 3 <computing metric 1,2,3>
+          Service CS-ID 2, <computing metrics>
                      +------+
              :<------| C-PS |<-------------------------------------.
              :       |      |<-------.                             |
