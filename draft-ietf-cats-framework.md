@@ -175,7 +175,6 @@ Service instance:
 Service site:
  : A location that hosts the resources that implement an offered service.
  : A service site may be a node or a set of nodes.
- : A CATS-serviced site is a service site connected to a CATS-Forwarder.
 
 Service contact instance:
   : A client-facing service function instance that is responsible for receiving requests in the context of a given service.
@@ -202,7 +201,7 @@ Ingress CATS-Forwarder:
  : An entity that steers service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder that connects to the most suitable service site that hosts the service contact instance selected to satisfy the initial service request.
 
 Egress CATS-Forwarder:
-: An entity located at the end of a CATS-computed path which connects to a CATS-serviced site.
+: An entity located at the end of a CATS-computed path which connects to a service site.
 
 CATS Path Selector (C-PS):
  : A functional entity that selects paths towards service locations and instances in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See {{sec-cps}}.
