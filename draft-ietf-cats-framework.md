@@ -126,7 +126,7 @@ Steering in CATS aims to select the appropriate service contact instance to serv
 
 The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. A combination of networking and computing metrics determine the exact characterization of services as 'suitable' or not.
 
-Furthermore, this document describes a workflow of the main CATS procedures (see {{sec-cats-workflow}}) executed in both the control and data planes.
+Furthermore, this document describes a workflow of the main CATS procedures ({{sec-cats-workflow}}) executed in both the control and data planes.
 
 
 # Terminology
@@ -146,7 +146,7 @@ Metric:
  : A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.
 
 Computing metrics:
-  : Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. For further detail, see the set computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
+  : Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. For further detail, see the set of computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
   : An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).
@@ -232,6 +232,7 @@ CATS Service ID (CS-ID):
 
 CATS Service Contact Instance ID (CSCI-ID):
   : An identifier of a specific service contact instance.
+  : This document does not make any assumption about the structure and semantic of this identifier. An example of such ID is a unicast IP address that uniquely identifies the location of a service instance.
 
 ## Framework Overview {#sec-cats-framework}
 
@@ -346,7 +347,7 @@ The CATS Service Metric Agent (C-SMA) is a functional component that gathers inf
 
 ### CATS Network Metric Agent (C-NMA) {#sec-cnma}
 
-The CATS Network Metric Agent (C-NMA) is a functional component that gathers information about the state of the underlay network. The C-NMAs may be implemented as standalone components or may be hosted by other components, such as CATS-Forwarders or CATS Path Selectors (C-PS) ({{sec-cps}}).
+The CATS Network Metric Agent (C-NMA) is a functional component that gathers information about the state of the underlay network. The C-NMAs may be implemented as standalone components or may be hosted by other components, such as CATS-Forwarders or CATS Path Selectors (C-PSes) ({{sec-cps}}).
 
 C-NMA is likely to leverage existing techniques (e.g., {{?RFC7471}}, {{?RFC8570}}, and {{?RFC8571}}).
 
@@ -354,7 +355,7 @@ C-NMA is likely to leverage existing techniques (e.g., {{?RFC7471}}, {{?RFC8570}
 
 ### CATS Path Selector (C-PS) {#sec-cps}
 
-The C-SMAs and C-NMAs share the collected information with CATS Path Selectors (C-PSes) that use such information to select the Egress CATS-Forwarders (and potentially the service contact instances) where to forward traffic for a given service request. C-PSes also determine the best paths (possibly using tunnels) to forward traffic, according to various criteria that include network state and traffic congestion conditions. The collected information is encoded into one or more metrics that feed the C-PS path selection logic. Such information also includes CS-ID and possibly CSCI-IDs.
+The C-SMAs and C-NMAs share the collected information with C-PSes that use such information to select the Egress CATS-Forwarders (and potentially the service contact instances) where to forward traffic for a given service request. C-PSes also determine the best paths (possibly using tunnels) to forward traffic, according to various criteria that include network state and traffic congestion conditions. The collected information is encoded into one or more metrics that feed the C-PS path selection logic. Such information also includes CS-ID and possibly CSCI-IDs.
 
 There might be one or more C-PSes used to select CATS paths in a CATS infrastructure.
 
@@ -450,7 +451,7 @@ Provisioning includes configuration as well as distribution through protocols. S
 
 ## Deployment Considerations {#sec-cats-deployment}
 
-This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a centralized C-PS) and distributed CATS functions (e.g., CATS traffic classifiers) is deployment-specific, which may reflect the preferences and policies of the (CATS) service provider. The deployment can also be informed by specific use case requirements {{?I-D.ietf-cats-usecases-requirements}}.
+This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a centralized C-PS) and distributed CATS functions (e.g., C-TCs) is deployment-specific, which may reflect the preferences and policies of the (CATS) service provider. The deployment can also be informed by specific use case requirements {{?I-D.ietf-cats-usecases-requirements}}.
 
 For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before a service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with C-TCs.
 
