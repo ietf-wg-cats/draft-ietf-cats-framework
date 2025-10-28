@@ -1285,8 +1285,8 @@ Contributors
 
 
    Dirk Trossen
-   Huawei Technologies
-   Email: dirk.trossen@huawei.com
+   DaPaDOT Tech UG (haftungsbeschraenkt)
+   Email: dirk@dapadot-tech.eu
 
 
    Luigi Iannone
