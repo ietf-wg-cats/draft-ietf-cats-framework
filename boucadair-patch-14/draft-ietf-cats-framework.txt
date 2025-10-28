@@ -778,7 +778,7 @@ Table of Contents
    (logically) centralized path computation logic (e.g., a PCE).  In
    this case, the CATS computation logic may process incoming service
    requests to compute paths to service contact instances.  More
-   generally, the paths might be computed before the service request
+   generally, the paths might be computed before a service request
    comes.  Based on the metrics and computed paths, the C-PS can select
    the most appropriate path and then synchronize with C-TCs.
 
@@ -806,16 +806,21 @@ Table of Contents
          network devices, and others may be collected by a centralized
          control element.  For example, some static information (e.g.,
          capabilities information) can be distributed among network
-         devices since they are quite stable (change infrequently).
-         Frequent changing information (e.g., resource utilization) can
-         be collected by a centralized control element to avoid frequent
-         flooding in the distributed control plane.  Service scheduling
-         function can be performed by a centralized control element, the
-         CATS-Forwarder, or both.  The entire or partial C-PS function
-         may be implemented in the centralized control element,
-         depending on the specific implementation and deployment.
+         devices since they are quite stable (i.e., change
+         infrequently).  Frequent changing information (e.g., resource
+         utilization) can be collected by a centralized control element
+         to avoid frequent flooding in the distributed control plane.
+         Service scheduling function can be performed by a centralized
+         control element, Ingress CATS-Forwarders (co-located with a
+         C-PS), or both depending on the specific deployment policies.
 
-   Examples to illustrate these modes are provided in Appendix A.
+         When path computation is distributed, centralized control
+         elements have to communicate the path information they collect
+         to Ingress CATS-Forwarders (co-located with a C-PS) so that
+         they take into account the full set of metrics for service
+         scheduling.
+
+   Examples to illustrate these models are provided in Appendix A.
 
    The framework covers only the case of a single service provider.
    Deployment considerations about the case of multiple service
@@ -1202,8 +1207,8 @@ A.2.  Centralized Model
 
 A.3.  Hybrid Model
 
-   In the hybrid model, the metric can be distributed, e.g., as
-   illustrated in the Figure 5.  For example, the metrics 1,2,3
+   In the hybrid model, the metrics can be distributed, e.g., as
+   illustrated in the Figure 5.  For example, the metrics 1, 2, and 3
    associated with the "CS-ID1" are collected by the centralized C-PS,
    and the metrics 4 and 5 are distributed via distributed protocols to
    the Ingress CATS-Forwarder directly.  For a service with "CS-ID2",
