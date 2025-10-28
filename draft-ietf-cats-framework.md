@@ -195,7 +195,7 @@ Service request:
  : Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.
 
 CATS-Forwarder:
- : A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.
+ : A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.
  : A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder.
 
 Ingress CATS-Forwarder:
@@ -205,7 +205,7 @@ Egress CATS-Forwarder:
 : An entity located at the end of a CATS-computed path which connects to a CATS-serviced site.
 
 CATS Path Selector (C-PS):
- : A functional entity that selects paths towards service locations and instances in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See {{sec-cps}}.
+ : A functional entity that selects paths towards service sites and instances (and thus service contact instances) in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See {{sec-cps}}.
 
 CATS Service Metric Agent (C-SMA):
  : A functional entity that is responsible for collecting service capabilities and status, and for reporting them to a C-PS. See {{sec-csma}}.
@@ -214,7 +214,7 @@ CATS Network Metric Agent (C-NMA):
  : A functional entity that is responsible for collecting network capabilities and status, and for reporting them to a C-PS. See {{sec-cnma}}.
 
 CATS Traffic Classifier (C-TC):
- : A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It is also responsible for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See {{sec-ctc}}.
+:  A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See {{sec-ctc}}.
 
 # CATS Framework and Components {#Framework-and-concepts}
 
