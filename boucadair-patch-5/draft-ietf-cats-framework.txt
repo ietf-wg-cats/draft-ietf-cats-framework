@@ -207,8 +207,8 @@ Table of Contents
       the clients use to access it.  See Section 3.2.
 
    Service instance:  A collection of running resources that are
-      orchestrated following a service logic and, thus, deliver an
-      intended service.
+      orchestrated following a service logic.  When invoked, these
+      resources will collectively provide the intended service.
 
       A service provider may enable many service instances that adhere
       to the same service logic to provide the same service.
