@@ -909,9 +909,9 @@ Table of Contents
    the clients, even including misdirection of traffic to an attacker's
    service implementation.  CATS solutions must support authentication
    and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes,
-   and between C-PSes and Ingress CATS-Forwarders.  Also, C-SMA agents
-   need to support a mechanism to authenticate the services for which
-   they provide information to C-PS computation logics, among other CATS
+   and between C-PSes and Ingress CATS-Forwarders.  Also, C-SMAs need to
+   support a mechanism to authenticate the services for which they
+   provide information to C-PS computation logics, among other CATS
    functions.
 
    This document focuses on the scenario of a single service provider.
@@ -1075,22 +1075,19 @@ Appendix A.  Deployment Examples
 
    The following example mainly describes a per-instance computing-
    related metric distribution for illustration purposes.  Such
-   information may be aggregated into a single advertisement.  That is,
-   in the case of distributing aggregated per-site computing-related
-   metrics, the per-instance CSCI-ID information will not be included in
-   the advertisement.  Instead, a per-site CSCI-ID may be used in case
-   multiple sites are connected to the Egress CATS-Forwarder to
-   explicitly indicate the site from where the aggregated metrics come.
+   information may be aggregated into a single advertisement.
 
 A.1.  Distributed Model
 
    Figure 3 shows an example of how CATS metrics can be disseminated in
-   the distributed model.  There is a client attached to the network via
-   "CATS-Forwarder 1".  There are three service contact instances of the
-   service with CS-ID "1": two service contact instances with CSCI-IDs
-   "1" and "2", respectively, are located at "Service Site 2" attached
-   via "CATS-Forwarder 2"; the third service contact instance is located
-   at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID
+   the distributed model.
+
+   There is a client attached to the network via "CATS-Forwarder 1".
+   There are three service contact instances of the service with CS-ID
+   "1": two service contact instances with CSCI-IDs "1" and "2",
+   respectively, are located at "Service Site 2" attached via "CATS-
+   Forwarder 2"; the third service contact instance is located at
+   "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID
    "3".  There is also a second service with CS-ID "2" with only one
    service contact instance located at "Service Site 3".
 
@@ -1112,6 +1109,12 @@ A.1.  Distributed Model
    service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the
    service contact instances as reported by the metrics, and the state
    of the network.
+
+   In the case of distributing aggregated per-site computing-related
+   metrics, the per-instance CSCI-ID information will not be included in
+   the advertisement.  Instead, a per-site CSCI-ID may be used in case
+   multiple sites are connected to the Egress CATS-Forwarder to
+   explicitly indicate the site from where the aggregated metrics come.
 
         Service CS-ID 1, contact instance CSCI-ID 1 <computing metrics>
         Service CS-ID 1, contact instance CSCI-ID 2 <computing metrics>
@@ -1153,7 +1156,7 @@ A.1.  Distributed Model
 
 A.2.  Centralized Model
 
-   In a centralized model, the metrics can be, e.g., distributed as
+   An example of metrics distribution in the centralized model is
    illustrated in Figure 4.
 
    The C-SMA collocated with "CATS-Forwarder 2" distributes the
@@ -1210,17 +1213,18 @@ A.2.  Centralized Model
 
 A.3.  Hybrid Model
 
-   In the hybrid model, the metrics can be distributed, e.g., as
-   illustrated in the Figure 5.  For example, the metrics 1, 2, and 3
-   associated with the "CS-ID1" are collected by the centralized C-PS,
-   and the metrics 4 and 5 are distributed via distributed protocols to
-   the Ingress CATS-Forwarder directly.  For a service with "CS-ID2",
-   all the metrics are collected by the centralized C-PS.  The CATS-
-   computed path result will be distributed to the Ingress CATS-
-   Forwarders from the C-PS by considering both the metrics from the
-   C-SMA and C-NMA.  Furthermore, the Ingress CATS-Forwarder may also
-   have some ability to compute the path for subsequent packets
-   accessing the same service.
+   An example of metrics distribution in the hybrid model is illustrated
+   in Figure 5.
+
+   For example, the metrics 1, 2, and 3 associated with the "CS-ID1" are
+   collected by the centralized C-PS, and the metrics 4 and 5 are
+   distributed via distributed protocols to the Ingress CATS-Forwarder
+   directly.  For a service with "CS-ID2", all the metrics are collected
+   by the centralized C-PS.  The CATS-computed path result will be
+   distributed to the Ingress CATS-Forwarders from the C-PS by
+   considering both the metrics from the C-SMA and C-NMA.  Furthermore,
+   the Ingress CATS-Forwarder may also have some ability to compute the
+   path for subsequent packets accessing the same service.
 
            Service CS-ID 1, instance CSCI-ID 1 <computing metric 1,2,3>
            Service CS-ID 1, instance CSCI-ID 2 <computing metric 1,2,3>
