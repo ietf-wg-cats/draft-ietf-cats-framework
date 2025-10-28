@@ -191,8 +191,8 @@ CATS Service Contact Instance ID (CSCI-ID):
 
 Service request:
  : A request to access or invoke a specific service. CATS-Forwarders steer a service request to a service contact instance.
- : Clients must place a service request using service-specific protocols.
- : Clients direct service requests to a server (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.
+ : Clients generate service requests using service-specific protocols.
+ : Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.
 
 CATS-Forwarder:
  : A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.
