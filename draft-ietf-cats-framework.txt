@@ -257,11 +257,11 @@ Table of Contents
       CATS-Forwarders steer a service request to a service contact
       instance.
 
-      Clients must place a service request using service-specific
+      Clients generate service requests using service-specific
       protocols.
 
-      Clients direct service requests to a server (identified by a CS-
-      ID), without explicit knowledge of CATS-Forwarders.
+      Clients send service requests to a service instance (identified by
+      a CS-ID), without explicit knowledge of CATS-Forwarders.
 
    CATS-Forwarder:  A network entity that steers traffic specific to a
       service request towards a corresponding yet-selected service
