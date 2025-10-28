@@ -887,8 +887,10 @@ Table of Contents
    same Egress CATS-Forwarder needs to be solicited to forward the
    packets.
 
-   The affinity is configured on the C-PS when the service is deployed,
-   or is determined at the time of newly formulated service requests.
+   Ensuring service affinity for flows is a feature that can be
+   configured on the C-PS when the service is deployed (i.e., all flows
+   bound to a service) or determined at the time of newly formulated
+   service requests (i.e., specific flow).
 
    Note that different services may have different notions of what
    constitutes a 'flow' and may, thus, identify a flow differently.
@@ -901,11 +903,11 @@ Table of Contents
    contact instance.
 
    Hence, when specifying a protocol to communicate information about
-   service contact instance affinity, the protocol should support
-   flexible mechanisms for identifying flows.  Or, from a more general
-   perspective, there should be a mechanism to specify and identify the
-   set of packets that are subject to a service contact instance
-   affinity.
+   service contact instance affinity to C-TCs in particular, the
+   protocol should support flexible mechanisms for identifying flows.
+   Or, from a more general perspective, there should be a mechanism to
+   specify and identify the set of packets that are subject to a service
+   contact instance affinity.
 
    More importantly, the means for identifying a flow for ensuring
    instance affinity should be application-independent to avoid the need
