@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 30 April 2026                                      China Mobile
+Expires: 1 May 2026                                         China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         27 October 2025
+                                                         28 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2026.
+   This Internet-Draft will expire on 1 May 2026.
 
 Copyright Notice
 
@@ -864,14 +864,13 @@ Table of Contents
    may consist of one or more service packets (e.g., Session Initiation
    Protocol (SIP) [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6
    [RFC8754], or Real-Time Streaming Protocol (RTSP) [RFC7826]) that
-   carry the CS-ID and potential parameters.  The Ingress CATS-Forwarder
-   classifies the packets using the information provided by C-TCs.  When
-   a matching classification entry is found for the packets, the Ingress
-   CATS-Forwarder encapsulates and forwards them to the C-PS selected
-   Egress CATS-Forwarder.  When these packets reach the Egress CATS-
-   Forwarder, the outer header of the possible overlay encapsulation
-   will be removed and the inner packets will be sent to the relevant
-   service contact instance.
+   carry the CS-ID and potential parameters.  When a matching
+   classification entry maintained by a C-TC is found for the packets,
+   the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS
+   selected Egress CATS-Forwarder.  When these packets reach the Egress
+   CATS-Forwarder, the outer header of the possible overlay
+   encapsulation will be removed and the inner packets will be sent to
+   the relevant service contact instance.
 
 4.4.  Service Contact Instance Affinity
 
