@@ -1452,7 +1452,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.57">CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.58">
-          <p id="section-2-2.58.1">A network entity that steers traffic specific to a service request towards a corresponding yet-selected service contact instance according to provisioned forwarding decisions. These decisions are supplied by a C-PS, which may or may not be on the CATS-Forwarder.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.58.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.<a href="#section-2-2.58.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.59"></dt>
@@ -1472,7 +1472,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.65">CATS Path Selector (C-PS):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.66">
-          <p id="section-2-2.66.1">A functional entity that selects paths towards service locations and instances in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.66.1">A functional entity that selects paths towards service sites and instances (and thus service contact instances) in order to accommodate the requirements of service requests. The path selection engine takes into account the service and network status information. See <a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>.<a href="#section-2-2.66.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.67">CATS Service Metric Agent (C-SMA):</dt>
@@ -1487,7 +1487,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.71">CATS Traffic Classifier (C-TC):</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.72">
-          <p id="section-2-2.72.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It is also responsible for forwarding such packets along a C-PS computed path that leads to the relevant service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.72.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.72.1">A functional entity that is responsible for determining which packets belong to a traffic flow for a specific service request. It coordinates with the Ingress CATS-Forwarder so that such packets are placed onto a path computed by the C-PS that leads to the selected service contact instance. See <a href="#sec-ctc" class="auto internal xref">Section 3.4.5</a>.<a href="#section-2-2.72.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
