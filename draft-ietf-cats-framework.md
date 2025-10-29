@@ -474,7 +474,7 @@ The framework covers only the case of a single service provider. Deployment cons
 
 ## Implementation Considerations on Using CATS Metrics {#sec-metric-implementation}
 
-Advertising per-instance computing-related metrics instead of aggregating them into per-site advertisements have scalability implications on involved CATS elements. Special care should be considered by providers when enabling per-instance metric distribution.
+Advertising per-instance computing-related metrics instead of aggregating them into per-site advertisements has scalability implications on involved CATS elements. Special care should be considered by providers when enabling per-instance metric distribution.
 
 Computing metrics need to be normalized (i.e., convert metric values with or without units into unitless scores), aggregated, or a combination thereof in order to soften the scalability impact while providing sufficient detail for effective CATS decision-making. See, e.g., {{?I-D.ietf-cats-metric-definition}} for a discussion on metrics and distribution approaches.
 
