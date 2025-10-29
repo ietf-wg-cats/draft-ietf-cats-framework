@@ -1054,7 +1054,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 1 May 2026</td>
+<td class="center">Expires 2 May 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1067,12 +1067,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-28" class="published">28 October 2025</time>
+<time datetime="2025-10-29" class="published">29 October 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-05-01">1 May 2026</time></dd>
+<dd class="expires"><time datetime="2026-05-02">2 May 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1124,7 +1124,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1318,7 +1318,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.9">Computing metrics:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.10">
-          <p id="section-2-2.10.1">Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. For further detail, see the set of computing metrics defined in <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span>.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.10.1">Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. Examples of computing metrics are discussed in <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span>.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.11">Service:</dt>
@@ -1450,7 +1450,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.55">CATS-Forwarder:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.56">
-          <p id="section-2-2.56.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.56.1">A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of a CATS-Forwarder.<a href="#section-2-2.56.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.57"></dt>
@@ -1628,7 +1628,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
             <p id="section-3.3-5.3.1">CATS Data Plane: Responsible for computing-aware forwarding, including classifying packets, steering them onto chosen paths toward selected service contact instances, and forwarding the packets along the paths to the service contact instances.<a href="#section-3.3-5.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-3.3-6">Depending on implementation and deployment, these planes may consist of several functional elements/components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.<a href="#section-3.3-6" class="pilcrow">¶</a></p>
+<p id="section-3.3-6">Depending on implementation and deployment, these planes may consist of several functional components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.<a href="#section-3.3-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-cats-arch">
@@ -1636,7 +1636,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
         <h3 id="name-cats-functional-components">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-cats-functional-components" class="section-name selfRef">CATS Functional Components</a>
         </h3>
-<p id="section-3.4-1">CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional elements and their interactions are shown in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>. The main functional components are described in the sub-sections that follow.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional components and their interactions are shown in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>. These components are described in the subsections that follow.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-cats-functional-components-2"></span><div id="fig-cats-components">
 <figure id="figure-2">
           <div id="section-3.4-2.1">
@@ -1648,7 +1648,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                 <path d="M 56,112 L 56,208" fill="none" stroke="black"></path>
                 <path d="M 56,592 L 56,640" fill="none" stroke="black"></path>
                 <path d="M 64,48 L 64,80" fill="none" stroke="black"></path>
-                <path d="M 72,32 L 72,64" fill="none" stroke="black"></path>
+                <path d="M 80,32 L 80,64" fill="none" stroke="black"></path>
                 <path d="M 80,464 L 80,528" fill="none" stroke="black"></path>
                 <path d="M 104,152 L 104,176" fill="none" stroke="black"></path>
                 <path d="M 104,368 L 104,440" fill="none" stroke="black"></path>
@@ -1686,13 +1686,13 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                 <path d="M 432,240 L 432,272" fill="none" stroke="black"></path>
                 <path d="M 432,320 L 432,400" fill="none" stroke="black"></path>
                 <path d="M 448,112 L 448,208" fill="none" stroke="black"></path>
-                <path d="M 24,32 L 72,32" fill="none" stroke="black"></path>
+                <path d="M 24,32 L 80,32" fill="none" stroke="black"></path>
                 <path d="M 192,32 L 248,32" fill="none" stroke="black"></path>
                 <path d="M 344,32 L 400,32" fill="none" stroke="black"></path>
-                <path d="M 8,48 L 56,48" fill="none" stroke="black"></path>
+                <path d="M 8,48 L 64,48" fill="none" stroke="black"></path>
                 <path d="M 176,48 L 232,48" fill="none" stroke="black"></path>
                 <path d="M 328,48 L 384,48" fill="none" stroke="black"></path>
-                <path d="M 8,80 L 56,80" fill="none" stroke="black"></path>
+                <path d="M 8,80 L 64,80" fill="none" stroke="black"></path>
                 <path d="M 176,80 L 232,80" fill="none" stroke="black"></path>
                 <path d="M 328,80 L 384,80" fill="none" stroke="black"></path>
                 <path d="M 56,112 L 192,112" fill="none" stroke="black"></path>
@@ -1729,12 +1729,10 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
                 <path d="M 56,592 L 144,592" fill="none" stroke="black"></path>
                 <path d="M 288,624 L 376,624" fill="none" stroke="black"></path>
                 <path d="M 56,640 L 144,640" fill="none" stroke="black"></path>
-                <path d="M 56,48 C 64.83064,48 72,55.16936 72,64" fill="none" stroke="black"></path>
-                <path d="M 56,48 C 64.83064,48 72,40.83064 72,32" fill="none" stroke="black"></path>
-                <path d="M 56,80 C 64.83064,80 72,72.83064 72,64" fill="none" stroke="black"></path>
                 <path d="M 200,368 C 191.16936,368 184,360.83064 184,352" fill="none" stroke="black"></path>
                 <g class="text">
                   <text x="36" y="68">client</text>
+                  <text x="72" y="68">-</text>
                   <text x="204" y="68">client</text>
                   <text x="240" y="68">-</text>
                   <text x="356" y="68">client</text>
@@ -1837,8 +1835,8 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-cats-service-metric-agent-c">
 <a href="#section-3.4.2" class="section-number selfRef">3.4.2. </a><a href="#name-cats-service-metric-agent-c" class="section-name selfRef">CATS Service Metric Agent (C-SMA)</a>
           </h4>
-<p id="section-3.4.2-1">The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder (<a href="#sec-ocr" class="auto internal xref">Section 3.4.6</a>), etc.<a href="#section-3.4.2-1" class="pilcrow">¶</a></p>
-<p id="section-3.4.2-2"><a href="#fig-cats-components" class="auto internal xref">Figure 2</a> shows one C-SMA embedded in "CATS-Forwarder 3", and another C-SMA that is adjacent to "CATS-Forwarder 1".<a href="#section-3.4.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.2-1">The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder (<a href="#sec-ocr" class="auto internal xref">Section 3.4.6</a>), etc. There may be one or more C-SMAs in a deployment.<a href="#section-3.4.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.2-2"><a href="#fig-cats-components" class="auto internal xref">Figure 2</a> shows one C-SMA embedded in "CATS-Forwarder 3" and another C-SMA that is adjacent to "CATS-Forwarder 1".<a href="#section-3.4.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-cnma">
@@ -1877,8 +1875,10 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-cats-forwarders">
 <a href="#section-3.4.6" class="section-number selfRef">3.4.6. </a><a href="#name-cats-forwarders" class="section-name selfRef">CATS-Forwarders</a>
           </h4>
-<p id="section-3.4.6-1">Ingress CATS-Forwarders are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder. Egress CATS-Forwarders are the elements that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.4.6-1" class="pilcrow">¶</a></p>
-<p id="section-3.4.6-2">Note that, depending on the design considerations and service requirements, per-service contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder may choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.<a href="#section-3.4.6-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.6-1">Ingress CATS-Forwarders are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder. Egress CATS-Forwarders are the elements that behave as an egress for service requests that are forwarded over a CATS infrastructure.<a href="#section-3.4.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.6-2">A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards the traffic to the relevant service contact instance accordingly.<a href="#section-3.4.6-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.6-3">In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.4.6-3" class="pilcrow">¶</a></p>
+<p id="section-3.4.6-4">Note that, depending on the design considerations and service requirements, per-service contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder may choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.<a href="#section-3.4.6-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="underlay-infrastructure">
@@ -1886,7 +1886,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           <h4 id="name-underlay-infrastructure">
 <a href="#section-3.4.7" class="section-number selfRef">3.4.7. </a><a href="#name-underlay-infrastructure" class="section-name selfRef">Underlay Infrastructure</a>
           </h4>
-<p id="section-3.4.7-1">The "underlay infrastructure" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a> indicates an IP and/or MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a C-PS will be distributed among the CATS-Forwarders (<a href="#sec-ocr" class="auto internal xref">Section 3.4.6</a>), and will not affect the underlay nodes. Underlay nodes are typically P routers (<span><a href="https://rfc-editor.org/rfc/rfc4026#section-5.3.1" class="relref">Section 5.3.1</a> of [<a href="#RFC4026" class="cite xref">RFC4026</a>]</span>).<a href="#section-3.4.7-1" class="pilcrow">¶</a></p>
+<p id="section-3.4.7-1">The "underlay infrastructure" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a> indicates an IP and/or MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a C-PS will be distributed among the CATS-Forwarders (<a href="#sec-ocr" class="auto internal xref">Section 3.4.6</a>) and will not affect the underlay nodes. Underlay nodes are typically P routers (<span><a href="https://rfc-editor.org/rfc/rfc4026#section-5.3.1" class="relref">Section 5.3.1</a> of [<a href="#RFC4026" class="cite xref">RFC4026</a>]</span>).<a href="#section-3.4.7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1898,7 +1898,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
       <h2 id="name-cats-framework-workflow">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-cats-framework-workflow" class="section-name selfRef">CATS Framework Workflow</a>
       </h2>
-<p id="section-4-1">The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a>. <a href="#sec-cats-deployment" class="auto internal xref">Section 5.2</a> describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a>. <a href="#sec-cats-deployment" class="auto internal xref">Section 5.2</a> describes several deployment options (distributed, centralized, and hybrid models) to accommodate a variety of contexts.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <div id="service-announcement">
 <section id="section-4.1">
         <h3 id="name-service-announcement">
@@ -1914,8 +1914,8 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
         </h3>
 <p id="section-4.2-1">As described in <a href="#sec-cats-arch" class="auto internal xref">Section 3.4</a>, a C-SMA collects both computing-related capabilities and metrics, and associates them with a CS-ID that identifies the service. The C-SMA may aggregate the metrics for multiple service contact instances, maintain them separately, or both.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">The C-SMA then advertises CS-IDs along with metrics to related C-PSes in the network. Depending on the deployment choice, CS-IDs with metrics may be distributed in different ways. Refer to <a href="#sec-metric-implementation" class="auto internal xref">Section 5.3</a> for more deployment considerations.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
-<p id="section-4.2-3">The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number of clients that access the service contact instance at any given time, etc.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
-<p id="section-4.2-4">Computing metrics may change very frequently (see <span>[<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span> for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">The computing metrics include computing-related metrics and potentially other service-specific metrics like the number of clients that access the service contact instance at any given time, etc.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">Computing metrics may change very frequently (e.g., see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-usecases-requirements-08#section-5.3" class="relref">Section 5.3</a> of [<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span> for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
 <p id="section-4.2-5">Additionally, the C-NMA collects network-related capabilities and metrics. These may be collected and distributed by existing measurement protocols and/or routing protocols, although extensions to such protocols may be required to carry additional information (e.g., link latency). The C-NMA distributes the network metrics to the C-PSes so that they can use the combination of service and network metrics to determine the best Egress CATS-Forwarder to provide access to a service contact instance and invoke the compute function required by a service request. Similar to computing-related metrics, the network-related metrics can be distributed using distributed, centralized, or hybrid schemes. This document does not describe such details since this is deployment-specific.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
 <p id="section-4.2-6">Network metrics may also change over time. Dynamic routing protocols may take advantage of some information or capabilities to prevent the network from being flooded with state change information (e.g., Partial Route Computation (PRC) of OSPFv3 <span>[<a href="#RFC5340" class="cite xref">RFC5340</a>]</span>). C-NMAs should also be configured or instructed like C-SMAs to determine when and how often updates should be notified to the C-PSes.<a href="#section-4.2-6" class="pilcrow">¶</a></p>
 </section>
@@ -1925,8 +1925,8 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
         <h3 id="name-service-access-processing">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-service-access-processing" class="section-name selfRef">Service Access Processing</a>
         </h3>
-<p id="section-4.3-1">A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>) or logically centralized (in the centralized model or hybrid model).<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3-2">This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such "appropriate information" may be utilized to differentiate selection mechanisms to enable service-specific selections.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-1">A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>) or logically centralized (in the centralized or hybrid models (<a href="#sec-cats-deployment" class="auto internal xref">Section 5.2</a>)).<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such appropriate information may be utilized to differentiate selection mechanisms to enable service-specific selections.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 <p id="section-4.3-3">In the example shown in <a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a>, the client sends a service request via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service request to access the service may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) <span>[<a href="#RFC3261" class="cite xref">RFC3261</a>]</span>, HTTP <span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>, IPv6 <span>[<a href="#RFC8200" class="cite xref">RFC8200</a>]</span>, SRv6 <span>[<a href="#RFC8754" class="cite xref">RFC8754</a>]</span>, or Real-Time Streaming Protocol (RTSP) <span>[<a href="#RFC7826" class="cite xref">RFC7826</a>]</span>) that carry the CS-ID and potential parameters. When a matching classification entry maintained by a C-TC is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1935,7 +1935,7 @@ is deployment specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
         <h3 id="name-service-contact-instance-af">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-service-contact-instance-af" class="section-name selfRef">Service Contact Instance Affinity</a>
         </h3>
-<p id="section-4.4-1">Service contact instance affinity means that packets that belong to a flow associated with a service request should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4-1">Service contact instance affinity means that packets that belong to a flow associated with a service request should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. A CATS framework implementation must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 <p id="section-4.4-2">Ensuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service) or determined at the time of newly formulated service requests (i.e., specific flow).<a href="#section-4.4-2" class="pilcrow">¶</a></p>
 <p id="section-4.4-3">Note that different services may have different notions of what constitutes a 'flow' and may, thus, identify a flow differently. Typically, a flow is identified by the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol). However, for instance, an RTP video stream may use different port numbers for video and audio channels: in that case, affinity may be identified as a combination of the two 5-tuple flow identifiers so that both flows are addressed to the same service contact instance.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
 <p id="section-4.4-4">Hence, when specifying a protocol to communicate information about service contact instance affinity to C-TCs in particular, the protocol should support
@@ -1956,7 +1956,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         <h3 id="name-provisioning-of-cats-compon">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-provisioning-of-cats-compon" class="section-name selfRef">Provisioning of CATS Components</a>
         </h3>
-<p id="section-5.1-1">Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-1">Enabling CATS in a network can be done incrementally. That is, not all ingress routers (Provider Edges (PEs), typically) need to be upgraded to support CATS.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.1-2">In addition to the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but is not limited to:<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.1-3.1">
@@ -2003,14 +2003,14 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         </h3>
 <p id="section-5.2-1">This document does not make any assumption about how the various CATS functional elements are implemented and deployed. Concretely, whether a CATS deployment follows a fully distributed design or relies upon a mix of centralized (e.g., a centralized C-PS) and distributed CATS functions (e.g., C-TCs) is deployment-specific, which may reflect the preferences and policies of the (CATS) service provider. The deployment can also be informed by specific use case requirements <span>[<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span>.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <p id="section-5.2-2">For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before a service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with C-TCs.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
-<p id="section-5.2-3">According to the method of distributing and collecting the computing related metrics, three deployment models can be considered for the deployment of the CATS framework:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
+<p id="section-5.2-3">According to the method of distributing and collecting the computing metrics, three deployment models can be considered for the deployment of the CATS framework:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.2-4.1">
             <span class="break"></span><dl class="dlParallel" id="section-5.2-4.1.1">
               <dt id="section-5.2-4.1.1.1">
 <strong>Distributed model</strong>:</dt>
               <dd style="margin-left: 1.5em" id="section-5.2-4.1.1.2">
-                <p id="section-5.2-4.1.1.2.1">Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control element (e.g., controller). Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.<a href="#section-5.2-4.1.1.2.1" class="pilcrow">¶</a></p>
+                <p id="section-5.2-4.1.1.2.1">Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control element (e.g., network controller). Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.<a href="#section-5.2-4.1.1.2.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
 </dl>
@@ -2055,7 +2055,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         <h3 id="name-implementation-consideratio">
 <a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-implementation-consideratio" class="section-name selfRef">Implementation Considerations on Using CATS Metrics</a>
         </h3>
-<p id="section-5.3-1">Advertising per-instance computing-related metrics instead of aggregating them into per-site advertisements have scalability implications on involved CATS elements. Special care should be considered by providers when enabling per-instance metric distribution.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-1">Advertising per-instance computing-related metrics instead of aggregating them into per-site advertisements has scalability implications on involved CATS elements. Special care should be considered by providers when enabling per-instance metric distribution.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.3-2">Computing metrics need to be normalized (i.e., convert metric values with or without units into unitless scores), aggregated, or a combination thereof in order to soften the scalability impact while providing sufficient detail for effective CATS decision-making. See, e.g., <span>[<a href="#I-D.ietf-cats-metric-definition" class="cite xref">I-D.ietf-cats-metric-definition</a>]</span> for a discussion on metrics and distribution approaches.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <p id="section-5.3-3">Depending on the resources and processing capabilities of CATS components, the normalization and aggregation functions can be located in different CATS components. An approach is to implement the normalization and aggregation functions located away from C-PSes, especially when C-PSes are co-located with CATS-Forwarders. With this in mind, the normalization and aggregation functions of CATS metrics can be placed at service contact instances or C-SMAs.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 <p id="section-5.3-4">When C-SMAs are co-located with CATS-Forwarders where there is limited resource for processing, the placement of normalization functions in a C-SMA may bring too much overhead and may influence the routing efficiency. Therefore, this document suggests to implement the normalization function at the service contact instances. Regarding the aggregation functions, it can be implemented in a C-SMA or the service contact instances.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
@@ -2086,7 +2086,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
 <p id="section-6-1">The computing resource information changes over time very frequently, especially with the creation and termination of service instances. When such information is carried in a routing protocol, too many updates may affect network stability. This issue could be exploited by an attacker (e.g., by spawning and deleting service instances very rapidly). CATS solutions must support guards against such misbehaviors. For example, these solutions should support aggregation techniques, dampening mechanisms, and threshold-triggered distribution updates.<a href="#section-6-1" class="pilcrow">¶</a></p>
-<p id="section-6-2">The information distributed by the C-SMAs and C-NMAs may be sensitive. Such information could indeed disclose intelligence about the network and the location of compute resources hosted in service sites. This information may be used by an attacker to identify weak spots in an operator's network. Furthermore, such information may be modified by an attacker resulting in disrupted service delivery for the clients, even including misdirection of traffic to an attacker's service implementation. CATS solutions must support authentication and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes, and between C-PSes and Ingress CATS-Forwarders. Also, C-SMA agents need to support a mechanism to authenticate the services for which they provide information to C-PS computation logics, among other CATS functions.<a href="#section-6-2" class="pilcrow">¶</a></p>
+<p id="section-6-2">The information distributed by the C-SMAs and C-NMAs may be sensitive. Such information could indeed disclose intelligence about the network and the location of compute resources hosted in service sites. This information may be used by an attacker to identify weak spots in an operator's network. Furthermore, such information may be modified by an attacker resulting in disrupted service delivery for the clients, even including misdirection of traffic to an attacker's service implementation. CATS solutions must support authentication and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes, and between C-PSes and Ingress CATS-Forwarders. Also, C-SMAs need to support a mechanism to authenticate the services for which they provide information to C-PS computation logics, among other CATS functions.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">This document focuses on the scenario of a single service provider. Hence, security considerations relevant to deployment with multiple service providers are out of scope.<a href="#section-6-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2216,19 +2216,21 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-deployment-examples" class="section-name selfRef">Deployment Examples</a>
       </h2>
 <p id="appendix-A-1">This section provides examples to illustrate examples of CATS metrics distribution. These examples are not deployment recommendations.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">The following example mainly describes a per-instance computing-related metric distribution for illustration purposes. Such information may be aggregated into a single advertisement. That is, in the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">The following example mainly describes a per-instance computing-related metric distribution for illustration purposes. Such information may be aggregated into a single advertisement.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
 <div id="sec-met-dist1">
 <section id="appendix-A.1">
         <h3 id="name-distributed-model">
 <a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-distributed-model" class="section-name selfRef">Distributed Model</a>
         </h3>
-<p id="appendix-A.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> shows an example of how CATS metrics can be disseminated in the distributed model. There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
-<p id="appendix-A.1-2">The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Similarly, the C-SMA located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress "CATS-Forwarder 3". Then, the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#appendix-A.1-2" class="pilcrow">¶</a></p>
-<p id="appendix-A.1-3">The computing metrics advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.<a href="#appendix-A.1-3" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-1"><a href="#fig-cats-example-overlay" class="auto internal xref">Figure 3</a> shows an example of how CATS metrics can be disseminated in the distributed model.<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-2">There is a client attached to the network via "CATS-Forwarder 1". There are three service contact instances of the service with CS-ID "1": two service contact instances with CSCI-IDs "1" and "2", respectively, are located at "Service Site 2" attached via "CATS-Forwarder 2"; the third service contact instance is located at "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID "3". There is also a second service with CS-ID "2" with only one service contact instance located at "Service Site 3".<a href="#appendix-A.1-2" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-3">The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)). Similarly, the C-SMA located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3". The C-SMA may distribute the computing metrics to the Egress "CATS-Forwarder 3". Then, the computing metrics can be redistributed by the Egress CATS-Forwarder to the Ingress CATS-Forwarder. The C-SMA also may directly distribute the computing metrics to the Ingress CATS-Forwarder.<a href="#appendix-A.1-3" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-4">The computing metrics advertisements are processed by the C-PS hosted by "CATS-Forwarder 1". The C-PS also processes network metric advertisements sent by the C-NMA. All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder according to the initial client's service request, the service that is requested ("CS-ID 1" or "CS-ID 2"), the state of the service contact instances as reported by the metrics, and the state of the network.<a href="#appendix-A.1-4" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-5">In the case of distributing aggregated per-site computing-related metrics, the per-instance CSCI-ID information will not be included in the advertisement. Instead, a per-site CSCI-ID may be used in case multiple sites are connected to the Egress CATS-Forwarder to explicitly indicate the site from where the aggregated metrics come.<a href="#appendix-A.1-5" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-d"></span><div id="fig-cats-example-overlay">
 <figure id="figure-3">
-          <div id="appendix-A.1-4.1">
-            <div class="alignLeft art-svg artwork" id="appendix-A.1-4.1.1">
+          <div id="appendix-A.1-6.1">
+            <div class="alignLeft art-svg artwork" id="appendix-A.1-6.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="576" viewBox="0 0 576 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                 <path d="M 8,224 L 8,256" fill="none" stroke="black"></path>
                 <path d="M 8,304 L 8,336" fill="none" stroke="black"></path>
@@ -2403,7 +2405,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
                   <text x="236" y="564">&lt;computing</text>
                   <text x="316" y="564">metrics&gt;</text>
                 </g>
-              </svg><a href="#appendix-A.1-4.1.1" class="pilcrow">¶</a>
+              </svg><a href="#appendix-A.1-6.1.1" class="pilcrow">¶</a>
 </div>
 </div>
 <figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
@@ -2417,7 +2419,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         <h3 id="name-centralized-model">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-centralized-model" class="section-name selfRef">Centralized Model</a>
         </h3>
-<p id="appendix-A.2-1">In a centralized model, the metrics can be, e.g., distributed as illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.2-1">An example of metrics distribution in the centralized model is illustrated in <a href="#fig-cats-centralized" class="auto internal xref">Figure 4</a>.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
 <p id="appendix-A.2-2">The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics for both service contact instances (i.e., (CS-ID 1, CSCI-ID 1) and (CS-ID 1, CSCI-ID 2)) to the centralized C-PS. In this case, the C-PS is a logically centralized element deployed separately with the "CATS-Forwarder 1". Similarly, the C-SMA located at "Service Site 3" advertises the computing metrics for the two services hosted by "Service Site 3" to the centralized C-PS as well. Furthermore, the C-PS receives the network metrics sent from the C-NMA.  All metrics are used by the C-PS to select the most relevant path that leads to the Egress CATS-Forwarder. The selected paths will be sent from the C-PS to "CATS-Forwarder 1" to indicate traffic steering.<a href="#appendix-A.2-2" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-di"></span><div id="fig-cats-centralized">
 <figure id="figure-4">
@@ -2603,11 +2605,12 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
         <h3 id="name-hybrid-model">
 <a href="#appendix-A.3" class="section-number selfRef">A.3. </a><a href="#name-hybrid-model" class="section-name selfRef">Hybrid Model</a>
         </h3>
-<p id="appendix-A.3-1">In the hybrid model, the metrics can be distributed, e.g., as illustrated in the <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>. For example, the metrics 1, 2, and 3 associated with the "CS-ID1" are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the Ingress CATS-Forwarder directly. For a service with "CS-ID2", all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for subsequent packets accessing the same service.<a href="#appendix-A.3-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.3-1">An example of metrics distribution in the hybrid model is illustrated in <a href="#fig-cats-hybrid" class="auto internal xref">Figure 5</a>.<a href="#appendix-A.3-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.3-2">For example, the metrics 1, 2, and 3 associated with the "CS-ID1" are collected by the centralized C-PS, and the metrics 4 and 5 are distributed via distributed protocols to the Ingress CATS-Forwarder directly. For a service with "CS-ID2", all the metrics are collected by the centralized C-PS. The CATS-computed path result will be distributed to the Ingress CATS-Forwarders from the C-PS by considering both the metrics from the C-SMA and C-NMA. Furthermore, the Ingress CATS-Forwarder may also have some ability to compute the path for subsequent packets accessing the same service.<a href="#appendix-A.3-2" class="pilcrow">¶</a></p>
 <span id="name-an-example-of-cats-metric-dis"></span><div id="fig-cats-hybrid">
 <figure id="figure-5">
-          <div id="appendix-A.3-2.1">
-            <div class="alignLeft art-svg artwork" id="appendix-A.3-2.1.1">
+          <div id="appendix-A.3-3.1">
+            <div class="alignLeft art-svg artwork" id="appendix-A.3-3.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="568" viewBox="0 0 568 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                 <path d="M 8,272 L 8,304" fill="none" stroke="black"></path>
                 <path d="M 8,368 L 8,448" fill="none" stroke="black"></path>
@@ -2805,7 +2808,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
                   <text x="500" y="596">metric</text>
                   <text x="548" y="596">4,5&gt;</text>
                 </g>
-              </svg><a href="#appendix-A.3-2.1.1" class="pilcrow">¶</a>
+              </svg><a href="#appendix-A.3-3.1.1" class="pilcrow">¶</a>
 </div>
 </div>
 <figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
