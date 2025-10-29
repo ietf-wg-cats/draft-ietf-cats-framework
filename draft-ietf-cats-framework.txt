@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 1 May 2026                                         China Mobile
+Expires: 2 May 2026                                         China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                         28 October 2025
+                                                         29 October 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 May 2026.
+   This Internet-Draft will expire on 2 May 2026.
 
 Copyright Notice
 
@@ -832,7 +832,7 @@ Table of Contents
 5.3.  Implementation Considerations on Using CATS Metrics
 
    Advertising per-instance computing-related metrics instead of
-   aggregating them into per-site advertisements have scalability
+   aggregating them into per-site advertisements has scalability
    implications on involved CATS elements.  Special care should be
    considered by providers when enabling per-instance metric
    distribution.
