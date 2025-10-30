@@ -146,7 +146,7 @@ Metric:
  : A quantitative measure that provides suitable input to a selection mechanism for CATS decision making.
 
 Computing metrics:
-  : Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. For further detail, see the set of computing metrics defined in {{?I-D.ietf-cats-metric-definition}}.
+  : Metrics specific to the computing resources in the underlying CATS systems as distinct from other metrics, such as network metrics. Examples of computing metrics are discussed in {{?I-D.ietf-cats-metric-definition}}.
 
 Service:
   : An offering that is made available by a service provider by orchestrating a set of resources (networking, compute, storage, etc.).
@@ -194,7 +194,7 @@ Service request:
  : Clients send service requests to a service instance (identified by a CS-ID), without explicit knowledge of CATS-Forwarders.
 
 CATS-Forwarder:
- : A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of the CATS-Forwarder.
+ : A network entity that steers traffic specific to a service request towards a service contact instance according to forwarding decisions supplied by a CATS Path Selector (C-PS), which may or may not be part of a CATS-Forwarder.
  : A CATS-Forwarder may behave as an Ingress or Egress CATS-Forwarder. See {{sec-ocr}}.
 
 Ingress CATS-Forwarder:
@@ -274,17 +274,17 @@ The following planes are defined:
 * CATS Control Plane: Responsible for scheduling services based on computing and network information. It is also responsible for making decisions about how packets should be forwarded by involved forwarding nodes and communicating such decisions to the CATS Data Plane for execution.
 * CATS Data Plane: Responsible for computing-aware forwarding, including classifying packets, steering them onto chosen paths toward selected service contact instances, and forwarding the packets along the paths to the service contact instances.
 
-Depending on implementation and deployment, these planes may consist of several functional elements/components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.
+Depending on implementation and deployment, these planes may consist of several functional components, and the details will be described in the following sections. For example, the control plane may consist of C-PS, C-NMA, etc. The data plane may consist of CATS-Forwarders, C-TC, etc.
 
 
 ## CATS Functional Components {#sec-cats-arch}
 
-CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional elements and their interactions are shown in {{fig-cats-components}}. The main functional components are described in the sub-sections that follow.
+CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional components and their interactions are shown in {{fig-cats-components}}. These components are described in the subsections that follow.
 
 ~~~ aasvg
-       +-----+              +------+           +------+
-     +------+|            +------+ |         +------+ |
-     |client|+            |client|-+         |client|-+
+       +------+             +------+           +------+
+     +------+ |           +------+ |         +------+ |
+     |client|-+           |client|-+         |client|-+
      +---+--+             +---+--+           +---+--+
          |                    |                  |
          | +----------------+ |            +-----+----------+
@@ -341,9 +341,9 @@ As service instances are accessed via a service contact instance, a client will 
 
 ### CATS Service Metric Agent (C-SMA) {#sec-csma}
 
-The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder ({{sec-ocr}}), etc.
+The CATS Service Metric Agent (C-SMA) is a functional component that gathers information about service sites and server resources, as well as the status of the different service instances. A C-SMA may be co-located or located adjacent to a service contact instance, hosted by or adjacent to an Egress CATS-Forwarder ({{sec-ocr}}), etc. There may be one or more C-SMAs in a deployment.
 
-{{fig-cats-components}} shows one C-SMA embedded in "CATS-Forwarder 3", and another C-SMA that is adjacent to "CATS-Forwarder 1".
+{{fig-cats-components}} shows one C-SMA embedded in "CATS-Forwarder 3" and another C-SMA that is adjacent to "CATS-Forwarder 1".
 
 ### CATS Network Metric Agent (C-NMA) {#sec-cnma}
 
@@ -373,17 +373,21 @@ C-TCs are typically hosted in CATS-Forwarders.
 
 ### CATS-Forwarders {#sec-ocr}
 
-Ingress CATS-Forwarders are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder. Egress CATS-Forwarders are the elements that behave as an egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance accordingly. In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.
+Ingress CATS-Forwarders are responsible for steering service-specific traffic along a CATS-computed path that leads to an Egress CATS-Forwarder. Egress CATS-Forwarders are the elements that behave as an egress for service requests that are forwarded over a CATS infrastructure.
+
+A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (e.g., multi-homing design). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CSCI-ID related information, the Egress CATS-Forwarder then forwards the traffic to the relevant service contact instance accordingly.
+
+In some cases, the choice of the service contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. In the absence of an explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.
 
 Note that, depending on the design considerations and service requirements, per-service contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a preferred option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service contact instances to select the proper service contact instance. An Egress CATS-Forwarder may choose to aggregate the metrics from different sites as well. In this case, the Egress CATS-Forwarder will choose the best site by itself when the packets arrive at it.
 
 ### Underlay Infrastructure
 
-The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a C-PS will be distributed among the CATS-Forwarders ({{sec-ocr}}), and will not affect the underlay nodes. Underlay nodes are typically P routers ({{Section 5.3.1 of ?RFC4026}}).
+The "underlay infrastructure" in {{fig-cats-components}} indicates an IP and/or MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a C-PS will be distributed among the CATS-Forwarders ({{sec-ocr}}) and will not affect the underlay nodes. Underlay nodes are typically P routers ({{Section 5.3.1 of ?RFC4026}}).
 
 # CATS Framework Workflow {#sec-cats-workflow}
 
-The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid model) to accommodate a variety of contexts.
+The following subsections provide an overview of a typical CATS workflow. In order to enable CATS in a given domain, some provisioning is needed; see more details in {{sec-cats-provisioning}}. {{sec-cats-deployment}} describes several deployment options (distributed, centralized, and hybrid models) to accommodate a variety of contexts.
 
 ## Service Announcement
 
@@ -395,9 +399,9 @@ As described in {{sec-cats-arch}}, a C-SMA collects both computing-related capab
 
 The C-SMA then advertises CS-IDs along with metrics to related C-PSes in the network. Depending on the deployment choice, CS-IDs with metrics may be distributed in different ways. Refer to {{sec-metric-implementation}} for more deployment considerations.
 
-The Computing metrics include computing-related metrics and potentially other service-specific metrics like the number of clients that access the service contact instance at any given time, etc.
+The computing metrics include computing-related metrics and potentially other service-specific metrics like the number of clients that access the service contact instance at any given time, etc.
 
-Computing metrics may change very frequently (see {{?I-D.ietf-cats-usecases-requirements}} for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics.
+Computing metrics may change very frequently (e.g., see {{Section 5.3 of ?I-D.ietf-cats-usecases-requirements}} for a discussion). How frequently such information is distributed is to be determined as part of the specification of any communication protocol (including routing protocols) that may be used to distribute the information. Various options can be considered, such as (but not limited to) interval-based updates, threshold-triggered updates, policy-based updates, or using normalized metrics.
 
 Additionally, the C-NMA collects network-related capabilities and metrics. These may be collected and distributed by existing measurement protocols and/or routing protocols, although extensions to such protocols may be required to carry additional information (e.g., link latency). The C-NMA distributes the network metrics to the C-PSes so that they can use the combination of service and network metrics to determine the best Egress CATS-Forwarder to provide access to a service contact instance and invoke the compute function required by a service request. Similar to computing-related metrics, the network-related metrics can be distributed using distributed, centralized, or hybrid schemes. This document does not describe such details since this is deployment-specific.
 
@@ -405,15 +409,15 @@ Network metrics may also change over time. Dynamic routing protocols may take ad
 
 ## Service Access Processing
 
-A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in {{fig-cats-example-overlay}}) or logically centralized (in the centralized model or hybrid model).
+A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in {{fig-cats-example-overlay}}) or logically centralized (in the centralized or hybrid models ({{sec-cats-deployment}})).
 
-This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such "appropriate information" may be utilized to differentiate selection mechanisms to enable service-specific selections.
+This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes in order to not constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such appropriate information may be utilized to differentiate selection mechanisms to enable service-specific selections.
 
 In the example shown in {{fig-cats-example-overlay}}, the client sends a service request via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service request to access the service may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) {{?RFC3261}}, HTTP {{?RFC9112}}, IPv6 {{?RFC8200}}, SRv6 {{?RFC8754}}, or Real-Time Streaming Protocol (RTSP) {{?RFC7826}}) that carry the CS-ID and potential parameters. When a matching classification entry maintained by a C-TC is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.
 
 ## Service Contact Instance Affinity
 
-Service contact instance affinity means that packets that belong to a flow associated with a service request should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. The CATS framework must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.
+Service contact instance affinity means that packets that belong to a flow associated with a service request should always be sent to the same service contact instance. Furthermore, packets of a given flow should be forwarded along the same path to avoid mis-ordering and to prevent the introduction of unpredictable latency variations. A CATS framework implementation must ensure that service instance selection and path steering decisions remain consistent for a flow. Specifically, the same Egress CATS-Forwarder needs to be solicited to forward the packets.
 
 Ensuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service) or determined at the time of newly formulated service requests (i.e., specific flow).
 
@@ -430,7 +434,7 @@ This document does not define any mechanism for defining or enforcing service co
 
 ## Provisioning of CATS Components {#sec-cats-provisioning}
 
-Enabling CATS in a network can be done incrementally. That is, not all ingress routers need to be upgraded to support CATS.
+Enabling CATS in a network can be done incrementally. That is, not all ingress routers (Provider Edges (PEs), typically) need to be upgraded to support CATS.
 
 In addition to the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but is not limited to:
 
@@ -455,10 +459,10 @@ This document does not make any assumption about how the various CATS functional
 
 For example, in a centralized design, both the computing related metrics from the C-SMAs and the network metrics are collected by a (logically) centralized path computation logic (e.g., a PCE). In this case, the CATS computation logic may process incoming service requests to compute paths to service contact instances. More generally, the paths might be computed before a service request comes. Based on the metrics and computed paths, the C-PS can select the most appropriate path and then synchronize with C-TCs.
 
-According to the method of distributing and collecting the computing related metrics, three deployment models can be considered for the deployment of the CATS framework:
+According to the method of distributing and collecting the computing metrics, three deployment models can be considered for the deployment of the CATS framework:
 
 * **Distributed model**:
-: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control element (e.g., controller). Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
+: Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control element (e.g., network controller). Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.
 
 * **Centralized model**:
 : Computing metrics are collected by centralized control elements. These elements then compute the forwarding path for service requests and syncs up with Ingress CATS-Forwarders. In this model, C-PS is implemented in a centralized control element.
