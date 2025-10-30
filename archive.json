@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-28T01:24:30.208480+00:00",
+  "timestamp": "2025-10-30T01:37:46.575534+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -7393,24 +7393,26 @@
       "id": "PR_kwDOJBcdGs6v3Lr-",
       "title": "nits for Adrian",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/133",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Start with the easy part ;-)\r\n\r\nAlmost all adopted excepted \"CATS-serviced\", which is corrected",
       "createdAt": "2025-10-27T10:58:59Z",
-      "updatedAt": "2025-10-27T11:30:39Z",
+      "updatedAt": "2025-10-28T09:06:45Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-2",
-      "headRefOid": "d3a7f607868753ecc0e13a40847ba28c90c3478f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "aaef432c9b1b0131a9c5462700ac40db02846638",
+      "closedAt": "2025-10-28T09:06:44Z",
+      "mergedAt": "2025-10-28T09:06:44Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "4409ad48e4b6ff415f45a308ea369cc6032f0910"
+      },
       "comments": [
         {
           "author": "muzixing",
@@ -7420,239 +7422,630 @@
           "updatedAt": "2025-10-27T11:30:39Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J2Rsp",
+          "commit": {
+            "abbreviatedOid": "d3a7f60"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T03:47:02Z",
+          "updatedAt": "2025-10-28T03:47:02Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 134,
       "id": "PR_kwDOJBcdGs6v3PU4",
       "title": "fix long lines (Adrian Review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/134",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:03:04Z",
-      "updatedAt": "2025-10-27T11:03:04Z",
+      "updatedAt": "2025-10-28T09:07:53Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-3",
       "headRefOid": "670ab7d902f76fb10a25cf04dedd2bc792aa37ed",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:07:51Z",
+      "mergedAt": "2025-10-28T09:07:51Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "2371e41ee6fe16c6bcc8d359f9f1a29b1b26997b"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J2SQ3",
+          "commit": {
+            "abbreviatedOid": "670ab7d"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T03:48:01Z",
+          "updatedAt": "2025-10-28T03:48:01Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 135,
       "id": "PR_kwDOJBcdGs6v3Sof",
       "title": "Update Dirk's contact info (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/135",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:06:22Z",
-      "updatedAt": "2025-10-27T11:06:22Z",
+      "updatedAt": "2025-10-28T09:08:16Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-4",
       "headRefOid": "56a2de1ccb4e58b307f75e6e36a825b2ba298ea6",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:08:14Z",
+      "mergedAt": "2025-10-28T09:08:14Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "f10391e302e34ccb91aae02d19027d797ca586d0"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J2SXk",
+          "commit": {
+            "abbreviatedOid": "56a2de1"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T03:48:19Z",
+          "updatedAt": "2025-10-28T03:48:19Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 136,
       "id": "PR_kwDOJBcdGs6v3V-R",
       "title": "service instance (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/136",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:10:13Z",
-      "updatedAt": "2025-10-27T11:26:14Z",
+      "updatedAt": "2025-10-28T09:12:34Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-5",
-      "headRefOid": "92e8e21b2c5098da8dc6e521674acfe3fda5fa22",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "66de969e014ec50d212def3b2b9340060c48753b",
+      "closedAt": "2025-10-28T09:12:33Z",
+      "mergedAt": "2025-10-28T09:12:33Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "29d27176917d758797c1b156d577e9428a22588d"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J5jrL",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:28:25Z",
+          "updatedAt": "2025-10-28T08:28:25Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "RFC editors may not like this style. But I can understand the text. Let's leave it to RFC editors.",
+              "createdAt": "2025-10-28T08:28:25Z",
+              "updatedAt": "2025-10-28T08:28:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5liD",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:29:46Z",
+          "updatedAt": "2025-10-28T08:29:46Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "how one instance can run on different service sites? I might suggest not to modify",
+              "createdAt": "2025-10-28T08:29:46Z",
+              "updatedAt": "2025-10-28T08:29:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5q2k",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:33:57Z",
+          "updatedAt": "2025-10-28T08:33:58Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n  : A collection of running resources that are orchestrated following a service logic. When invoked, these resources will collectively provide the intended service.\r\n```",
+              "createdAt": "2025-10-28T08:33:57Z",
+              "updatedAt": "2025-10-28T08:33:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5rDY",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:34:06Z",
+          "updatedAt": "2025-10-28T08:34:06Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Better?",
+              "createdAt": "2025-10-28T08:34:06Z",
+              "updatedAt": "2025-10-28T08:34:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5ukf",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:36:50Z",
+          "updatedAt": "2025-10-28T08:36:51Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "```suggestion\r\nCATS assumes that there might be one or multiple service instances hosted by service sites, which provide a given service that is represented by the same service identifier (see {{cats-ids}}). However, CATS does not make any assumption about these instances other than they are reachable via one or multiple service contact instances.\r\n```",
+              "createdAt": "2025-10-28T08:36:51Z",
+              "updatedAt": "2025-10-28T08:36:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5vWZ",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:37:25Z",
+          "updatedAt": "2025-10-28T08:37:26Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "OK to me. They like to make a sentence clear, like \"what \" is invoked? Passive voice is not suggested.",
+              "createdAt": "2025-10-28T08:37:25Z",
+              "updatedAt": "2025-10-28T08:37:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J5xcX",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:39:02Z",
+          "updatedAt": "2025-10-28T08:39:02Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Maybe. Will let them fix that if needed. Thanks.",
+              "createdAt": "2025-10-28T08:39:02Z",
+              "updatedAt": "2025-10-28T08:39:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J50Cg",
+          "commit": {
+            "abbreviatedOid": "92e8e21"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:40:54Z",
+          "updatedAt": "2025-10-28T08:40:54Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "'which' refers to service sites? or service instances?  In the current text, the which should refer to service instances(more than one instance). I am confusing if only one service instance is hosted, then we might not need CATS?  ",
+              "createdAt": "2025-10-28T08:40:54Z",
+              "updatedAt": "2025-10-28T08:40:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J6ZWm",
+          "commit": {
+            "abbreviatedOid": "da23679"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T09:09:11Z",
+          "updatedAt": "2025-10-28T09:09:11Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n  : A collection of running resources that are orchestrated following a service logic. When invoked by a client request, these resources will collectively provide the intended service.\r\n```",
+              "createdAt": "2025-10-28T09:09:11Z",
+              "updatedAt": "2025-10-28T09:09:12Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 137,
       "id": "PR_kwDOJBcdGs6v3b69",
       "title": "service request (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/137",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:18:03Z",
-      "updatedAt": "2025-10-27T11:18:03Z",
+      "updatedAt": "2025-10-28T09:15:48Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-6",
       "headRefOid": "df51a86c3e3cfd78f41cd6c37f934a911ced7d2f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:15:46Z",
+      "mergedAt": "2025-10-28T09:15:46Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "4ec792077cf072a9c0726eb8aa8ae4232a3542fc"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J5oTM",
+          "commit": {
+            "abbreviatedOid": "df51a86"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T08:31:53Z",
+          "updatedAt": "2025-10-28T08:31:53Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 138,
       "id": "PR_kwDOJBcdGs6v3dkf",
       "title": "CATS forwarder/C-PS/Classifier in Section 2 (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/138",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:20:19Z",
-      "updatedAt": "2025-10-27T11:24:44Z",
+      "updatedAt": "2025-10-28T09:17:37Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-7",
       "headRefOid": "7df82ba7cc3e962e29daaeaf3d94922568003912",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:17:36Z",
+      "mergedAt": "2025-10-28T09:17:36Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "42e577970eb1135ea526481863ac4fc53dcf84b7"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J6HH_",
+          "commit": {
+            "abbreviatedOid": "7df82ba"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T08:55:11Z",
+          "updatedAt": "2025-10-28T08:55:11Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 139,
       "id": "PR_kwDOJBcdGs6v3lLj",
       "title": "(3.3) fix the weird routing mention (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/139",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:29:47Z",
-      "updatedAt": "2025-10-27T11:29:47Z",
+      "updatedAt": "2025-10-28T09:20:59Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-8",
       "headRefOid": "0904cc61a498cfbddf46de885828a2941782136b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:20:57Z",
+      "mergedAt": "2025-10-28T09:20:57Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "005ff91fd632da1b2f6d3e71baed6ef93b5184a1"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J6KPH",
+          "commit": {
+            "abbreviatedOid": "0904cc6"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T08:57:25Z",
+          "updatedAt": "2025-10-28T08:57:25Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 140,
       "id": "PR_kwDOJBcdGs6v3mlf",
       "title": "(3.4.6) endpoints (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/140",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "3.4.6\r\n\r\n   Egress CATS-Forwarders are the endpoints that behave as\r\n   an egress for service requests that are forwarded over a CATS\r\n   infrastructure. \r\n\r\nAre they the endpoints, or are they the remote edges of the underlay network? If they are the end point of anything, it would be a tunnel in the underlay network.",
       "createdAt": "2025-10-27T11:31:42Z",
-      "updatedAt": "2025-10-27T11:31:42Z",
+      "updatedAt": "2025-10-28T09:25:36Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
+      "baseRefOid": "005ff91fd632da1b2f6d3e71baed6ef93b5184a1",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-9",
-      "headRefOid": "3b191b989499231d22d84964f51178ecdf0bbada",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "7064bae32aa0d101bcb642997ba47af12143b543",
+      "closedAt": "2025-10-28T09:25:35Z",
+      "mergedAt": "2025-10-28T09:25:35Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "7737f01e676c34f3f984c52e484155c8c3a23b9e"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J6NdU",
+          "commit": {
+            "abbreviatedOid": "3b191b9"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T08:59:44Z",
+          "updatedAt": "2025-10-28T08:59:44Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "An Ingress CATS-forwarder is responsible? ",
+              "createdAt": "2025-10-28T08:59:44Z",
+              "updatedAt": "2025-10-28T08:59:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J6Vem",
+          "commit": {
+            "abbreviatedOid": "3b191b9"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T09:05:58Z",
+          "updatedAt": "2025-10-28T09:05:59Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "That's already fixed in #133 ",
+              "createdAt": "2025-10-28T09:05:59Z",
+              "updatedAt": "2025-10-28T09:05:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J6kT9",
+          "commit": {
+            "abbreviatedOid": "3b191b9"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T09:17:06Z",
+          "updatedAt": "2025-10-28T09:17:06Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "nice! ",
+              "createdAt": "2025-10-28T09:17:06Z",
+              "updatedAt": "2025-10-28T09:17:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J6kqD",
+          "commit": {
+            "abbreviatedOid": "3b191b9"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T09:17:21Z",
+          "updatedAt": "2025-10-28T09:17:21Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 141,
       "id": "PR_kwDOJBcdGs6v3uOn",
       "title": "(4.4) service affinity protocol (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/141",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "mention C-TC to better scope the protocol",
       "createdAt": "2025-10-27T11:41:55Z",
-      "updatedAt": "2025-10-27T11:41:55Z",
+      "updatedAt": "2025-10-28T09:46:13Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-10",
-      "headRefOid": "99bc57aedd57e0c4eb5f80c1622ccd9f71cc8dec",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "856037db5c05481d5c44fabde5fc0ce0ff267336",
+      "closedAt": "2025-10-28T09:42:37Z",
+      "mergedAt": "2025-10-28T09:42:37Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "510dc8242fd043d0b29364be36f43e28503bcca0"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J7CRj",
+          "commit": {
+            "abbreviatedOid": "99bc57a"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T09:38:09Z",
+          "updatedAt": "2025-10-28T09:38:10Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nEnsuring service affinity for flows is a feature that can be configured on the C-PS when the service is deployed (i.e., all flows bound to a service) or determined at the time of newly formulated service requests (i.e., specific flow).\r\n```",
+              "createdAt": "2025-10-28T09:38:09Z",
+              "updatedAt": "2025-10-28T09:38:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J7KvA",
+          "commit": {
+            "abbreviatedOid": "99bc57a"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T09:46:13Z",
+          "updatedAt": "2025-10-28T09:46:13Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 142,
       "id": "PR_kwDOJBcdGs6v3xaT",
       "title": "(5.1) Provisioning clarification (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/142",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:46:11Z",
-      "updatedAt": "2025-10-27T13:59:10Z",
+      "updatedAt": "2025-10-28T09:43:17Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
+      "baseRefOid": "0179abc496aefddb7a5fe6e3a112e84ba1351015",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-11",
-      "headRefOid": "32b49ddb635145eabc34e693f8b5434e4959597a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "cd512fd910c80d64ff6cab3e23db2763a2fc4fc7",
+      "closedAt": "2025-10-28T09:43:15Z",
+      "mergedAt": "2025-10-28T09:43:15Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "0b99656c4fb2dc32bd86fd50aff60590a8a30bfb"
+      },
       "comments": [],
       "reviews": []
     },
@@ -7661,24 +8054,26 @@
       "id": "PR_kwDOJBcdGs6v33su",
       "title": "(5.3) normalization (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/143",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T11:54:19Z",
-      "updatedAt": "2025-10-27T13:36:04Z",
+      "updatedAt": "2025-10-28T09:52:10Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
+      "baseRefOid": "0b99656c4fb2dc32bd86fd50aff60590a8a30bfb",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-12",
-      "headRefOid": "a78eec0f811897c41fe53384ac852ec59aa9e91a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "02d86fc8d27c8c394cf5e0529eb5fa7307aff5bf",
+      "closedAt": "2025-10-28T09:52:09Z",
+      "mergedAt": "2025-10-28T09:52:09Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "68c57195a2638647c3daee57977c800c1e4ef84b"
+      },
       "comments": [],
       "reviews": []
     },
@@ -7687,46 +8082,290 @@
       "id": "PR_kwDOJBcdGs6v5ceF",
       "title": "(5.2) clarification about centralized control \"plane\" (Adrian's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/144",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "5.2\r\n\r\n   *  *Distributed model*:  Computing metrics are distributed among network devices directly using distributed protocols without interactions with a centralized control plane.  Service scheduling function is performed by the CATS-Forwarders in the distribution model, therefore, the C-PS is integrated into an Ingress CATS-Forwarder.\r\n\r\n   *  *Centralized model*:  Computing metrics are collected by a centralized control plane, and then the centralized control plane computes the forwarding path for service requests and syncs up with the Ingress CATS-Forwarder.  In this model, C-PS is implemented in the centralized control plane.\r\n\r\nThe concept of a \"centralized control plane\" is unclear. Perhaps this means \"centralized controller\"? Or you could be distinguishing between point-to-point protocols and a distributed control plane? But, of course, either control plane protocol approach could be used with distributed components or centralized components. And, I think, it is the components that are important for the architecture, not the protocol methods. This is confirmed by other paragraphs in the section.",
       "createdAt": "2025-10-27T13:44:14Z",
-      "updatedAt": "2025-10-27T13:58:56Z",
+      "updatedAt": "2025-10-28T09:52:41Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-13",
       "headRefOid": "a80fc89e9f30092e799982c5544a390e4747cefc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-10-28T09:52:39Z",
+      "mergedAt": "2025-10-28T09:52:39Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "cc2e3910ed3770670d896cc7610f1d41c6f4a4c3"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J4vTQ",
+          "commit": {
+            "abbreviatedOid": "a80fc89"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T07:42:28Z",
+          "updatedAt": "2025-10-28T07:42:28Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 145,
       "id": "PR_kwDOJBcdGs6v5p3L",
       "title": "Move distributed models into deployment section (Med's review)",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/145",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-27T13:58:00Z",
-      "updatedAt": "2025-10-27T13:59:23Z",
+      "updatedAt": "2025-10-29T06:26:46Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
-      "baseRefOid": "e9e5461240302a4d2d32bb54beed289e649f582c",
+      "baseRefOid": "9e46b6d636a411fbea7d28d4134107ef68804f40",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-14",
-      "headRefOid": "48c4f48c8a72a93c6fa11045cd5ec8591b54b470",
+      "headRefOid": "80b0821a75aee61d86a157672569e9e5de5b1f14",
+      "closedAt": "2025-10-28T13:33:04Z",
+      "mergedAt": "2025-10-28T13:33:04Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "44c6c71c1f6077751c7de8c5188166dd674222f1"
+      },
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://author-tools.ietf.org/api/iddiff?url_1=https://ietf-wg-cats.github.io/draft-ietf-cats-framework/draft-ietf-cats-framework.txt&url_2=https://ietf-wg-cats.github.io/draft-ietf-cats-framework/boucadair-patch-14/draft-ietf-cats-framework.txt\r\n\r\nis the diff of this PR? we might move the text of 4.2.1-4.2.3 to section 5.2 instead of 5.3? ",
+          "createdAt": "2025-10-28T09:55:13Z",
+          "updatedAt": "2025-10-28T09:55:13Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I approved two commits. But the third one needs some discussion. ",
+          "createdAt": "2025-10-28T09:59:57Z",
+          "updatedAt": "2025-10-28T10:00:10Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> https://author-tools.ietf.org/api/iddiff?url_1=https://ietf-wg-cats.github.io/draft-ietf-cats-framework/draft-ietf-cats-framework.txt&url_2=https://ietf-wg-cats.github.io/draft-ietf-cats-framework/boucadair-patch-14/draft-ietf-cats-framework.txt\r\n> \r\n> is the diff of this PR? we might move the text of 4.2.1-4.2.3 to section 5.2 instead of 5.3?\r\n\r\nYes, that's the diff.\r\n\r\nI'm still not comfortable with this for various reasons:\r\n\r\n* There is redundant text between the bullet example list and the subsections\r\n* The subsections may be seen as a reco for how metric are bound to instance/service contact/etc. \r\n\r\nI tend to move this to an appendix or simply delete these subsections.",
+          "createdAt": "2025-10-28T10:31:11Z",
+          "updatedAt": "2025-10-28T10:31:11Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J7UHq",
+          "commit": {
+            "abbreviatedOid": "6e0b865"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T09:56:59Z",
+          "updatedAt": "2025-10-28T09:56:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7J7Ul5",
+          "commit": {
+            "abbreviatedOid": "6e0b865"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T09:57:32Z",
+          "updatedAt": "2025-10-28T09:57:32Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7KJ1_-",
+          "commit": {
+            "abbreviatedOid": "80b0821"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-29T03:52:38Z",
+          "updatedAt": "2025-10-29T03:52:38Z",
+          "comments": [
+            {
+              "originalPosition": 105,
+              "body": "has scalability implications?",
+              "createdAt": "2025-10-29T03:52:38Z",
+              "updatedAt": "2025-10-29T03:52:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7KJ2Lr",
+          "commit": {
+            "abbreviatedOid": "80b0821"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "The rest is ok to me. OK with moving the example to appendix. Thanks for the excellent work!",
+          "createdAt": "2025-10-29T03:53:20Z",
+          "updatedAt": "2025-10-29T03:53:20Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJBcdGs7KK2oH",
+          "commit": {
+            "abbreviatedOid": "80b0821"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-29T06:26:46Z",
+          "updatedAt": "2025-10-29T06:26:46Z",
+          "comments": [
+            {
+              "originalPosition": 105,
+              "body": "Good catch. Fixed in https://github.com/ietf-wg-cats/draft-ietf-cats-framework/commit/7ff7b34f910c62dbcb497c2aa1b495e0ee80b309",
+              "createdAt": "2025-10-29T06:26:46Z",
+              "updatedAt": "2025-10-29T06:26:46Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 146,
+      "id": "PR_kwDOJBcdGs6wFBOS",
+      "title": "Remove CATS-serviced site (Adrian's review)",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/146",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-10-28T07:52:09Z",
+      "updatedAt": "2025-10-28T10:02:20Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "cc2e3910ed3770670d896cc7610f1d41c6f4a4c3",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-15",
+      "headRefOid": "05c98f1d647a8632916e61dc9609a8472df024fb",
+      "closedAt": "2025-10-28T10:02:19Z",
+      "mergedAt": "2025-10-28T10:02:19Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "9e46b6d636a411fbea7d28d4134107ef68804f40"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7J5BJB",
+          "commit": {
+            "abbreviatedOid": "eb27dd2"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-28T08:01:17Z",
+          "updatedAt": "2025-10-28T08:01:17Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 147,
+      "id": "PR_kwDOJBcdGs6wJRyj",
+      "title": "Clarifications about hybrid model (Adrian's review)",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/147",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-10-28T13:27:06Z",
+      "updatedAt": "2025-10-28T13:31:48Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "boucadair-patch-14",
+      "baseRefOid": "5fc316465861f9d6b2ca0e8a225391357473c57b",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "e1d9dc012e1900700eb6245e2b6679cf278d33af",
+      "closedAt": "2025-10-28T13:31:46Z",
+      "mergedAt": "2025-10-28T13:31:46Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "80b0821a75aee61d86a157672569e9e5de5b1f14"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 148,
+      "id": "PR_kwDOJBcdGs6wJvYG",
+      "title": "CSCI-ID elaboration (Adrian's review)",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/148",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-10-28T13:59:12Z",
+      "updatedAt": "2025-10-28T14:00:12Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "0eab622b391a50e985a4095511aaac02c0073648",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "3f23dfd34fc3b84469bdfd9227126a378a7c7a41",
+      "closedAt": "2025-10-28T14:00:10Z",
+      "mergedAt": "2025-10-28T14:00:10Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "9241150c9301506a8e45f99deef5a68dd074347e"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 149,
+      "id": "PR_kwDOJBcdGs6wVSkC",
+      "title": "minor edits",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/149",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-10-29T10:16:59Z",
+      "updatedAt": "2025-10-29T10:16:59Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "7ff7b34f910c62dbcb497c2aa1b495e0ee80b309",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "fb8adde74fdb6c072b902cd61f8796986827a04e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
