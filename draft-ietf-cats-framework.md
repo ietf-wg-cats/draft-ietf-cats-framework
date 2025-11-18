@@ -128,6 +128,7 @@ The CATS framework is an overlay framework for the selection of the suitable ser
 
 Furthermore, this document describes a workflow of the main CATS procedures ({{sec-cats-workflow}}) executed in both the control and data planes.
 
+This document assumes that CATS functional elements are hosted in a provider network. As such, it is out of scope to discuss deployment options where such elements are co-located with a client.
 
 # Terminology
 
