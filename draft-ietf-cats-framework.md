@@ -457,11 +457,9 @@ Also, companion supervision and OAM tools are needed to drive CATS provisioning 
 * Expose encapsulation capabilities supported by CATS-Forwarders.
 * Retrieve active classification table of C-TC elements.
 * Retrieve active steering rules in CATS-Forwarders.
-* Retrieve active 
+* Retrieve active installed policies in C-PSes.
 * Retrieve the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.
-* Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior).
-
-See also {{sec-verify}}.
+* Enable OAM tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior). See also {{sec-verify}}.
 
 ## Deployment Considerations {#sec-cats-deployment}
 
