@@ -443,16 +443,25 @@ In addition to the CATS steering policies that are communicated by a C-PS to an 
 * Supply information needed to connect C-PS elements with C-NMAs and C-SMAs.
 * Allocate identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
 * Provide C-PS elements with the set of optimization metrics (per service) and an optimization policy.
-* Expose encapsulation capabilities supported by CATS-Forwarders.
 * Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
-* Expose classification capabilities of C-TC elements.
-* Retrieve active classification table of C-TC elements.
 * Reset the classification table of C-TC elements.
 * Set the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders. Such correlation is needed to help identify issues induced by the underlying encapsulation.
-* Enable OAM tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior).
-
 
 Provisioning includes configuration as well as distribution through protocols. Specifically, the above tasks can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, RESTCONF {{?RFC8040}}, YANG-Push {{?RFC8639}}, etc.). It is out of scope to discuss required CATS extensions to these protocols.
+
+## Supervision of CATS Components & CATS OAM {#sec-oam}
+
+Also, companion supervision and OAM tools are needed to drive CATS provisioning but also to assess the overall CATS operations. This includes, but is not limited to:
+
+* Expose classification capabilities of C-TC elements.
+* Expose encapsulation capabilities supported by CATS-Forwarders.
+* Retrieve active classification table of C-TC elements.
+* Retrieve active steering rules in CATS-Forwarders.
+* Retrieve active 
+* Retrieve the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.
+* Enable tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior).
+
+See also {{sec-verify}}.
 
 ## Deployment Considerations {#sec-cats-deployment}
 
@@ -489,7 +498,7 @@ When C-SMAs are co-located with CATS-Forwarders where there is limited resource 
 
 In order to ensure consistent CATS decisions, the same normalization and aggregation functions must be enabled in all involved CATS components. Also, in the case of service contact instances and C-SMAs are provided by different vendors, it is needed to use the same common normalization function and aggregation functions, so that the service contact instance selection result can be fair among all the service contact instances. To that aim, a set of normalization and aggregation functions must standardized. To accommodate contexts where multiple functions are supported, CATS implementations must expose a configuration parameter to control the activation of normalization and aggregation functions.
 
-## Verifying Correct Operations
+## Verifying Correct Operations {#sec-verify}
 
 A CATS implementation must log error events for better network management and operation. Means to assess the reachability and trace CATS paths should be supported.
 
