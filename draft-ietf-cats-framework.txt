@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 22 May 2026                                        China Mobile
+Expires: 23 May 2026                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                        18 November 2025
+                                                        19 November 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 May 2026.
+   This Internet-Draft will expire on 23 May 2026.
 
 Copyright Notice
 
@@ -80,10 +80,11 @@ Table of Contents
      4.4.  Service Contact Instance Affinity
    5.  Operational Considerations
      5.1.  Provisioning of CATS Components
-     5.2.  Deployment Considerations
-     5.3.  Implementation Considerations on Using CATS Metrics
-     5.4.  Verifying Correct Operations
-     5.5.  Impact on Network Operations
+     5.2.  Supervision of CATS Components & CATS OAM
+     5.3.  Deployment Considerations
+     5.4.  Implementation Considerations on Using CATS Metrics
+     5.5.  Verifying Correct Operations
+     5.6.  Impact on Network Operations
    6.  Security Considerations
    7.  Privacy Considerations
    8.  IANA Considerations
@@ -588,7 +589,7 @@ Table of Contents
 
    The following subsections provide an overview of a typical CATS
    workflow.  In order to enable CATS in a given domain, some
-   provisioning is needed; see more details in Section 5.1.  Section 5.2
+   provisioning is needed; see more details in Section 5.1.  Section 5.3
    describes several deployment options (distributed, centralized, and
    hybrid models) to accommodate a variety of contexts.
 
@@ -611,7 +612,7 @@ Table of Contents
 
    The C-SMA then advertises CS-IDs along with metrics to related C-PSes
    in the network.  Depending on the deployment choice, CS-IDs with
-   metrics may be distributed in different ways.  Refer to Section 5.3
+   metrics may be distributed in different ways.  Refer to Section 5.4
    for more deployment considerations.
 
    The computing metrics include computing-related metrics and
@@ -653,7 +654,7 @@ Table of Contents
    both service and network metrics that were advertised.  A C-PS may be
    collocated with an Ingress CATS-Forwarder (as shown in Figure 3) or
    logically centralized (in the centralized or hybrid models
-   (Section 5.2)).
+   (Section 5.3)).
 
    This document does not specify any specific algorithm for path
    selection purposes to be supported by C-PSes in order to not
@@ -748,15 +749,9 @@ Table of Contents
    *  Provide C-PS elements with the set of optimization metrics (per
       service) and an optimization policy.
 
-   *  Expose encapsulation capabilities supported by CATS-Forwarders.
-
    *  Configure specific encapsulation capabilities of CATS-Forwarders
       for use, including any credentials for mutual authentication
       between peer CATS-Forwarders.
-
-   *  Expose classification capabilities of C-TC elements.
-
-   *  Retrieve active classification table of C-TC elements.
 
    *  Reset the classification table of C-TC elements.
 
@@ -765,17 +760,36 @@ Table of Contents
       is needed to help identify issues induced by the underlying
       encapsulation.
 
-   *  Enable tools to check the correct behavior of various entities
-      (e.g., classification rules, steering rules, and forwarding
-      behavior)
-
    Provisioning includes configuration as well as distribution through
    protocols.  Specifically, the above tasks can be enabled using a
    variety of means (NETCONF [RFC6241], IPFIX [RFC7011], RESTCONF
    [RFC8040], YANG-Push [RFC8639], etc.).  It is out of scope to discuss
    required CATS extensions to these protocols.
 
-5.2.  Deployment Considerations
+5.2.  Supervision of CATS Components & CATS OAM
+
+   Also, companion supervision and OAM tools are needed to drive CATS
+   provisioning but also to assess the overall CATS operations.  This
+   includes, but is not limited to:
+
+   *  Expose classification capabilities of C-TC elements.
+
+   *  Expose encapsulation capabilities supported by CATS-Forwarders.
+
+   *  Retrieve active classification table of C-TC elements.
+
+   *  Retrieve active steering rules in CATS-Forwarders.
+
+   *  Retrieve active installed policies in C-PSes.
+
+   *  Retrieve the traffic counters at CATS-Forwarders to ease
+      correlation between both Ingress and Egress CATS-Forwarders.
+
+   *  Enable OAM tools to check the correct behavior of various entities
+      (e.g., classification rules, steering rules, and forwarding
+      behavior).  See also Section 5.5.
+
+5.3.  Deployment Considerations
 
    This document does not make any assumption about how the various CATS
    functional elements are implemented and deployed.  Concretely,
@@ -839,7 +853,7 @@ Table of Contents
    Deployment considerations about the case of multiple service
    providers are out of scope.
 
-5.3.  Implementation Considerations on Using CATS Metrics
+5.4.  Implementation Considerations on Using CATS Metrics
 
    Advertising per-instance computing-related metrics instead of
    aggregating them into per-site advertisements has scalability
@@ -882,13 +896,13 @@ Table of Contents
    expose a configuration parameter to control the activation of
    normalization and aggregation functions.
 
-5.4.  Verifying Correct Operations
+5.5.  Verifying Correct Operations
 
    A CATS implementation must log error events for better network
    management and operation.  Means to assess the reachability and trace
    CATS paths should be supported.
 
-5.5.  Impact on Network Operations
+5.6.  Impact on Network Operations
 
    Computing metrics are collected and distributed in CATS.  A new
    function is needed to be deployed to manage the cooperation between
