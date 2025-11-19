@@ -460,6 +460,7 @@ Also, companion supervision and OAM tools are needed to drive CATS provisioning 
 * Retrieve active installed policies in C-PSes.
 * Retrieve the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders.
 * Enable OAM tools to check the correct behavior of various entities (e.g., classification rules, steering rules, and forwarding behavior). See also {{sec-verify}}.
+* Enable OAM tools for performance measurement.
 
 ## Deployment Considerations {#sec-cats-deployment}
 
