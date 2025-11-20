@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-02T01:40:13.608589+00:00",
+  "timestamp": "2025-11-20T01:26:46.175172+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -8388,6 +8388,88 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 150,
+      "id": "PR_kwDOJBcdGs60CE0m",
+      "title": "Joel's comment about CATS steering in a host",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/150",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-11-18T07:53:18Z",
+      "updatedAt": "2025-11-18T13:01:04Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "4e48d2462af351e2270958cb27cb11df84fc6b51",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "9d4cf5199605d04184ea3053419419b60e60cf1a",
+      "closedAt": "2025-11-18T13:01:03Z",
+      "mergedAt": "2025-11-18T13:01:03Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "9699f0740c36e3f7328326cae1b4dc50528dd49f"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 151,
+      "id": "PR_kwDOJBcdGs60G8vE",
+      "title": "OAM tools",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/151",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-11-18T13:02:57Z",
+      "updatedAt": "2025-11-19T07:04:06Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "9699f0740c36e3f7328326cae1b4dc50528dd49f",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "OAM-comment",
+      "headRefOid": "91f3e9f4b89f29cfc74418ccb95471e2f7478c85",
+      "closedAt": "2025-11-19T07:04:04Z",
+      "mergedAt": "2025-11-19T07:04:04Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "85242d361364efff319ce775427cd91c82793c59"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 152,
+      "id": "PR_kwDOJBcdGs60UXLO",
+      "title": "add perf OAM item",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/152",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-11-19T10:20:31Z",
+      "updatedAt": "2025-11-19T10:20:31Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "85242d361364efff319ce775427cd91c82793c59",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "79c19724a5fe9a5210b4fd477eca0229850d35b6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
