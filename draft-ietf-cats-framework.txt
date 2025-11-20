@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 23 May 2026                                        China Mobile
+Expires: 24 May 2026                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                        19 November 2025
+                                                        20 November 2025
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 May 2026.
+   This Internet-Draft will expire on 24 May 2026.
 
 Copyright Notice
 
@@ -789,6 +789,8 @@ Table of Contents
       (e.g., classification rules, steering rules, and forwarding
       behavior).  See also Section 5.5.
 
+   *  Enable OAM tools for performance measurement.
+
 5.3.  Deployment Considerations
 
    This document does not make any assumption about how the various CATS
@@ -982,9 +984,9 @@ Table of Contents
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
               "Computing-Aware Traffic Steering (CATS) Problem
               Statement, Use Cases, and Requirements", Work in Progress,
-              Internet-Draft, draft-ietf-cats-usecases-requirements-08,
-              12 October 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-cats-usecases-requirements-08>.
+              Internet-Draft, draft-ietf-cats-usecases-requirements-09,
+              19 November 2025, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-usecases-requirements-09>.
 
    [I-D.yao-cats-awareness-architecture]
               Yao, H., wang, X., Li, Z., Huang, D., and C. Lin,
