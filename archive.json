@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-20T01:26:46.175172+00:00",
+  "timestamp": "2025-11-23T01:48:35.814866+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -8450,24 +8450,26 @@
       "id": "PR_kwDOJBcdGs60UXLO",
       "title": "add perf OAM item",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/152",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-11-19T10:20:31Z",
-      "updatedAt": "2025-11-19T10:20:31Z",
+      "updatedAt": "2025-11-20T03:14:19Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "85242d361364efff319ce775427cd91c82793c59",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-2",
       "headRefOid": "79c19724a5fe9a5210b4fd477eca0229850d35b6",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-11-20T03:14:18Z",
+      "mergedAt": "2025-11-20T03:14:18Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "b0c6221e8d388c34106d468535af49aa57e88507"
+      },
       "comments": [],
       "reviews": []
     }
