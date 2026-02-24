@@ -240,27 +240,26 @@ CATS Service Contact Instance ID (CSCI-ID):
 A high-level view of the CATS framework, without expanding the functional entities in the network, is illustrated in {{fig-cats-fw}}.
 
 ~~~ aasvg
-   +----------------------------------+  |         +--------+
-   |         Management Plane         |  |         |        |
-   +----------------------------------+  |<=======>| C-SMA  |
-   |           Control Plane          |  |         |        |
-   +----------------------------------+  |         +---+----+
-                   /\                    |             |
-                   ||                    |             |
-                   \/                    |             |
-   +----------------------------------+  |         +--------+
-   |           Data Plane             |  |         | +--------+
-   +----------------------------------+  |<=======>| |Service |
-                                         |         +-|Contact |
-                                         |           |Instance|
-                                         |           +--------+
+   .----------------------------------.  |         .---------.
+   |         Management Plane         |  |         |         |
+   +----------------------------------+  |<=======>|  C-SMA  |
+   |           Control Plane          |  |         |         |
+   '----------------------------------'  |         '---+-----'
+                    ^                    |             |
+                    |                    |             |
+                    v                    |             |
+   .----------------------------------.  |         .---+----.
+   |           Data Plane             |  |         | .------+-.
+   '----------------------------------'  |<=======>| |Service |
+                                         |         | |Contact |
+                                         |         '-+Instance|
+                                         |           '----+---'
                                          |                |
-                                         |         +--------+
-                                         |         | +--------+
+                                         |         .------+-.
+                                         |         | .------+-.
                                          |         | |Service |
-                                         |         +-|Instance|
-                                         |           +--------+
-
+                                         |         '-+Instance|
+                                         |           '--------'
 ~~~
 {: #fig-cats-fw title="Main CATS Interactions"}
 
@@ -283,45 +282,45 @@ Depending on implementation and deployment, these planes may consist of several 
 CATS nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service contact instances and network. The main CATS functional components and their interactions are shown in {{fig-cats-components}}. These components are described in the subsections that follow.
 
 ~~~ aasvg
-       +------+             +------+           +------+
-     +------+ |           +------+ |         +------+ |
-     |client|-+           |client|-+         |client|-+
-     +---+--+             +---+--+           +---+--+
+       .------.             .------.           .------.
+     .-+----. |           .-+----. |         .-+----. |
+     |client+-'           |client+-'         |client+-'
+     '---+--'             '---+--'           '---+--'
          |                    |                  |
-         | +----------------+ |            +-----+----------+
+         | .----------------. |            .-----+----------.
          '-+    C-TC#1      +-'      .-----+    C-TC#2      |
-           |----------------|        |     |----------------|
-           |     |C-PS#1    |    +------+  |CATS-Forwarder 4|
-     ......|     +----------|....|C-PS#2|..|                |...
-     :     |CATS-Forwarder 2|    |      |  |                |  .
-     :     +----------------+    +------+  +----------------+  :
+           +-----+----------+        |     +----------------+
+           |     |  C-PS#1  |    .---+--.  |CATS-Forwarder 4|
+           |     '----------+    |C-PS#2|  |                |
+     ......|CATS-Forwarder 2|....|      |..|                |...
+     :     '----------------'    '------'  '----------------'  :
      :                                                         :
-     :                                            +-------+    :
+     :                                            .-------.    :
      :                         Underlay           | C-NMA |    :
-     :                      Infrastructure        +-------+    :
+     :                      Infrastructure        '-------'    :
      :                                                         :
      :                                                         :
-     : +----------------+                +----------------+    :
-     : |CATS-Forwarder 1|  +-------+     |CATS-Forwarder 3|    :
-     :.|                |..|C-SMA#1|.... |                |....:
-       +---------+------+  ++------+     +----------------+
-                 |          |            |   C-SMA#2      |
-                 |          |            +-------+--------+
-                 |          |                    |
-                 |          |                    |
-                +------------+             +------------+
-              +------------+ |           +------------+ |
-              |  Service   | |           |  Service   | |
-              |  Contact   | |           |  Contact   | |
-              |  Instance  |-+           |  Instance  |-+
-              +------------+             +------------+
+     : .----------------.                .----------------.    :
+     : |CATS-Forwarder 1|  .-------.     |CATS-Forwarder 3|    :
+     :.|                |..|C-SMA#1|.....|                |....:
+       '--------+-------'  '-+-----'     +----------------+
+                |            |           |   C-SMA#2      |
+                |            |           '-------+--------'
+                |            |                   |
+                |            |                   |
+              .-+------------+-.           .-----+-------.
+            .-+-------------.  |         .-+----------.  |
+            |    Service    |  |         |  Service   |  |
+            |    Contact    |  |         |  Contact   |  |
+            |    Instance   +--'         |  Instance  +--'
+            '--------+------'            '------+-----'
                      |                          |
-               +----------+               +----------+
-             +----------+ |             +----------+ |
-           +----------+ | |             | Service  | |
-           | Service  | |-+             | Instance |-+
-           | Instance |-+               +----------+
-           +----------+                Service Site 2
+               .-----+----.               .-----+----.
+             .-+--------. |             .-+--------. |
+           .-+--------. | |             | Service  | |
+           | Service  | +-'             | Instance +-'
+           | Instance +-'               '----------'
+           '----------'                Service Site 2
           Service Site 1
 ~~~
 {: #fig-cats-components title="CATS Functional Components"}
