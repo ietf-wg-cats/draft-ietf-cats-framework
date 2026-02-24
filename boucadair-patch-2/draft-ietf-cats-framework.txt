@@ -145,7 +145,7 @@ Table of Contents
 
    The CATS framework is an overlay framework for the selection of the
    suitable service contact instances from a set of candidates.  A
-   combination of networking and computing metrics determine the exact
+   combination of networking and computing metrics determines the exact
    characterization of services as 'suitable' or not.
 
    Furthermore, this document describes a workflow of the main CATS
@@ -174,12 +174,12 @@ Table of Contents
       metrics to enable computing-aware traffic steering policies.
 
    Metric:  A quantitative measure that provides suitable input to a
-      selection mechanism for CATS decision making.
+      selection mechanism for CATS decision-making.
 
    Computing metrics:  Metrics specific to the computing resources in
-      the underlying CATS systems as distinct from other metrics, such
-      as network metrics.  Examples of computing metrics are discussed
-      in [I-D.ietf-cats-metric-definition].
+      the underlying CATS systems as opposed to other metrics, such as
+      network metrics.  Examples of computing metrics are discussed in
+      [I-D.ietf-cats-metric-definition].
 
    Service:  An offering that is made available by a service provider by
       orchestrating a set of resources (networking, compute, storage,
@@ -311,8 +311,8 @@ Table of Contents
    service instances.  Such instances may be hosted within the same or
    distinct service sites.  A given service is represented by the same
    service identifier (Section 3.2).  CATS does not make any additional
-   assumption about these instances other than they are reachable via
-   one or multiple service contact instances.
+   assumption about these instances other than that they are reachable
+   via one or multiple service contact instances.
 
 3.2.  CATS Identifiers
 
@@ -335,10 +335,10 @@ Table of Contents
    CATS Service Contact Instance ID (CSCI-ID):  An identifier of a
       specific service contact instance.
 
-      This document does not make any assumption about the structure and
-      semantic of this identifier.  An example of such ID is a unicast
-      IP address that uniquely identifies the location of a service
-      instance.
+      This document makes no assumptions about the structure or
+      semantics of this identifier.  One example of such an ID is a
+      unicast IP address, which uniquely identifies the location of a
+      service instance.
 
 3.3.  Framework Overview
 
@@ -372,7 +372,7 @@ Table of Contents
    box in Figure 1.  However, this does not imply that a service
    instance is hosted in a single node.  Whether a service instance is
    realized by invoking resources within the same node or by chaining
-   resources exposed by several nodes is deployment specific.
+   resources exposed by several nodes is deployment-specific.
 
    The following planes are defined:
 
@@ -460,7 +460,7 @@ Table of Contents
    of a CATS system.
 
    A single service can be represented and accessed via several contact
-   instances that run in same or different regions of a network.
+   instances that run in the same or different regions of a network.
 
    As service instances are accessed via a service contact instance, a
    client will not see the service instances but only the service
@@ -568,8 +568,8 @@ Table of Contents
 
    Note that, depending on the design considerations and service
    requirements, per-service contact instance computing-related metrics
-   or aggregated per-site computing related metrics (and a combination
-   thereof) can be used by a C-PS.  Using aggregated per-site computing
+   or aggregated per-site computing-related metrics (and a combination
+   thereof) can be used by a C-PS.  Using aggregated per-site computing-
    related metrics appears as a preferred option scalability-wise, but
    relies on Egress CATS-Forwarders that connect to various service
    contact instances to select the proper service contact instance.  An
@@ -657,14 +657,14 @@ Table of Contents
    (Section 5.3)).
 
    This document does not specify any specific algorithm for path
-   selection purposes to be supported by C-PSes in order to not
-   constrain the CATS framework to one possible selection only.
-   Instead, it is expected that a service request or local policy may
-   feed the C-PS with appropriate information on that selection logic
-   that takes the suitable metric information as input and the selected
-   service contact instance as output.  Such appropriate information may
-   be utilized to differentiate selection mechanisms to enable service-
-   specific selections.
+   selection purposes to be supported by C-PSes so as not to constrain
+   the CATS framework to one possible selection only.  Instead, it is
+   expected that a service request or local policy may feed the C-PS
+   with appropriate information on that selection logic that takes the
+   suitable metric information as input and the selected service contact
+   instance as output.  Such appropriate information may be utilized to
+   differentiate selection mechanisms to enable service-specific
+   selections.
 
    In the example shown in Figure 3, the client sends a service request
    via the network through the "CATS-Forwarder 1", which is an Ingress
@@ -719,8 +719,8 @@ Table of Contents
    for service-specific instance affinity methods.  However, service
    contact instance affinity information may be configurable on a per-
    service basis.  For each service, the information can include the
-   flow or packets identification type and means, affinity timeout
-   value, etc.
+   flow or packet identification type and means, affinity timeout value,
+   etc.
 
    This document does not define any mechanism for defining or enforcing
    service contact instance affinity.
@@ -756,9 +756,9 @@ Table of Contents
    *  Reset the classification table of C-TC elements.
 
    *  Set the traffic counters at CATS-Forwarders to ease correlation
-      between both Ingress and Egress CATS-Forwarders.  Such correlation
-      is needed to help identify issues induced by the underlying
-      encapsulation.
+      between both Ingress and Egress CATS-Forwarders.  Such a
+      correlation is needed to help identify issues induced by the
+      underlying encapsulation.
 
    Provisioning includes configuration as well as distribution through
    protocols.  Specifically, the above tasks can be enabled using a
@@ -776,7 +776,7 @@ Table of Contents
 
    *  Expose encapsulation capabilities supported by CATS-Forwarders.
 
-   *  Retrieve active classification table of C-TC elements.
+   *  Retrieve the active classification table of C-TC elements.
 
    *  Retrieve active steering rules in CATS-Forwarders.
 
@@ -802,7 +802,7 @@ Table of Contents
    provider.  The deployment can also be informed by specific use case
    requirements [I-D.ietf-cats-usecases-requirements].
 
-   For example, in a centralized design, both the computing related
+   For example, in a centralized design, both the computing-related
    metrics from the C-SMAs and the network metrics are collected by a
    (logically) centralized path computation logic (e.g., a PCE).  In
    this case, the CATS computation logic may process incoming service
@@ -881,8 +881,8 @@ Table of Contents
    When C-SMAs are co-located with CATS-Forwarders where there is
    limited resource for processing, the placement of normalization
    functions in a C-SMA may bring too much overhead and may influence
-   the routing efficiency.  Therefore, this document suggests to
-   implement the normalization function at the service contact
+   the routing efficiency.  Therefore, this document suggests
+   implementing the normalization function at the service contact
    instances.  Regarding the aggregation functions, it can be
    implemented in a C-SMA or the service contact instances.
 
@@ -931,7 +931,7 @@ Table of Contents
    the network and the location of compute resources hosted in service
    sites.  This information may be used by an attacker to identify weak
    spots in an operator's network.  Furthermore, such information may be
-   modified by an attacker resulting in disrupted service delivery for
+   modified by an attacker, resulting in disrupted service delivery for
    the clients, even including misdirection of traffic to an attacker's
    service implementation.  CATS solutions must support authentication
    and integrity-protection mechanisms between C-SMAs/C-NMAs and C-PSes,
@@ -1305,6 +1305,8 @@ Appendix B.  Acknowledgements
 
    Special thanks to Adrian Farrel for the careful shepherd review and
    various suggestions that enhanced this specification.
+
+   Thanks to Thomas Fossati for the GENART review.
 
 Contributors
 
