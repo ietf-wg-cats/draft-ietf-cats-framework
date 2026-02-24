@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 23 May 2026                                        China Mobile
+Expires: 28 August 2026                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                        19 November 2025
+                                                        24 February 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,11 +40,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 May 2026.
+   This Internet-Draft will expire on 28 August 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -345,26 +345,26 @@ Table of Contents
    A high-level view of the CATS framework, without expanding the
    functional entities in the network, is illustrated in Figure 1.
 
-      +----------------------------------+  |         +--------+
-      |         Management Plane         |  |         |        |
-      +----------------------------------+  |<=======>| C-SMA  |
-      |           Control Plane          |  |         |        |
-      +----------------------------------+  |         +---+----+
-                      /\                    |             |
-                      ||                    |             |
-                      \/                    |             |
-      +----------------------------------+  |         +--------+
-      |           Data Plane             |  |         | +--------+
-      +----------------------------------+  |<=======>| |Service |
-                                            |         +-|Contact |
-                                            |           |Instance|
-                                            |           +--------+
+      .----------------------------------.  |         .---------.
+      |         Management Plane         |  |         |         |
+      +----------------------------------+  |<=======>|  C-SMA  |
+      |           Control Plane          |  |         |         |
+      '----------------------------------'  |         '---+-----'
+                       ^                    |             |
+                       |                    |             |
+                       v                    |             |
+      .----------------------------------.  |         .---+----.
+      |           Data Plane             |  |         | .------+-.
+      '----------------------------------'  |<=======>| |Service |
+                                            |         | |Contact |
+                                            |         '-+Instance|
+                                            |           '----+---'
                                             |                |
-                                            |         +--------+
-                                            |         | +--------+
+                                            |         .------+-.
+                                            |         | .------+-.
                                             |         | |Service |
-                                            |         +-|Instance|
-                                            |           +--------+
+                                            |         '-+Instance|
+                                            |           '--------'
 
                       Figure 1: Main CATS Interactions
 
@@ -405,45 +405,45 @@ Table of Contents
    in Figure 2.  These components are described in the subsections that
    follow.
 
-          +------+             +------+           +------+
-        +------+ |           +------+ |         +------+ |
-        |client|-+           |client|-+         |client|-+
-        +---+--+             +---+--+           +---+--+
+          .------.             .------.           .------.
+        .-+----. |           .-+----. |         .-+----. |
+        |client+-'           |client+-'         |client+-'
+        '---+--'             '---+--'           '---+--'
             |                    |                  |
-            | +----------------+ |            +-----+----------+
+            | .----------------. |            .-----+----------.
             '-+    C-TC#1      +-'      .-----+    C-TC#2      |
-              |----------------|        |     |----------------|
-              |     |C-PS#1    |    +------+  |CATS-Forwarder 4|
-        ......|     +----------|....|C-PS#2|..|                |...
-        :     |CATS-Forwarder 2|    |      |  |                |  .
-        :     +----------------+    +------+  +----------------+  :
+              +-----+----------+        |     +----------------+
+              |     |  C-PS#1  |    .---+--.  |CATS-Forwarder 4|
+              |     '----------+    |C-PS#2|  |                |
+        ......|CATS-Forwarder 2|....|      |..|                |...
+        :     '----------------'    '------'  '----------------'  :
         :                                                         :
-        :                                            +-------+    :
+        :                                            .-------.    :
         :                         Underlay           | C-NMA |    :
-        :                      Infrastructure        +-------+    :
+        :                      Infrastructure        '-------'    :
         :                                                         :
         :                                                         :
-        : +----------------+                +----------------+    :
-        : |CATS-Forwarder 1|  +-------+     |CATS-Forwarder 3|    :
-        :.|                |..|C-SMA#1|.... |                |....:
-          +---------+------+  ++------+     +----------------+
-                    |          |            |   C-SMA#2      |
-                    |          |            +-------+--------+
-                    |          |                    |
-                    |          |                    |
-                   +------------+             +------------+
-                 +------------+ |           +------------+ |
-                 |  Service   | |           |  Service   | |
-                 |  Contact   | |           |  Contact   | |
-                 |  Instance  |-+           |  Instance  |-+
-                 +------------+             +------------+
+        : .----------------.                .----------------.    :
+        : |CATS-Forwarder 1|  .-------.     |CATS-Forwarder 3|    :
+        :.|                |..|C-SMA#1|.....|                |....:
+          '--------+-------'  '-+-----'     +----------------+
+                   |            |           |   C-SMA#2      |
+                   |            |           '-------+--------'
+                   |            |                   |
+                   |            |                   |
+                 .-+------------+-.           .-----+-------.
+               .-+-------------.  |         .-+----------.  |
+               |    Service    |  |         |  Service   |  |
+               |    Contact    |  |         |  Contact   |  |
+               |    Instance   +--'         |  Instance  +--'
+               '--------+------'            '------+-----'
                         |                          |
-                  +----------+               +----------+
-                +----------+ |             +----------+ |
-              +----------+ | |             | Service  | |
-              | Service  | |-+             | Instance |-+
-              | Instance |-+               +----------+
-              +----------+                Service Site 2
+                  .-----+----.               .-----+----.
+                .-+--------. |             .-+--------. |
+              .-+--------. | |             | Service  | |
+              | Service  | +-'             | Instance +-'
+              | Instance +-'               '----------'
+              '----------'                Service Site 2
              Service Site 1
 
                     Figure 2: CATS Functional Components
@@ -974,19 +974,19 @@ Table of Contents
 9.  Informative References
 
    [I-D.ietf-cats-metric-definition]
-              Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and H.
-              Shi, "CATS Metrics Definition", Work in Progress,
-              Internet-Draft, draft-ietf-cats-metric-definition-04, 20
-              October 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-cats-metric-definition-04>.
+              Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and G.
+              Zeng, "CATS Metrics Definition", Work in Progress,
+              Internet-Draft, draft-ietf-cats-metric-definition-05, 2
+              February 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-metric-definition-05>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
               "Computing-Aware Traffic Steering (CATS) Problem
               Statement, Use Cases, and Requirements", Work in Progress,
-              Internet-Draft, draft-ietf-cats-usecases-requirements-08,
-              12 October 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-cats-usecases-requirements-08>.
+              Internet-Draft, draft-ietf-cats-usecases-requirements-14,
+              2 February 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-usecases-requirements-14>.
 
    [I-D.yao-cats-awareness-architecture]
               Yao, H., wang, X., Li, Z., Huang, D., and C. Lin,
