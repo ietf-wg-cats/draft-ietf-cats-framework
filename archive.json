@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-23T01:48:35.814866+00:00",
+  "timestamp": "2026-02-26T02:04:58.442715+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -8471,6 +8471,42 @@
         "oid": "b0c6221e8d388c34106d468535af49aa57e88507"
       },
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 153,
+      "id": "PR_kwDOJBcdGs7F2sqv",
+      "title": "GENART Review (Tomas Fossati)",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/153",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-02-24T08:19:22Z",
+      "updatedAt": "2026-02-25T07:08:29Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "b0c6221e8d388c34106d468535af49aa57e88507",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "1f95732ec11ae1860c590e8175b05ff82fe8096b",
+      "closedAt": "2026-02-25T07:08:28Z",
+      "mergedAt": "2026-02-25T07:08:28Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "cfad2e51eeea582d9f14a501ca2db93013df6d13"
+      },
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I am OK with the modification, thanks for your work!\r\n",
+          "createdAt": "2026-02-24T08:47:25Z",
+          "updatedAt": "2026-02-24T08:47:25Z"
+        }
+      ],
       "reviews": []
     }
   ]
