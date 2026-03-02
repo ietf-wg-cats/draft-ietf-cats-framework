@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 29 August 2026                                     China Mobile
+Expires: 3 September 2026                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                        25 February 2026
+                                                            2 March 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 August 2026.
+   This Internet-Draft will expire on 3 September 2026.
 
 Copyright Notice
 
@@ -174,7 +174,8 @@ Table of Contents
       metrics to enable computing-aware traffic steering policies.
 
    Metric:  A quantitative measure that provides suitable input to a
-      selection mechanism for CATS decision-making.
+      selection mechanism for CATS decision-making.  It can be a network
+      metric or a computing metric.
 
    Computing metrics:  Metrics specific to the computing resources in
       the underlying CATS systems as opposed to other metrics, such as
@@ -519,7 +520,8 @@ Table of Contents
    Figure 2) or may be deployed as a standalone component (e.g.,
    "C-PS#2" in Figure 2).  Generally, a standalone C-PS can be a
    functional component of a centralized controller (e.g., a Path
-   Computation Element (PCE) [RFC4655]).
+   Computation Element (PCE) [RFC4655], a Software-Defined Networking
+   (SDN) controller [RFC7149][RFC7426]).
 
    Refer to Section 4.2 for a discussion on metric distribution
    (including interaction with routing protocols).
@@ -976,9 +978,9 @@ Table of Contents
    [I-D.ietf-cats-metric-definition]
               Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and G.
               Zeng, "CATS Metrics Definition", Work in Progress,
-              Internet-Draft, draft-ietf-cats-metric-definition-05, 2
-              February 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-cats-metric-definition-05>.
+              Internet-Draft, draft-ietf-cats-metric-definition-06, 1
+              March 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-cats-metric-definition-06>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
@@ -1045,6 +1047,17 @@ Table of Contents
               Protocol for the Exchange of Flow Information", STD 77,
               RFC 7011, DOI 10.17487/RFC7011, September 2013,
               <https://www.rfc-editor.org/rfc/rfc7011>.
+
+   [RFC7149]  Boucadair, M. and C. Jacquenet, "Software-Defined
+              Networking: A Perspective from within a Service Provider
+              Environment", RFC 7149, DOI 10.17487/RFC7149, March 2014,
+              <https://www.rfc-editor.org/rfc/rfc7149>.
+
+   [RFC7426]  Haleplidis, E., Ed., Pentikousis, K., Ed., Denazis, S.,
+              Hadi Salim, J., Meyer, D., and O. Koufopavlou, "Software-
+              Defined Networking (SDN): Layers and Architecture
+              Terminology", RFC 7426, DOI 10.17487/RFC7426, January
+              2015, <https://www.rfc-editor.org/rfc/rfc7426>.
 
    [RFC7471]  Giacalone, S., Ward, D., Drake, J., Atlas, A., and S.
               Previdi, "OSPF Traffic Engineering (TE) Metric
@@ -1306,7 +1319,8 @@ Appendix B.  Acknowledgements
    Special thanks to Adrian Farrel for the careful shepherd review and
    various suggestions that enhanced this specification.
 
-   Thanks to Thomas Fossati for the GENART review.
+   Thanks to Thomas Fossati for the GENART review and Gyan Mishra for
+   the OPSDIR review.
 
 Contributors
 

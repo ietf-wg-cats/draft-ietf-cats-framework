@@ -1052,11 +1052,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CATS Framework</td>
-<td class="right">February 2026</td>
+<td class="right">March 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 29 August 2026</td>
+<td class="center">Expires 3 September 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1069,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-02-25" class="published">25 February 2026</time>
+<time datetime="2026-03-02" class="published">2 March 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-08-29">29 August 2026</time></dd>
+<dd class="expires"><time datetime="2026-09-03">3 September 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 29 August 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 September 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1319,7 +1319,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <dd class="break"></dd>
 <dt id="section-2-2.7">Metric:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.8">
-          <p id="section-2-2.8.1">A quantitative measure that provides suitable input to a selection mechanism for CATS decision-making.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.8.1">A quantitative measure that provides suitable input to a selection mechanism for CATS decision-making. It can be a network metric or a computing metric.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.9">Computing metrics:</dt>
@@ -1869,7 +1869,7 @@ is deployment-specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
           </h4>
 <p id="section-3.4.4-1">The C-SMAs and C-NMAs share the collected information with C-PSes that use such information to select the Egress CATS-Forwarders (and potentially the service contact instances) where to forward traffic for a given service request. C-PSes also determine the best paths (possibly using tunnels) to forward traffic, according to various criteria that include network state and traffic congestion conditions. The collected information is encoded into one or more metrics that feed the C-PS path selection logic. Such information also includes CS-ID and possibly CSCI-IDs.<a href="#section-3.4.4-1" class="pilcrow">¶</a></p>
 <p id="section-3.4.4-2">There might be one or more C-PSes used to select CATS paths in a CATS infrastructure.<a href="#section-3.4.4-2" class="pilcrow">¶</a></p>
-<p id="section-3.4.4-3">A C-PS can be integrated into CATS-Forwarders (e.g., "C-PS#1" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>) or may be deployed as a standalone component (e.g., "C-PS#2" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>). Generally, a standalone C-PS can be a functional component of a centralized controller (e.g., a Path Computation Element (PCE) <span>[<a href="#RFC4655" class="cite xref">RFC4655</a>]</span>).<a href="#section-3.4.4-3" class="pilcrow">¶</a></p>
+<p id="section-3.4.4-3">A C-PS can be integrated into CATS-Forwarders (e.g., "C-PS#1" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>) or may be deployed as a standalone component (e.g., "C-PS#2" in <a href="#fig-cats-components" class="auto internal xref">Figure 2</a>). Generally, a standalone C-PS can be a functional component of a centralized controller (e.g., a Path Computation Element (PCE) <span>[<a href="#RFC4655" class="cite xref">RFC4655</a>]</span>, a Software-Defined Networking (SDN) controller <span>[<a href="#RFC7149" class="cite xref">RFC7149</a>]</span><span>[<a href="#RFC7426" class="cite xref">RFC7426</a>]</span>).<a href="#section-3.4.4-3" class="pilcrow">¶</a></p>
 <p id="section-3.4.4-4">Refer to <a href="#sec-met-dist" class="auto internal xref">Section 4.2</a> for a discussion on metric distribution (including interaction with routing protocols).<a href="#section-3.4.4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2153,7 +2153,7 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <dl class="references">
 <dt id="I-D.ietf-cats-metric-definition">[I-D.ietf-cats-metric-definition]</dt>
       <dd>
-<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Ros-Giralt, J.</span>, and <span class="refAuthor">G. Zeng</span>, <span class="refTitle">"CATS Metrics Definition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-metric-definition-05</span>, <time datetime="2026-02-02" class="refDate">2 February 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-05">https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Ros-Giralt, J.</span>, and <span class="refAuthor">G. Zeng</span>, <span class="refTitle">"CATS Metrics Definition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-metric-definition-06</span>, <time datetime="2026-03-01" class="refDate">1 March 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-06">https://datatracker.ietf.org/doc/html/draft-ietf-cats-metric-definition-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-cats-usecases-requirements">[I-D.ietf-cats-usecases-requirements]</dt>
       <dd>
@@ -2202,6 +2202,14 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
 <dt id="RFC7011">[RFC7011]</dt>
       <dd>
 <span class="refAuthor">Claise, B., Ed.</span>, <span class="refAuthor">Trammell, B., Ed.</span>, and <span class="refAuthor">P. Aitken</span>, <span class="refTitle">"Specification of the IP Flow Information Export (IPFIX) Protocol for the Exchange of Flow Information"</span>, <span class="seriesInfo">STD 77</span>, <span class="seriesInfo">RFC 7011</span>, <span class="seriesInfo">DOI 10.17487/RFC7011</span>, <time datetime="2013-09" class="refDate">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7011">https://www.rfc-editor.org/rfc/rfc7011</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7149">[RFC7149]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M.</span> and <span class="refAuthor">C. Jacquenet</span>, <span class="refTitle">"Software-Defined Networking: A Perspective from within a Service Provider Environment"</span>, <span class="seriesInfo">RFC 7149</span>, <span class="seriesInfo">DOI 10.17487/RFC7149</span>, <time datetime="2014-03" class="refDate">March 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7149">https://www.rfc-editor.org/rfc/rfc7149</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7426">[RFC7426]</dt>
+      <dd>
+<span class="refAuthor">Haleplidis, E., Ed.</span>, <span class="refAuthor">Pentikousis, K., Ed.</span>, <span class="refAuthor">Denazis, S.</span>, <span class="refAuthor">Hadi Salim, J.</span>, <span class="refAuthor">Meyer, D.</span>, and <span class="refAuthor">O. Koufopavlou</span>, <span class="refTitle">"Software-Defined Networking (SDN): Layers and Architecture Terminology"</span>, <span class="seriesInfo">RFC 7426</span>, <span class="seriesInfo">DOI 10.17487/RFC7426</span>, <time datetime="2015-01" class="refDate">January 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7426">https://www.rfc-editor.org/rfc/rfc7426</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7471">[RFC7471]</dt>
       <dd>
@@ -2866,7 +2874,7 @@ Xinxin Yi, Jari Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qia
 Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar, and Taylor Paul for their comments and suggestions.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <p id="appendix-B-2">Some text about various deployment models was originally documented in <span>[<a href="#I-D.yao-cats-awareness-architecture" class="cite xref">I-D.yao-cats-awareness-architecture</a>]</span>.<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 <p id="appendix-B-3">Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this specification.<a href="#appendix-B-3" class="pilcrow">¶</a></p>
-<p id="appendix-B-4">Thanks to Thomas Fossati for the GENART review.<a href="#appendix-B-4" class="pilcrow">¶</a></p>
+<p id="appendix-B-4">Thanks to Thomas Fossati for the GENART review and Gyan Mishra for the OPSDIR review.<a href="#appendix-B-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="contributors">
