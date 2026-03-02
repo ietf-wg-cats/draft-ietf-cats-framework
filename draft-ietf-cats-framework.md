@@ -130,6 +130,8 @@ Furthermore, this document describes a workflow of the main CATS procedures ({{s
 
 This document assumes that CATS functional elements are hosted in a provider network. As such, it is out of scope to discuss deployment options where such elements are co-located with a client.
 
+It is out of the scope of this document to provide a comprehensive list of CATS realization techniques or assess how existing mechanisms meet all CATS requirements.
+
 # Terminology
 
 This document makes use of the following terms:
