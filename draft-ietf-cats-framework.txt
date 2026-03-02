@@ -1314,17 +1314,18 @@ Appendix B.  Acknowledgements
    Farinacci, Adrian Farrel, Cullen Jennings, Linda Dunbar, Jeffrey
    Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li, Xinxin Yi, Jari
    Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian,
-   Zhenbin Li, Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra
-   Kumar, and Taylor Paul for their comments and suggestions.
+   Zhenbin Li, Xinyue Zhang, Weier Li, Quan Xiong, Nagendra Kumar, and
+   Taylor Paul for their comments and suggestions.
 
    Some text about various deployment models was originally documented
    in [I-D.yao-cats-awareness-architecture].
 
    Special thanks to Adrian Farrel for the careful shepherd review and
-   various suggestions that enhanced this specification.
+   various suggestions that enhanced this document.
 
-   Thanks to Thomas Fossati for the GENART review and Gyan Mishra for
-   the OPSDIR review.
+   Thanks to Ines Robles and Linda Dunbar for the RTGDIR reviews,
+   Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews, Thomas
+   Fossati for the GENART review, Linda Dunbar for the SECDIR review.
 
 Contributors
 
