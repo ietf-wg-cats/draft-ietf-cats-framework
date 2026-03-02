@@ -144,7 +144,7 @@ Computing-Aware Traffic Steering (CATS):
  : A traffic engineering approach {{?RFC9522}} that takes into account the dynamic nature of computing resources (e.g., compute and storage) and network state to optimize service-specific traffic forwarding towards a given service contact instance. The CATS framework leverages various metrics to enable computing-aware traffic steering policies.
 
 Metric:
- : A quantitative measure that provides suitable input to a selection mechanism for CATS decision-making.
+ : A quantitative measure that provides suitable input to a selection mechanism for CATS decision-making. It can be a network metric or a computing metric.
 
 Computing metrics:
   : Metrics specific to the computing resources in the underlying CATS systems as opposed to other metrics, such as network metrics. Examples of computing metrics are discussed in {{?I-D.ietf-cats-metric-definition}}.
@@ -359,7 +359,7 @@ The C-SMAs and C-NMAs share the collected information with C-PSes that use such 
 
 There might be one or more C-PSes used to select CATS paths in a CATS infrastructure.
 
-A C-PS can be integrated into CATS-Forwarders (e.g., "C-PS#1" in {{fig-cats-components}}) or may be deployed as a standalone component (e.g., "C-PS#2" in {{fig-cats-components}}). Generally, a standalone C-PS can be a functional component of a centralized controller (e.g., a Path Computation Element (PCE) {{?RFC4655}}).
+A C-PS can be integrated into CATS-Forwarders (e.g., "C-PS#1" in {{fig-cats-components}}) or may be deployed as a standalone component (e.g., "C-PS#2" in {{fig-cats-components}}). Generally, a standalone C-PS can be a functional component of a centralized controller (e.g., a Path Computation Element (PCE) {{?RFC4655}}, a Software-Defined Networking (SDN) controller {{?RFC7149}}{{?RFC7426}}).
 
 Refer to {{sec-met-dist}} for a discussion on metric distribution (including interaction with routing protocols).
 
@@ -688,4 +688,4 @@ Some text about various deployment models was originally documented in {{?I-D.ya
 
 Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this specification.
 
-Thanks to Thomas Fossati for the GENART review.
+Thanks to Thomas Fossati for the GENART review and Gyan Mishra for the OPSDIR review.
