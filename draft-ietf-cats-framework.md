@@ -684,10 +684,11 @@ For example, the metrics 1, 2, and 3 associated with the "CS-ID1" are collected 
 The authors would like to thank Joel Halpern, John Scudder, Dino Farinacci, Adrian Farrel,
 Cullen Jennings, Linda Dunbar, Jeffrey Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li,
 Xinxin Yi, Jari Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian, Zhenbin Li,
-Xinyue Zhang, Weier Li, Quan Xiong, Ines Robles, Nagendra Kumar, and Taylor Paul for their comments and suggestions.
+Xinyue Zhang, Weier Li, Quan Xiong, Nagendra Kumar, and Taylor Paul for their comments and suggestions.
 
 Some text about various deployment models was originally documented in {{?I-D.yao-cats-awareness-architecture}}.
 
-Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this specification.
+Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this document.
 
-Thanks to Thomas Fossati for the GENART review and Gyan Mishra for the OPSDIR review.
+Thanks to Ines Robles and Linda Dunbar for the RTGDIR reviews, Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews,
+Thomas Fossati for the GENART review, Linda Dunbar for the SECDIR review.
