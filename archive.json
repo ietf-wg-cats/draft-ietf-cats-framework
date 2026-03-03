@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-26T02:04:58.442715+00:00",
+  "timestamp": "2026-03-03T02:08:53.201457+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1879,6 +1879,22 @@
           "updatedAt": "2025-09-08T13:52:57Z"
         }
       ]
+    },
+    {
+      "number": 157,
+      "id": "I_kwDOJBcdGs7vQGFe",
+      "title": "cats-framework: clarify \u201cstandardized set\u201d is not pick-and-choose; define all-or-nothing vs explicit profiles",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/157",
+      "state": "OPEN",
+      "author": "fazoncore",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The framework refers to a \u201cstandardized set\u201d of normalization and aggregation functions and requires consistency across involved CATS components.\n\nInterop clarification requested:\n- Please clarify that the standardized set is NOT a pick-and-choose menu per implementation/component.\n- Instead, the set should be treated as all-or-nothing, where members apply to different metrics, and consistency across involved components is required for predictable multi-vendor behavior.\n- If partial adoption is intended to be possible, please require that it be expressed as an explicit \u201cprofile\u201d (named/identified) and coordinated across components (configuration distribution and/or protocol signaling), so all components know which profile is active.",
+      "createdAt": "2026-03-03T00:07:25Z",
+      "updatedAt": "2026-03-03T00:07:25Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -8505,6 +8521,133 @@
           "body": "I am OK with the modification, thanks for your work!\r\n",
           "createdAt": "2026-02-24T08:47:25Z",
           "updatedAt": "2026-02-24T08:47:25Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 154,
+      "id": "PR_kwDOJBcdGs7HQf2r",
+      "title": "OPSDIR review",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/154",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-02T07:52:18Z",
+      "updatedAt": "2026-03-02T07:59:13Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "cfad2e51eeea582d9f14a501ca2db93013df6d13",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "b182b6863dab0b38c31fabd23009579cda253f49",
+      "closedAt": "2026-03-02T07:59:11Z",
+      "mergedAt": "2026-03-02T07:59:11Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "0e71e9249f61103c4abcf2771fc9e50b3e6156d2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7m8duO",
+          "commit": {
+            "abbreviatedOid": "b182b68"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T07:59:03Z",
+          "updatedAt": "2026-03-02T07:59:03Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 155,
+      "id": "PR_kwDOJBcdGs7HQndY",
+      "title": "realization is out of scope",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/155",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-02T08:01:56Z",
+      "updatedAt": "2026-03-02T08:26:26Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "0e71e9249f61103c4abcf2771fc9e50b3e6156d2",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "ddd374fe10ecca56b6efb5ee4f337c88c554cd78",
+      "closedAt": "2026-03-02T08:26:24Z",
+      "mergedAt": "2026-03-02T08:26:24Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "26dbeb1172d2ee2f6db7230f7eb904ee97372c13"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs7m84fy",
+          "commit": {
+            "abbreviatedOid": "ddd374f"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T08:26:18Z",
+          "updatedAt": "2026-03-02T08:26:18Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 156,
+      "id": "PR_kwDOJBcdGs7HSLkJ",
+      "title": "ACK all directorate reviews",
+      "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/pull/156",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-02T09:59:20Z",
+      "updatedAt": "2026-03-02T10:12:48Z",
+      "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "baseRefName": "main",
+      "baseRefOid": "26dbeb1172d2ee2f6db7230f7eb904ee97372c13",
+      "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "e1ce712ba0b7b7d299691143c86be8ca3a41db92",
+      "closedAt": "2026-03-02T09:59:59Z",
+      "mergedAt": "2026-03-02T09:59:58Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "b4c2711a41dbf30db9aa095766eb399aaa0b225f"
+      },
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "hello Med, why did you delete Ines Robles ?",
+          "createdAt": "2026-03-02T10:11:48Z",
+          "updatedAt": "2026-03-02T10:11:48Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "sorry, I found the name in another paragraph, NP.",
+          "createdAt": "2026-03-02T10:12:48Z",
+          "updatedAt": "2026-03-02T10:12:48Z"
         }
       ],
       "reviews": []
