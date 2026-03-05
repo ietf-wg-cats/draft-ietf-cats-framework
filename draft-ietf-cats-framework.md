@@ -367,9 +367,9 @@ Refer to {{sec-met-dist}} for a discussion on metric distribution (including int
 
 ### CATS Traffic Classifier (C-TC) {#sec-ctc}
 
-The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. C-TCs also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to {{sec-cats-provisioning}} for more details about provisioning of classification rules.
+The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. C-TCs also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to {{sec-cats-provisioning}} for more details about required provisioning actions.
 
-Note that CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used.
+CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used. Such exposure is not possible with if extensions such as {{?RFC9849}} are used. Relying upon of non-volatile and explicit signals (e.g., {{?RFC8558}}) is thus encouraged for efficient classification rules.
 
 C-TCs are typically hosted in CATS-Forwarders.
 
@@ -441,12 +441,13 @@ Enabling CATS in a network can be done incrementally. That is, not all ingress r
 
 In addition to the CATS steering policies that are communicated by a C-PS to an Ingress CATS-Forwarder, some provisioning tasks are required. This includes, but is not limited to:
 
-* Provide C-PS elements with the locators of available Ingress CATS-Forwarder. Such locators may also be discovered from the network.
+* Provide C-PS elements with the locators of available Ingress CATS-Forwarders/C-TCs. Such locators may also be discovered from the network.
 * Supply information needed to connect C-PS elements with C-NMAs and C-SMAs.
 * Allocate identifiers CS-ID/CSCI-ID and bind them to specific service contact instances.
 * Provide C-PS elements with the set of optimization metrics (per service) and an optimization policy.
 * Configure specific encapsulation capabilities of CATS-Forwarders for use, including any credentials for mutual authentication between peer CATS-Forwarders.
 * Reset the classification table of C-TC elements.
+* Provide C-TCs with initial classification rules based on the classification capabilities ({{sec-oam}}).
 * Set the traffic counters at CATS-Forwarders to ease correlation between both Ingress and Egress CATS-Forwarders. Such a correlation is needed to help identify issues induced by the underlying encapsulation.
 
 Provisioning includes configuration as well as distribution through protocols. Specifically, the above tasks can be enabled using a variety of means (NETCONF {{?RFC6241}}, IPFIX {{?RFC7011}}, RESTCONF {{?RFC8040}}, YANG-Push {{?RFC8639}}, etc.). It is out of scope to discuss required CATS extensions to these protocols.
@@ -519,7 +520,7 @@ This document focuses on the scenario of a single service provider. Hence, secur
 
 CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determining which client accesses which service). More generally, personal data must not be exposed to external parties by CATS beyond what is carried in the packet that was originally issued by the client.
 
-In some cases, the CATS solution may need to know about applications, clients, and even user identity. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation, so this is out of the scope of this document.
+CATS involves user-related data (e.g., access patterns, service requests) across edge service sites. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation. As such, the exact implementation details are out of the scope of this document.
 
 This document focuses on the scenario of a single service provider. Hence, privacy considerations relevant to deployment with multiple service providers are out of scope.
 
@@ -691,4 +692,4 @@ Some text about various deployment models was originally documented in {{?I-D.ya
 Special thanks to Adrian Farrel for the careful shepherd review and various suggestions that enhanced this document.
 
 Thanks to Ines Robles and Linda Dunbar for the RTGDIR reviews, Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews,
-Thomas Fossati for the GENART review, Linda Dunbar for the SECDIR review.
+Thomas Fossati for the GENART review, Linda Dunbar for the SECDIR review, and Tommy Pauly for the TSVDIR review.
