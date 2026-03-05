@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 3 September 2026                                   China Mobile
+Expires: 6 September 2026                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            2 March 2026
+                                                            5 March 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 September 2026.
+   This Internet-Draft will expire on 6 September 2026.
 
 Copyright Notice
 
@@ -539,11 +539,13 @@ Table of Contents
    service contact instance, as instructed by a C-PS.  To that aim, a
    C-TC uses CS-IDs (or their resolution of CS-ID to network locators)
    to classify service requests.  Refer to Section 5.1 for more details
-   about provisioning of classification rules.
+   about required provisioning actions.
 
-   Note that CS-IDs may be carried in packets if mechanisms such as TLS
-   Server Name Indication extension (SNI) (Section 3 of [RFC6066]) are
-   used.
+   CS-IDs may be carried in packets if mechanisms such as TLS Server
+   Name Indication extension (SNI) (Section 3 of [RFC6066]) are used.
+   Such exposure is not possible with if extensions such as [RFC9849]
+   are used.  Relying upon of non-volatile and explicit signals (e.g.,
+   [RFC8558]) is thus encouraged for efficient classification rules.
 
    C-TCs are typically hosted in CATS-Forwarders.
 
@@ -744,7 +746,8 @@ Table of Contents
    required.  This includes, but is not limited to:
 
    *  Provide C-PS elements with the locators of available Ingress CATS-
-      Forwarder.  Such locators may also be discovered from the network.
+      Forwarders/C-TCs.  Such locators may also be discovered from the
+      network.
 
    *  Supply information needed to connect C-PS elements with C-NMAs and
       C-SMAs.
@@ -760,6 +763,9 @@ Table of Contents
       between peer CATS-Forwarders.
 
    *  Reset the classification table of C-TC elements.
+
+   *  Provide C-TCs with initial classification rules based on the
+      classification capabilities (Section 5.2).
 
    *  Set the traffic counters at CATS-Forwarders to ease correlation
       between both Ingress and Egress CATS-Forwarders.  Such a
@@ -958,14 +964,14 @@ Table of Contents
    must not be exposed to external parties by CATS beyond what is
    carried in the packet that was originally issued by the client.
 
-   In some cases, the CATS solution may need to know about applications,
-   clients, and even user identity.  This information is sensitive and
-   should be encrypted.  To prevent the information leaking between CATS
-   components, the C-PS computed path information should be encrypted in
-   distribution.  The specific encryption method may be applied at the
-   network layer, transport layer, or at the application/protocol level
-   depending on the implementation, so this is out of the scope of this
-   document.
+   CATS involves user-related data (e.g., access patterns, service
+   requests) across edge service sites.  This information is sensitive
+   and should be encrypted.  To prevent the information leaking between
+   CATS components, the C-PS computed path information should be
+   encrypted in distribution.  The specific encryption method may be
+   applied at the network layer, transport layer, or at the application/
+   protocol level depending on the implementation.  As such, the exact
+   implementation details are out of the scope of this document.
 
    This document focuses on the scenario of a single service provider.
    Hence, privacy considerations relevant to deployment with multiple
@@ -1082,6 +1088,10 @@ Table of Contents
               DOI 10.17487/RFC8200, July 2017,
               <https://www.rfc-editor.org/rfc/rfc8200>.
 
+   [RFC8558]  Hardie, T., Ed., "Transport Protocol Path Signals",
+              RFC 8558, DOI 10.17487/RFC8558, April 2019,
+              <https://www.rfc-editor.org/rfc/rfc8558>.
+
    [RFC8570]  Ginsberg, L., Ed., Previdi, S., Ed., Giacalone, S., Ward,
               D., Drake, J., and Q. Wu, "IS-IS Traffic Engineering (TE)
               Metric Extensions", RFC 8570, DOI 10.17487/RFC8570, March
@@ -1110,6 +1120,10 @@ Table of Contents
    [RFC9522]  Farrel, A., Ed., "Overview and Principles of Internet
               Traffic Engineering", RFC 9522, DOI 10.17487/RFC9522,
               January 2024, <https://www.rfc-editor.org/rfc/rfc9522>.
+
+   [RFC9849]  Rescorla, E., Oku, K., Sullivan, N., and C. A. Wood, "TLS
+              Encrypted Client Hello", RFC 9849, DOI 10.17487/RFC9849,
+              March 2026, <https://www.rfc-editor.org/rfc/rfc9849>.
 
 Appendix A.  Deployment Examples
 
@@ -1325,7 +1339,8 @@ Appendix B.  Acknowledgements
 
    Thanks to Ines Robles and Linda Dunbar for the RTGDIR reviews,
    Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews, Thomas
-   Fossati for the GENART review, Linda Dunbar for the SECDIR review.
+   Fossati for the GENART review, Linda Dunbar for the SECDIR review,
+   and Tommy Pauly for the TSVDIR review.
 
 Contributors
 
