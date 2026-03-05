@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-03T02:08:53.201457+00:00",
+  "timestamp": "2026-03-05T02:05:57.268879+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -1885,16 +1885,31 @@
       "id": "I_kwDOJBcdGs7vQGFe",
       "title": "cats-framework: clarify \u201cstandardized set\u201d is not pick-and-choose; define all-or-nothing vs explicit profiles",
       "url": "https://github.com/ietf-wg-cats/draft-ietf-cats-framework/issues/157",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fazoncore",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "The framework refers to a \u201cstandardized set\u201d of normalization and aggregation functions and requires consistency across involved CATS components.\n\nInterop clarification requested:\n- Please clarify that the standardized set is NOT a pick-and-choose menu per implementation/component.\n- Instead, the set should be treated as all-or-nothing, where members apply to different metrics, and consistency across involved components is required for predictable multi-vendor behavior.\n- If partial adoption is intended to be possible, please require that it be expressed as an explicit \u201cprofile\u201d (named/identified) and coordinated across components (configuration distribution and/or protocol signaling), so all components know which profile is active.",
       "createdAt": "2026-03-03T00:07:25Z",
-      "updatedAt": "2026-03-03T00:07:25Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-03-03T09:14:09Z",
+      "closedAt": "2026-03-03T07:38:51Z",
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Please refer to https://mailarchive.ietf.org/arch/msg/cats/Gpfr-QpZLes9KOhJ0NIRD07XUg4/. No change is needed",
+          "createdAt": "2026-03-03T07:38:51Z",
+          "updatedAt": "2026-03-03T07:38:51Z"
+        },
+        {
+          "author": "fazoncore",
+          "authorAssociation": "NONE",
+          "body": "Thanks Med (and Adrian) for the clarification and for linking the mailarchive rationale.\n\nUnderstood: CATS targets a single administrative domain / single operator, and the \u201cactivation/configuration parameter\u201d is meant to expose control knobs so operators can enforce consistent normalization/aggregation behavior across involved components (including multi-vendor components within the same domain). Given that framing, I\u2019m fine with closing this as \u201cno change needed\u201d.",
+          "createdAt": "2026-03-03T09:14:09Z",
+          "updatedAt": "2026-03-03T09:14:09Z"
+        }
+      ]
     }
   ],
   "pulls": [
