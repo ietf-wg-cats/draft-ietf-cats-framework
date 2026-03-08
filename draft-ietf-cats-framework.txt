@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 6 September 2026                                   China Mobile
+Expires: 9 September 2026                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            5 March 2026
+                                                            8 March 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 September 2026.
+   This Internet-Draft will expire on 9 September 2026.
 
 Copyright Notice
 
@@ -1126,12 +1126,12 @@ A.1.  Distributed Model
    the distributed model.
 
    There is a client attached to the network via "CATS-Forwarder 1".
-   There are three service contact instances of the service with CS-ID
-   "1": two service contact instances with CSCI-IDs "1" and "2",
+   There are three service contact instances of the service with "CS-ID
+   1": two service contact instances with CSCI-IDs "1" and "2",
    respectively, are located at "Service Site 2" attached via "CATS-
    Forwarder 2"; the third service contact instance is located at
-   "Service Site 3" attached via "CATS-Forwarder 3" and with CSCI-ID
-   "3".  There is also a second service with CS-ID "2" with only one
+   "Service Site 3" attached via "CATS-Forwarder 3" and with "CSCI-ID
+   3".  There is also a second service with "CS-ID 2" with only one
    service contact instance located at "Service Site 3".
 
    The C-SMA collocated with "CATS-Forwarder 2" distributes the
@@ -1259,12 +1259,12 @@ A.3.  Hybrid Model
    An example of metrics distribution in the hybrid model is illustrated
    in Figure 5.
 
-   For example, the metrics 1, 2, and 3 associated with the "CS-ID1" are
-   collected by the centralized C-PS, and the metrics 4 and 5 are
+   For example, the metrics 1, 2, and 3 associated with the "CS-ID 1"
+   are collected by the centralized C-PS, and the metrics 4 and 5 are
    distributed via distributed protocols to the Ingress CATS-Forwarder
-   directly.  For a service with "CS-ID2", all the metrics are collected
-   by the centralized C-PS.  The CATS-computed path result will be
-   distributed to the Ingress CATS-Forwarders from the C-PS by
+   directly.  For a service with "CS-ID 2", all the metrics are
+   collected by the centralized C-PS.  The CATS-computed path result
+   will be distributed to the Ingress CATS-Forwarders from the C-PS by
    considering both the metrics from the C-SMA and C-NMA.  Furthermore,
    the Ingress CATS-Forwarder may also have some ability to compute the
    path for subsequent packets accessing the same service.
