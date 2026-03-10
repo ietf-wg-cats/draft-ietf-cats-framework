@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-08T02:07:44.798043+00:00",
+  "timestamp": "2026-03-10T02:01:59.316625+00:00",
   "repo": "ietf-wg-cats/draft-ietf-cats-framework",
   "labels": [
     {
@@ -8679,13 +8679,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-03-05T07:52:09Z",
-      "updatedAt": "2026-03-05T07:52:09Z",
+      "updatedAt": "2026-03-08T14:05:12Z",
       "baseRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "baseRefName": "main",
       "baseRefOid": "11039bfd2fdfb937e68d7915b606245a7b5a96e7",
       "headRepository": "ietf-wg-cats/draft-ietf-cats-framework",
       "headRefName": "boucadair-patch-2",
-      "headRefOid": "b61c277fc5e569006fbf95c6fd3edafc76a910ea",
+      "headRefOid": "9a6d24e353d29a0119b04fff2d18baad2f6c51e0",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
