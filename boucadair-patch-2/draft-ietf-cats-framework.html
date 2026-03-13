@@ -1056,7 +1056,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 9 September 2026</td>
+<td class="center">Expires 14 September 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1069,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-03-08" class="published">8 March 2026</time>
+<time datetime="2026-03-13" class="published">13 March 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-09-09">9 September 2026</time></dd>
+<dd class="expires"><time datetime="2026-09-14">14 September 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 9 September 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 September 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -2135,10 +2135,11 @@ flexible mechanisms for identifying flows. Or, from a more general perspective, 
       <h2 id="name-privacy-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-privacy-considerations" class="section-name selfRef">Privacy Considerations</a>
       </h2>
-<p id="section-7-1">CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determining which client accesses which service). More generally, personal data must not be exposed to external parties by CATS beyond what is carried in the packet that was originally issued by the client.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2">CATS involves user-related data (e.g., access patterns, service requests) across edge service sites. This information is sensitive and should be encrypted. To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation. As such, the exact implementation details are out of the scope of this document.<a href="#section-7-2" class="pilcrow">¶</a></p>
-<p id="section-7-3">This document focuses on the scenario of a single service provider. Hence, privacy considerations relevant to deployment with multiple service providers are out of scope.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">For more discussion about privacy, refer to <span>[<a href="#RFC6462" class="cite xref">RFC6462</a>]</span> and <span>[<a href="#RFC6973" class="cite xref">RFC6973</a>]</span>.<a href="#section-7-4" class="pilcrow">¶</a></p>
+<p id="section-7-1">CATS solutions must support preventing on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determining which client accesses which service). More generally, personal data must not be exposed to external parties by CATS beyond what is carried in the packet that was originally issued by a client.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">CATS involves user-related data (e.g., access patterns, service requests) across service sites. Identifying a service site does not necessarily identify the service that is being invoked (typically, a service site may host many services, let alone that service instances may be relocated to other sites). However, when unambiguous correlation can be established between a service site and a service site, the binding of a service request and a service contact instance is sensitive, and such information should be encrypted.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">To prevent the information leaking between CATS components, the C-PS computed path information should be encrypted in distribution. The specific encryption method may be applied at the network layer, transport layer, or at the application/protocol level depending on the implementation. As such, the exact implementation details are out of the scope of this document.<a href="#section-7-3" class="pilcrow">¶</a></p>
+<p id="section-7-4">This document focuses on the scenario of a single service provider. Hence, privacy considerations relevant to deployment with multiple service providers are out of scope.<a href="#section-7-4" class="pilcrow">¶</a></p>
+<p id="section-7-5">For more discussion about privacy, refer to <span>[<a href="#RFC6462" class="cite xref">RFC6462</a>]</span> and <span>[<a href="#RFC6973" class="cite xref">RFC6973</a>]</span>.<a href="#section-7-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
