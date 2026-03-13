@@ -611,9 +611,9 @@ The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics f
            :          |  |CATS-Forwarder 2|   '---+CS-ID 1  |     |
            :          |  '---------+------'       |CSCI-ID 2|     |
 .--------. :          |            |              '---------'     |
-| Client | :  Network |  .---------+------------.                 |
-'----+---' :  metrics |  |  .-------.           |     .-----.     |
-     |     :          '--)--+ C-NMA |           |     |     +-----'
+| Client | :  Network |  .---------+------------.     .-----.     |
+'----+---' :  metrics |  |  .-------.           |     |     +-----'
+     |     :          '--)--+ C-NMA |           |     |     |
      |     :             |  '--+----'           |     |C-SMA|
 .----+-----------.       |     |                |     |     |<----.
 |CATS-Forwarder 1+<------)-----'                |     '-----'     |
@@ -656,9 +656,9 @@ For example, the metrics 1, 2, and 3 associated with the "CS-ID 1" are collected
              :          |   |CATS-Forwarder 2|   '---+CS-ID 1  |      |
              :          |   '---------+------'       |CSCI-ID 2|      |
  .--------.  :          |             |              '---------'      |
- | Client |  :  Network |   .---------+------------.                  |
- '----+---'  :  metrics |   |  .-------.           |      .-----.     |
-      |      :          '---)--+ C-NMA |           |      |     +-----'
+ | Client |  :  Network |   .---------+------------.      .-----.     |
+ '----+---'  :  metrics |   |  .-------.           |      |     +-----'
+      |      :          '---)--+ C-NMA |           |      |     |
       |      :              |  '-+-----'           |      |C-SMA+-----.
       |      :              |    |                 |      |     |<--. |
  .----+-----------.         |    |                 |      '-----'   | |
