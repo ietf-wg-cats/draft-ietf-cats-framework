@@ -124,7 +124,7 @@ Today, organizations often distribute user services across on-premises and cloud
 
 Steering in CATS aims to select the appropriate service contact instance to service a request according to a set of network and computing metrics. This selection may not reveal the actual service instance that a client will invoke, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be aggregate metrics from multiple service instances.
 
-The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. A combination of networking and computing metrics determines the exact characterization of services as 'suitable' or not.
+The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. The overlay is realized by means of encapsulation between CATS Forwarders. A combination of networking and computing metrics determines the exact characterization of services as 'suitable' or not.
 
 Furthermore, this document describes a workflow of the main CATS procedures ({{sec-cats-workflow}}) executed in both the control and data planes. The framework covers only the case of a single service provider.
 
@@ -140,7 +140,7 @@ Client:
 : An endpoint that connects to a service provider network.
 
 Flow:
-: A logical grouping of packets during a time interval, identified by some fields from the packet header, such as the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol).
+: A logical grouping of packets during a time interval, identified by some fields from the packet header, such as the 5-tuple transport coordinates (source address and destination address, source and destination port numbers, and protocol). Flow identification should also cover contexts where port numbers are not present (non-initial fragments, IP Encapsulating Security Payload (ESP) {{?RFC4303}}, etc.).
 
 Computing-Aware Traffic Steering (CATS):
  : A traffic engineering approach {{?RFC9522}} that takes into account the dynamic nature of computing resources (e.g., compute and storage) and network state to optimize service-specific traffic forwarding towards a given service contact instance. The CATS framework leverages various metrics to enable computing-aware traffic steering policies.
