@@ -966,9 +966,9 @@ Table of Contents
    necessarily identify the service that is being invoked (typically, a
    service site may host many services, let alone that service instances
    may be relocated to other sites).  However, when unambiguous
-   correlation can be established between a service site and a service
-   site, the binding of a service request and a service contact instance
-   is sensitive, and such information should be encrypted.
+   correlation can be established between a service request and a
+   service site, the binding of a service request and a service contact
+   instance is sensitive, and such information should be encrypted.
 
    To prevent the information leaking between CATS components, the C-PS
    computed path information should be encrypted in distribution.  The
@@ -1352,7 +1352,8 @@ Appendix B.  Acknowledgements
    Fossati for the GENART review, Linda Dunbar for the SECDIR review,
    and Tommy Pauly for the TSVDIR review.
 
-   Thanks Ketan Talaulikar for the IESG review.
+   Thanks Eric Vyncke, Ketan Talaulikar, Christopher Inacio, and Deb
+   Cooley for the IESG review.
 
 Contributors
 
