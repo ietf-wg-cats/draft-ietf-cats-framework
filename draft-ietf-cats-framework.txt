@@ -145,9 +145,11 @@ Table of Contents
    instance may be aggregate metrics from multiple service instances.
 
    The CATS framework is an overlay framework for the selection of the
-   suitable service contact instances from a set of candidates.  A
-   combination of networking and computing metrics determines the exact
-   characterization of services as 'suitable' or not.
+   suitable service contact instances from a set of candidates.  The
+   overlay is realized by means of encapsulation between CATS
+   Forwarders.  A combination of networking and computing metrics
+   determines the exact characterization of services as 'suitable' or
+   not.
 
    Furthermore, this document describes a workflow of the main CATS
    procedures (Section 4) executed in both the control and data planes.
@@ -170,7 +172,10 @@ Table of Contents
    Flow:  A logical grouping of packets during a time interval,
       identified by some fields from the packet header, such as the
       5-tuple transport coordinates (source address and destination
-      address, source and destination port numbers, and protocol).
+      address, source and destination port numbers, and protocol).  Flow
+      identification should also cover contexts where port numbers are
+      not present (non-initial fragments, IP Encapsulating Security
+      Payload (ESP) [RFC4303], etc.).
 
    Computing-Aware Traffic Steering (CATS):  A traffic engineering
       approach [RFC9522] that takes into account the dynamic nature of
@@ -1030,6 +1035,10 @@ Table of Contents
               Private Network (VPN) Terminology", RFC 4026,
               DOI 10.17487/RFC4026, March 2005,
               <https://www.rfc-editor.org/rfc/rfc4026>.
+
+   [RFC4303]  Kent, S., "IP Encapsulating Security Payload (ESP)",
+              RFC 4303, DOI 10.17487/RFC4303, December 2005,
+              <https://www.rfc-editor.org/rfc/rfc4303>.
 
    [RFC4655]  Farrel, A., Vasseur, J.-P., and J. Ash, "A Path
               Computation Element (PCE)-Based Architecture", RFC 4655,
