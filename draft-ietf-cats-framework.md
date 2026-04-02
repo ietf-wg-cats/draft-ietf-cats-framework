@@ -369,7 +369,7 @@ Refer to {{sec-met-dist}} for a discussion on metric distribution (including int
 
 The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. C-TCs also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to {{sec-cats-provisioning}} for more details about required provisioning actions.
 
-CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used. Such exposure is not possible if extensions such as {{?RFC9849}} are used. Relying upon non-volatile and explicit signals (e.g., {{?RFC8558}}) is thus encouraged for efficient classification rules.
+CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) ({{Section 3 of ?RFC6066}}) are used. Such exposure is not possible if extensions such as {{?RFC9849}} are used. Relying upon non-volatile and explicit signals (e.g., {{?RFC8558}}) is thus encouraged for efficient classification rules. Note that once classified, packets will be encapsulated as described in {{sec-access}}.
 
 C-TCs are typically hosted in CATS-Forwarders.
 
@@ -410,7 +410,7 @@ Additionally, the C-NMA collects network-related capabilities and metrics. These
 
 Network metrics may also change over time. Dynamic routing protocols may take advantage of some information or capabilities to prevent the network from being flooded with state change information (e.g., Partial Route Computation (PRC) of OSPFv3 {{?RFC5340}}). C-NMAs should also be configured or instructed like C-SMAs to determine when and how often updates should be notified to the C-PSes.
 
-## Service Access Processing
+## Service Access Processing {#sec-access}
 
 A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder or logically centralized (in the centralized or hybrid models ({{sec-cats-deployment}})).
 
