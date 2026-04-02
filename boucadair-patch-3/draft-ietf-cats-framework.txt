@@ -662,9 +662,8 @@ Table of Contents
 
    A C-PS selects paths that lead to Egress CATS-Forwarders according to
    both service and network metrics that were advertised.  A C-PS may be
-   collocated with an Ingress CATS-Forwarder (as shown in Figure 3) or
-   logically centralized (in the centralized or hybrid models
-   (Section 5.3)).
+   collocated with an Ingress CATS-Forwarder or logically centralized
+   (in the centralized or hybrid models (Section 5.3)).
 
    This document does not specify any specific algorithm for path
    selection purposes to be supported by C-PSes so as not to constrain
@@ -676,19 +675,17 @@ Table of Contents
    differentiate selection mechanisms to enable service-specific
    selections.
 
-   In the example shown in Figure 3, the client sends a service request
-   via the network through the "CATS-Forwarder 1", which is an Ingress
-   CATS-Forwarder.  Note that, a service request to access the service
-   may consist of one or more service packets (e.g., Session Initiation
-   Protocol (SIP) [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6
-   [RFC8754], or Real-Time Streaming Protocol (RTSP) [RFC7826]) that
-   carry the CS-ID and potential parameters.  When a matching
-   classification entry maintained by a C-TC is found for the packets,
-   the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS
-   selected Egress CATS-Forwarder.  When these packets reach the Egress
-   CATS-Forwarder, the outer header of the possible overlay
-   encapsulation will be removed and the inner packets will be sent to
-   the relevant service contact instance.
+   Note that, a service request to access the service may consist of one
+   or more service packets (e.g., Session Initiation Protocol (SIP)
+   [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6 [RFC8754][RFC8986],
+   or Real-Time Streaming Protocol (RTSP) [RFC7826]) that carry the CS-
+   ID and potential parameters.  When a matching classification entry
+   maintained by a C-TC is found for the packets, the Ingress CATS-
+   Forwarder encapsulates and forwards them to the C-PS selected Egress
+   CATS-Forwarder.  When these packets reach the Egress CATS-Forwarder,
+   the outer header of the possible overlay encapsulation will be
+   removed and the inner packets will be sent to the relevant service
+   contact instance.
 
 4.4.  Service Contact Instance Affinity
 
@@ -971,9 +968,9 @@ Table of Contents
    necessarily identify the service that is being invoked (typically, a
    service site may host many services, let alone that service instances
    may be relocated to other sites).  However, when unambiguous
-   correlation can be established between a service site and a service
-   site, the binding of a service request and a service contact instance
-   is sensitive, and such information should be encrypted.
+   correlation can be established between a service request and a
+   service site, the binding of a service request and a service contact
+   instance is sensitive, and such information should be encrypted.
 
    To prevent the information leaking between CATS components, the C-PS
    computed path information should be encrypted in distribution.  The
@@ -1121,6 +1118,12 @@ Table of Contents
               Matsushima, S., and D. Voyer, "IPv6 Segment Routing Header
               (SRH)", RFC 8754, DOI 10.17487/RFC8754, March 2020,
               <https://www.rfc-editor.org/rfc/rfc8754>.
+
+   [RFC8986]  Filsfils, C., Ed., Camarillo, P., Ed., Leddy, J., Voyer,
+              D., Matsushima, S., and Z. Li, "Segment Routing over IPv6
+              (SRv6) Network Programming", RFC 8986,
+              DOI 10.17487/RFC8986, February 2021,
+              <https://www.rfc-editor.org/rfc/rfc8986>.
 
    [RFC9112]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
@@ -1351,7 +1354,8 @@ Appendix B.  Acknowledgements
    Fossati for the GENART review, Linda Dunbar for the SECDIR review,
    and Tommy Pauly for the TSVDIR review.
 
-   Thanks Eric Vyncke for the IESG review.
+   Thanks Eric Vyncke, Ketan Talaulikar, Christopher Inacio, and Deb
+   Cooley for the IESG review.
 
 Contributors
 
