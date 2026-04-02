@@ -108,7 +108,7 @@ informative:
 
 --- abstract
 
-This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes.
+This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes. The framework covers only the case of a single service provider.
 
 --- middle
 
@@ -126,7 +126,7 @@ Steering in CATS aims to select the appropriate service contact instance to serv
 
 The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. A combination of networking and computing metrics determines the exact characterization of services as 'suitable' or not.
 
-Furthermore, this document describes a workflow of the main CATS procedures ({{sec-cats-workflow}}) executed in both the control and data planes.
+Furthermore, this document describes a workflow of the main CATS procedures ({{sec-cats-workflow}}) executed in both the control and data planes. The framework covers only the case of a single service provider.
 
 This document assumes that CATS functional elements are hosted in a provider network. As such, it is out of scope to discuss deployment options where such elements are co-located with a client.
 
