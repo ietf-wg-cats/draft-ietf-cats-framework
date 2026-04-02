@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 2 October 2026                                     China Mobile
+Expires: 4 October 2026                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                           31 March 2026
+                                                            2 April 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 October 2026.
+   This Internet-Draft will expire on 4 October 2026.
 
 Copyright Notice
 
@@ -969,9 +969,9 @@ Table of Contents
    necessarily identify the service that is being invoked (typically, a
    service site may host many services, let alone that service instances
    may be relocated to other sites).  However, when unambiguous
-   correlation can be established between a service site and a service
-   site, the binding of a service request and a service contact instance
-   is sensitive, and such information should be encrypted.
+   correlation can be established between a service request and a
+   service site, the binding of a service request and a service contact
+   instance is sensitive, and such information should be encrypted.
 
    To prevent the information leaking between CATS components, the C-PS
    computed path information should be encrypted in distribution.  The
@@ -1348,6 +1348,8 @@ Appendix B.  Acknowledgements
    Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews, Thomas
    Fossati for the GENART review, Linda Dunbar for the SECDIR review,
    and Tommy Pauly for the TSVDIR review.
+
+   Thanks Christopher Inacio and Deb Cooley for the IESG review.
 
 Contributors
 
