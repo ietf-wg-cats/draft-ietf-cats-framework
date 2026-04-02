@@ -23,7 +23,8 @@ Abstract
    This document describes a framework for Computing-Aware Traffic
    Steering (CATS).  Specifically, the document identifies a set of CATS
    functional components, describes their interactions, and provides
-   illustrative workflows of the control and data planes.
+   illustrative workflows of the control and data planes.  The framework
+   covers only the case of a single service provider.
 
 Status of This Memo
 
@@ -150,6 +151,7 @@ Table of Contents
 
    Furthermore, this document describes a workflow of the main CATS
    procedures (Section 4) executed in both the control and data planes.
+   The framework covers only the case of a single service provider.
 
    This document assumes that CATS functional elements are hosted in a
    provider network.  As such, it is out of scope to discuss deployment

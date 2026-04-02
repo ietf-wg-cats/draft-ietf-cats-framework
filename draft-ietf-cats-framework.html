@@ -11,7 +11,7 @@
 <meta content="Luis M. Contreras" name="author">
 <meta content="John E Drake" name="author">
 <meta content="
-       This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes. 
+       This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes. The framework covers only the case of a single service provider. 
     " name="description">
 <meta content="xml2rfc 3.32.0" name="generator">
 <meta content="Computing Computing-Aware Traffic Steering" name="keyword">
@@ -1105,7 +1105,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">A Framework for Computing-Aware Traffic Steering (CATS)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document describes a framework for Computing-Aware Traffic Steering (CATS). Specifically, the document identifies a set of CATS functional components, describes their interactions, and provides illustrative workflows of the control and data planes. The framework covers only the case of a single service provider.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1291,7 +1291,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-1-4">Today, organizations often distribute user services across on-premises and cloud service provider networks. To support both redundancy and responsiveness, the Computing-Aware Traffic Steering (CATS) framework supports single or multiple service instances providing one given service, which may exist in one or more service sites. Clients access service instances via client-facing service functions known as service contact instances. A single service site may host one or multiple service contact instances. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. Therefore, steering traffic among different service sites can address resource limitations in a specific service site.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">Steering in CATS aims to select the appropriate service contact instance to service a request according to a set of network and computing metrics. This selection may not reveal the actual service instance that a client will invoke, e.g., in hierarchical or recursive contexts. Therefore, the metrics of the service contact instance may be aggregate metrics from multiple service instances.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">The CATS framework is an overlay framework for the selection of the suitable service contact instances from a set of candidates. A combination of networking and computing metrics determines the exact characterization of services as 'suitable' or not.<a href="#section-1-6" class="pilcrow">¶</a></p>
-<p id="section-1-7">Furthermore, this document describes a workflow of the main CATS procedures (<a href="#sec-cats-workflow" class="auto internal xref">Section 4</a>) executed in both the control and data planes.<a href="#section-1-7" class="pilcrow">¶</a></p>
+<p id="section-1-7">Furthermore, this document describes a workflow of the main CATS procedures (<a href="#sec-cats-workflow" class="auto internal xref">Section 4</a>) executed in both the control and data planes. The framework covers only the case of a single service provider.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">This document assumes that CATS functional elements are hosted in a provider network. As such, it is out of scope to discuss deployment options where such elements are co-located with a client.<a href="#section-1-8" class="pilcrow">¶</a></p>
 <p id="section-1-9">It is out of the scope of this document to provide a comprehensive list of CATS realization techniques or assess how existing mechanisms meet all CATS requirements.<a href="#section-1-9" class="pilcrow">¶</a></p>
 </section>
