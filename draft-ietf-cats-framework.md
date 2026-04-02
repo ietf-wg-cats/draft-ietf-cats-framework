@@ -412,11 +412,11 @@ Network metrics may also change over time. Dynamic routing protocols may take ad
 
 ## Service Access Processing
 
-A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder (as shown in {{fig-cats-example-overlay}}) or logically centralized (in the centralized or hybrid models ({{sec-cats-deployment}})).
+A C-PS selects paths that lead to Egress CATS-Forwarders according to both service and network metrics that were advertised. A C-PS may be collocated with an Ingress CATS-Forwarder or logically centralized (in the centralized or hybrid models ({{sec-cats-deployment}})).
 
 This document does not specify any specific algorithm for path selection purposes to be supported by C-PSes so as not to constrain the CATS framework to one possible selection only. Instead, it is expected that a service request or local policy may feed the C-PS with appropriate information on that selection logic that takes the suitable metric information as input and the selected service contact instance as output. Such appropriate information may be utilized to differentiate selection mechanisms to enable service-specific selections.
 
-In the example shown in {{fig-cats-example-overlay}}, the client sends a service request via the network through the "CATS-Forwarder 1", which is an Ingress CATS-Forwarder. Note that, a service request to access the service may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) {{?RFC3261}}, HTTP {{?RFC9112}}, IPv6 {{?RFC8200}}, SRv6 {{?RFC8754}}, or Real-Time Streaming Protocol (RTSP) {{?RFC7826}}) that carry the CS-ID and potential parameters. When a matching classification entry maintained by a C-TC is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.
+Note that, a service request to access the service may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) {{?RFC3261}}, HTTP {{?RFC9112}}, IPv6 {{?RFC8200}}, SRv6 {{?RFC8754}}{{?RFC8986}}, or Real-Time Streaming Protocol (RTSP) {{?RFC7826}}) that carry the CS-ID and potential parameters. When a matching classification entry maintained by a C-TC is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.
 
 ## Service Contact Instance Affinity
 
@@ -695,3 +695,5 @@ Special thanks to Adrian Farrel for the careful shepherd review and various sugg
 
 Thanks to Ines Robles and Linda Dunbar for the RTGDIR reviews, Giuseppe Fioccola and Gyan Mishra for the OPSDIR reviews,
 Thomas Fossati for the GENART review, Linda Dunbar for the SECDIR review, and Tommy Pauly for the TSVDIR review.
+
+Thanks Ketan Talaulikar for the IESG review.
