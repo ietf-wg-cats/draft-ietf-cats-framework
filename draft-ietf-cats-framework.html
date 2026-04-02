@@ -1880,7 +1880,7 @@ is deployment-specific.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
 <a href="#section-3.4.5" class="section-number selfRef">3.4.5. </a><a href="#name-cats-traffic-classifier-c-t" class="section-name selfRef">CATS Traffic Classifier (C-TC)</a>
           </h4>
 <p id="section-3.4.5-1">The CATS Traffic Classifier (C-TC) is a functional component that is responsible for associating incoming packets from clients with service requests. C-TCs also ensure that packets that are bound to a specific service contact instance are all forwarded towards that same service contact instance, as instructed by a C-PS. To that aim, a C-TC uses CS-IDs (or their resolution of CS-ID to network locators) to classify service requests. Refer to <a href="#sec-cats-provisioning" class="auto internal xref">Section 5.1</a> for more details about required provisioning actions.<a href="#section-3.4.5-1" class="pilcrow">¶</a></p>
-<p id="section-3.4.5-2">CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) (<span><a href="https://rfc-editor.org/rfc/rfc6066#section-3" class="relref">Section 3</a> of [<a href="#RFC6066" class="cite xref">RFC6066</a>]</span>) are used. Such exposure is not possible if extensions such as <span>[<a href="#RFC9849" class="cite xref">RFC9849</a>]</span> are used. Relying upon non-volatile and explicit signals (e.g., <span>[<a href="#RFC8558" class="cite xref">RFC8558</a>]</span>) is thus encouraged for efficient classification rules.<a href="#section-3.4.5-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.5-2">CS-IDs may be carried in packets if mechanisms such as TLS Server Name Indication extension (SNI) (<span><a href="https://rfc-editor.org/rfc/rfc6066#section-3" class="relref">Section 3</a> of [<a href="#RFC6066" class="cite xref">RFC6066</a>]</span>) are used. Such exposure is not possible if extensions such as <span>[<a href="#RFC9849" class="cite xref">RFC9849</a>]</span> are used. Relying upon non-volatile and explicit signals (e.g., <span>[<a href="#RFC8558" class="cite xref">RFC8558</a>]</span>) is thus encouraged for efficient classification rules. Note that once classified, packets will be encapsulated as described in <a href="#sec-access" class="auto internal xref">Section 4.3</a>.<a href="#section-3.4.5-2" class="pilcrow">¶</a></p>
 <p id="section-3.4.5-3">C-TCs are typically hosted in CATS-Forwarders.<a href="#section-3.4.5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1935,7 +1935,7 @@ computing-related metrics (and a combination thereof) can be used by a C-PS. Usi
 <p id="section-4.2-6">Network metrics may also change over time. Dynamic routing protocols may take advantage of some information or capabilities to prevent the network from being flooded with state change information (e.g., Partial Route Computation (PRC) of OSPFv3 <span>[<a href="#RFC5340" class="cite xref">RFC5340</a>]</span>). C-NMAs should also be configured or instructed like C-SMAs to determine when and how often updates should be notified to the C-PSes.<a href="#section-4.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="service-access-processing">
+<div id="sec-access">
 <section id="section-4.3">
         <h3 id="name-service-access-processing">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-service-access-processing" class="section-name selfRef">Service Access Processing</a>
