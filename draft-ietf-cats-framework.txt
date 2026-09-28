@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 4 October 2026                                     China Mobile
+Expires: 1 April 2027                                       China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                              Independent
-                                                            2 April 2026
+                                                       28 September 2026
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 October 2026.
+   This Internet-Draft will expire on 1 April 2027.
 
 Copyright Notice
 
@@ -1001,9 +1001,9 @@ Table of Contents
    [I-D.ietf-cats-metric-definition]
               Yao, K., Li, C., Contreras, L. M., Ros-Giralt, J., and G.
               Zeng, "CATS Metrics Definition", Work in Progress,
-              Internet-Draft, draft-ietf-cats-metric-definition-06, 1
-              March 2026, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-cats-metric-definition-06>.
+              Internet-Draft, draft-ietf-cats-metric-definition-11, 4
+              September 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-cats-metric-definition-11>.
 
    [I-D.ietf-cats-usecases-requirements]
               Yao, K., Contreras, L. M., Shi, H., Zhang, S., and Q. An,
@@ -1028,7 +1028,7 @@ Table of Contents
    [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
               A., Peterson, J., Sparks, R., Handley, M., and E.
               Schooler, "SIP: Session Initiation Protocol", RFC 3261,
-              DOI 10.17487/RFC3261, June 2002,
+              DOI 10.17487/RFC3261, July 2002,
               <https://www.rfc-editor.org/rfc/rfc3261>.
 
    [RFC4026]  Andersson, L. and T. Madsen, "Provider Provisioned Virtual
@@ -1312,16 +1312,16 @@ A.3.  Hybrid Model
            Service CS-ID 2, <computing metrics>
                       .------.
               :<------+ C-PS |<----------------------------------------.
-              :       |      |<-------.                                |
-              :       '------'        |               .---------.      |
-              :          ^            |           .---+CS-ID 1  |      |
-              :          |            |           |   |CSCI-ID 1|      |
+              :       |      |<-------.               .---------.      |
+              :       '------'        |           .---+CS-ID 1  |      |
+              :          ^            |           |   |CSCI-ID 1|      |
               :          |   .--------+-------.   |   '---------'      |
               :          |   |    C-SMA       +---+ Service Site 2     |
               :          |   +----------------+   |   .---------.      |
               :          |   |CATS-Forwarder 2|   '---+CS-ID 1  |      |
               :          |   '---------+------'       |CSCI-ID 2|      |
-  .--------.  :          |             |              '---------'      |
+              :          |             |              '---------'      |
+  .--------.  :          |             |                               |
   | Client |  :  Network |   .---------+------------.      .-----.     |
   '----+---'  :  metrics |   |  .-------.           |      |     +-----'
        |      :          '---)--+ C-NMA |           |      |     |
