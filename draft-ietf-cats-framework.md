@@ -622,7 +622,7 @@ The C-SMA collocated with "CATS-Forwarder 2" distributes the computing metrics f
 |CATS-Forwarder 1+<------)-----'                |     '-----'     |
 |                +-------+                      |          ^      |
 '----------------'       |       Underlay       |          |      |
-                         |     Infrastructure   |    .---------.  |
+                         |     Infrastructure   |    .-----+---.  |
                          |                      |    |CS-ID 1  |  |
                          '---------+------------'    |CSCI-ID 3|  |
                                    |                 '-+-------'  |
